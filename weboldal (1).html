@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Főnix Vitalitás Központ - Pomáz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'fonix-green': '#1a4731', // Mély smaragdzöld
+                        'fonix-light-green': '#2f6f52',
+                        'fonix-gold': '#d4af37', // Klasszikus arany
+                        'fonix-gold-light': '#f3e5ab',
+                        'fonix-bg': '#f9f8f4', // Krémfehér háttér
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            scroll-behavior: smooth;
+        }
+        .text-gold-gradient {
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .gold-border {
+            border-image: linear-gradient(to right, #bf953f, #fcf6ba, #b38728) 1;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(26, 71, 49, 0.15);
+        }
+        /* Accordion transition */
+        .accordion-content {
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .accordion-content.active {
+            /* Megnövelve, hogy a hosszú tartalom is elférjen */
+            max-height: 8000px; 
+            opacity: 1;
+        }
+        .rotate-icon {
+            transform: rotate(180deg);
+        }
+        .cta-button-pop {
+            animation: pulse-gold 2s infinite;
+        }
+        @keyframes pulse-gold {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+    </style>
+</head>
+<body class="bg-fonix-bg text-gray-800 font-sans">
+
+    <!-- Navigation -->
+    <nav class="bg-fonix-green text-white fixed w-full z-50 shadow-lg transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-serif font-bold tracking-wider flex items-center gap-2">
+                <i class="fas fa-feather-alt text-fonix-gold"></i>
+                <span class="text-fonix-gold">Főnix</span> Vitalitás
+            </a>
+            <div class="hidden md:flex space-x-8 items-center text-sm uppercase tracking-widest">
+                <a href="#rolunk" class="hover:text-fonix-gold transition">Rólunk</a>
+                <a href="#szolgaltatasok" class="hover:text-fonix-gold transition">Szolgáltatások</a>
+                <a href="#csapat" class="hover:text-fonix-gold transition">Csapat</a>
+                <a href="#kapcsolat" class="hover:text-fonix-gold transition">Kapcsolat</a>
+                <a href="tel:+36204654525" class="bg-fonix-gold text-fonix-green px-6 py-3 rounded-lg hover:bg-white hover:text-fonix-green transition duration-300 font-extrabold shadow-lg transform hover:scale-105 cta-button-pop flex items-center gap-2">
+                    <i class="fas fa-calendar-check"></i> IDŐPONT FOGLALÁS
+                </a>
+            </div>
+            <button class="md:hidden text-fonix-gold text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-fonix-green border-t border-fonix-light-green">
+            <a href="#rolunk" class="block px-6 py-3 hover:bg-fonix-light-green">Rólunk</a>
+            <a href="#szolgaltatasok" class="block px-6 py-3 hover:bg-fonix-light-green">Szolgáltatások</a>
+            <a href="#csapat" class="block px-6 py-3 hover:bg-fonix-light-green">Csapat</a>
+            <a href="#kapcsolat" class="block px-6 py-3 hover:bg-fonix-light-green">Kapcsolat</a>
+            <a href="tel:+36204654525" class="block px-6 py-4 bg-fonix-gold text-fonix-green font-bold text-center mt-2 mx-4 mb-4 rounded">IDŐPONT FOGLALÁS</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen min-h-[600px] flex items-center justify-center bg-fixed bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-fonix-green/30 to-fonix-green/80"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto" data-aos="fade-up">
+            <div class="mb-4 text-fonix-gold text-xl tracking-[0.2em] uppercase">Pomáz szívében</div>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight">
+                Ahol a természet és a <span class="text-fonix-gold italic">ragyogás</span> találkozik
+            </h1>
+            <p class="text-gray-200 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light">
+                A Főnix egyedülálló módon egyesíti a rekreáció négy pillérét: mozgás, szépség, kényeztetés és lelki egészség.
+            </p>
+            <a href="#szolgaltatasok" class="inline-block bg-fonix-gold text-fonix-green font-bold px-8 py-4 rounded hover:bg-white hover:text-fonix-green transition duration-300 uppercase tracking-widest shadow-lg">
+                Szolgáltatásaink
+            </a>
+        </div>
+    </header>
+
+    <!-- Rólunk -->
+    <section id="rolunk" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Spa hangulat" class="rounded-lg shadow-2xl border-b-4 border-r-4 border-fonix-gold">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl font-serif text-fonix-green mb-6">A Főnix Vitalitás Központ</h2>
+                    <div class="w-20 h-1 bg-fonix-gold mb-6"></div>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        A korábbi központ alapjaira építkezve, de teljesen megújult szellemiséggel várunk Pomáz szívében. A névválasztás nem véletlen - visszautal a Főnix Day Spa-ra, és egyben az újjászületést és az örök energiát szimbolizálja.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Nálunk nem csupán kezeléseket kapsz, hanem egy teljeskörű élményt. A modern technológia (elektromágneses kezelések, kavitáció) és az ősi gyógymódok (masszázs, jóga) fúziója biztosítja, hogy tested és lelked is megtalálja az újjászületést.
+                    </p>
+                    <ul class="grid grid-cols-2 gap-4 text-fonix-green font-serif italic">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-fonix-gold"></i> Mozgás</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-fonix-gold"></i> Szépség</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-fonix-gold"></i> Kényeztetés</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-fonix-gold"></i> Lelki egészség</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Szolgáltatások -->
+    <section id="szolgaltatasok" class="py-20 bg-fonix-bg">
+        <div class="container mx-auto px-6 max-w-6xl"> 
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif text-fonix-green mb-4">Szolgáltatások és Árak</h2>
+                <div class="w-24 h-1 bg-fonix-gold mx-auto"></div>
+                <p class="mt-4 text-gray-500">Kattints a kategóriákra a részletes árlistáért</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-100">
+                
+                <!-- Mozgás -->
+                <div class="border-b border-gray-100">
+                    <button onclick="toggleAccordion('cat-mozgas')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-gray-50 transition text-left focus:outline-none group">
+                        <div class="flex items-center gap-6">
+                            <div class="w-12 h-12 bg-fonix-green rounded-full flex items-center justify-center text-fonix-gold text-2xl group-hover:bg-fonix-gold group-hover:text-white transition">
+                                <i class="fas fa-running"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl md:text-2xl font-serif text-fonix-green">Mozgás</h3>
+                                <p class="text-sm text-gray-400">Jóga, Személyi edzés, Csoportos órák</p>
+                            </div>
+                        </div>
+                        <i id="icon-cat-mozgas" class="fas fa-chevron-down text-fonix-gold text-xl transition-transform duration-300"></i>
+                    </button>
+                    <div id="cat-mozgas" class="accordion-content bg-gray-50">
+                        <div class="px-8 pb-8 pt-6">
+                            <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-serif text-fonix-green font-bold">Jóga és Csoportos órák <span class="text-sm font-sans text-gray-500 font-normal block md:inline">(Hatha, Női jóga, Egyéb csoportos)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">3.000 Ft <span class="text-xs text-gray-400 font-normal">/ 60-75 perc</span></div>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-gray-100 shadow-sm w-full md:w-auto">
+                                        <div class="text-sm font-bold text-gray-700 mb-1 border-b border-gray-100 pb-1">Bérlet opció:</div>
+                                        <div class="flex justify-between gap-8 text-sm">
+                                            <div class="flex flex-col">
+                                                <span>10 alkalom:</span>
+                                                <span class="text-[10px] text-gray-400 italic">Minden 3000 Ft-os órára érvényes</span>
+                                            </div>
+                                            <span class="font-bold text-fonix-green">26.500 Ft</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    Változatos óratípusaink lehetőséget kínálnak a test és lélek felfrissítésére. A <strong>Hatha jóga</strong> (60p) az ászanák kitartására és a légzésre fókuszál, a <strong>Női jóga</strong> (75p) a hormonális egyensúlyt és a női szervek egészségét támogatja lágyabb mozdulatokkal, míg <strong>Csoportos óráink</strong> (60p) a dinamikusabb mozgásformákat kedvelőknek nyújtanak feltöltődést. Bérletünkkel szabadon átjárhatsz az óratípusok között.
+                                </p>
+                            </div>
+                            <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-serif text-fonix-green font-bold">Kismama jóga <span class="text-sm font-sans text-gray-500 font-normal">(90 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">4.000 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-gray-100 shadow-sm w-full md:w-auto">
+                                        <div class="text-sm font-bold text-gray-700 mb-1 border-b border-gray-100 pb-1">Bérlet opció:</div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">36.000 Ft</span></div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    A várandósság idején végzett speciális jóga segít a megváltozott testhelyzethez való alkalmazkodásban, enyhíti a hát- és derékfájdalmakat, valamint felkészíti a medencealapi izmokat a szülésre. A légzőgyakorlatok és a relaxáció segítik a kismamák lelki ráhangolódását az anyaságra és a babával való kapcsolódást.
+                                </p>
+                            </div>
+                            <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-serif text-fonix-green font-bold">Személyi edzés <span class="text-sm font-sans text-gray-500 font-normal">(60 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">7.500 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-gray-100 shadow-sm w-full md:w-auto">
+                                        <div class="text-sm font-bold text-gray-700 mb-1 border-b border-gray-100 pb-1">Bérlet opció:</div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">67.500 Ft</span></div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    Személyre szabott edzésprogram, amely figyelembe veszi egyéni céljaidat, fittségi állapotodat és esetleges mozgásszervi problémáidat. Szakképzett edzőnk maximális figyelmet fordít a gyakorlatok helyes kivitelezésére, így a fejlődés gyorsabb, biztonságosabb és hatékonyabb, mint az önálló edzés során. Ideális választás újrakezdőknek, vagy specifikus célok (fogyás, erősítés) eléréséhez.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alakformálás -->
+                <div class="border-b border-gray-100">
+                    <button onclick="toggleAccordion('cat-alak')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-gray-50 transition text-left focus:outline-none group">
+                        <div class="flex items-center gap-6">
+                            <div class="w-12 h-12 bg-fonix-gold rounded-full flex items-center justify-center text-white text-2xl group-hover:bg-fonix-green transition">
+                                <i class="fas fa-burn"></i>
+                            </div>
+                             <div>
+                                <h3 class="text-xl md:text-2xl font-serif text-fonix-green">Alakformálás</h3>
+                                <p class="text-sm text-gray-400">EMS, Nyirokmasszázs, Kavitáció</p>
+                            </div>
+                        </div>
+                        <i id="icon-cat-alak" class="fas fa-chevron-down text-fonix-gold text-xl transition-transform duration-300"></i>
+                    </button>
+                    <div id="cat-alak" class="accordion-content bg-gray-50">
+                        <div class="px-8 pb-8 pt-6">
+                            <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-serif text-fonix-green font-bold">EMS Intimfotel <span class="text-sm font-sans text-gray-500 font-normal">(30 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">8.500 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-gray-100 shadow-sm w-full md:w-auto">
+                                        <div class="text-sm font-bold text-gray-700 mb-1 border-b border-gray-100 pb-1">Bérlet opciók:</div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">38.500 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">69.900 Ft</span></div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    Az EMS intimfotel (HI-EMS, azaz elektromágneses technológiával végzett kezelések) hatékonyan erősítik a medencefenék izmait, javítják az intim egészséget és csökkentik az inkontinencia problémákat. A kezelések végzése heti 2 alkalommal javasolt, és a kúra időtartama 3-5 hét.
+                                </p>
+                            </div>
+                            <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-serif text-fonix-green font-bold">Gépi nyirokmasszázs <span class="text-sm font-sans text-gray-500 font-normal">(25 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">7.500 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-gray-100 shadow-sm w-full md:w-auto">
+                                        <div class="text-sm font-bold text-gray-700 mb-1 border-b border-gray-100 pb-1">Bérlet opciók:</div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">33.900 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">63.900 Ft</span></div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    A gépi nyirokmasszázs, más néven hullámmasszázs, egy kompressziós eljárás, ahol speciális "köpenyt" helyeznek a testre. A gép által vezérelt légkamrák hullámszerűen, ritmikusan telnek meg levegővel, és váltakozó nyomást fejtenek ki, ami a végtagoktól a szív felé haladva serkenti a nyirok- és vérkeringést, elősegítve a salakanyagok és folyadéktöbblet távozását. Kellemes és pihentető érzést biztosít, miközben segíthet a narancsbőr, ödéma és a testkontúrok javításában, valamint a szervezet méregtelenítésében.
+                                </p>
+                            </div>
+                            <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-serif text-fonix-green font-bold">Kombinált testkezelés <span class="text-sm font-sans text-gray-500 font-normal">(75 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">19.900 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-gray-100 shadow-sm w-full md:w-auto">
+                                        <div class="text-sm font-bold text-gray-700 mb-1 border-b border-gray-100 pb-1">Bérlet opciók:</div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>4 alkalom:</span> <span class="font-bold text-fonix-green">59.900 Ft</span></div>
+                                    </div>
+                                </div>
+                                <div class="text-sm text-gray-600 leading-relaxed italic text-justify space-y-2">
+                                    <p><strong class="not-italic text-fonix-green">A csomag tartalma:</strong> 80kHz Kavitációs zsírbontás, Bőrfeszesítés, Rádiófrekvenciás vákuum, Teljes testes gépi nyirokmasszázs.</p>
+                                    <p>A kavitációs zsírbontás (más néven ultrahangos zsírbontás) 4–10 MHz frekvenciájú ultrahanghullám segítségével apró buborékokat hoz létre a zsírsejtek közötti térben. Az ultrahanghullám a szövetet és szerveket érintetlenül hagyva kizárólag a zsírszövetre fejt ki hatást. A kavitáció hatására létrejövő buborékok megroppantják a zsírsejtekben tárolt zsírcseppeket. A zsírcsepp alkotórészei, a zsírsavak, folyékonnyá válnak, bekerülnek a nyirokáramba, majd távoznak a bélrendszeren keresztül.</p>
+                                </div>
+                            </div>
+                            <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-serif text-fonix-green font-bold">Alpha melegterápiás kezelés <span class="text-sm font-sans text-gray-500 font-normal">(45 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">8.500 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-gray-100 shadow-sm w-full md:w-auto">
+                                        <div class="text-sm font-bold text-gray-700 mb-1 border-b border-gray-100 pb-1">Bérlet opciók:</div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">38.500 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">69.900 Ft</span></div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    A készülék mélymeleg-terápiás (max. 70 fok) környezetet teremt, ezzel beindítja a test öngyógyító folyamatait és elősegíti regenerálódását. A kezelés eredményeként megindul a súlyvesztés (ideális hőfok 62-65 C), csökkennek a zsírpárnák és a narancsbőr, gyorsul az anyagcsere, beindul a keringési rendszer, tisztul a bőr. Enyhülnek a mindennapos stresszes tünetek.
+                                </p>
+                            </div>
+                             <div>
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-serif text-fonix-green font-bold">Vörösfény terápia <span class="text-sm font-sans text-gray-500 font-normal">(10 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">1.000 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    A vörös fényterápia (RLT) egy nem invazív kezelési módszer, amely vörös és közeli infravörös fényt használ a sejtek regenerálódásának elősegítésére, gyulladáscsökkentésre és a bőr állapotának javítására.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kényeztetés & Masszázs -->
+                <div class="border-b border-gray-100">
+                    <button onclick="toggleAccordion('cat-masszazs')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-gray-50 transition text-left focus:outline-none group">
+                        <div class="flex items-center gap-6">
+                            <div class="w-12 h-12 bg-fonix-green rounded-full flex items-center justify-center text-fonix-gold text-2xl group-hover:bg-fonix-gold group-hover:text-white transition">
+                                <i class="fas fa-spa"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl md:text-2xl font-serif text-fonix-green">Kényeztetés & Masszázs</h3>
+                                <p class="text-sm text-gray-400">Head Spa, Masszázsok és kozmetika</p>
+                            </div>
+                        </div>
+                        <i id="icon-cat-masszazs" class="fas fa-chevron-down text-fonix-gold text-xl transition-transform duration-300"></i>
+                    </button>
+                    <div id="cat-masszazs" class="accordion-content bg-gray-50">
+                        <div class="px-8 pb-8 pt-6">
+                            
+                            <!-- 1. Head Spa -->
+                            <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col gap-4 mb-4">
+                                    <h4 class="text-lg font-serif text-fonix-green font-bold mb-2">Head Spa</h4>
+                                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white p-4 rounded border border-gray-100 shadow-sm">
+                                        <div>
+                                            <span class="font-bold text-gray-700">60 perc</span>
+                                            <div class="text-fonix-green font-bold text-xl">18.000 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div>
+                                        </div>
+                                        <div class="flex justify-between gap-8 text-sm w-full md:w-auto border-t md:border-t-0 md:border-l border-gray-100 pt-2 md:pt-0 md:pl-4">
+                                            <span>4 alkalmas bérlet:</span> <span class="font-bold text-fonix-green">64.800 Ft</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white p-4 rounded border border-gray-100 shadow-sm">
+                                        <div>
+                                            <span class="font-bold text-gray-700">90 perc</span>
+                                            <div class="text-fonix-green font-bold text-xl">25.000 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div>
+                                        </div>
+                                        <div class="flex justify-between gap-8 text-sm w-full md:w-auto border-t md:border-t-0 md:border-l border-gray-100 pt-2 md:pt-0 md:pl-4">
+                                            <span>4 alkalmas bérlet:</span> <span class="font-bold text-fonix-green">90.000 Ft</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col px-2 mt-2 gap-1">
+                                        <span class="text-sm font-bold text-gray-600">Hajszárítás (15 perc)</span>
+                                        <span class="text-sm text-fonix-green font-bold">2.000 Ft</span>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    A head spa egy holisztikus, japán eredetű fej-, nyak- és vállkezelés, amely a fejbőr és a haj egészségének javítását, valamint a stresszoldást célozza meg. Különféle technikák - a masszázs, akupresszúra és aromaterápia - kombinációját használja speciális termékekkel, így mélytisztítást, hidratálást és regenerálást végez.
+                                </p>
+                            </div>
+
+                            <!-- 2. MezoPen -->
+                            <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col mb-4 gap-3">
+                                    <div>
+                                        <h4 class="text-lg font-serif text-fonix-green font-bold">MezoPen kezelés <span class="text-sm font-sans text-gray-500 font-normal">(45 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">18.000 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-gray-100 shadow-sm w-full md:max-w-xs">
+                                        <div class="text-sm font-bold text-gray-700 mb-1 border-b border-gray-100 pb-1">Bérlet opció:</div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>4 alkalom:</span> <span class="font-bold text-fonix-green">59.900 Ft</span></div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    A Mezopen egy innovatív, tűvel végzett bőrfiatalító kezelés, amely függőleges mozgású, hajszálvékony tűkkel mikrosérüléseket ejt a bőrön, miközben orvosi tisztaságú hatóanyagokat juttat a bőr mélyebb rétegeibe. Serkenti a kollagén- és elasztintermelést, hatékonyan kezeli a ráncokat, hegeket, tág pórusokat, és feszesíti a megereszkedett bőrt.
+                                </p>
+                            </div>
+
+                            <!-- 3. Lágy csontkovácsolás -->
+                            <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-serif text-fonix-green font-bold">Lágy csontkovácsolás <span class="text-sm font-sans text-gray-500 font-normal">(50 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">15.000 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-gray-100 shadow-sm w-full md:w-auto">
+                                        <div class="text-sm font-bold text-gray-700 mb-1 border-b border-gray-100 pb-1">Bérlet opciók:</div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">67.500 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">135.000 Ft</span></div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    A lágy csontkovácsolás - más néven "a lusták jógája" - a gerinc, az izmok és az ízületek speciális mozdulatokkal történő kezelése, amely a manuális terápia egy formája. A gerinc eredetű panaszok enyhítésére, valamint mozgásszervi problémák kezelésére szolgál. A módszer ősi népi hagyományokon alapul, és kíméletes, fájdalommentes módszert kínál lumbágó, derék-, nyak- és fejfájás esetén.
+                                </p>
+                            </div>
+
+                            <!-- 4. Triggerpont masszázs -->
+                            <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-serif text-fonix-green font-bold">Triggerpont masszázs <span class="text-sm font-sans text-gray-500 font-normal">(50 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">13.000 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-gray-100 shadow-sm w-full md:w-auto">
+                                        <div class="text-sm font-bold text-gray-700 mb-1 border-b border-gray-100 pb-1">Bérlet opciók:</div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">58.500 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">117.000 Ft</span></div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    A trigger pont terápia az izmokban kialakult csomóokat célzott módon kezeli. Ez az egyik leghatékonyabb, gyógytornászok által is használt technika, ugyanis a kiváltó ok kerül a terápia középpontjába.
+                                </p>
+                            </div>
+
+                            <!-- 5. Svéd masszázs -->
+                            <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-serif text-fonix-green font-bold">Svéd masszázs <span class="text-sm font-sans text-gray-500 font-normal">(60 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">13.000 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-gray-100 shadow-sm w-full md:w-auto">
+                                        <div class="text-sm font-bold text-gray-700 mb-1 border-b border-gray-100 pb-1">Bérlet opciók:</div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">58.500 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">117.000 Ft</span></div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    Célzott fogásokkal, simító, gyúró és dörzsölő technikákkal serkenti a vér- és nyirokkeringést, csökkenti az izomfeszültséget és támogatja a testi-lelki relaxációt. Ideális regenerációhoz és stresszoldáshoz.
+                                </p>
+                            </div>
+
+                            <!-- 6. Kézi nyirokmasszázs -->
+                            <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col gap-4 mb-4">
+                                    <h4 class="text-lg font-serif text-fonix-green font-bold mb-2">Kézi nyirokmasszázs</h4>
+                                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white p-4 rounded border border-gray-100 shadow-sm">
+                                        <div>
+                                            <span class="font-bold text-gray-700">60 perc</span>
+                                            <div class="text-fonix-green font-bold text-xl">15.000 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div>
+                                        </div>
+                                        <div class="flex flex-col gap-1 w-full md:w-auto border-t md:border-t-0 md:border-l border-gray-100 pt-2 md:pt-0 md:pl-4">
+                                            <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">67.500 Ft</span></div>
+                                            <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">135.000 Ft</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white p-4 rounded border border-gray-100 shadow-sm">
+                                        <div>
+                                            <span class="font-bold text-gray-700">90 perc</span>
+                                            <div class="text-fonix-green font-bold text-xl">22.000 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div>
+                                        </div>
+                                        <div class="flex flex-col gap-1 w-full md:w-auto border-t md:border-t-0 md:border-l border-gray-100 pt-2 md:pt-0 md:pl-4">
+                                            <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">99.000 Ft</span></div>
+                                            <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">198.000 Ft</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    Finom, ritmikus, célzott fogásokkal serkenti a nyirokfolyadék áramlását, elősegíti a méreganyagok elszállítását, csökkenti a pangást és duzzanatot, valamint támogatja az immunrendszer működését és a regenerációt.
+                                </p>
+                            </div>
+
+                            <!-- 7. Arcmasszázs -->
+                            <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-serif text-fonix-green font-bold">Arcmasszázs <span class="text-sm font-sans text-gray-500 font-normal">(40 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">8.500 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-gray-100 shadow-sm w-full md:w-auto">
+                                        <div class="text-sm font-bold text-gray-700 mb-1 border-b border-gray-100 pb-1">Bérlet opciók:</div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">38.300 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">76.500 Ft</span></div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    Speciális fogásokkal stimulálja a mimikai izmokat, javítja a vérkeringést és nyirokáramlást az arcon. Elősegíti a bőr oxigén ellátását, fokozza a rugalmasságot és a friss, üde megjelenést, miközben csökkenti a fej- és arc feszültséget.
+                                </p>
+                            </div>
+
+                            <!-- 8. Sportmasszázs -->
+                            <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-serif text-fonix-green font-bold">Sportmasszázs <span class="text-sm font-sans text-gray-500 font-normal">(50 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">14.000 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-gray-100 shadow-sm w-full md:w-auto">
+                                        <div class="text-sm font-bold text-gray-700 mb-1 border-b border-gray-100 pb-1">Bérlet opciók:</div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">63.000 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">126.000 Ft</span></div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    Célzott technikákkal (dörzsölés, nyújtás) optimalizálja az izomfunkciót, csökkenti a sérülésveszélyt és fokozza az edzés utáni regenerációt. Kiemelten ajánlott aktív életmódhoz és versenysportolóknak.
+                                </p>
+                            </div>
+
+                            <!-- 9. Cellulit masszázs -->
+                            <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col gap-4 mb-4">
+                                    <h4 class="text-lg font-serif text-fonix-green font-bold mb-2">Cellulit masszázs</h4>
+                                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white p-4 rounded border border-gray-100 shadow-sm">
+                                        <div>
+                                            <span class="font-bold text-gray-700">40 perc</span>
+                                            <div class="text-fonix-green font-bold text-xl">12.000 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div>
+                                        </div>
+                                        <div class="flex flex-col gap-1 w-full md:w-auto border-t md:border-t-0 md:border-l border-gray-100 pt-2 md:pt-0 md:pl-4">
+                                            <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">54.000 Ft</span></div>
+                                            <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">108.000 Ft</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white p-4 rounded border border-gray-100 shadow-sm">
+                                        <div>
+                                            <span class="font-bold text-gray-700">60 perc</span>
+                                            <div class="text-fonix-green font-bold text-xl">18.000 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div>
+                                        </div>
+                                        <div class="flex flex-col gap-1 w-full md:w-auto border-t md:border-t-0 md:border-l border-gray-100 pt-2 md:pt-0 md:pl-4">
+                                            <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">81.000 Ft</span></div>
+                                            <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">162.000 Ft</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    A cellulit masszázs elősegíti, hogy a felhalmozódott nyirok a salakanyaggal együtt a nyirokcsomókon keresztül a véráramba jusson és kiürüljön, így megszabadítva a zsírsejteket a méreganyagtól. Emellett hihetetlen módon meggyorsítja az anyagcsere folyamatokat, vérkeringést, és a szövetek frissítését a szervezetben. A narancsbőr masszázs elősegíti az új kollagén termelést, ami a szövetek feszességét fokozza.
+                                </p>
+                            </div>
+
+                             <!-- 10. Body Mix -->
+                             <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-serif text-fonix-green font-bold">Body Mix <span class="text-sm font-sans text-gray-500 font-normal">(60 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">15.000 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-gray-100 shadow-sm w-full md:w-auto">
+                                        <div class="text-sm font-bold text-gray-700 mb-1 border-b border-gray-100 pb-1">Bérlet opciók:</div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">67.500 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">135.000 Ft</span></div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    Egyénre szabott masszázs mix, amely a svéd masszázs, a triggerpont masszázs és a lágy csontkovácsolás elemeit ötvözi, a vendég állapota és igénye szerint.
+                                </p>
+                            </div>
+
+                             <!-- 11. Stressz masszázs -->
+                             <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-serif text-fonix-green font-bold">Stressz masszázs <span class="text-sm font-sans text-gray-500 font-normal">(30 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">7.500 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-gray-100 shadow-sm w-full md:w-auto">
+                                        <div class="text-sm font-bold text-gray-700 mb-1 border-b border-gray-100 pb-1">Bérlet opciók:</div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">33.750 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">67.500 Ft</span></div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    Teljes hát-, váll- és nyakizom masszázs a stressz oldására. Végezhető fekvő és ülő helyzetben is.
+                                </p>
+                            </div>
+
+                            <!-- 12. Talpmasszázs -->
+                            <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col gap-4 mb-4">
+                                    <h4 class="text-lg font-serif text-fonix-green font-bold mb-2">Talpmasszázs</h4>
+                                    <div class="flex flex-col md:flex-row justify-between items-center gap-2 bg-white p-3 rounded border border-gray-100 shadow-sm">
+                                        <div class="flex-1">
+                                            <span class="font-bold text-gray-700 block">10 perc</span>
+                                            <span class="text-fonix-green font-bold">3.000 Ft</span>
+                                        </div>
+                                        <div class="text-xs w-full md:w-auto text-gray-500">
+                                            <div>5 alk: <span class="text-fonix-green font-bold">13.900 Ft</span></div>
+                                            <div>10 alk: <span class="text-fonix-green font-bold">26.500 Ft</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col md:flex-row justify-between items-center gap-2 bg-white p-3 rounded border border-gray-100 shadow-sm">
+                                        <div class="flex-1">
+                                            <span class="font-bold text-gray-700 block">30 perc</span>
+                                            <span class="text-fonix-green font-bold">6.500 Ft</span>
+                                        </div>
+                                        <div class="text-xs w-full md:w-auto text-gray-500">
+                                            <div>5 alk: <span class="text-fonix-green font-bold">32.000 Ft</span></div>
+                                            <div>10 alk: <span class="text-fonix-green font-bold">58.500 Ft</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col md:flex-row justify-between items-center gap-2 bg-white p-3 rounded border border-gray-100 shadow-sm">
+                                        <div class="flex-1">
+                                            <span class="font-bold text-gray-700 block">60 perc</span>
+                                            <span class="text-fonix-green font-bold">11.000 Ft</span>
+                                        </div>
+                                        <div class="text-xs w-full md:w-auto text-gray-500">
+                                            <div>5 alk: <span class="text-fonix-green font-bold">49.500 Ft</span></div>
+                                            <div>10 alk: <span class="text-fonix-green font-bold">99.000 Ft</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    A talp reflexpontjainak stimulálásával harmonizálja az egész szervezet működését, támogatja a keringést, az idegrendszeri egyensúlyt és a szervezet öngyógyító folyamatait. Segít a fáradtság csökkentésében, a test méregtelenítésében és a testi-lelki feltöltődésben.
+                                </p>
+                            </div>
+
+                            <!-- 13. Csontkovácsolás - REMOVED FROM BOX -->
+                            <div class="mb-8">
+                                <div class="flex flex-col mb-4 gap-2">
+                                    <div>
+                                        <h4 class="text-lg font-serif text-fonix-green font-bold">Csontkovácsolás (Kiropraktika) <span class="text-sm font-sans text-gray-500 font-normal">(30 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">22.000 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div>
+                                    </div>
+                                    <div class="text-sm italic text-gray-500">
+                                        Bejelentkezés: <a href="tel:+36204654525" class="text-fonix-green hover:underline font-bold">06 20 465 4525</a>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    A csontkovácsolás, más néven kiropraktika, egy olyan alternatív gyógyászati módszer, amely a gerinc és az ízületek kézzel történő manipulációjával igyekszik helyreállítani a test egyensúlyát és elősegíteni a gyógyulást.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kéz- és Lábápolás -->
+                <div class="border-b border-gray-100">
+                     <button onclick="toggleAccordion('cat-kezlab')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-gray-50 transition text-left focus:outline-none group">
+                        <div class="flex items-center gap-6">
+                            <div class="w-12 h-12 bg-fonix-gold rounded-full flex items-center justify-center text-white text-2xl group-hover:bg-fonix-green transition">
+                                <i class="fas fa-hand-sparkles"></i>
+                            </div>
+                             <div>
+                                <h3 class="text-xl md:text-2xl font-serif text-fonix-green">Kéz- és Lábápolás</h3>
+                                <p class="text-sm text-gray-400">Manikűr, Pedikűr</p>
+                            </div>
+                        </div>
+                        <i id="icon-cat-kezlab" class="fas fa-chevron-down text-fonix-gold text-xl transition-transform duration-300"></i>
+                    </button>
+                    <div id="cat-kezlab" class="accordion-content bg-gray-50">
+                         <div class="px-8 pb-8 pt-6">
+                            <h4 class="text-lg font-serif text-fonix-green font-bold mb-4 border-b border-gray-200 pb-2">Kézápolás</h4>
+                            <div class="mb-8">
+                                <div class="flex flex-col gap-3 mb-3">
+                                    <div class="flex justify-between items-center bg-white p-3 rounded border border-gray-100">
+                                        <span class="font-bold text-gray-700">Manikűr hagyományos körömerősítővel <span class="text-sm font-normal text-gray-500">(60p)</span></span>
+                                        <span class="font-bold text-fonix-green">3.500 Ft</span>
+                                    </div>
+                                    <div class="flex justify-between items-center bg-white p-3 rounded border border-gray-100">
+                                        <span class="font-bold text-gray-700">Manikűr speciális körömerősítővel <span class="text-sm font-normal text-gray-500">(60p)</span></span>
+                                        <span class="font-bold text-fonix-green">4.500 Ft</span>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    A jó megjelenés az ápolt kéznél kezdődik. A rendszeres kezelés szép körömformát, egészséges körömágyat nyújt. Körmöt kérheti matt hatásra, fényesre polírozva, vagy akár lakkozva is.
+                                </p>
+                            </div>
+                            <div class="mb-8">
+                                <div class="flex justify-between items-center bg-white p-3 rounded border border-gray-100 mb-3">
+                                    <span class="font-bold text-gray-700">Japán manikűr <span class="text-sm font-normal text-gray-500">(60p)</span></span>
+                                    <span class="font-bold text-fonix-green">5.500 Ft</span>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    A Japán Manikűr a körömlemezek méhviaszos ápolása. Azoknak ajánljuk, akik a természetes eljárást részesítik előnyben, akiknek gyenge, töredezésre hajlamos vékony körmük van. A méhviaszt beledörzsöljük a körömlemezbe, majd a speciális kagylóport belepolírozzuk. Olyan fényes lesz, hogy felülmúlja a lakkozástól nyert fényt, sokkal tartósabb és nem kopik le. Visszaadja a köröm természetes állapotát.
+                                </p>
+                            </div>
+                            <div class="mb-8">
+                                <div class="flex justify-between items-center bg-white p-3 rounded border border-gray-100 mb-3">
+                                    <span class="font-bold text-gray-700">Lakkozás <span class="text-sm font-normal text-gray-500">(15p)</span></span>
+                                    <span class="font-bold text-fonix-green">2.500 Ft</span>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    A manikűr tökéletes befejezése. Válasszon széles színpalettánkból hangulatának vagy az alkalomnak megfelelően, hogy kezei még vonzóbbak legyenek.
+                                </p>
+                            </div>
+                            <h4 class="text-lg font-serif text-fonix-green font-bold mb-4 border-b border-gray-200 pb-2 mt-8">Pedikűr Szolgáltatások</h4>
+                            <div class="mb-8">
+                                <div class="flex flex-col gap-3 mb-3">
+                                    <div class="flex justify-between items-center bg-white p-3 rounded border border-gray-100">
+                                        <span class="font-bold text-gray-700">Esztétikai pedikűr + krémezés <span class="text-sm font-normal text-gray-500">(60p)</span></span>
+                                        <span class="font-bold text-fonix-green">7.000 Ft</span>
+                                    </div>
+                                    <div class="flex justify-between items-center bg-white p-3 rounded border border-gray-100">
+                                        <span class="font-bold text-gray-700">Esztétikai pedikűr + géllakk <span class="text-sm font-normal text-gray-500">(60p)</span></span>
+                                        <span class="font-bold text-fonix-green">9.000 Ft</span>
+                                    </div>
+                                    <div class="flex justify-between items-center bg-white p-3 rounded border border-gray-100">
+                                        <span class="font-bold text-gray-700">Esztétikai pedikűr + 10p talpmasszázs <span class="text-sm font-normal text-gray-500">(70p)</span></span>
+                                        <span class="font-bold text-fonix-green">10.000 Ft</span>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    Az egészséges ápolt lábak rendkívül fontosak. A rendszeres kezeléssel és ápolással sok minden probléma időben felismerhető és orvosolható. A szép lábak, az egészség és a személyes kisugárzás elengedhetetlen része.
+                                </p>
+                            </div>
+                            <div class="mb-8">
+                                <div class="flex justify-between items-center bg-white p-3 rounded border border-gray-100 mb-3">
+                                    <span class="font-bold text-gray-700">Spa pedikűr + frissítő talpmasszázs <span class="text-sm font-normal text-gray-500">(60p)</span></span>
+                                    <span class="font-bold text-fonix-green">8.000 Ft</span>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    Kényeztető lábápolás, amely a klasszikus pedikűr lépéseit kiegészíti egy bőrpuhító áztatással, radírozással és egy hosszabb, vérkeringést serkentő masszázzsal a teljes felfrissülésért.
+                                </p>
+                            </div>
+                            <div class="mb-8">
+                                <div class="flex justify-between items-center bg-white p-3 rounded border border-gray-100 mb-3">
+                                    <span class="font-bold text-gray-700">Szike mentes pedikűr Callux termékekkel <span class="text-sm font-normal text-gray-500">(60p)</span></span>
+                                    <span class="font-bold text-fonix-green">11.000 Ft</span>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    /Natúr, parabén mentes anyagok felhasználásával/ Glikolsavas (gyümölcssavas) hámlasztás Callux géllel: az alfahidroxi savak (AHA), úgymint Glikolsav, tejsav, almasav, citromsav... a leggyengébb hámlasztó szerek, ezeket használjuk a legfelületesebb beavatkozásokra. Ezek találhatók a Callux gélben is. A glikolsavas kémiai hámlasztás gyors, megbízható, fájdalom nélküli.
+                                </p>
+                            </div>
+                            <div class="mb-8">
+                                <div class="flex justify-between items-center bg-white p-3 rounded border border-gray-100 mb-3">
+                                    <span class="font-bold text-gray-700">Kombinált pedikűr <span class="text-sm font-normal text-gray-500">(60p)</span></span>
+                                    <span class="font-bold text-fonix-green">9.000 Ft</span>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    A szikés és a szike mentes (gépi vagy kémiai hámlasztásos) pedikűr előnyeit ötvöző eljárás a tökéletesen sima talpakért.
+                                </p>
+                            </div>
+                            <h4 class="text-lg font-serif text-fonix-green font-bold mb-4 border-b border-gray-200 pb-2 mt-8">Korrekciók és Gyógypedikűr</h4>
+                            <div class="mb-8">
+                                <div class="flex flex-col gap-3 mb-3">
+                                    <div class="flex justify-between items-center bg-white p-3 rounded border border-gray-100">
+                                        <span class="font-bold text-gray-700">Tyúkszem kiszedés <span class="text-sm font-normal text-gray-500">(30p)</span></span>
+                                        <span class="font-bold text-fonix-green">500 Ft</span>
+                                    </div>
+                                    <div class="flex justify-between items-center bg-white p-3 rounded border border-gray-100">
+                                        <span class="font-bold text-gray-700">Benőtt köröm kiszedés <span class="text-sm font-normal text-gray-500">(60p)</span></span>
+                                        <span class="font-bold text-fonix-green">4.500 Ft</span>
+                                    </div>
+                                    <div class="flex justify-between items-center bg-white p-3 rounded border border-gray-100">
+                                        <span class="font-bold text-gray-700">Kötözés <span class="text-sm font-normal text-gray-500">(30p)</span></span>
+                                        <span class="font-bold text-fonix-green">2.500 Ft</span>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    Szakszerű segítség a fájdalmas lábproblémákra. A beavatkozások steril körülmények között történnek, céljuk a fájdalom megszüntetése és a gyulladás megelőzése.
+                                </p>
+                            </div>
+                            <div class="mb-8">
+                                <div class="flex justify-between items-center bg-white p-3 rounded border border-gray-100 mb-3">
+                                    <span class="font-bold text-gray-700">Körömprotézis <span class="text-sm font-normal text-gray-500">(professzionális anyagokkal, 60p)</span></span>
+                                    <span class="font-bold text-fonix-green">5.000 Ft</span>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    A körömprotézis építése esztétikai és egészségügyi szempontól is nagyon fontos. Sérült körmöket óvja az újabb fertőzésektől, és így az új körmöt ugyanúgy lehet lakkozni és díszíteni, mint a saját körmöt. Ez egy speciális, professzionális anyag, amivel készítem! Hasonló, de nem összetévesztendő a műkörömmel!
+                                </p>
+                            </div>
+                            <div class="mb-8">
+                                <div class="flex flex-col gap-3 mb-3">
+                                    <div class="flex justify-between items-center bg-white p-3 rounded border border-gray-100">
+                                        <span class="font-bold text-gray-700">Gombás köröm kezelés (Öregujj) <span class="text-sm font-normal text-gray-500">(60p)</span></span>
+                                        <span class="font-bold text-fonix-green">5.000 – 8.500 Ft</span>
+                                    </div>
+                                    <div class="flex justify-between items-center bg-white p-3 rounded border border-gray-100">
+                                        <span class="font-bold text-gray-700">Gombás köröm utókezelés <span class="text-sm font-normal text-gray-500">(60p)</span></span>
+                                        <span class="font-bold text-fonix-green">3.500 Ft</span>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    A gombás fertőzés szakszerű tisztítást és kezelést igényel. Eltávolítjuk a fertőzött körömrészeket, elősegítve a gyógyulást és az egészséges köröm növekedését.
+                                </p>
+                            </div>
+                            <h4 class="text-lg font-serif text-fonix-green font-bold mb-4 border-b border-gray-200 pb-2 mt-8">Kiegészítő Szolgáltatások</h4>
+                            <div class="grid md:grid-cols-2 gap-4 mb-8">
+                                <div class="flex justify-between items-center bg-white p-3 rounded border border-gray-100">
+                                    <span class="font-bold text-gray-700">Géllakk lábra <span class="text-sm font-normal text-gray-500">(15p)</span></span>
+                                    <span class="font-bold text-fonix-green">3.500 Ft</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-white p-3 rounded border border-gray-100">
+                                    <span class="font-bold text-gray-700">Géllakk leszedés <span class="text-sm font-normal text-gray-500">(15p)</span></span>
+                                    <span class="font-bold text-fonix-green">2.500 Ft</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-white p-3 rounded border border-gray-100">
+                                    <span class="font-bold text-gray-700">Mini pedikűr gyerekeknek <span class="text-sm font-normal text-gray-500">(30p)</span></span>
+                                    <span class="font-bold text-fonix-green">3.500 Ft</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-white p-3 rounded border border-gray-100">
+                                    <span class="font-bold text-gray-700">Cipő sterilizálása <span class="text-sm font-normal text-gray-500">(15p)</span></span>
+                                    <span class="font-bold text-fonix-green">2.000 Ft</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lelki Egészség -->
+                <div>
+                     <button onclick="toggleAccordion('cat-lelki')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-gray-50 transition text-left focus:outline-none group">
+                        <div class="flex items-center gap-6">
+                            <div class="w-12 h-12 bg-fonix-green rounded-full flex items-center justify-center text-fonix-gold text-2xl group-hover:bg-fonix-gold group-hover:text-white transition">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl md:text-2xl font-serif text-fonix-green">Lelki Egészség</h3>
+                                <p class="text-sm text-gray-400">Terápia, Tanácsadás</p>
+                            </div>
+                        </div>
+                        <i id="icon-cat-lelki" class="fas fa-chevron-down text-fonix-gold text-xl transition-transform duration-300"></i>
+                    </button>
+                    <div id="cat-lelki" class="accordion-content bg-gray-50">
+                        <div class="px-8 pb-8 pt-6">
+                             
+                            <!-- 1. Hangtál terápia -->
+                            <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-serif text-fonix-green font-bold">Hangtál terápia <span class="text-sm font-sans text-gray-500 font-normal">(90 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl uppercase tracking-wider">Adomány alapú</div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    A hangtál terápia egy ősi és modern gyógymód, amely a test és a lelki egészség támogatására szolgál. A terápia során a hangtálak rezgései a test és a lelki egészség mélyebb rétegeit aktiválják, hozzájárulva a relaxációhoz, meditációhoz és a stresszoldó hormonok csökkentéséhez. A hangtálak hatása alatt az agy különböző változásokat tapasztalhat, és a mélyebb meditatív állapot elérhetővé válik. Aktiválja a test öngyógyító folyamatait a harmonikus rezgések segítségével, a testi és lelki harmónia megteremtésére szolgál.
+                                </p>
+                            </div>
+
+                            <!-- 2. Családállítás - REMOVED FROM BOX -->
+                            <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col mb-4 gap-2">
+                                    <div>
+                                        <h4 class="text-lg font-serif text-fonix-green font-bold">Családállítás <span class="text-sm font-sans text-gray-500 font-normal">(5-6 óra)</span></h4>
+                                        <div class="text-fonix-green font-bold text-sm">Bert Hellinger módszere alapján</div>
+                                    </div>
+                                    <div class="text-sm italic text-gray-500">
+                                        Bejelentkezés: <a href="https://www.lelekkirakos.hu/" target="_blank" class="text-fonix-green hover:underline font-bold">www.lelekkirakos.hu</a>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    A családállítás egy alternatív terápiás módszer, amelyet Bert Hellinger német pszichoterapeuta dolgozott ki. A módszer lényege, hogy a családi kapcsolatokban rejlő problémák és konfliktusok gyökereit feltárja, amelyek gyakran generációkon átívelő hatásokból erednek. A családállítás során a résztvevők szimbolikusan jelenítik meg a családi dinamikát, lehetővé téve a rejtett mintázatok és traumák felismerését és feldolgozását.
+                                </p>
+                            </div>
+
+                            <!-- 3. Mentálhigiéniás tanácsadás -->
+                            <div class="mb-8">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-serif text-fonix-green font-bold">Mentálhigiéniás tanácsadás <span class="text-sm font-sans text-gray-500 font-normal">(60 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">15.000 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    Nemcsak a testnek, a léleknek is szüksége van az állandó „karbantartásra”, megtisztulásra. A mentálhigiénés segítő beszélgetés lehetőséget ad az érzelmi tehermentesítésre, az önismeret fejlesztésére és a belső egyensúly visszaállítására.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Csapat -->
+    <section id="csapat" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif text-fonix-green mb-4">Munkatársaink</h2>
+                <div class="w-24 h-1 bg-fonix-gold mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 1. Edina -->
+                <div class="text-center group">
+                     <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gray-100 group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
+                         <img src="edina.jpg" alt="Magyar Edina" class="w-full h-full object-cover object-top">
+                    </div>
+                    <h3 class="text-xl font-bold text-fonix-green">Magyar Edina</h3>
+                    <p class="text-fonix-gold font-serif italic mb-2">Edző (Trambulin, Fit Jance)</p>
+                    <p class="text-sm text-gray-500 px-4">Kreatív, táncos edzések a felszabadulásért és feltöltődésért.</p>
+                </div>
+
+                <!-- 2. Andi -->
+                <div class="text-center group">
+                     <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gray-100 group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
+                         <img src="andi1.jpg" alt="Tarján Andrea" class="w-full h-full object-cover object-top">
+                    </div>
+                    <h3 class="text-xl font-bold text-fonix-green">Tarján Andrea</h3>
+                    <p class="text-fonix-gold font-serif italic mb-2">Jóga és meditáció tanár</p>
+                    <p class="text-sm text-gray-500 px-4">Női jóga specialista a testi-lelki egyensúlyért.</p>
+                </div>
+
+                <!-- 3. Laura -->
+                <div class="text-center group">
+                     <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gray-100 group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
+                         <img src="laura.jpg" alt="Víg-Szeleczky Laura" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-fonix-green">Víg-Szeleczky Laura</h3>
+                    <p class="text-fonix-gold font-serif italic mb-2">Jóga oktató</p>
+                    <p class="text-sm text-gray-500 px-4">Dinamikus és lágy gyakorlatok ötvözete, kezdőknek és haladóknak.</p>
+                </div>
+
+                <!-- 4. Hajni -->
+                <div class="text-center group mt-8">
+                     <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gray-100 group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
+                         <img src="hajni.jpg" alt="Hajni" class="w-full h-full object-cover object-top">
+                    </div>
+                    <h3 class="text-xl font-bold text-fonix-green">Hajni</h3>
+                    <p class="text-fonix-gold font-serif italic mb-2">Edző</p>
+                    <p class="text-sm text-gray-500 px-4">Várunk szeretettel az óráimon.</p>
+                </div>
+
+                <!-- 5. Kovács Kriszta -->
+                <div class="text-center group mt-8">
+                    <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gray-100 group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
+                         <img src="kriszta.jpg" alt="Kovács Kriszta" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-fonix-green">Kovács Kriszta</h3>
+                    <p class="text-fonix-gold font-serif italic mb-2">Kozmetikus, Testkezelő</p>
+                    <p class="text-sm text-gray-500 px-4">Több mint 30 év tapasztalattal, mindig mosolygósan várja vendégeit.</p>
+                </div>
+
+                <!-- 6. Rudolfné Mónika -->
+                <div class="text-center group mt-8">
+                     <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gray-100 group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
+                         <div class="w-full h-full flex items-center justify-center bg-gray-200 text-gray-400">
+                            <i class="fas fa-user text-4xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-fonix-green">Rudolfné Herczku Mónika</h3>
+                    <p class="text-fonix-gold font-serif italic mb-2">Kéz- és lábápoló, Műköröm építő</p>
+                    <p class="text-sm text-gray-500 px-4">20 év tapasztalat, minőségi anyagok (Gehwol, Callux).</p>
+                </div>
+
+                <!-- 7. Balogh Emese -->
+                 <div class="text-center group mt-8">
+                     <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gray-100 group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
+                         <div class="w-full h-full flex items-center justify-center bg-gray-200 text-gray-400">
+                            <i class="fas fa-user text-4xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-fonix-green">Balogh Emese</h3>
+                    <p class="text-fonix-gold font-serif italic mb-2">Masszőr</p>
+                    <p class="text-sm text-gray-500 px-4">A testi-lelki felüdülés szakértője.</p>
+                </div>
+
+                <!-- 8. Szabolcsi Éva -->
+                <div class="text-center group mt-8">
+                    <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gray-100 group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
+                        <img src="eva.png" alt="Kövesiné Szabolcsi Éva" class="w-full h-full object-cover object-top">
+                    </div>
+                    <h3 class="text-xl font-bold text-fonix-green">Kövesiné Szabolcsi Éva</h3>
+                    <p class="text-fonix-gold font-serif italic mb-2">Mentálhigiénés szakember</p>
+                    <p class="text-sm text-gray-500 px-4">"Hiszem, hogy mindnyájunknak kell időnként lelki szellőztetés."</p>
+                </div>
+
+                <!-- 9. Kricsfalussy Vali -->
+                 <div class="text-center group mt-8">
+                     <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gray-100 group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
+                         <img src="vali.jpg" alt="Kricsfalussy Valéria" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-fonix-green">Kricsfalussy Valéria</h3>
+                    <p class="text-fonix-gold font-serif italic mb-2">Kineziológus</p>
+                    <p class="text-sm text-gray-500 px-4">Segítség a belső egyensúly megtalálásában.</p>
+                </div>
+
+            </div>
+            <div class="text-center mt-12 text-gray-600">
+                <p>További szakértőnk: <span class="font-bold text-fonix-green">Németh László</span> (Hangtál terápia)</p>
+                <p class="mt-4 text-sm font-serif italic text-fonix-gold"> </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kapcsolat -->
+    <section id="kapcsolat" class="bg-fonix-green text-white py-20">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-4xl font-serif text-fonix-gold mb-8">Kapcsolat</h2>
+                    <ul class="space-y-6 text-lg">
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-map-marker-alt text-fonix-gold mt-1"></i>
+                            <div>
+                                <strong class="block text-fonix-gold">Címünk:</strong>
+                                2013 Pomáz, Beniczky utca 4.
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-phone text-fonix-gold mt-1"></i>
+                            <div>
+                                <strong class="block text-fonix-gold">Telefonszám:</strong>
+                                <a href="tel:+36204654525" class="hover:text-fonix-gold transition">06 20 465 4525</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-envelope text-fonix-gold mt-1"></i>
+                            <div>
+                                <strong class="block text-fonix-gold">Email:</strong>
+                                info@fonixvitalitas.hu
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-clock text-fonix-gold mt-1"></i>
+                            <div>
+                                <strong class="block text-fonix-gold">Nyitvatartás:</strong>
+                                <div class="grid grid-cols-2 gap-x-4">
+                                    <span>Hétfő - Péntek:</span> <span>9:00 - 11:00 és 15:00 - 20:00</span>
+                                    <span>Hétfő - Szombat:</span> <span>9:00 - 11:00</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="h-80 bg-gray-300 rounded-lg overflow-hidden shadow-xl border-4 border-fonix-gold">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2688.123456789!2d19.0!3d47.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjAxMyBQb23DoXosIEJlbmljemt5IHV0Y2EgNA!5e0!3m2!1shu!2shu!4v1600000000000!5m2!1shu!2shu" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="text-center mt-16 pt-8 border-t border-fonix-light-green text-sm opacity-70">
+                <p>&copy; 2024 Főnix Vitalitás Központ. Minden jog fenntartva.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Script for Accordion -->
+    <script>
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            content.classList.toggle('active');
+            if (content.classList.contains('active')) {
+                icon.classList.add('rotate-icon');
+            } else {
+                icon.classList.remove('rotate-icon');
+            }
+        }
+    </script>
+</body>
+</html>
