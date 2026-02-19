@@ -12,11 +12,11 @@
             theme: {
                 extend: {
                     colors: {
-                        'fonix-green': '#1a4731', // Mély smaragdzöld
-                        'fonix-light-green': '#2f6f52',
-                        'fonix-gold': '#d4af37', // Klasszikus arany
-                        'fonix-gold-light': '#f3e5ab',
-                        'fonix-bg': '#f9f8f4', // Krémfehér háttér
+                        'fonix-green': '#198024', // Élénk ájurvédikus zöld a kép alapján
+                        'fonix-light-green': '#24a331',
+                        'fonix-gold': '#d1ab4b', // Képen látható elegáns arany/mustár
+                        'fonix-gold-light': '#ebd086',
+                        'fonix-bg': '#fdfcf8', // Krémfehér háttér
                     },
                     fontFamily: {
                         serif: ['"Playfair Display"', 'serif'],
@@ -31,13 +31,13 @@
             scroll-behavior: smooth;
         }
         .text-gold-gradient {
-            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            background: linear-gradient(to right, #d1ab4b, #fdf6cc, #c09a3c, #fdf6cc, #a68128);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
         .gold-border {
-            border-image: linear-gradient(to right, #bf953f, #fcf6ba, #b38728) 1;
+            border-image: linear-gradient(to right, #d1ab4b, #fcf6ba, #c09a3c) 1;
         }
         .service-card:hover {
             transform: translateY(-5px);
@@ -915,6 +915,7 @@
                     <h3 class="text-xl font-bold text-fonix-green">Magyar Edina</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Edző (Trambulin, Fit Jance)</p>
                     <div class="text-sm text-gray-500 px-4 text-justify relative">
+                        <p class="mb-2 font-semibold text-center text-fonix-green">Élmény alapú egyedi mozgásforma trambulin, a tánc és a fitness ötvözetéből</p>
                         <p class="mb-2">Magyar Edina vagyok, gyerekkorom óta a tánc és a sport a legnagyobb szenvedélyem. Versenyszerűen táncoltam és karatéztam, majd saját tánciskolát alapítottam...</p>
                         <div id="bio-edina" class="hidden">
                             <p>...ahol gyermekekkel és felnőttekkel dolgoztam. Az évek során számos fellépésen, versenyen, gálán és közösségi eseményen vettünk részt, ezeknek jelentős részét én szerveztem és koordináltam. A táncos múltamat később CrossFit és Spartan edzések és versenyek egészítették ki. A trambulinos edzésekkel való találkozás sorsfordító élmény volt számomra: teljesen beleszerettem. 2023 óta oktatok trambulinos edzéseket. A korábbi tapasztalataimból hoztam létre a Fit Jance nevű, speciális mozgásformát. A Fit Jance a trambulinos edzést, a táncot és a fitness elemeit ötvözi egyetlen, komplex rendszerben. Az óráim rendkívül kreatívak és változatosak, minden edzéshez külön tematika és zenei világ társul – például retro, house vagy dance stílusban –, mindig új lejátszási listákkal. Számomra a legfontosabb, hogy az edzés a vendégről szóljon: hogy felszabaduljon, feltöltődjön, jól érezze magát, és pozitív élménnyel távozzon.</p>
@@ -1069,6 +1070,27 @@
                         <button onclick="toggleBio('bio-vali', this)" class="text-fonix-gold hover:text-fonix-green font-bold text-sm mt-2 focus:outline-none transition-colors duration-300 flex items-center justify-center mx-auto">
                             Olvass tovább <i class="fas fa-chevron-down ml-1"></i>
                         </button>
+                    </div>
+                </div>
+
+                <!-- 10. Magyar Edina (Marketing) -->
+                <div class="text-center group mt-8 md:col-start-2">
+                     <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gray-100 group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
+                         <img src="edina_marketing.jpg" alt="Magyar Edina Marketing" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80';">
+                    </div>
+                    <h3 class="text-xl font-bold text-fonix-green">Magyar Edina</h3>
+                    <p class="text-fonix-gold font-serif italic mb-2">Social Media Strategy & Communication Specialist</p>
+                    <div class="text-sm text-gray-500 px-4 text-justify relative">
+                        <p class="mb-2">A Főnix Vitalitás Központ arculatának és közösségi kommunikációjának kialakításán, valamint egységes online jelenlétének stratégiai irányításán dolgozom. Magyar Edina vagyok.</p>
+                        <div id="bio-edina-marketing" class="hidden">
+                            <p>A kreativitás gyermekkorom óta meghatározó része az életemnek, ezen keresztül tudok értéket adni és pozitív üzeneteket közvetíteni. Számomra a hivatás nem csupán munka, hanem szenvedély: vállalkozásokat teszek láthatóvá a közösségi médiában stratégiai gondolkodással, egyedi vizuális rendszerrel, tudatos tartalomépítéssel és kampányszemlélettel. Célom, hogy valódi kapcsolat jöjjön létre az emberek és a szolgáltatások között. Tapasztalatom kiterjed az arculattervezésre, kreatív vizuális megoldásokra és videókészítésre, valamint a közösségi média tartalmak és hirdetések tervezésére és optimalizálására is, miközben folyamatosan fejlesztem szakmai tudásomat.</p>
+                        </div>
+                        <button onclick="toggleBio('bio-edina-marketing', this)" class="text-fonix-gold hover:text-fonix-green font-bold text-sm mt-2 focus:outline-none transition-colors duration-300 flex items-center justify-center mx-auto">
+                            Olvass tovább <i class="fas fa-chevron-down ml-1"></i>
+                        </button>
+                        <a href="https://www.canva.com/design/DAGk_l9BMP8/sRQKkPT2E_hAQmlc4ocgXw/edit?utm_content=DAGk_l9BMP8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="inline-block mt-4 bg-fonix-gold text-white px-4 py-2 rounded hover:bg-fonix-green transition duration-300 font-bold text-xs uppercase tracking-wider">
+                            Portfólió megtekintése
+                        </a>
                     </div>
                 </div>
 
