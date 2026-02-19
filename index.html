@@ -65,6 +65,10 @@
             70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
             100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
         }
+        /* Bio transition */
+        .bio-text {
+            transition: all 0.3s ease-in-out;
+        }
     </style>
 </head>
 <body class="bg-fonix-bg text-gray-800 font-sans">
@@ -857,7 +861,7 @@
                                     </div>
                                 </div>
                                 <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
-                                    A hangfürdő egy ősi és modern gyógymód, amely a test és a lelki egészség támogatására szolgál. A terápia során a hangtálak rezgései a test és a lelki egészség mélyebb rétegeit aktiválják, hozzájárulva a relaxációhoz, meditációhoz és a stresszoldó hormonok csökkentéséhez. A hangtálak hatása alatt az agy különböző változásokat tapasztalhat, és a mélyebb meditatív állapot elérhetővé válik. Aktiválja a test öngyógyító folyamatait a harmonikus rezgések segítségével, a testi és lelki harmónia megteremtésére szolgál.
+                                    A hangtál terápia egy ősi és modern gyógymód, amely a test és a lelki egészség támogatására szolgál. A terápia során a hangtálak rezgései a test és a lelki egészség mélyebb rétegeit aktiválják, hozzájárulva a relaxációhoz, meditációhoz és a stresszoldó hormonok csökkentéséhez. A hangtálak hatása alatt az agy különböző változásokat tapasztalhat, és a mélyebb meditatív állapot elérhetővé válik. Aktiválja a test öngyógyító folyamatait a harmonikus rezgések segítségével, a testi és lelki harmónia megteremtésére szolgál.
                                 </p>
                             </div>
 
@@ -902,7 +906,7 @@
                 <h2 class="text-4xl font-serif text-fonix-green mb-4">Munkatársaink</h2>
                 <div class="w-24 h-1 bg-fonix-gold mx-auto"></div>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-8 items-start">
                 <!-- 1. Edina -->
                 <div class="text-center group">
                      <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gray-100 group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
@@ -910,7 +914,15 @@
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Magyar Edina</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Edző (Trambulin, Fit Jance)</p>
-                    <p class="text-sm text-gray-500 px-4">Kreatív, táncos edzések a felszabadulásért és feltöltődésért.</p>
+                    <div class="text-sm text-gray-500 px-4 text-justify relative">
+                        <p class="mb-2">Magyar Edina vagyok, gyerekkorom óta a tánc és a sport a legnagyobb szenvedélyem. Versenyszerűen táncoltam és karatéztam, majd saját tánciskolát alapítottam...</p>
+                        <div id="bio-edina" class="hidden">
+                            <p>...ahol gyermekekkel és felnőttekkel dolgoztam. Az évek során számos fellépésen, versenyen, gálán és közösségi eseményen vettünk részt, ezeknek jelentős részét én szerveztem és koordináltam. A táncos múltamat később CrossFit és Spartan edzések és versenyek egészítették ki. A trambulinos edzésekkel való találkozás sorsfordító élmény volt számomra: teljesen beleszerettem. 2023 óta oktatok trambulinos edzéseket. A korábbi tapasztalataimból hoztam létre a Fit Jance nevű, speciális mozgásformát. A Fit Jance a trambulinos edzést, a táncot és a fitness elemeit ötvözi egyetlen, komplex rendszerben. Az óráim rendkívül kreatívak és változatosak, minden edzéshez külön tematika és zenei világ társul – például retro, house vagy dance stílusban –, mindig új lejátszási listákkal. Számomra a legfontosabb, hogy az edzés a vendégről szóljon: hogy felszabaduljon, feltöltődjön, jól érezze magát, és pozitív élménnyel távozzon.</p>
+                        </div>
+                        <button onclick="toggleBio('bio-edina', this)" class="text-fonix-gold hover:text-fonix-green font-bold text-sm mt-2 focus:outline-none transition-colors duration-300 flex items-center justify-center mx-auto">
+                            Olvass tovább <i class="fas fa-chevron-down ml-1"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <!-- 2. Andi -->
@@ -919,9 +931,17 @@
                          <img src="andi1.jpg" alt="Tarján Andrea" class="w-full h-full object-cover object-top">
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Tarján Andrea</h3>
-                    <p class="text-fonix-gold font-serif italic mb-2">Jóga és meditáció tanár, mentálhigiénés szakember</p>
-                    <a href="https://tarjanandrea.hu/" target="_blank" class="text-sm text-fonix-gold hover:underline block mb-2">tarjanandrea.hu</a>
-                    <p class="text-sm text-gray-500 px-4">Női jóga specialista a testi-lelki egyensúlyért.</p>
+                    <p class="text-fonix-gold font-serif italic mb-1">Jóga és meditáció tanár, mentálhigiénés szakember</p>
+                    <a href="https://tarjanandrea.hu/" target="_blank" class="text-sm text-fonix-gold hover:underline block mb-2 font-bold">tarjanandrea.hu</a>
+                    <div class="text-sm text-gray-500 px-4 text-justify relative">
+                        <p class="mb-2">„A jóga gyakorlása nem mindig könnyű, de izgalmas utazás, mely a belső béke, a szabadság és a testi-lelki jóllét felé visz.”</p>
+                        <div id="bio-andi" class="hidden">
+                            <p>Jóga- és meditáció tanárként abban szeretnék segíteni, hogy a test és a lélek egyensúlyából születik. A női jóga a nőiességünk teljességére összpontosít, figyelembe veszi a különleges testi és lelki igényeinket, női létünk folyamatos, ciklikus változásait. A lágy, áramló gyakorlás alatt fókuszban van a gát, a csípő, a hüvely, a has és a medence energetikai rendszerének helyreállítása. Mobilizáljuk a csípőízületet, erősítjük a csípőt körülvevő izmokat, az alhas, a hát és a gát területét. Az elengedés hasonlóan fontos: nőként sok feszültséget terhelünk ezekre a területekre, amit lazítani, oldani kell. A női jóga segít a ciklus szabályozásában, növeli a rugalmasságot és az erőt, javítja az alvás minőségét, csökkenti a stresszt és a szorongást, harmonizáló hatással van a hormonrendszerre, nyugtatja és kiegyensúlyozhatja az idegrendszert, a változó kori tünetek enyhítésében is segít, megelőzheti a nőgyógyászati betegségek kialakulását, csökkenti a menstruáció kellemetlen tüneteit, támogatja és kiegészíti női önismeretben való elmélyülést, segít kapcsolódni a saját testünkhöz. A saját tapasztalataim, a fejlődésem, a folyamatos gyakorlás, az állandó tanulás mind arra ösztönöz, hogy átadjam a jóga szeretetét, és segítsek a testi-lelki fejlődésben mindenkinek, aki hozzám fordul. Szeretettel várlak!</p>
+                        </div>
+                        <button onclick="toggleBio('bio-andi', this)" class="text-fonix-gold hover:text-fonix-green font-bold text-sm mt-2 focus:outline-none transition-colors duration-300 flex items-center justify-center mx-auto">
+                            Olvass tovább <i class="fas fa-chevron-down ml-1"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <!-- 3. Laura -->
@@ -931,7 +951,15 @@
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Víg-Szeleczky Laura</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Jóga oktató</p>
-                    <p class="text-sm text-gray-500 px-4">Dinamikus és lágy gyakorlatok ötvözete, kezdőknek és haladóknak.</p>
+                    <div class="text-sm text-gray-500 px-4 text-justify relative">
+                        <p class="mb-2">Víg-Szeleczky Laura vagyok, két kisfiú anyukája. A hatha jóga és kismama jógaoktató képzéseket a nagyobbik fiam érkezése előtt végeztem el...</p>
+                        <div id="bio-laura" class="hidden">
+                            <p>...de a jógagyakorlás már sokkal régebb óta az életem része. Szeretem az óráim során a dinamikus, áramló jellegű gyakorlatokat ötvözni a lágyabb, nyújtó és statikus pózokkal. Fontos számomra, hogy kezdők és haladók egyaránt jól érezzék magukat az órán. Várok mindenkit szeretettel jóga óráimra, egy kellemes átmozgatásra vagy épp egy dinamikusabb gyakorlásra. A jóga mindenki számára elérhető, nemtől és kortól függetlenül.</p>
+                        </div>
+                        <button onclick="toggleBio('bio-laura', this)" class="text-fonix-gold hover:text-fonix-green font-bold text-sm mt-2 focus:outline-none transition-colors duration-300 flex items-center justify-center mx-auto">
+                            Olvass tovább <i class="fas fa-chevron-down ml-1"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <!-- 4. Hajni -->
@@ -939,9 +967,17 @@
                      <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gray-100 group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
                          <img src="hajni.jpg" alt="Hajni" class="w-full h-full object-cover object-top">
                     </div>
-                    <h3 class="text-xl font-bold text-fonix-green">Hajni</h3>
-                    <p class="text-fonix-gold font-serif italic mb-2">Edző</p>
-                    <p class="text-sm text-gray-500 px-4">Várunk szeretettel az óráimon.</p>
+                    <h3 class="text-xl font-bold text-fonix-green">Nagy-Papp Hajnalka</h3>
+                    <p class="text-fonix-gold font-serif italic mb-2">Szülésznő, kismama és baba-mama jógaoktató</p>
+                    <div class="text-sm text-gray-500 px-4 text-justify relative">
+                        <p class="mb-2">Nagy-Papp Hajnalka vagyok szülésznő, kismama és baba-mama jóga oktató.</p>
+                        <div id="bio-hajni" class="hidden">
+                            <p>Hivatásomból adódóan szívügyem, hogy a nők biztonságban és megtartó térben élhessék meg a nőiességüket, anyaságukat. Hiszem, hogy a szülés előtti és utáni időszak különleges, érzékeny életszakasz, melyben a testünkre és a lelkünkre is kellő hangsúlyt érdemes fektetni. Óráimon szeretettel, szakmai tapasztalattal és tudással, illetve odafigyeléssel kísérlek Titeket ezen a csodálatos úton.</p>
+                        </div>
+                        <button onclick="toggleBio('bio-hajni', this)" class="text-fonix-gold hover:text-fonix-green font-bold text-sm mt-2 focus:outline-none transition-colors duration-300 flex items-center justify-center mx-auto">
+                            Olvass tovább <i class="fas fa-chevron-down ml-1"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <!-- 5. Kovács Kriszta -->
@@ -951,7 +987,15 @@
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Kovács Kriszta</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Kozmetikus, Testkezelő</p>
-                    <p class="text-sm text-gray-500 px-4">Több mint 30 év tapasztalattal, mindig mosolygósan várja vendégeit.</p>
+                    <div class="text-sm text-gray-500 px-4 text-justify relative">
+                        <p class="mb-2">Ismerd meg a mi mindig mosolygós test- és arckezelő specialistánkat, Krisztát.</p>
+                        <div id="bio-kriszta" class="hidden">
+                            <p>„Az a vágy, hogy a szépségápolás területén szeretnék egyszer dolgozni, olyan 13-14 évesen kezdett motoszkálni bennem, és legnagyobb boldogságomra mára már több mint 30 éve a szakmában élek, amit elkötelezetten gyakorlok és nagyon-nagyon szeretek. Mindig igyekeztem fejleszteni magam és lépést tartani a legújabb trendekkel. Ezt megelőzően egy arc- és hajklinikán több éven át dolgoztam, amivel egy álmom válhatott valóra. Örömmel tölt el, ha felidézem az elmúlt időszakot és hálás vagyok azért, hogy egy ilyen helyen hasznosíthattam a szépségápolás területén szerzett tapasztalataimat, valamint tudásomat, mely így még tovább fejlődött. Ezen a szépséges új munkahelyemen, a Főnix Vitalitás Központban pedig a kor legmodernebb gépeivel dolgozhatok és végezhetem a legújabb testkezeléseket egy szuper kedves és profi csapatban."</p>
+                        </div>
+                        <button onclick="toggleBio('bio-kriszta', this)" class="text-fonix-gold hover:text-fonix-green font-bold text-sm mt-2 focus:outline-none transition-colors duration-300 flex items-center justify-center mx-auto">
+                            Olvass tovább <i class="fas fa-chevron-down ml-1"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <!-- 6. Rudolfné Mónika -->
@@ -962,7 +1006,15 @@
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Rudolfné Herczku Mónika</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Kéz- és lábápoló, Műköröm építő</p>
-                    <p class="text-sm text-gray-500 px-4">20 év tapasztalat, minőségi anyagok (Gehwol, Callux).</p>
+                    <div class="text-sm text-gray-500 px-4 text-justify relative">
+                        <p class="mb-2">Rudolfné H. Mónika vagyok, 20 éve dolgozom a szakmámban.</p>
+                        <div id="bio-monika" class="hidden">
+                            <p>Kéz- és lábápoló szakemberként készséggel állok rendelkezésére, legyen szó manikűrről, gyógypedikűrről, vagy éppen talpreflex masszázsról. Mindig törekszem az igényes, precíz munkára, fontos számomra a megbízhatóság és a szakértelem. Kizárólag minőségi és professzionális anyagokkal /Gehwol, Callux/ dolgozom, melynek eredményeképpen a vendég kellemesen és magabiztosan érzi magát távozáskor. Nincs annál nagyobb öröm és felemelő érzés, mikor a vendég elégedetten távozik a kezeim közül. Forduljon hozzám bizalommal, hogy lába jól járjon!</p>
+                        </div>
+                        <button onclick="toggleBio('bio-monika', this)" class="text-fonix-gold hover:text-fonix-green font-bold text-sm mt-2 focus:outline-none transition-colors duration-300 flex items-center justify-center mx-auto">
+                            Olvass tovább <i class="fas fa-chevron-down ml-1"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <!-- 7. Balogh Emese -->
@@ -972,7 +1024,15 @@
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Balogh Emese</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Masszőr</p>
-                    <p class="text-sm text-gray-500 px-4">A testi-lelki felüdülés szakértője.</p>
+                    <div class="text-sm text-gray-500 px-4 text-justify relative">
+                        <p class="mb-2">Üdvözöllek! Emese vagyok, 10 okleveles masszőr.</p>
+                        <div id="bio-emese" class="hidden">
+                            <p>Először, 2017-ben sajátítottam el, a masszázs, jótékony hatásainak a technikáját, azóta is, folyamatosan tanulom és fejlesztem magam.A mai rohanó világ "mellékhatásai" keményen kihatnak az ember szervezetére és testére. A legfontosabb, hogy a masszázs jótékony hatásai, nemcsak a testet frissíti fel, hanem hatással van a stressz csökkentésére, az idegrendszer megnyugtatására, serkenti a vérkeringést, karbantartja a nyirokrendszert, valamint növeli az izmok rugalmasságát és regenerálódását. Várok mindenkit, sok szeretettel, aki úgy érzi, hogy szüksége van egy masszázsra!</p>
+                        </div>
+                        <button onclick="toggleBio('bio-emese', this)" class="text-fonix-gold hover:text-fonix-green font-bold text-sm mt-2 focus:outline-none transition-colors duration-300 flex items-center justify-center mx-auto">
+                            Olvass tovább <i class="fas fa-chevron-down ml-1"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <!-- 8. Szabolcsi Éva -->
@@ -982,7 +1042,15 @@
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Kövesiné Szabolcsi Éva</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Mentálhigiénés szakember</p>
-                    <p class="text-sm text-gray-500 px-4">"Hiszem, hogy mindnyájunknak kell időnként lelki szellőztetés."</p>
+                    <div class="text-sm text-gray-500 px-4 text-justify relative">
+                        <p class="mb-2">Nemcsak a testnek, a léleknek is szüksége van az állandó „karbantartásra”, megtisztulásra.</p>
+                        <div id="bio-eva" class="hidden">
+                            <p>Keress bizalommal, szívesen segítek az alábbiakban: családi és kapcsolati problémák, önismeret, önértékelési zavarok, érzelmi elakadások, érzelmi problémák feltárása, szorongás- és feszültségoldás, lelki harmónia, lelki elengedettség elősegítése, lelki egészségfejlesztés, egészség-megőrzés. Támogatlak Téged a mélyebb önismeret és probléma-megoldás útján.</p>
+                        </div>
+                        <button onclick="toggleBio('bio-eva', this)" class="text-fonix-gold hover:text-fonix-green font-bold text-sm mt-2 focus:outline-none transition-colors duration-300 flex items-center justify-center mx-auto">
+                            Olvass tovább <i class="fas fa-chevron-down ml-1"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <!-- 9. Kricsfalussy Vali -->
@@ -993,7 +1061,15 @@
                     <h3 class="text-xl font-bold text-fonix-green">Kricsfalussy Valéria</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Kineziológus</p>
                     <a href="https://www.lelekkirakos.hu/" target="_blank" class="text-sm text-fonix-gold hover:underline block mb-2">www.lelekkirakos.hu</a>
-                    <p class="text-sm text-gray-500 px-4">Segítség a belső egyensúly megtalálásában.</p>
+                    <div class="text-sm text-gray-500 px-4 text-justify relative">
+                        <p class="mb-2">Kricsfalussy Vali vagyok, kineziológus és Családállító terapeuta.</p>
+                        <div id="bio-vali" class="hidden">
+                            <p>Mi is az a Családállítás, hogyan zajlik? Minthogy ez egy csoportos foglalkozás, a jelenlevők (változó létszámú csoport) azok, akik a segítő szerepére vállalkoznak, az állítók (akik a problémájukra keresnek választ) és a terapeuta (aki segíti és koordinálja a folyamatot) – a felállítások során a szellemi mező segítségével rendezik a teret, mozgással, a megélt érzésük kommunikálásával segítve az állítót az oldáshoz való eljutásban, megértésben. A családfelállítást nem a terapeuta irányítja, hanem ez a morfogenetikus szellemi mező. Amennyiben a segítők és a terapeuta is képes elvárások nélkül, saját érzéseit, gondolatait, egóját lecsöndesítve átadnia magát a mező által lecsatornázott információknak, érzéseknek, gyönyörű képek mutatkoznak meg, melyek segítik az állító problémájának feloldását.</p>
+                        </div>
+                        <button onclick="toggleBio('bio-vali', this)" class="text-fonix-gold hover:text-fonix-green font-bold text-sm mt-2 focus:outline-none transition-colors duration-300 flex items-center justify-center mx-auto">
+                            Olvass tovább <i class="fas fa-chevron-down ml-1"></i>
+                        </button>
+                    </div>
                 </div>
 
             </div>
@@ -1080,6 +1156,17 @@
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
+        }
+
+        function toggleBio(id, btn) {
+            const content = document.getElementById(id);
+            content.classList.toggle('hidden');
+            
+            if (content.classList.contains('hidden')) {
+                btn.innerHTML = 'Olvass tovább <i class="fas fa-chevron-down ml-1"></i>';
+            } else {
+                btn.innerHTML = 'Kevesebb <i class="fas fa-chevron-up ml-1"></i>';
+            }
         }
     </script>
 </body>
