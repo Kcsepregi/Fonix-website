@@ -27,7 +27,7 @@
         }
     </script>
     <style>
-        body {
+        html {
             scroll-behavior: smooth;
         }
         .text-gold-gradient {
@@ -45,15 +45,14 @@
         }
         /* Accordion transition */
         .accordion-content {
-            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
             max-height: 0;
             opacity: 0;
             overflow: hidden;
         }
         .accordion-content.active {
-            /* Megnövelve, hogy a hosszú tartalom is elférjen */
-            max-height: 8000px; 
             opacity: 1;
+            /* max-height is handled by JS for smooth animation */
         }
         .rotate-icon {
             transform: rotate(180deg);
@@ -86,15 +85,15 @@
                     <i class="fas fa-calendar-check"></i> IDŐPONT FOGLALÁS
                 </a>
             </div>
-            <button class="md:hidden text-fonix-gold text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <button class="md:hidden text-fonix-gold text-2xl" onclick="toggleMobileMenu()">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-fonix-green border-t border-fonix-light-green">
-            <a href="#rolunk" class="block px-6 py-3 hover:bg-fonix-light-green">Rólunk</a>
-            <a href="#szolgaltatasok" class="block px-6 py-3 hover:bg-fonix-light-green">Szolgáltatások</a>
-            <a href="#csapat" class="block px-6 py-3 hover:bg-fonix-light-green">Csapat</a>
-            <a href="#kapcsolat" class="block px-6 py-3 hover:bg-fonix-light-green">Kapcsolat</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-fonix-green border-t border-fonix-light-green transition-all duration-300">
+            <a href="#rolunk" class="block px-6 py-3 hover:bg-fonix-light-green" onclick="toggleMobileMenu()">Rólunk</a>
+            <a href="#szolgaltatasok" class="block px-6 py-3 hover:bg-fonix-light-green" onclick="toggleMobileMenu()">Szolgáltatások</a>
+            <a href="#csapat" class="block px-6 py-3 hover:bg-fonix-light-green" onclick="toggleMobileMenu()">Csapat</a>
+            <a href="#kapcsolat" class="block px-6 py-3 hover:bg-fonix-light-green" onclick="toggleMobileMenu()">Kapcsolat</a>
             <a href="tel:+36204654525" class="block px-6 py-4 bg-fonix-gold text-fonix-green font-bold text-center mt-2 mx-4 mb-4 rounded">IDŐPONT FOGLALÁS</a>
         </div>
     </nav>
@@ -104,10 +103,10 @@
         <div class="absolute inset-0 bg-black opacity-40"></div>
         <div class="absolute inset-0 bg-gradient-to-b from-fonix-green/30 to-fonix-green/80"></div>
         
-        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto" data-aos="fade-up">
-            <div class="mb-4 text-fonix-gold text-xl tracking-[0.2em] uppercase">Pomáz szívében</div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <div class="mb-4 text-fonix-gold text-xl tracking-[0.2em] uppercase animate-fade-in-up">Pomáz szívében</div>
             <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight">
-                Ahol a természet és a <span class="text-fonix-gold italic">ragyogás</span> találkozik
+                Ahol a lendület és egyensúly találkozik
             </h1>
             <p class="text-gray-200 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light">
                 A Főnix egyedülálló módon egyesíti a rekreáció négy pillérét: mozgás, szépség, kényeztetés és lelki egészség.
@@ -123,16 +122,19 @@
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2">
-                    <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Spa hangulat" class="rounded-lg shadow-2xl border-b-4 border-r-4 border-fonix-gold">
+                    <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Spa hangulat" class="rounded-lg shadow-2xl border-b-4 border-r-4 border-fonix-gold w-full h-auto object-cover">
                 </div>
                 <div class="md:w-1/2">
                     <h2 class="text-4xl font-serif text-fonix-green mb-6">A Főnix Vitalitás Központ</h2>
                     <div class="w-20 h-1 bg-fonix-gold mb-6"></div>
                     <p class="text-gray-600 mb-4 leading-relaxed">
-                        A korábbi központ alapjaira építkezve, de teljesen megújult szellemiséggel várunk Pomáz szívében. A névválasztás nem véletlen - visszautal a Főnix Day Spa-ra, és egyben az újjászületést és az örök energiát szimbolizálja.
+                        A Főnix Vitalitás Központ egy komplex tér Pomáz szívében, ahol a mozgás, a feltöltődés és a lelki egyensúly egymást erősítve működnek.
+                    </p>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Nálunk a vitalitás nem csupán egy szó, hanem egy tudatosan felépített rendszer. Modern testkezelő technológiáink és szakértő szolgáltatásaink támogatják a tested megújulását, csoportos óráink – a jógától a dinamikus alakformáló edzésekig – segítenek visszaszerezni az energiád és az erőd, míg relaxációs és lelki programjaink segítenek lelassulni és feltöltődni.
                     </p>
                     <p class="text-gray-600 mb-6 leading-relaxed">
-                        Nálunk nem csupán kezeléseket kapsz, hanem egy teljeskörű élményt. A modern technológia (elektromágneses kezelések, kavitáció) és az ősi gyógymódok (masszázs, jóga) fúziója biztosítja, hogy tested és lelked is megtalálja az újjászületést.
+                        Központunk négy pillére – mozgás, szépség, kényeztetés, lelki egészség – egy egységes szemléletben működik. Hiszünk abban, hogy a valódi vitalitás a test és a lélek egyensúlyából születik.
                     </p>
                     <ul class="grid grid-cols-2 gap-4 text-fonix-green font-serif italic">
                         <li class="flex items-center gap-2"><i class="fas fa-check text-fonix-gold"></i> Mozgás</li>
@@ -160,12 +162,12 @@
                 <div class="border-b border-gray-100">
                     <button onclick="toggleAccordion('cat-mozgas')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-gray-50 transition text-left focus:outline-none group">
                         <div class="flex items-center gap-6">
-                            <div class="w-12 h-12 bg-fonix-green rounded-full flex items-center justify-center text-fonix-gold text-2xl group-hover:bg-fonix-gold group-hover:text-white transition">
+                            <div class="w-12 h-12 bg-fonix-green rounded-full flex items-center justify-center text-fonix-gold text-2xl group-hover:bg-fonix-gold group-hover:text-white transition shrink-0">
                                 <i class="fas fa-running"></i>
                             </div>
                             <div>
                                 <h3 class="text-xl md:text-2xl font-serif text-fonix-green">Mozgás</h3>
-                                <p class="text-sm text-gray-400">Jóga, Személyi edzés, Csoportos órák</p>
+                                <p class="text-sm text-gray-400">Jóga, Fit Jance, Személyi edzés</p>
                             </div>
                         </div>
                         <i id="icon-cat-mozgas" class="fas fa-chevron-down text-fonix-gold text-xl transition-transform duration-300"></i>
@@ -190,9 +192,23 @@
                                     </div>
                                 </div>
                                 <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
-                                    Változatos óratípusaink lehetőséget kínálnak a test és lélek felfrissítésére. A <strong>Hatha jóga</strong> (60p) az ászanák kitartására és a légzésre fókuszál, a <strong>Női jóga</strong> (75p) a hormonális egyensúlyt és a női szervek egészségét támogatja lágyabb mozdulatokkal, míg <strong>Csoportos óráink</strong> (60p) a dinamikusabb mozgásformákat kedvelőknek nyújtanak feltöltődést. Bérletünkkel szabadon átjárhatsz az óratípusok között.
+                                    Változatos óratípusaink lehetőséget kínálnak a test és lélek felfrissítésére. A <strong>Hatha jóga</strong> (60p) az ászanák kitartására és a légzésre fókuszál, a <strong>Női jóga</strong> (75p) a hormonális egyensúlyt és a női szervek egészségét támogatja lágyabb mozdulatokkal, míg <strong>Csoportos óráink</strong> (60p) a dinamikusabb mozgásformákat kedvelőknek nyújtanak feltöltődést. Bérletünkkel szabadon átjárhatsz a csoportos óratípusok között - kivéve a Fit Jance órákat.
                                 </p>
                             </div>
+
+                            <!-- Fit Jance -->
+                            <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-serif text-fonix-green font-bold">Fit Jance trambulin edzés</h4>
+                                        <!-- <div class="text-fonix-green font-bold text-xl">X.000 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div> -->
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    A <strong>Fit Jance (Jump & Dance)</strong> egy speciális trambulinos–táncos–fitness mozgásforma, ahol a fejlődés és a mozgás élménnyé válik. Kreatív, változatos órák és zenék, igazi flow-élmény vár, miközben észrevétlenül fejlődsz. Az edzések hangulata olyan, mint egy buli, ahol te vagy a középpontban. A cél az, hogy feltöltődve, pozitív energiával és mosollyal menj haza!
+                                </p>
+                            </div>
+
                             <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
                                     <div>
@@ -208,6 +224,24 @@
                                     A várandósság idején végzett speciális jóga segít a megváltozott testhelyzethez való alkalmazkodásban, enyhíti a hát- és derékfájdalmakat, valamint felkészíti a medencealapi izmokat a szülésre. A légzőgyakorlatok és a relaxáció segítik a kismamák lelki ráhangolódását az anyaságra és a babával való kapcsolódást.
                                 </p>
                             </div>
+
+                            <!-- Baba-mama jóga -->
+                            <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-serif text-fonix-green font-bold">Baba-mama jóga <span class="text-sm font-sans text-gray-500 font-normal">(90 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">4.000 Ft <span class="text-xs text-gray-400 font-normal">/ alkalom</span></div>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-gray-100 shadow-sm w-full md:w-auto">
+                                        <div class="text-sm font-bold text-gray-700 mb-1 border-b border-gray-100 pb-1">Bérlet opció:</div>
+                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">36.000 Ft</span></div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
+                                    A kisbabás jóga 6-10 hetes kortól 8–10 hónapos korig ajánlott, ahol babáddal együtt, biztonságos és szeretetteljes térben mozoghattok és töltődhettek. A 90 perces órán ráhangolódás után a babamasszázs, közös mozgás, gátizomtorna és relaxáció is helyet kap, hogy testben és lélekben is feltöltődj. Az alkalmak célja, hogy segítsük a regenerációt, mélyítsétek a kapcsolatotokat, és közben egy támogató hangulatú anyaközösség részévé váljatok.
+                                </p>
+                            </div>
+
                             <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
                                     <div>
@@ -231,7 +265,7 @@
                 <div class="border-b border-gray-100">
                     <button onclick="toggleAccordion('cat-alak')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-gray-50 transition text-left focus:outline-none group">
                         <div class="flex items-center gap-6">
-                            <div class="w-12 h-12 bg-fonix-gold rounded-full flex items-center justify-center text-white text-2xl group-hover:bg-fonix-green transition">
+                            <div class="w-12 h-12 bg-fonix-gold rounded-full flex items-center justify-center text-white text-2xl group-hover:bg-fonix-green transition shrink-0">
                                 <i class="fas fa-burn"></i>
                             </div>
                              <div>
@@ -256,7 +290,7 @@
                                     </div>
                                 </div>
                                 <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
-                                    Az EMS intimfotel (HI-EMS, azaz elektromágneses technológiával végzett kezelések) hatékonyan erősítik a medencefenék izmait, javítják az intim egészséget és csökkentik az inkontinencia problémákat. A kezelések végzése heti 2 alkalommal javasolt, és a kúra időtartama 3-5 hét.
+                                    Az EMS intimfotel (HI-EMS, azaz elektromágneses technológiával végzett kezelések) hatékonyan erősítik a medencefenék izmait, javítják az intim egészséget és csökkentik az inkontinencia problémákat. A kezeléseket kúraszerűen javasolt végezni, heti 2 alkalommal, 6 héten keresztül. A kúrákat fél évente célszerű megismételni.
                                 </p>
                             </div>
                             <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
@@ -326,7 +360,7 @@
                 <div class="border-b border-gray-100">
                     <button onclick="toggleAccordion('cat-masszazs')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-gray-50 transition text-left focus:outline-none group">
                         <div class="flex items-center gap-6">
-                            <div class="w-12 h-12 bg-fonix-green rounded-full flex items-center justify-center text-fonix-gold text-2xl group-hover:bg-fonix-gold group-hover:text-white transition">
+                            <div class="w-12 h-12 bg-fonix-green rounded-full flex items-center justify-center text-fonix-gold text-2xl group-hover:bg-fonix-gold group-hover:text-white transition shrink-0">
                                 <i class="fas fa-spa"></i>
                             </div>
                             <div>
@@ -614,7 +648,7 @@
                                 </p>
                             </div>
 
-                            <!-- 13. Csontkovácsolás - REMOVED FROM BOX -->
+                            <!-- 13. Csontkovácsolás -->
                             <div class="mb-8">
                                 <div class="flex flex-col mb-4 gap-2">
                                     <div>
@@ -637,7 +671,7 @@
                 <div class="border-b border-gray-100">
                      <button onclick="toggleAccordion('cat-kezlab')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-gray-50 transition text-left focus:outline-none group">
                         <div class="flex items-center gap-6">
-                            <div class="w-12 h-12 bg-fonix-gold rounded-full flex items-center justify-center text-white text-2xl group-hover:bg-fonix-green transition">
+                            <div class="w-12 h-12 bg-fonix-gold rounded-full flex items-center justify-center text-white text-2xl group-hover:bg-fonix-green transition shrink-0">
                                 <i class="fas fa-hand-sparkles"></i>
                             </div>
                              <div>
@@ -801,7 +835,7 @@
                 <div>
                      <button onclick="toggleAccordion('cat-lelki')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-gray-50 transition text-left focus:outline-none group">
                         <div class="flex items-center gap-6">
-                            <div class="w-12 h-12 bg-fonix-green rounded-full flex items-center justify-center text-fonix-gold text-2xl group-hover:bg-fonix-gold group-hover:text-white transition">
+                            <div class="w-12 h-12 bg-fonix-green rounded-full flex items-center justify-center text-fonix-gold text-2xl group-hover:bg-fonix-gold group-hover:text-white transition shrink-0">
                                 <i class="fas fa-brain"></i>
                             </div>
                             <div>
@@ -814,28 +848,25 @@
                     <div id="cat-lelki" class="accordion-content bg-gray-50">
                         <div class="px-8 pb-8 pt-6">
                              
-                            <!-- 1. Hangtál terápia -->
+                            <!-- 1. Hangfürdő -->
                             <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
                                     <div>
-                                        <h4 class="text-lg font-serif text-fonix-green font-bold">Hangtál terápia <span class="text-sm font-sans text-gray-500 font-normal">(90 perc)</span></h4>
+                                        <h4 class="text-lg font-serif text-fonix-green font-bold">Hangfürdő <span class="text-sm font-sans text-gray-500 font-normal">(90 perc)</span></h4>
                                         <div class="text-fonix-green font-bold text-xl uppercase tracking-wider">Adomány alapú</div>
                                     </div>
                                 </div>
                                 <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
-                                    A hangtál terápia egy ősi és modern gyógymód, amely a test és a lelki egészség támogatására szolgál. A terápia során a hangtálak rezgései a test és a lelki egészség mélyebb rétegeit aktiválják, hozzájárulva a relaxációhoz, meditációhoz és a stresszoldó hormonok csökkentéséhez. A hangtálak hatása alatt az agy különböző változásokat tapasztalhat, és a mélyebb meditatív állapot elérhetővé válik. Aktiválja a test öngyógyító folyamatait a harmonikus rezgések segítségével, a testi és lelki harmónia megteremtésére szolgál.
+                                    A hangfürdő egy ősi és modern gyógymód, amely a test és a lelki egészség támogatására szolgál. A terápia során a hangtálak rezgései a test és a lelki egészség mélyebb rétegeit aktiválják, hozzájárulva a relaxációhoz, meditációhoz és a stresszoldó hormonok csökkentéséhez. A hangtálak hatása alatt az agy különböző változásokat tapasztalhat, és a mélyebb meditatív állapot elérhetővé válik. Aktiválja a test öngyógyító folyamatait a harmonikus rezgések segítségével, a testi és lelki harmónia megteremtésére szolgál.
                                 </p>
                             </div>
 
-                            <!-- 2. Családállítás - REMOVED FROM BOX -->
+                            <!-- 2. Családállítás -->
                             <div class="mb-8 border-b border-gray-200 pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col mb-4 gap-2">
                                     <div>
                                         <h4 class="text-lg font-serif text-fonix-green font-bold">Családállítás <span class="text-sm font-sans text-gray-500 font-normal">(5-6 óra)</span></h4>
                                         <div class="text-fonix-green font-bold text-sm">Bert Hellinger módszere alapján</div>
-                                    </div>
-                                    <div class="text-sm italic text-gray-500">
-                                        Bejelentkezés: <a href="https://www.lelekkirakos.hu/" target="_blank" class="text-fonix-green hover:underline font-bold">www.lelekkirakos.hu</a>
                                     </div>
                                 </div>
                                 <p class="text-sm text-gray-600 leading-relaxed italic text-justify">
@@ -879,23 +910,18 @@
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Magyar Edina</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Edző (Trambulin, Fit Jance)</p>
-                    <div class="text-sm text-gray-500 px-4 text-justify leading-relaxed">
-                        <p class="mb-2">Magyar Edina vagyok, gyerekkorom óta a tánc és a sport a legnagyobb szenvedélyem. Versenyszerűen táncoltam és karatéztam, majd saját tánciskolát alapítottam, ahol gyermekekkel és felnőttekkel dolgoztam.</p>
-                        <p class="mb-2">A Fit Jance a trambulinos edzést, a táncot és a fitness elemeit ötvözi egyetlen, komplex rendszerben. Az óráim rendkívül kreatívak és változatosak, minden edzéshez külön tematika és zenei világ társul. Számomra a legfontosabb, hogy az edzés a vendégről szóljon: hogy felszabaduljon, feltöltődjön, jól érezze magát, és pozitív élménnyel távozzon.</p>
-                    </div>
+                    <p class="text-sm text-gray-500 px-4">Kreatív, táncos edzések a felszabadulásért és feltöltődésért.</p>
                 </div>
 
-                <!-- 2. Andi (Tarján Andrea) -->
+                <!-- 2. Andi -->
                 <div class="text-center group">
                      <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gray-100 group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
                          <img src="andi1.jpg" alt="Tarján Andrea" class="w-full h-full object-cover object-top">
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Tarján Andrea</h3>
-                    <p class="text-fonix-gold font-serif italic mb-2">Jóga és meditáció tanár</p>
-                    <div class="text-sm text-gray-500 px-4 text-justify leading-relaxed">
-                        <p class="mb-2">„A jóga gyakorlása nem mindig könnyű, de izgalmas utazás, mely a belső béke, a szabadság és a testi-lelki jóllét felé visz.” Jóga- és meditáció tanárként abban szeretnék segíteni, hogy a test és a lélek egyaránt megtalálja az egyensúlyt.</p>
-                        <p>A női jóga a nőiességünk teljességére összpontosít, figyelembe veszi a különleges testi és lelki igényeinket, női létünk folyamatos, ciklikus változásait. A lágy, áramló gyakorlás alatt fókuszban van a gát, a csípő, a hüvely, a has és a medence energetikai rendszerének helyreállítása.</p>
-                    </div>
+                    <p class="text-fonix-gold font-serif italic mb-2">Jóga és meditáció tanár, mentálhigiénés szakember</p>
+                    <a href="https://tarjanandrea.hu/" target="_blank" class="text-sm text-fonix-gold hover:underline block mb-2">tarjanandrea.hu</a>
+                    <p class="text-sm text-gray-500 px-4">Női jóga specialista a testi-lelki egyensúlyért.</p>
                 </div>
 
                 <!-- 3. Laura -->
@@ -905,10 +931,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Víg-Szeleczky Laura</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Jóga oktató</p>
-                    <div class="text-sm text-gray-500 px-4 text-justify leading-relaxed">
-                        <p class="mb-2">Víg-Szeleczky Laura vagyok, két kisfiú anyukája. A hatha jóga és kismama jógaoktató képzéseket a nagyobbik fiam érkezése előtt végeztem el, de a jógagyakorlás már sokkal régebb óta az életem része.</p>
-                        <p>Szeretem az óráim során a dinamikus, áramló jellegű gyakorlatokat ötvözni a lágyabb, nyújtó és statikus pózokkal. Fontos számomra, hogy kezdők és haladók egyaránt jól érezzék magukat az órán. Várok mindenkit szeretettel jóga óráimra.</p>
-                    </div>
+                    <p class="text-sm text-gray-500 px-4">Dinamikus és lágy gyakorlatok ötvözete, kezdőknek és haladóknak.</p>
                 </div>
 
                 <!-- 4. Hajni -->
@@ -916,12 +939,9 @@
                      <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gray-100 group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
                          <img src="hajni.jpg" alt="Hajni" class="w-full h-full object-cover object-top">
                     </div>
-                    <h3 class="text-xl font-bold text-fonix-green">Nagy-Papp Hajnalka</h3>
-                    <p class="text-fonix-gold font-serif italic mb-2">Edző, szülésznő</p>
-                    <div class="text-sm text-gray-500 px-4 text-justify leading-relaxed">
-                        <p class="mb-2">Nagy-Papp Hajnalka vagyok szülésznő, kismama és baba-mama jóga oktató. Hivatásomból adódóan szívügyem, hogy a nők biztonságban és megtartó térben élhessék meg a nőiességüket, anyaságukat.</p>
-                        <p>Hiszem, hogy a szülés előtti és utáni időszak különleges, érzékeny életszakasz, melyben a testünkre és a lelkünkre is kellő hangsúlyt érdemes fektetni. Óráimon szeretettel, szakmai tapasztalattal és tudással, illetve odafigyeléssel kísérlek Titeket ezen a csodálatos úton.</p>
-                    </div>
+                    <h3 class="text-xl font-bold text-fonix-green">Hajni</h3>
+                    <p class="text-fonix-gold font-serif italic mb-2">Edző</p>
+                    <p class="text-sm text-gray-500 px-4">Várunk szeretettel az óráimon.</p>
                 </div>
 
                 <!-- 5. Kovács Kriszta -->
@@ -931,53 +951,38 @@
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Kovács Kriszta</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Kozmetikus, Testkezelő</p>
-                    <div class="text-sm text-gray-500 px-4 text-justify leading-relaxed">
-                        <p class="mb-2">“Az a vágy, hogy a szépségápolás területén szeretnék egyszer dolgozni, olyan 13-14 évesen kezdett motoszkálni bennem, és legnagyobb boldogságomra mára már több mint 30 éve a szakmában élek, amit elkötelezetten gyakorlok és nagyon-nagyon szeretek."</p>
-                        <p>Ezen a szépséges új munkahelyemen, a Főnix Vitalitás Központban a kor legmodernebb gépeivel dolgozhatok és végezhetem a legújabb testkezeléseket egy szuper kedves és profi csapatban.</p>
-                    </div>
+                    <p class="text-sm text-gray-500 px-4">Több mint 30 év tapasztalattal, mindig mosolygósan várja vendégeit.</p>
                 </div>
 
                 <!-- 6. Rudolfné Mónika -->
                 <div class="text-center group mt-8">
                      <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gray-100 group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
-                         <div class="w-full h-full flex items-center justify-center bg-gray-200 text-gray-400">
-                            <i class="fas fa-user text-4xl"></i>
-                        </div>
+                        <!-- Use monika.jpg here as requested -->
+                         <img src="monika.jpg" alt="Rudolfné Herczku Mónika" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1632345031635-fe5cc05333f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80';">
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Rudolfné Herczku Mónika</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Kéz- és lábápoló, Műköröm építő</p>
-                    <div class="text-sm text-gray-500 px-4 text-justify leading-relaxed">
-                        <p class="mb-2">Rudolfné H. Mónika vagyok, 20 éve dolgozom a szakmámban. Kéz- és lábápoló szakemberként készséggel állok rendelkezésére, legyen szó manikűrről, gyógypedikűrről, vagy éppen talpreflex masszázsról.</p>
-                        <p>Kizárólag minőségi és professzionális anyagokkal (Gehwol, Callux) dolgozom. Nincs annál nagyobb öröm és felemelő érzés, mikor a vendég elégedetten távozik a kezeim közül. Forduljon hozzám bizalommal, hogy lába jól járjon!</p>
-                    </div>
+                    <p class="text-sm text-gray-500 px-4">20 év tapasztalat, minőségi anyagok (Gehwol, Callux).</p>
                 </div>
 
-                <!-- 7. Szabolcsi Éva -->
+                <!-- 7. Balogh Emese -->
+                 <div class="text-center group mt-8">
+                     <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gray-100 group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
+                         <img src="emese.jpeg" alt="Balogh Emese" class="w-full h-full object-cover object-[50%_25%]" onerror="this.onerror=null; this.src='emese.jpg';">
+                    </div>
+                    <h3 class="text-xl font-bold text-fonix-green">Balogh Emese</h3>
+                    <p class="text-fonix-gold font-serif italic mb-2">Masszőr</p>
+                    <p class="text-sm text-gray-500 px-4">A testi-lelki felüdülés szakértője.</p>
+                </div>
+
+                <!-- 8. Szabolcsi Éva -->
                 <div class="text-center group mt-8">
                     <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gray-100 group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
                         <img src="eva.png" alt="Kövesiné Szabolcsi Éva" class="w-full h-full object-cover object-top">
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Kövesiné Szabolcsi Éva</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Mentálhigiénés szakember</p>
-                    <div class="text-sm text-gray-500 px-4 text-justify leading-relaxed">
-                        <p class="mb-2">“Hiszem, hogy mindnyájunknak kell időnként „lelki szellőztetés”, egyensúlyunk helyreállítása, hogy nagyobb bátorsággal és önbizalommal élhessünk.”</p>
-                        <p>Keress bizalommal, szívesen segítek az alábbiakban: családi és kapcsolati problémák, önismeret, önértékelési zavarok, érzelmi elakadások, szorongás- és feszültségoldás. Támogatlak Téged a mélyebb önismeret és probléma-megoldás útján.</p>
-                    </div>
-                </div>
-
-                <!-- 8. Balogh Emese -->
-                 <div class="text-center group mt-8">
-                     <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gray-100 group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
-                         <img src="emese.jpg" alt="Balogh Emese" class="w-full h-full object-cover object-top">
-                    </div>
-                    <h3 class="text-xl font-bold text-fonix-green">Balogh Emese</h3>
-                    <p class="text-fonix-gold font-serif italic mb-2">Okleveles masszőr</p>
-                    <div class="text-sm text-gray-500 px-4 text-justify leading-relaxed">
-                        <p class="mb-2">Emese vagyok, okleveles masszőr.</p>
-                        <p class="mb-2">2017-ben sajátítottam el először a masszázs technikáját és ismerkedtem meg jótékony hatásaival. Azóta is folyamatosan tanulom és fejlesztem magam. A mai rohanó világ "mellékhatásai" keményen kihatnak az ember szervezetére és testére.</p>
-                        <p class="mb-2">A legfontosabb, hogy a masszázs nemcsak a testet frissíti fel, hanem hatással van a stressz csökkentésére, az idegrendszer megnyugtatására, serkenti a vérkeringést, karbantartja a nyirokrendszert, valamint növeli az izmok rugalmasságát és regenerálódását.</p>
-                        <p>Várok mindenkit, sok szeretettel, aki úgy érzi, hogy szüksége van egy lazításra, megújulásra!</p>
-                    </div>
+                    <p class="text-sm text-gray-500 px-4">"Hiszem, hogy mindnyájunknak kell időnként lelki szellőztetés."</p>
                 </div>
 
                 <!-- 9. Kricsfalussy Vali -->
@@ -987,15 +992,13 @@
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Kricsfalussy Valéria</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Kineziológus</p>
-                    <div class="text-sm text-gray-500 px-4 text-justify leading-relaxed">
-                        <p class="mb-2">Kricsfalussy Vali vagyok, kineziológus és Családállító terapeuta. Mi is az a Családállítás, hogyan zajlik?</p>
-                        <p>A felállítások során a szellemi mező segítségével rendezik a teret, mozgással, a megélt érzésük kommunikálásával segítve az állítót az oldáshoz való eljutásban, megértésben. A családfelállítást nem a terapeuta irányítja, hanem ez a morfogenetikus szellemi mező.</p>
-                    </div>
+                    <a href="https://www.lelekkirakos.hu/" target="_blank" class="text-sm text-fonix-gold hover:underline block mb-2">www.lelekkirakos.hu</a>
+                    <p class="text-sm text-gray-500 px-4">Segítség a belső egyensúly megtalálásában.</p>
                 </div>
 
             </div>
             <div class="text-center mt-12 text-gray-600">
-                <p>További szakértőnk: <span class="font-bold text-fonix-green">Németh László</span> (Hangtál terápia)</p>
+                <p>További szakértőnk: <span class="font-bold text-fonix-green">Németh László</span> (Hangfürdő)</p>
                 <p class="mt-4 text-sm font-serif italic text-fonix-gold"> </p>
             </div>
         </div>
@@ -1042,7 +1045,8 @@
                     </ul>
                 </div>
                 <div class="h-80 bg-gray-300 rounded-lg overflow-hidden shadow-xl border-4 border-fonix-gold">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2688.123456789!2d19.0!3d47.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjAxMyBQb23DoXosIEJlbmljemt5IHV0Y2EgNA!5e0!3m2!1shu!2shu!4v1600000000000!5m2!1shu!2shu" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <!-- Updated Map link for accuracy to Pomáz -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2688.134006180126!2d19.02271297676756!3d47.64332217119335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741d08e5a7d6569%3A0x6e3b5e4c0c1b7e0!2zUG9tw6F6LCBCZW5pY3preSB1LiA0LCAyMDEz!5e0!3m2!1shu!2shu!4v1709289123456!5m2!1shu!2shu" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
             <div class="text-center mt-16 pt-8 border-t border-fonix-light-green text-sm opacity-70">
@@ -1056,12 +1060,26 @@
         function toggleAccordion(id) {
             const content = document.getElementById(id);
             const icon = document.getElementById('icon-' + id);
+            
+            if (!content || !icon) return;
+
+            // Toggle active class
             content.classList.toggle('active');
-            if (content.classList.contains('active')) {
-                icon.classList.add('rotate-icon');
+            
+            // Handle max-height for smooth transition
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
             } else {
-                icon.classList.remove('rotate-icon');
+                content.style.maxHeight = content.scrollHeight + "px";
             }
+            
+            // Rotate icon
+            icon.classList.toggle('rotate-icon');
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
         }
     </script>
 </body>
