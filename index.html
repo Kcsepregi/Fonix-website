@@ -98,32 +98,34 @@
                 <!-- Fallback szöveges logó, ha a kép nem töltődik be -->
                 <img src="logo.png" alt="Főnix Vitalitás Központ" class="h-20 md:h-28 object-contain mix-blend-multiply" onerror="this.outerHTML='<span class=\'text-2xl font-serif font-bold text-fonix-green\'>Főnix</span>'">
             </a>
-            <div class="hidden md:flex space-x-8 items-center text-sm uppercase tracking-widest font-bold">
+            <div class="hidden lg:flex space-x-6 items-center text-sm uppercase tracking-widest font-bold">
                 <a href="#rolunk" class="hover:text-fonix-green transition">Rólunk</a>
                 <a href="#szolgaltatasok" class="hover:text-fonix-green transition">Szolgáltatások</a>
                 <a href="#galeria" class="hover:text-fonix-green transition">Galéria</a>
                 <a href="#csapat" class="hover:text-fonix-green transition">Csapat</a>
+                <a href="#teremberles" class="hover:text-fonix-green transition text-fonix-gold">Terembérlés</a>
                 <a href="#kapcsolat" class="hover:text-fonix-green transition">Kapcsolat</a>
-                <a href="#idopontfoglalas" class="bg-fonix-gold text-fonix-bg px-6 py-3 rounded-lg hover:bg-fonix-green hover:text-fonix-bg transition duration-300 font-extrabold shadow-lg transform hover:scale-105 cta-button-pop flex items-center gap-2">
-                    <i class="fas fa-calendar-check"></i> IDŐPONT FOGLALÁS
+                <a href="#idopontfoglalas" class="bg-fonix-gold text-fonix-bg px-5 py-2.5 rounded-lg hover:bg-fonix-green hover:text-fonix-bg transition duration-300 font-extrabold shadow-lg transform hover:scale-105 cta-button-pop flex items-center gap-2">
+                    <i class="fas fa-calendar-check"></i> FOGLALÁS
                 </a>
             </div>
-            <button class="md:hidden text-fonix-gold text-2xl focus:outline-none" onclick="toggleMobileMenu()">
+            <button class="lg:hidden text-fonix-gold text-2xl focus:outline-none" onclick="toggleMobileMenu()">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-fonix-bg border-t border-fonix-gold transition-all duration-300">
+        <div id="mobile-menu" class="hidden lg:hidden bg-fonix-bg border-t border-fonix-gold transition-all duration-300 max-h-screen overflow-y-auto">
             <a href="#rolunk" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Rólunk</a>
             <a href="#szolgaltatasok" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Szolgáltatások</a>
             <a href="#galeria" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Galéria</a>
             <a href="#csapat" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Csapat</a>
+            <a href="#teremberles" class="block px-6 py-3 text-fonix-gold hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Terembérlés</a>
             <a href="#kapcsolat" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Kapcsolat</a>
             <a href="#idopontfoglalas" class="block px-6 py-4 bg-fonix-gold text-fonix-bg font-bold text-center mt-2 mx-4 mb-4 rounded" onclick="toggleMobileMenu()">IDŐPONT FOGLALÁS</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative h-screen min-h-[600px] flex items-center justify-center bg-fixed bg-cover bg-center" style="background-image: url('fonix.jpg');">
+    <header class="relative h-screen min-h-[600px] flex items-center justify-center bg-fixed bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1920&q=80');">
         <!-- Háttér halványítása 70%-os réteggel -->
         <div class="absolute inset-0 bg-white/70"></div>
         <div class="absolute inset-0 bg-gradient-to-b from-fonix-green/10 to-fonix-green/40"></div>
@@ -218,7 +220,7 @@
                                     </div>
                                 </div>
                                 <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
-                                    Változatos óratípusaink lehetőséget kínálnak a test és lélek felfrissítésére. A <strong>Hatha jóga</strong> (60p) az ászanák kitartására és a légzésre fókuszál, míg <strong>Csoportos óráink</strong> (60p) a dinamikusabb mozgásformákat kedvelőknek nyújtanak feltöltődést. Bérletünkkel szabadon átjárhatsz a csoportos óratípusok között - kivéve a Fit Jance órákat.
+                                    Változatos óratípusaink lehetőségek kínálnak a test és lélek felfrissítésére. A <strong>Hatha jóga</strong> (60p) az ászanák kitartására és a légzésre fókuszál, míg <strong>Csoportos óráink</strong> (60p) a dinamikusabb mozgásformákat kedvelőknek nyújtanak feltöltődést. Bérletünkkel szabadon átjárhatsz a csoportos óratípusok között - kivéve a Fit Jance órákat.
                                 </p>
                             </div>
 
@@ -991,16 +993,31 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <!-- Helykitöltő képek a galériának automatikusan kezelt fallbackenddel az előnézethez -->
                 <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden border-2 border-fonix-bg shadow-sm">
-                    <img src="galeria1.png" onerror="this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80'" alt="Galéria kép 1" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer">
+                    <img src="galeria1.jpg" onerror="this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80'" alt="Galéria kép 1" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer transform-gpu will-change-transform">
                 </div>
                 <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden border-2 border-fonix-bg shadow-sm">
-                    <img src="galeria2.png" onerror="this.src='https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=500&q=80'" alt="Galéria kép 2" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer">
+                    <!-- Kavitációs zsírbontás ideiglenes helyettesítő képpel -->
+                    <img src="galeria2.jpg" onerror="this.src='https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=500&q=80'" alt="Kavitációs zsírbontás kezelés" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer transform-gpu will-change-transform">
                 </div>
                 <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden border-2 border-fonix-bg shadow-sm">
-                    <img src="galeria3.png" onerror="this.src='https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=500&q=80'" alt="Galéria kép 3" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer">
+                    <img src="galeria3.jpg" onerror="this.src='https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=500&q=80'" alt="Galéria kép 3" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer transform-gpu will-change-transform">
                 </div>
                 <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden border-2 border-fonix-bg shadow-sm">
-                    <img src="galeria4.png" onerror="this.src='https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=500&q=80'" alt="Galéria kép 4" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer">
+                    <!-- Alfa kapszula / modern relaxációs környezet ideiglenes helyettesítő képpel -->
+                    <img src="galeria4.jpg" onerror="this.src='https://images.unsplash.com/photo-1563298723-dcfebaa392e3?auto=format&fit=crop&w=500&q=80'" alt="Alfa kapszula" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer transform-gpu will-change-transform">
+                </div>
+                <!-- Új 4 kép -->
+                <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden border-2 border-fonix-bg shadow-sm">
+                    <img src="galeria5.jpg" onerror="this.src='https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=500&q=80'" alt="Galéria kép 5" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer transform-gpu will-change-transform">
+                </div>
+                <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden border-2 border-fonix-bg shadow-sm">
+                    <img src="galeria6.jpg" onerror="this.src='https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=500&q=80'" alt="Galéria kép 6" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer transform-gpu will-change-transform">
+                </div>
+                <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden border-2 border-fonix-bg shadow-sm">
+                    <img src="galeria7.jpg" onerror="this.src='https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=500&q=80'" alt="Galéria kép 7" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer transform-gpu will-change-transform">
+                </div>
+                <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden border-2 border-fonix-bg shadow-sm">
+                    <img src="galeria8.jpg" onerror="this.src='https://images.unsplash.com/photo-1553531384-cc64ac80f931?auto=format&fit=crop&w=500&q=80'" alt="Galéria kép 8" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer transform-gpu will-change-transform">
                 </div>
             </div>
         </div>
@@ -1018,7 +1035,7 @@
             <div class="flex justify-center mb-16">
                 <div class="text-center group max-w-xl">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
-                         <img src="kati.jpg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="dr. Csepregi Katalin" class="w-full h-full object-cover object-[50%_25%]">
+                         <img src="kati.jpg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="dr. Csepregi Katalin" class="w-full h-full object-cover object-[50%_25%] transform-gpu will-change-transform">
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">dr. Csepregi Katalin</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Alapító, Életviteli tanácsadás és business coaching</p>
@@ -1044,7 +1061,7 @@
                 <!-- 1. Edina -->
                 <div class="text-center group">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
-                         <img src="edina.jpg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Magyar Edina" class="w-full h-full object-cover object-top">
+                         <img src="edina.jpg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Magyar Edina" class="w-full h-full object-cover object-top transform-gpu will-change-transform">
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Magyar Edina</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Edző (Trambulin, Fit Jance)</p>
@@ -1052,7 +1069,7 @@
                         <p class="mb-2 font-bold text-center text-fonix-green">Élmény alapú egyedi mozgásforma trambulin, a tánc és a fitness ötvözetéből</p>
                         <p class="mb-2">Magyar Edina vagyok, gyerekkorom óta a tánc és a sport a legnagyobb szenvedélyem. Versenyszerűen táncoltam és karatéztam, majd saját tánciskolát alapítottam...</p>
                         <div id="bio-edina" class="hidden">
-                            <p>...ahol gyermekekkel és felnőttekkel dolgoztam. Az évek során számos fellépésen, versenyen, gálán és közösségi eseményen vettünk részt, ezeknek jelentős részét én szerveztem és koordináltam. A táncos múltamat később CrossFit és Spartan edzések és versenyek egészítették ki. A trambulinos edzésekkel való találkozás sorsfordító élmény volt számomra: teljesen beleszerettem. 2023 óta oktatok trambulinos edzéseket. A korábbi tapasztalataimból hoztam létre a Fit Jance nevű, speciális mozgásformát. A Fit Jance a trambulinos edzést, a táncot és a fitness elemeit ötvözi egyetlen, komplex rendszerben. Az óráim rendkívül kreatívak és változatosak, minden edzéshez külön tematika és zenei világ társul – például retro, house vagy dance stílusban –, mindig új lejátszási listákkal. Számomra a legfontosabb, hogy az edzés a vendégről szóljon: hogy felszabaduljon, feltöltődjön, jól érezze magát, és pozitív élménnyel távozzon.</p>
+                            <p>...ahol gyermekekkel és felnőttekkel dolgoztam. Az évek során számos fellépésen, versenyen, gálán és közösségi eseményen vettünk részt, ezeknek jelentős részét én szerveztem és koordináltam. A táncos múltamat később CrossFit és Spartan edzések és versenyek egészítették ki. A trambulinos edzésekkel való találkozás sorsfordító élmény volt számára: teljesen beleszerettem. 2023 óta oktatok trambulinos edzéseket. A korábbi tapasztalataimból hoztam létre a Fit Jance nevű, speciális mozgásformát. A Fit Jance a trambulinos edzést, a táncot és a fitness elemeit ötvözi egyetlen, komplex rendszerben. Az óráim rendkívül kreatívak és változatosak, minden edzéshez külön tematika és zenei világ társul – például retro, house vagy dance stílusban –, mindig új lejátszási listákkal. Számomra a legfontosabb, hogy az edzés a vendégről szóljon: hogy felszabaduljon, feltöltődjön, jól érezze magát, és pozitív élménnyel távozzon.</p>
                         </div>
                         <button onclick="toggleBio('bio-edina', this)" class="text-fonix-gold hover:text-fonix-green font-bold text-sm mt-2 focus:outline-none transition-colors duration-300 flex items-center justify-center mx-auto">
                             Bővebben <i class="fas fa-chevron-down ml-1"></i>
@@ -1063,7 +1080,7 @@
                 <!-- 2. Andi -->
                 <div class="text-center group">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
-                         <img src="andi1.jpg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Tarján Andrea" class="w-full h-full object-cover object-top">
+                         <img src="andi1.jpg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Tarján Andrea" class="w-full h-full object-cover object-top transform-gpu will-change-transform">
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Tarján Andrea</h3>
                     <p class="text-fonix-gold font-serif italic mb-1">Jóga és meditáció tanár, mentálhigiénés szakember</p>
@@ -1083,7 +1100,7 @@
                 <!-- 3. Laura -->
                 <div class="text-center group">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
-                         <img src="laura.jpg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Víg-Szeleczky Laura" class="w-full h-full object-cover">
+                         <img src="laura.jpg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Víg-Szeleczky Laura" class="w-full h-full object-cover transform-gpu will-change-transform">
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Víg-Szeleczky Laura</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Jóga oktató</p>
@@ -1101,14 +1118,14 @@
                 <!-- 4. Hajni -->
                 <div class="text-center group mt-8">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
-                         <img src="hajni.jpg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Hajni" class="w-full h-full object-cover object-top">
+                         <img src="hajni.jpg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Hajni" class="w-full h-full object-cover object-top transform-gpu will-change-transform">
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Nagy-Papp Hajnalka</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Szülésznő, kismama és baba-mama jógaoktató</p>
                     <div class="text-sm text-fonix-dark/80 px-4 text-justify relative">
                         <p class="mb-2">Nagy-Papp Hajnalka vagyok szülésznő, kismama és baba-mama jóga oktató.</p>
                         <div id="bio-hajni" class="hidden">
-                            <p>Hivatásomból adódóan szívügyem, hogy a nők biztonságban és megtartó térben élhessék meg a nőiességüket, anyaságukat. Hiszem, hogy a szülés előtti és utáni időszak különleges, érzékeny életszakasz, melyben a testünkre és a lelkünkre is kellő hangsúlyt érdemes fektetni. Óráimon szeretettel, szakmai tapasztalattal és tudással, illetve odafigyeléssel kísérlek Titeket ezen a csodálatos úton.</p>
+                            <p>Hivatásomból adódóan szívügyem, hogy a nők biztonságban és megtartó térben élhessék meg a nőiességüket, anyaságukat. Hiszem, hogy a szülés előtti és utáni időszak különleges, érzékeny életszakasz, melyben a testünkre és a lelkünkre is kellő hangsúlyt érdemes fektetni. Óráimon szeretettel, szakmai tapasztalattal és tudással, illetve odafigyeléssel kísérlek Titeket ezen a coodálatos úton.</p>
                         </div>
                         <button onclick="toggleBio('bio-hajni', this)" class="text-fonix-gold hover:text-fonix-green font-bold text-sm mt-2 focus:outline-none transition-colors duration-300 flex items-center justify-center mx-auto">
                             Bővebben <i class="fas fa-chevron-down ml-1"></i>
@@ -1119,7 +1136,7 @@
                 <!-- 5. Kovács Kriszta -->
                 <div class="text-center group mt-8">
                     <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
-                         <img src="kriszta.jpg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Kovács Kriszta" class="w-full h-full object-cover">
+                         <img src="kriszta.jpg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Kovács Kriszta" class="w-full h-full object-cover transform-gpu will-change-transform">
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Kovács Kriszta</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Kozmetikus, Testkezelő</p>
@@ -1137,7 +1154,7 @@
                 <!-- 6. Rudolfné Mónika -->
                 <div class="text-center group mt-8">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
-                         <img src="monika.jpg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Rudolfné Herczku Mónika" class="w-full h-full object-cover">
+                         <img src="monika.jpg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Rudolfné Herczku Mónika" class="w-full h-full object-cover transform-gpu will-change-transform">
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Rudolfné Herczku Mónika</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Kéz- és lábápoló, Műköröm építő</p>
@@ -1155,7 +1172,7 @@
                 <!-- 7. Balogh Emese -->
                  <div class="text-center group mt-8">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
-                         <img src="emese.jpg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Balogh Emese" class="w-full h-full object-cover object-[50%_80%]">
+                         <img src="emese.jpg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Balogh Emese" class="w-full h-full object-cover object-[50%_80%] transform-gpu will-change-transform">
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Balogh Emese</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Masszőr</p>
@@ -1173,7 +1190,7 @@
                 <!-- Új munkatárs: Balogh Maya -->
                  <div class="text-center group mt-8">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
-                         <img src="maya.jpg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Balogh Maya" class="w-full h-full object-cover object-top">
+                         <img src="maya.jpg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Balogh Maya" class="w-full h-full object-cover object-top transform-gpu will-change-transform">
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Balogh Maya</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Képzett thai masszőr</p>
@@ -1193,7 +1210,7 @@
                 <!-- 8. Szabolcsi Éva -->
                 <div class="text-center group mt-8">
                     <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
-                        <img src="eva.png" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Kövesiné Szabolcsi Éva" class="w-full h-full object-cover object-top">
+                        <img src="eva.png" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Kövesiné Szabolcsi Éva" class="w-full h-full object-cover object-top transform-gpu will-change-transform">
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Kövesiné Szabolcsi Éva</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Mentálhigiénés szakember</p>
@@ -1213,7 +1230,7 @@
                 <!-- Új munkatárs: Szántó Mária -->
                 <div class="text-center group mt-8">
                     <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
-                        <img src="maria.jpeg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Szántó Mária" class="w-full h-full object-cover object-top">
+                        <img src="maria.jpeg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Szántó Mária" class="w-full h-full object-cover object-top transform-gpu will-change-transform">
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Szántó Mária</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Integratív szemléletű Pszichológiai és párkapcsolati konzulens, coach, veszteségfeldolgozás és gyászterapeuta, csoportvezető, lélekmentor</p>
@@ -1240,7 +1257,7 @@
                 <!-- 9. Kricsfalussy Vali -->
                  <div class="text-center group mt-8">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
-                         <img src="vali.jpg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Kricsfalussy Valéria" class="w-full h-full object-cover">
+                         <img src="vali.jpg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Kricsfalussy Valéria" class="w-full h-full object-cover transform-gpu will-change-transform">
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Kricsfalussy Valéria</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Kineziológus</p>
@@ -1248,7 +1265,7 @@
                     <div class="text-sm text-fonix-dark/80 px-4 text-justify relative">
                         <p class="mb-2">Kricsfalussy Vali vagyok, kineziológus és Családállító terapeuta.</p>
                         <div id="bio-vali" class="hidden">
-                            <p>Mi is az a Családállítás, hogyan zajlik? Minthogy ez egy csoportos foglalkozás, a jelenlevők (változó létszámú csoport) azok, akik a segítő szerepére vállalkoznak, az állítók (akik a problémájukra keresnek választ) és a terapeuta (aki segíti és koordinálja a folyamatot) – a felállítások során a szellemi mező segítségével rendezik a teret, mozgással, a megélt érzésük kommunikálásával segítve az állítót az oldáshoz való eljutásban, megértésben. A családfelállítást nem a terapeuta irányítja, hanem ez a morfogenetikus szellemi mező. Amennyiben a segítők és a terapeuta is képes elvárások nélkül, saját érzéseit, gondolatait, egóját lecsöndesítve átadnia magát a mező által lecsatornázott információknak, érzéseknek, gyönyörű képek mutatkoznak meg, melyek segítik az állító problémájának feloldását.</p>
+                            <p>Mi is az a Családállítás, hogyan zajlik? Minthogy ez egy csoportos foglalkozás, a jelenlevők (változó létszámú csoport) azok, aki a segítő szerepére vállalkoznak, az állítók (akik a problémájukra keresnek választ) és a terapeuta (aki segíti és koordinálja a folyamatot) – a felállítások során a szellemi mező segítségével rendezik a teret, mozgással, a megélt érzésük kommunikálásával segítve az állítót az oldáshoz való eljutásban, megértésben. A családfelállítást nem a terapeuta irányítja, hanem ez a morfogenetikus szellemi mező. Amennyiben a segítők és a terapeuta is képes elvárások nélkül, saját érzéseit, gondolatait, egóját lecsöndesítve átadnia magát a mező által lecsatornázott információknak, érzéseknek, gyönyörű képek mutatkoznak meg, melyek segítik az állító problémájának feloldását.</p>
                         </div>
                         <button onclick="toggleBio('bio-vali', this)" class="text-fonix-gold hover:text-fonix-green font-bold text-sm mt-2 focus:outline-none transition-colors duration-300 flex items-center justify-center mx-auto">
                             Bővebben <i class="fas fa-chevron-down ml-1"></i>
@@ -1259,7 +1276,7 @@
                 <!-- 10. Magyar Edina (Marketing) -->
                 <div class="text-center group mt-8">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg group-hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200">
-                         <img src="edina_marketing.jpg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Magyar Edina Marketing" class="w-full h-full object-cover object-top">
+                         <img src="edina_marketing.jpg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Magyar Edina Marketing" class="w-full h-full object-cover object-top transform-gpu will-change-transform">
                     </div>
                     <h3 class="text-xl font-bold text-fonix-green">Magyar Edina</h3>
                     <p class="text-fonix-gold font-serif italic mb-2">Közösségi média kommunikációs és stratégiai szakértő</p>
@@ -1281,6 +1298,151 @@
             <div class="text-center mt-12 text-fonix-dark/70">
                 <p>További szakértőnk: <span class="font-bold text-fonix-green">Németh László</span> (Hangfürdő)</p>
             </div>
+        </div>
+    </section>
+
+    <!-- Terembérlés Szakasz -->
+    <section id="teremberles" class="py-20 bg-[#fcfbf7] border-t border-fonix-gold/20">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold text-fonix-green mb-4">Bérelhető Helyiségek</h2>
+                <div class="w-24 h-1 bg-fonix-gold mx-auto"></div>
+                <p class="mt-4 text-fonix-dark/70 font-medium">Kiválóan felszerelt, igényes terek rendezvényekhez és szépségipari vagy terápiás tevékenységekhez.</p>
+            </div>
+
+            <!-- Rendezvényekre bérelhető termeink -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-serif font-bold text-fonix-green mb-8 flex items-center gap-3 border-b border-fonix-gold/30 pb-2">
+                    <i class="fas fa-users text-fonix-gold"></i> Rendezvényekre bérelhető termeink
+                </h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    
+                    <!-- Terem 1.1 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-fonix-bg group">
+                        <div class="grid grid-cols-3 gap-1 bg-fonix-bg overflow-hidden relative h-64 sm:h-72 rounded-t-xl">
+                            <!-- Nagy kép (bal oldal) -->
+                            <div class="col-span-2 overflow-hidden relative h-full">
+                                <img src="terasz1.jpeg" onerror="this.src='https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=800&q=80'" alt="Teraszkapcsolatos terem 1" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition duration-500 transform-gpu will-change-transform">
+                            </div>
+                            <!-- Két kisebb kép (jobb oldal) -->
+                            <div class="col-span-1 grid grid-rows-2 gap-1 h-full">
+                                <div class="overflow-hidden relative h-full w-full">
+                                    <img src="terasz2.jpg" onerror="this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=400&q=80'" alt="Teraszkapcsolatos terem 2" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition duration-500 transform-gpu will-change-transform">
+                                </div>
+                                <div class="overflow-hidden relative h-full w-full">
+                                    <img src="terasz3.jpg" onerror="this.src='https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=400&q=80'" alt="Teraszkapcsolatos terem 3" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition duration-500 transform-gpu will-change-transform">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col h-full">
+                            <h4 class="text-lg font-bold text-fonix-green mb-3">Teraszkapcsolatos, reprezentatív terem</h4>
+                            <p class="text-sm text-fonix-dark/80 leading-relaxed mb-4 flex-grow">
+                                Kb. 40 nm-es terem, cserépkályhával, hideg burkolattal. Bérelhető rendezvényekre, családi összejövetelekre, táncos rendezvényekre, workshop-okra.
+                            </p>
+                            <div class="flex items-center gap-2 text-xs font-bold text-fonix-gold bg-fonix-bg p-3 rounded border border-fonix-gold/20">
+                                <i class="fas fa-chair text-lg"></i> 
+                                <span>Ültetve kényelmes maximum 20 főnek,<br>ültetés nélkül 30 főnek.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terem 1.2 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-fonix-bg group">
+                        <div class="grid grid-cols-3 gap-1 bg-fonix-bg overflow-hidden relative h-64 sm:h-72 rounded-t-xl">
+                            <!-- Nagy kép (bal oldal) -->
+                            <div class="col-span-2 overflow-hidden relative h-full">
+                                <img src="teto1.jpg" onerror="this.src='https://images.unsplash.com/photo-1588286840104-a4b8eb4968bc?auto=format&fit=crop&w=800&q=80'" alt="Tetőtéri terem 1" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition duration-500 transform-gpu will-change-transform">
+                            </div>
+                            <!-- Két kisebb kép (jobb oldal) -->
+                            <div class="col-span-1 grid grid-rows-2 gap-1 h-full">
+                                <div class="overflow-hidden relative h-full w-full">
+                                    <img src="teto2.jpg" onerror="this.src='https://images.unsplash.com/photo-1545224144-b38cd30dd49f?auto=format&fit=crop&w=400&q=80'" alt="Tetőtéri terem 2" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition duration-500 transform-gpu will-change-transform">
+                                </div>
+                                <div class="overflow-hidden relative h-full w-full">
+                                    <img src="teto3.jpg" onerror="this.src='https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=400&q=80'" alt="Tetőtéri terem 3" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition duration-500 transform-gpu will-change-transform">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col h-full">
+                            <h4 class="text-lg font-bold text-fonix-green mb-3">Tetőtéri, melegburkolatos terem</h4>
+                            <p class="text-sm text-fonix-dark/80 leading-relaxed mb-4 flex-grow">
+                                Kb. 50 nm-es terem. Kiválóan alkalmas bérelhető alkalmi rendezvényekre, jóga workshopokra, vagy akár heti több napra rendszeres elfoglaltságra.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Szépségipari vagy mentálhigiéniás tevékenységre -->
+            <div>
+                <h3 class="text-2xl font-serif font-bold text-fonix-green mb-8 flex items-center gap-3 border-b border-fonix-gold/30 pb-2">
+                    <i class="fas fa-spa text-fonix-gold"></i> Szépségipari vagy mentálhigiéniás tevékenységre bérelhető szobák
+                </h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    
+                    <!-- Terem 2.1 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-fonix-bg group">
+                        <div class="h-56 bg-fonix-bg overflow-hidden relative">
+                            <!-- A kép src-je terem3.png -->
+                            <img src="terem3.png" onerror="this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80'" alt="Műkörömépítő vagy pedikűrös szoba" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500 transform-gpu will-change-transform">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold text-fonix-green mb-3">Kéz- és lábápoló szoba</h4>
+                            <p class="text-sm text-fonix-dark/80 leading-relaxed mb-4">
+                                Kifejezetten műkörömépítőnek, vagy pedikűrösnek kiadó szoba, szakmai tevékenység végzésére.
+                            </p>
+                            <div class="inline-flex items-center gap-2 text-xs font-bold text-fonix-green bg-fonix-green/10 px-3 py-1.5 rounded-full">
+                                <i class="far fa-calendar-alt"></i> Heti maximum 4 napra
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terem 2.2 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-fonix-bg group">
+                        <div class="h-56 bg-fonix-bg overflow-hidden relative">
+                            <!-- A kép src-je terem4.jpg -->
+                            <img src="terem4.jpg" onerror="this.src='https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=800&q=80'" alt="Masszázs szoba" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500 transform-gpu will-change-transform">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold text-fonix-green mb-3">Masszázs szoba</h4>
+                            <p class="text-sm text-fonix-dark/80 leading-relaxed mb-4">
+                                Csendes, nyugodt környezetet biztosító masszázs tevékenységre kiadó szoba.
+                            </p>
+                            <div class="inline-flex items-center gap-2 text-xs font-bold text-fonix-green bg-fonix-green/10 px-3 py-1.5 rounded-full mt-auto">
+                                <i class="far fa-calendar-alt"></i> Heti maximum 4 napra
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terem 2.3 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-fonix-bg group">
+                        <div class="h-56 bg-fonix-bg overflow-hidden relative">
+                            <!-- A kép src-je terem5.png -->
+                            <img src="terem5.png" onerror="this.src='https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80'" alt="Konzultációs szoba" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500 transform-gpu will-change-transform">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold text-fonix-green mb-3">Konzultációs és terápiás szoba</h4>
+                            <p class="text-sm text-fonix-dark/80 leading-relaxed mb-4">
+                                Tanácsadásra, konzultációra, mentálhigiéniás beszélgetésre, vagy egyéni jóga foglalkozásokra bérelhető szoba.
+                            </p>
+                            <div class="inline-flex items-center gap-2 text-xs font-bold text-fonix-green bg-fonix-green/10 px-3 py-1.5 rounded-full">
+                                <i class="far fa-calendar-alt"></i> Heti maximum 4 napra
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Call to action gomb terembérléshez -->
+            <div class="mt-16 text-center">
+                <p class="text-fonix-dark/70 mb-4 font-medium">További információkért és terembérléssel kapcsolatos egyeztetésért keress minket bizalommal!</p>
+                <a href="tel:+36204654525" class="inline-flex items-center gap-2 bg-fonix-gold text-fonix-bg font-bold px-8 py-3 rounded hover:bg-fonix-green transition duration-300 shadow-md">
+                    <i class="fas fa-phone-alt"></i> Kapcsolatfelvétel: 06 20 465 4525
+                </a>
+            </div>
+
         </div>
     </section>
 
