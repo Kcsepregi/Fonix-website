@@ -89,14 +89,14 @@
         }
     </style>
 </head>
-<body class="bg-fonix-bg text-fonix-bg font-sans">
+<body class="bg-fonix-bg text-fonix-dark font-sans">
 
     <!-- Navigation -->
     <nav class="bg-fonix-bg text-fonix-dark fixed w-full z-50 shadow-lg transition-all duration-300" id="navbar">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="#" class="flex items-center">
                 <!-- Fallback szöveges logó, ha a kép nem töltődik be -->
-                <img src="logo.png" alt="Főnix Vitalitás Központ" class="h-20 md:h-28 object-contain mix-blend-multiply" onerror="this.outerHTML='<span class=\'text-2xl font-serif font-bold text-fonix-green\'>Főnix</span>'">
+                <img src="logo.png" alt="Főnix Vitalitás Központ" class="h-14 md:h-20 py-1 object-contain mix-blend-multiply" onerror="this.outerHTML='<span class=\'text-2xl font-serif font-bold text-fonix-green\'>Főnix</span>'">
             </a>
             <div class="hidden lg:flex space-x-6 items-center text-sm uppercase tracking-widest font-bold">
                 <a href="#rolunk" class="hover:text-fonix-green transition">Rólunk</a>
@@ -125,12 +125,12 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative h-screen min-h-[600px] flex items-center justify-center bg-fixed bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');">
+    <header class="relative h-screen min-h-[600px] flex items-center justify-center bg-fixed bg-cover bg-center" style="background-image: url('fonix.jpg');">
         <!-- Háttér halványítása 70%-os réteggel -->
         <div class="absolute inset-0 bg-white/70"></div>
         <div class="absolute inset-0 bg-gradient-to-b from-fonix-green/10 to-fonix-green/40"></div>
         
-        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-16 md:mt-0">
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-28 md:mt-32">
             <div class="mb-8 text-fonix-gold text-xl md:text-2xl font-bold tracking-[0.2em] uppercase animate-fade-in-up strong-text-shadow">Pomáz szívében</div>
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-fonix-green mb-12 leading-tight strong-text-shadow">
                 Ahol a <span class="font-script text-fonix-gold text-6xl md:text-8xl font-normal lowercase px-2 inline-block -rotate-2">lendület</span>
@@ -212,7 +212,7 @@
                                         <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opció:</div>
                                         <div class="flex justify-between gap-8 text-sm">
                                             <div class="flex flex-col">
-                                                <span>10 alkalom:</span>
+                                                <span class="font-medium text-fonix-dark">10 alkalom:</span>
                                                 <span class="text-[10px] text-fonix-dark/50 italic">Minden 3000 Ft-os órára érvényes</span>
                                             </div>
                                             <span class="font-bold text-fonix-green">26.500 Ft</span>
@@ -233,7 +233,7 @@
                                     </div>
                                     <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
                                         <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opció:</div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">36.000 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">36.000 Ft</span></div>
                                     </div>
                                 </div>
                                 <div class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify space-y-3">
@@ -253,6 +253,45 @@
                                         <li>támogatja és kiegészíti női önismeretben való elmélyülést, segít kapcsolódni a saját testünkhöz</li>
                                     </ul>
                                 </div>
+                            </div>
+
+                            <!-- Stretching -->
+                            <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-sans text-fonix-green font-bold">Stretching <span class="text-sm font-sans text-fonix-dark/70 font-normal">(60 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">3.000 Ft <span class="text-xs text-fonix-dark/50 font-normal">/ alkalom</span></div>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
+                                        <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opció:</div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">26.500 Ft</span></div>
+                                    </div>
+                                </div>
+                                <div class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify space-y-2">
+                                    <p>
+                                        Moderntáncos technikán és mozdulatokon alapú, flow nyújtás és erősítés. Funkcionális alapokon nyújtunk, hiszen a mobilitáshoz az erő is hozzátartozik. Az erősítés és a nyújtás mellett rövid mozdulatsort is tanulunk, amit mindig külön zenére táncolunk. Az óra végén relaxálunk.
+                                    </p>
+                                    <p>
+                                        Alacsony intenzitású óra, amire szeretettel várok kezdőket, haladókat, sportolókat, akik szeretnének dolgozni a mobilitásukon, illetve sérüléssel küzdőket is, akik szeretnének tudatosan erősödni.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Step aerobik -->
+                            <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-sans text-fonix-green font-bold">Step aerobik <span class="text-sm font-sans text-fonix-dark/70 font-normal">(60 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">3.000 Ft <span class="text-xs text-fonix-dark/50 font-normal">/ alkalom</span></div>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
+                                        <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opció:</div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">26.500 Ft</span></div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
+                                    A bemelegítést követő kardiós rész után váltva erősítünk és rövid, energikus koreográfiákat tanulunk. Mindkét blokkhoz a step padot használjuk. Közepes intenzitású óra, amire szeretettel várok kezdőket és haladókat is egyaránt.
+                                </p>
                             </div>
 
                             <!-- Fit Jance -->
@@ -275,7 +314,7 @@
                                     </div>
                                     <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
                                         <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opció:</div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">36.000 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">36.000 Ft</span></div>
                                     </div>
                                 </div>
                                 <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
@@ -292,7 +331,7 @@
                                     </div>
                                     <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
                                         <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opció:</div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">36.000 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">36.000 Ft</span></div>
                                     </div>
                                 </div>
                                 <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
@@ -308,7 +347,7 @@
                                     </div>
                                     <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
                                         <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opció:</div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">67.500 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">67.500 Ft</span></div>
                                     </div>
                                 </div>
                                 <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
@@ -343,8 +382,8 @@
                                     </div>
                                     <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
                                         <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opciók:</div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">38.500 Ft</span></div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">69.900 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">5 alkalom:</span> <span class="font-bold text-fonix-green">38.500 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">69.900 Ft</span></div>
                                     </div>
                                 </div>
                                 <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
@@ -359,8 +398,8 @@
                                     </div>
                                     <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
                                         <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opciók:</div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">33.900 Ft</span></div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">63.900 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">5 alkalom:</span> <span class="font-bold text-fonix-green">33.900 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">63.900 Ft</span></div>
                                     </div>
                                 </div>
                                 <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
@@ -375,7 +414,7 @@
                                     </div>
                                     <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
                                         <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opciók:</div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>4 alkalom:</span> <span class="font-bold text-fonix-green">59.900 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">4 alkalom:</span> <span class="font-bold text-fonix-green">59.900 Ft</span></div>
                                     </div>
                                 </div>
                                 <div class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify space-y-2">
@@ -391,8 +430,8 @@
                                     </div>
                                     <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
                                         <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opciók:</div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">38.500 Ft</span></div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">69.900 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">5 alkalom:</span> <span class="font-bold text-fonix-green">38.500 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">69.900 Ft</span></div>
                                     </div>
                                 </div>
                                 <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
@@ -441,7 +480,7 @@
                                             <div class="text-fonix-green font-bold text-xl">18.000 Ft <span class="text-xs text-fonix-dark/50 font-normal">/ alkalom</span></div>
                                         </div>
                                         <div class="flex justify-between gap-8 text-sm w-full md:w-auto border-t md:border-t-0 md:border-l border-fonix-bg pt-2 md:pt-0 md:pl-4">
-                                            <span>4 alkalmas bérlet:</span> <span class="font-bold text-fonix-green">64.800 Ft</span>
+                                            <span class="font-medium text-fonix-dark">4 alkalmas bérlet:</span> <span class="font-bold text-fonix-green">64.800 Ft</span>
                                         </div>
                                     </div>
                                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white p-4 rounded border border-fonix-bg shadow-sm">
@@ -450,7 +489,7 @@
                                             <div class="text-fonix-green font-bold text-xl">25.000 Ft <span class="text-xs text-fonix-dark/50 font-normal">/ alkalom</span></div>
                                         </div>
                                         <div class="flex justify-between gap-8 text-sm w-full md:w-auto border-t md:border-t-0 md:border-l border-fonix-bg pt-2 md:pt-0 md:pl-4">
-                                            <span>4 alkalmas bérlet:</span> <span class="font-bold text-fonix-green">90.000 Ft</span>
+                                            <span class="font-medium text-fonix-dark">4 alkalmas bérlet:</span> <span class="font-bold text-fonix-green">90.000 Ft</span>
                                         </div>
                                     </div>
                                     <div class="flex flex-col px-2 mt-2 gap-1">
@@ -472,7 +511,7 @@
                                     </div>
                                     <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:max-w-xs">
                                         <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opció:</div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>4 alkalom:</span> <span class="font-bold text-fonix-green">59.900 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">4 alkalom:</span> <span class="font-bold text-fonix-green">59.900 Ft</span></div>
                                     </div>
                                 </div>
                                 <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
@@ -489,8 +528,8 @@
                                     </div>
                                     <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
                                         <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opciók:</div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">67.500 Ft</span></div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">135.000 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">5 alkalom:</span> <span class="font-bold text-fonix-green">67.500 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">135.000 Ft</span></div>
                                     </div>
                                 </div>
                                 <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
@@ -507,8 +546,8 @@
                                     </div>
                                     <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
                                         <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opciók:</div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">58.500 Ft</span></div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">117.000 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">5 alkalom:</span> <span class="font-bold text-fonix-green">58.500 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">117.000 Ft</span></div>
                                     </div>
                                 </div>
                                 <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
@@ -525,8 +564,8 @@
                                     </div>
                                     <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
                                         <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opciók:</div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">58.500 Ft</span></div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">117.000 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">5 alkalom:</span> <span class="font-bold text-fonix-green">58.500 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">117.000 Ft</span></div>
                                     </div>
                                 </div>
                                 <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
@@ -544,8 +583,8 @@
                                             <div class="text-fonix-green font-bold text-xl">15.000 Ft <span class="text-xs text-fonix-dark/50 font-normal">/ alkalom</span></div>
                                         </div>
                                         <div class="flex flex-col gap-1 w-full md:w-auto border-t md:border-t-0 md:border-l border-fonix-bg pt-2 md:pt-0 md:pl-4">
-                                            <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">67.500 Ft</span></div>
-                                            <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">135.000 Ft</span></div>
+                                            <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">5 alkalom:</span> <span class="font-bold text-fonix-green">67.500 Ft</span></div>
+                                            <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">135.000 Ft</span></div>
                                         </div>
                                     </div>
                                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white p-4 rounded border border-fonix-bg shadow-sm">
@@ -554,8 +593,8 @@
                                             <div class="text-fonix-green font-bold text-xl">22.000 Ft <span class="text-xs text-fonix-dark/50 font-normal">/ alkalom</span></div>
                                         </div>
                                         <div class="flex flex-col gap-1 w-full md:w-auto border-t md:border-t-0 md:border-l border-fonix-bg pt-2 md:pt-0 md:pl-4">
-                                            <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">99.000 Ft</span></div>
-                                            <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">198.000 Ft</span></div>
+                                            <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">5 alkalom:</span> <span class="font-bold text-fonix-green">99.000 Ft</span></div>
+                                            <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">198.000 Ft</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -573,8 +612,8 @@
                                     </div>
                                     <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
                                         <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opciók:</div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">38.300 Ft</span></div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">76.500 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">5 alkalom:</span> <span class="font-bold text-fonix-green">38.300 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">76.500 Ft</span></div>
                                     </div>
                                 </div>
                                 <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
@@ -591,8 +630,8 @@
                                     </div>
                                     <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
                                         <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opciók:</div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">67.500 Ft</span></div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">135.000 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">5 alkalom:</span> <span class="font-bold text-fonix-green">67.500 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">135.000 Ft</span></div>
                                     </div>
                                 </div>
                                 <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
@@ -610,8 +649,8 @@
                                             <div class="text-fonix-green font-bold text-xl">13.000 Ft <span class="text-xs text-fonix-dark/50 font-normal">/ alkalom</span></div>
                                         </div>
                                         <div class="flex flex-col gap-1 w-full md:w-auto border-t md:border-t-0 md:border-l border-fonix-bg pt-2 md:pt-0 md:pl-4">
-                                            <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">58.500 Ft</span></div>
-                                            <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">117.000 Ft</span></div>
+                                            <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">5 alkalom:</span> <span class="font-bold text-fonix-green">58.500 Ft</span></div>
+                                            <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">117.000 Ft</span></div>
                                         </div>
                                     </div>
                                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white p-4 rounded border border-fonix-bg shadow-sm">
@@ -620,8 +659,8 @@
                                             <div class="text-fonix-green font-bold text-xl">18.000 Ft <span class="text-xs text-fonix-dark/50 font-normal">/ alkalom</span></div>
                                         </div>
                                         <div class="flex flex-col gap-1 w-full md:w-auto border-t md:border-t-0 md:border-l border-fonix-bg pt-2 md:pt-0 md:pl-4">
-                                            <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">81.000 Ft</span></div>
-                                            <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">162.000 Ft</span></div>
+                                            <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">5 alkalom:</span> <span class="font-bold text-fonix-green">81.000 Ft</span></div>
+                                            <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">162.000 Ft</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -639,8 +678,8 @@
                                     </div>
                                     <div class="bg-white p-3 rounded border border-gray-100 shadow-sm w-full md:w-auto">
                                         <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opciók:</div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">67.500 Ft</span></div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">135.000 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">5 alkalom:</span> <span class="font-bold text-fonix-green">67.500 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">135.000 Ft</span></div>
                                     </div>
                                 </div>
                                 <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
@@ -657,8 +696,8 @@
                                     </div>
                                     <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
                                         <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opciók:</div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>5 alkalom:</span> <span class="font-bold text-fonix-green">33.750 Ft</span></div>
-                                        <div class="flex justify-between gap-8 text-sm"><span>10 alkalom:</span> <span class="font-bold text-fonix-green">67.500 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">5 alkalom:</span> <span class="font-bold text-fonix-green">33.750 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">67.500 Ft</span></div>
                                     </div>
                                 </div>
                                 <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
@@ -676,8 +715,8 @@
                                             <span class="text-fonix-green font-bold">3.000 Ft</span>
                                         </div>
                                         <div class="text-xs w-full md:w-auto text-fonix-dark/70 flex justify-between md:flex-col gap-2 md:gap-0 mt-2 md:mt-0">
-                                            <div>5 alk: <span class="text-fonix-green font-bold">13.900 Ft</span></div>
-                                            <div>10 alk: <span class="text-fonix-green font-bold">26.500 Ft</span></div>
+                                            <div class="font-medium text-fonix-dark">5 alk: <span class="text-fonix-green font-bold">13.900 Ft</span></div>
+                                            <div class="font-medium text-fonix-dark">10 alk: <span class="text-fonix-green font-bold">26.500 Ft</span></div>
                                         </div>
                                     </div>
                                     <div class="flex flex-col md:flex-row justify-between items-center gap-2 bg-white p-3 rounded border border-fonix-bg shadow-sm">
@@ -686,8 +725,8 @@
                                             <span class="text-fonix-green font-bold">6.500 Ft</span>
                                         </div>
                                         <div class="text-xs w-full md:w-auto text-fonix-dark/70 flex justify-between md:flex-col gap-2 md:gap-0 mt-2 md:mt-0">
-                                            <div>5 alk: <span class="text-fonix-green font-bold">32.000 Ft</span></div>
-                                            <div>10 alk: <span class="text-fonix-green font-bold">58.500 Ft</span></div>
+                                            <div class="font-medium text-fonix-dark">5 alk: <span class="text-fonix-green font-bold">32.000 Ft</span></div>
+                                            <div class="font-medium text-fonix-dark">10 alk: <span class="text-fonix-green font-bold">58.500 Ft</span></div>
                                         </div>
                                     </div>
                                     <div class="flex flex-col md:flex-row justify-between items-center gap-2 bg-white p-3 rounded border border-fonix-bg shadow-sm">
@@ -696,8 +735,8 @@
                                             <span class="text-fonix-green font-bold">11.000 Ft</span>
                                         </div>
                                         <div class="text-xs w-full md:w-auto text-fonix-dark/70 flex justify-between md:flex-col gap-2 md:gap-0 mt-2 md:mt-0">
-                                            <div>5 alk: <span class="text-fonix-green font-bold">49.500 Ft</span></div>
-                                            <div>10 alk: <span class="text-fonix-green font-bold">99.000 Ft</span></div>
+                                            <div class="font-medium text-fonix-dark">5 alk: <span class="text-fonix-green font-bold">49.500 Ft</span></div>
+                                            <div class="font-medium text-fonix-dark">10 alk: <span class="text-fonix-green font-bold">99.000 Ft</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -748,6 +787,44 @@
                                         <li><strong>Száraz masszázs:</strong> Hagyományosan olaj nélkül, kényelmes pamutruhában végzik egy földre helyezett matracon.</li>
                                         <li><strong>Akupresszúra:</strong> Erőteljes nyomásokkal dolgozik a test pontjain, ami serkenti a vérkeringést és a nyirokkeringést.</li>
                                     </ul>
+                                </div>
+                            </div>
+
+                            <!-- 15. Thai masszázs (+talp masszázs) -->
+                            <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col gap-4 mb-4">
+                                    <h4 class="text-lg font-sans text-fonix-green font-bold mb-2">Thai masszázs (+talp masszázs)</h4>
+                                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white p-4 rounded border border-fonix-bg shadow-sm">
+                                        <div>
+                                            <span class="font-bold text-fonix-dark/90">60 perc</span>
+                                            <div class="text-fonix-green font-bold text-xl">13.000 Ft <span class="text-xs text-fonix-dark/50 font-normal">/ alkalom</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white p-4 rounded border border-fonix-bg shadow-sm">
+                                        <div>
+                                            <span class="font-bold text-fonix-dark/90">90 perc</span>
+                                            <div class="text-fonix-green font-bold text-xl">18.000 Ft <span class="text-xs text-fonix-dark/50 font-normal">/ alkalom</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 16. Thai masszázs (fej- nyak- hát masszázs) -->
+                            <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col gap-4 mb-4">
+                                    <h4 class="text-lg font-sans text-fonix-green font-bold mb-2">Thai masszázs (fej- nyak- hát masszázs)</h4>
+                                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white p-4 rounded border border-fonix-bg shadow-sm">
+                                        <div>
+                                            <span class="font-bold text-fonix-dark/90">60 perc</span>
+                                            <div class="text-fonix-green font-bold text-xl">13.000 Ft <span class="text-xs text-fonix-dark/50 font-normal">/ alkalom</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white p-4 rounded border border-fonix-bg shadow-sm">
+                                        <div>
+                                            <span class="font-bold text-fonix-dark/90">90 perc</span>
+                                            <div class="text-fonix-green font-bold text-xl">18.000 Ft <span class="text-xs text-fonix-dark/50 font-normal">/ alkalom</span></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1115,6 +1192,26 @@
                     </div>
                 </div>
 
+                <!-- Új munkatárs: Welther Hermina -->
+                <div class="text-center mt-8">
+                     <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200 group">
+                         <img src="hermina.jpeg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Welther Hermina" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
+                    </div>
+                    <h3 class="text-xl font-bold text-fonix-green">Welther Hermina</h3>
+                    <p class="text-fonix-gold font-serif italic mb-2">Csoportos fitness edző</p>
+                    <div class="text-sm text-fonix-dark/80 px-4 text-justify relative">
+                        <p class="mb-2">Welther Hermina vagyok, csoportos fitness edző.</p>
+                        <div id="bio-hermina" class="hidden">
+                            <p class="mb-2">Korábban közel tíz évig táncoltam, ami megalapozta a sporthoz és mozgáshoz kapcsolódó szeretetemet. Hiszek abban, hogy a sport létfontosságú a mentális és fizikai egészségünk megőrzésében.</p>
+                            <p class="mb-2">Az óraimon nagy hangsúlyt kap a fokozatos terhelés és helyes kivitelezés, fontos számomra a jó hangulat és a biztonságos közeg megteremtése, hogy a vendégeim kikapcsolódhassanak a hétköznapokból és feltöltődhessenek energiával, miközben erősödünk.</p>
+                            <p class="font-bold text-fonix-green text-center">Várlak szeretettel az óráimon!</p>
+                        </div>
+                        <button onclick="toggleBio('bio-hermina', this)" class="text-fonix-gold hover:text-fonix-green font-bold text-sm mt-2 focus:outline-none transition-colors duration-300 flex items-center justify-center mx-auto">
+                            Bővebben <i class="fas fa-chevron-down ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
                 <!-- 4. Hajni -->
                 <div class="text-center mt-8">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200 group">
@@ -1274,8 +1371,11 @@
                     </div>
                 </div>
 
-                <!-- 10. Magyar Edina (Marketing) -->
-                <div class="text-center mt-8">
+            </div>
+
+            <!-- 10. Magyar Edina (Marketing) - Alul középen -->
+            <div class="flex justify-center mt-16">
+                <div class="text-center max-w-xl">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200 group">
                          <img src="edina_marketing.jpg" onerror="this.outerHTML='<div class=\'w-full h-full fallback-avatar\'><i class=\'fas fa-user\'></i></div>'" alt="Magyar Edina Marketing" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
                     </div>
@@ -1294,8 +1394,8 @@
                         </a>
                     </div>
                 </div>
-
             </div>
+
             <div class="text-center mt-12 text-fonix-dark/70">
                 <p>További szakértőnk: <span class="font-bold text-fonix-green">Németh László</span> (Hangfürdő)</p>
             </div>
@@ -1593,4 +1693,3 @@
     </script>
 </body>
 </html>
-
