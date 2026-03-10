@@ -101,9 +101,10 @@
             <div class="hidden lg:flex space-x-6 items-center text-sm uppercase tracking-widest font-bold">
                 <a href="#rolunk" class="hover:text-fonix-green transition">Rólunk</a>
                 <a href="#szolgaltatasok" class="hover:text-fonix-green transition">Szolgáltatások</a>
+                <a href="#orarend" class="hover:text-fonix-green transition">Órarend</a>
                 <a href="#galeria" class="hover:text-fonix-green transition">Galéria</a>
                 <a href="#csapat" class="hover:text-fonix-green transition">Csapat</a>
-                <a href="#teremberles" class="hover:text-fonix-green transition text-fonix-gold">Terembérlés</a>
+                <a href="#teremberles" class="hover:text-fonix-green transition">Terembérlés</a>
                 <a href="#kapcsolat" class="hover:text-fonix-green transition">Kapcsolat</a>
                 <a href="#idopontfoglalas" class="bg-fonix-gold text-fonix-bg px-5 py-2.5 rounded-lg hover:bg-fonix-green hover:text-fonix-bg transition duration-300 font-extrabold shadow-lg transform hover:scale-105 cta-button-pop flex items-center gap-2">
                     <i class="fas fa-calendar-check"></i> IDŐPONTFOGLALÁS
@@ -116,16 +117,17 @@
         <div id="mobile-menu" class="hidden lg:hidden bg-fonix-bg border-t border-fonix-gold transition-all duration-300 max-h-screen overflow-y-auto">
             <a href="#rolunk" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Rólunk</a>
             <a href="#szolgaltatasok" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Szolgáltatások</a>
+            <a href="#orarend" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Órarend</a>
             <a href="#galeria" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Galéria</a>
             <a href="#csapat" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Csapat</a>
-            <a href="#teremberles" class="block px-6 py-3 text-fonix-gold hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Terembérlés</a>
+            <a href="#teremberles" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Terembérlés</a>
             <a href="#kapcsolat" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Kapcsolat</a>
             <a href="#idopontfoglalas" class="block px-6 py-4 bg-fonix-gold text-fonix-bg font-bold text-center mt-2 mx-4 mb-4 rounded" onclick="toggleMobileMenu()">IDŐPONT FOGLALÁS</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative h-screen min-h-[600px] flex items-center justify-center bg-fixed bg-cover bg-center" style="background-image: url('fonix.jpg');">
+    <header class="relative h-screen min-h-[600px] flex items-center justify-center bg-fixed bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');">
         <!-- Háttér halványítása 70%-os réteggel -->
         <div class="absolute inset-0 bg-white/70"></div>
         <div class="absolute inset-0 bg-gradient-to-b from-fonix-green/10 to-fonix-green/40"></div>
@@ -195,18 +197,32 @@
                             </div>
                             <div>
                                 <h3 class="text-xl md:text-2xl font-serif font-bold text-fonix-green">Mozgás</h3>
-                                <p class="text-sm text-fonix-dark/50">Jóga, Fit Jance, Személyi edzés</p>
+                                <p class="text-sm text-fonix-dark/50">Jóga, Csoportos órák, Személyi edzés</p>
                             </div>
                         </div>
                         <i id="icon-cat-mozgas" class="fas fa-chevron-down text-fonix-gold text-xl transition-transform duration-300"></i>
                     </button>
                     <div id="cat-mozgas" class="accordion-content bg-[#fcfbf7]">
                         <div class="px-8 pb-8 pt-6">
+
+                            <!-- Fit Jance -->
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
                                     <div>
-                                        <h4 class="text-lg font-sans text-fonix-green font-bold">Jóga és Csoportos órák <span class="text-sm font-sans text-fonix-dark/70 font-normal block md:inline">(Hatha, Egyéb csoportos)</span></h4>
-                                        <div class="text-fonix-green font-bold text-xl">3.000 Ft <span class="text-xs text-fonix-dark/50 font-normal">/ 60 perc</span></div>
+                                        <h4 class="text-lg font-sans text-fonix-green font-bold">Fit Jance trambulin edzés</h4>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
+                                    A <strong>Fit Jance (Jump & Dance)</strong> egy speciális trambulinos–táncos–fitness mozgásforma, ahol a fejlődés és a mozgás élménnyé válik. Kreatív, változatos órák és zenék, igazi flow-élmény vár, miközben észrevétlenül fejlődsz. Az edzések hangulata olyan, mint egy buli, ahol te vagy a középpontban. A cél az, hogy feltöltődve, pozitív energiával és mosollyal menj haza!
+                                </p>
+                            </div>
+
+                            <!-- Pilates -->
+                            <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-sans text-fonix-green font-bold">Pilates <span class="text-sm font-sans text-fonix-dark/70 font-normal">(60 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">3.000 Ft <span class="text-xs text-fonix-dark/50 font-normal">/ alkalom</span></div>
                                     </div>
                                     <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
                                         <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opció:</div>
@@ -220,7 +236,98 @@
                                     </div>
                                 </div>
                                 <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
-                                    Változatos óratípusaink lehetőségek kínálnak a test és lélek felfrissítésére. A <strong>Hatha jóga</strong> (60p) az ászanák kitartására és a légzésre fókuszál, míg <strong>Csoportos óráink</strong> (60p) a dinamikusabb mozgásformákat kedvelőknek nyújtanak feltöltődést. Bérletünkkel szabadon átjárhatsz a csoportos óratípusok között - kivéve a Fit Jance órákat.
+                                    A pilates a test teljes izomzatát átmozgató, erősítő és nyújtó hatású mozgásforma, amely különösen nagy hangsúlyt fektet a törzsizomzat (core) stabilitására, a helyes testtartás kialakítására és a tudatos légzésre. Minden korosztály számára ajánlott, ízületkímélő edzés.
+                                </p>
+                            </div>
+
+                            <!-- Stretching -->
+                            <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-sans text-fonix-green font-bold">Stretching <span class="text-sm font-sans text-fonix-dark/70 font-normal">(60 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">3.000 Ft <span class="text-xs text-fonix-dark/50 font-normal">/ alkalom</span></div>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
+                                        <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opció:</div>
+                                        <div class="flex justify-between gap-8 text-sm">
+                                            <div class="flex flex-col">
+                                                <span class="font-medium text-fonix-dark">10 alkalom:</span>
+                                                <span class="text-[10px] text-fonix-dark/50 italic">Minden 3000 Ft-os órára érvényes</span>
+                                            </div>
+                                            <span class="font-bold text-fonix-green">26.500 Ft</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify space-y-2">
+                                    <p>
+                                        Moderntáncos technikán és mozdulatokon alapú, flow nyújtás és erősítés. Funkcionális alapokon nyújtunk, hiszen a mobilitáshoz az erő is hozzátartozik. Az alapos bemelegítésbe építjük a saját testsúllyal végzett erősítéseket, amiket izoláltan végzünk. A gyakorlatsorokban ezen kívül gerinctréning és egyensúlygyakorlatok is vannak. Az erősítés és a nyújtás mellett rövid mozdulatsort is tanulunk, amit mindig külön zenére táncolunk. Az óra végén relaxálunk.
+                                    </p>
+                                    <p>
+                                        Alacsony intenzitású óra, amire szeretettel várok kezdőket, haladókat, sportolókat, akik szeretnének dolgozni a mobilitásukon, illetve sérüléssel küzdőket is, akik szeretnének tudatosan erősödni.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Step aerobik -->
+                            <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-sans text-fonix-green font-bold">Step aerobik <span class="text-sm font-sans text-fonix-dark/70 font-normal">(60 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">3.000 Ft <span class="text-xs text-fonix-dark/50 font-normal">/ alkalom</span></div>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
+                                        <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opció:</div>
+                                        <div class="flex justify-between gap-8 text-sm">
+                                            <div class="flex flex-col">
+                                                <span class="font-medium text-fonix-dark">10 alkalom:</span>
+                                                <span class="text-[10px] text-fonix-dark/50 italic">Minden 3000 Ft-os órára érvényes</span>
+                                            </div>
+                                            <span class="font-bold text-fonix-green">26.500 Ft</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
+                                    A step aerobik bemelegítést követő kardiós rész után váltva erősítünk és rövid, energikus koreográfiákat tanulunk. Az erősítésben változatos gyakorlatokat végzünk különböző eszközökkel, a step pad mellett gumiszalaggal és egyéb rugalmas ellenállásokkal is. Mindkét blokkhoz a step padot használjuk, a koreográfiák változatosak, alaplépéseket és nehezebb elemeket is használunk, de mindemellett követhető és élvezetes marad. Közepes intenzitású óra, amire szeretettel várok kezdőket és haladókat is egyaránt.
+                                </p>
+                            </div>
+
+                            <!-- Személyi edzés -->
+                            <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-sans text-fonix-green font-bold">Személyi edzés <span class="text-sm font-sans text-fonix-dark/70 font-normal">(60 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">7.500 Ft <span class="text-xs text-fonix-dark/50 font-normal">/ alkalom</span></div>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
+                                        <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opció:</div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">67.500 Ft</span></div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
+                                    Személyre szabott edzésprogram, amely figyelembe veszi egyéni céljaidat, fittségi állapotodat és esetleges mozgásszervi problémáidat. Szakképzett edzőnk maximális figyelmet fordít a gyakorlatok helyes kivitelezésére, így a fejlődés gyorsabb, biztonságosabb és hatékonyabb, mint az önálló edzés során. Ideális választás újrakezdőknek, vagy specifikus célok (fogyás, erősítés) eléréséhez.
+                                </p>
+                            </div>
+
+                            <!-- Hatha jóga -->
+                            <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                                    <div>
+                                        <h4 class="text-lg font-sans text-fonix-green font-bold">Hatha jóga <span class="text-sm font-sans text-fonix-dark/70 font-normal">(60 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">3.000 Ft <span class="text-xs text-fonix-dark/50 font-normal">/ alkalom</span></div>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
+                                        <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opció:</div>
+                                        <div class="flex justify-between gap-8 text-sm">
+                                            <div class="flex flex-col">
+                                                <span class="font-medium text-fonix-dark">10 alkalom:</span>
+                                                <span class="text-[10px] text-fonix-dark/50 italic">Minden 3000 Ft-os órára érvényes</span>
+                                            </div>
+                                            <span class="font-bold text-fonix-green">26.500 Ft</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
+                                    A Hatha jóga az ászanák kitartására és a légzésre fókuszál. A gyakorlás egyaránt szolgálja a fizikai test egészségét, a vitalitást, és segít a mentális egyensúly megteremtésében. Bérletünkkel szabadon átjárhatsz a csoportos óratípusok között - kivéve a Fit Jance órákat.
                                 </p>
                             </div>
 
@@ -255,57 +362,7 @@
                                 </div>
                             </div>
 
-                            <!-- Stretching -->
-                            <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
-                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
-                                    <div>
-                                        <h4 class="text-lg font-sans text-fonix-green font-bold">Stretching <span class="text-sm font-sans text-fonix-dark/70 font-normal">(60 perc)</span></h4>
-                                        <div class="text-fonix-green font-bold text-xl">3.000 Ft <span class="text-xs text-fonix-dark/50 font-normal">/ alkalom</span></div>
-                                    </div>
-                                    <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
-                                        <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opció:</div>
-                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">26.500 Ft</span></div>
-                                    </div>
-                                </div>
-                                <div class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify space-y-2">
-                                    <p>
-                                        Moderntáncos technikán és mozdulatokon alapú, flow nyújtás és erősítés. Funkcionális alapokon nyújtunk, hiszen a mobilitáshoz az erő is hozzátartozik. Az erősítés és a nyújtás mellett rövid mozdulatsort is tanulunk, amit mindig külön zenére táncolunk. Az óra végén relaxálunk.
-                                    </p>
-                                    <p>
-                                        Alacsony intenzitású óra, amire szeretettel várok kezdőket, haladókat, sportolókat, akik szeretnének dolgozni a mobilitásukon, illetve sérüléssel küzdőket is, akik szeretnének tudatosan erősödni.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Step aerobik -->
-                            <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
-                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
-                                    <div>
-                                        <h4 class="text-lg font-sans text-fonix-green font-bold">Step aerobik <span class="text-sm font-sans text-fonix-dark/70 font-normal">(60 perc)</span></h4>
-                                        <div class="text-fonix-green font-bold text-xl">3.000 Ft <span class="text-xs text-fonix-dark/50 font-normal">/ alkalom</span></div>
-                                    </div>
-                                    <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
-                                        <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opció:</div>
-                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">26.500 Ft</span></div>
-                                    </div>
-                                </div>
-                                <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
-                                    A bemelegítést követő kardiós rész után váltva erősítünk és rövid, energikus koreográfiákat tanulunk. Mindkét blokkhoz a step padot használjuk. Közepes intenzitású óra, amire szeretettel várok kezdőket és haladókat is egyaránt.
-                                </p>
-                            </div>
-
-                            <!-- Fit Jance -->
-                            <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
-                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
-                                    <div>
-                                        <h4 class="text-lg font-sans text-fonix-green font-bold">Fit Jance trambulin edzés</h4>
-                                    </div>
-                                </div>
-                                <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
-                                    A <strong>Fit Jance (Jump & Dance)</strong> egy speciális trambulinos–táncos–fitness mozgásforma, ahol a fejlődés és a mozgás élménnyé válik. Kreatív, változatos órák és zenék, igazi flow-élmény vár, miközben észrevétlenül fejlődsz. Az edzések hangulata olyan, mint egy buli, ahol te vagy a középpontban. A cél az, hogy feltöltődve, pozitív energiával és mosollyal menj haza!
-                                </p>
-                            </div>
-
+                            <!-- Kismama jóga -->
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
                                     <div>
@@ -339,21 +396,6 @@
                                 </p>
                             </div>
 
-                            <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
-                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
-                                    <div>
-                                        <h4 class="text-lg font-sans text-fonix-green font-bold">Személyi edzés <span class="text-sm font-sans text-fonix-dark/70 font-normal">(60 perc)</span></h4>
-                                        <div class="text-fonix-green font-bold text-xl">7.500 Ft <span class="text-xs text-fonix-dark/50 font-normal">/ alkalom</span></div>
-                                    </div>
-                                    <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
-                                        <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opció:</div>
-                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">67.500 Ft</span></div>
-                                    </div>
-                                </div>
-                                <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
-                                    Személyre szabott edzésprogram, amely figyelembe veszi egyéni céljaidat, fittségi állapotodat és esetleges mozgásszervi problémáidat. Szakképzett edzőnk maximális figyelmet fordít a gyakorlatok helyes kivitelezésére, így a fejlődés gyorsabb, biztonságosabb és hatékonyabb, mint az önálló edzés során. Ideális választás újrakezdőknek, vagy specifikus célok (fogyás, erősítés) eléréséhez.
-                                </p>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -607,13 +649,13 @@
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
                                     <div>
-                                        <h4 class="text-lg font-sans text-fonix-green font-bold">Arcmasszázs <span class="text-sm font-sans text-fonix-dark/70 font-normal">(40 perc)</span></h4>
-                                        <div class="text-fonix-green font-bold text-xl">8.500 Ft <span class="text-xs text-fonix-dark/50 font-normal">/ alkalom</span></div>
+                                        <h4 class="text-lg font-sans text-fonix-green font-bold">Arcmasszázs <span class="text-sm font-sans text-fonix-dark/70 font-normal">(30 perc)</span></h4>
+                                        <div class="text-fonix-green font-bold text-xl">7.500 Ft <span class="text-xs text-fonix-dark/50 font-normal">/ alkalom</span></div>
                                     </div>
                                     <div class="bg-white p-3 rounded border border-fonix-bg shadow-sm w-full md:w-auto">
                                         <div class="text-sm font-bold text-fonix-dark/90 mb-1 border-b border-fonix-bg pb-1">Bérlet opciók:</div>
-                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">5 alkalom:</span> <span class="font-bold text-fonix-green">38.300 Ft</span></div>
-                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">76.500 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">5 alkalom:</span> <span class="font-bold text-fonix-green">33.750 Ft</span></div>
+                                        <div class="flex justify-between gap-8 text-sm"><span class="font-medium text-fonix-dark">10 alkalom:</span> <span class="font-bold text-fonix-green">67.500 Ft</span></div>
                                     </div>
                                 </div>
                                 <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
@@ -1017,7 +1059,7 @@
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
                                     <div>
                                         <h4 class="text-lg font-sans text-fonix-green font-bold">Hangfürdő <span class="text-sm font-sans text-fonix-dark/70 font-normal">(90 perc)</span></h4>
-                                        <div class="text-fonix-green font-bold text-xl uppercase tracking-wider">Adomány alapú</div>
+                                        <div class="text-fonix-green font-medium text-lg">Adomány alapú</div>
                                     </div>
                                 </div>
                                 <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
@@ -1043,7 +1085,7 @@
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
                                     <div>
                                         <h4 class="text-lg font-sans text-fonix-green font-bold">Mentálhigiéniás tanácsadás <span class="text-sm font-sans text-fonix-dark/70 font-normal">(60 perc)</span></h4>
-                                        <div class="text-fonix-green font-bold text-xl">Egyéni árazás</div>
+                                        <div class="text-fonix-green font-medium text-base">Egyéni árazás</div>
                                     </div>
                                 </div>
                                 <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
@@ -1055,6 +1097,20 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Órarend -->
+    <section id="orarend" class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-serif font-bold text-fonix-green mb-4">Órarend</h2>
+                <div class="w-24 h-1 bg-fonix-gold mx-auto"></div>
+                <p class="mt-4 text-fonix-dark/70 font-medium">Aktuális csoportos óráink beosztása</p>
+            </div>
+            <div class="flex justify-center">
+                <img src="orarend.jpg" onerror="this.src='https://placehold.co/1200x800/f5f1e8/0f8514?text=Órarend+Hamarosan&font=playfair-display'" alt="Főnix Vitalitás Központ Órarend" class="w-full max-w-4xl h-auto rounded-xl shadow-2xl border border-fonix-gold/30">
             </div>
         </div>
     </section>
