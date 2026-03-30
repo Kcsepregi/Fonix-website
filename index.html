@@ -93,29 +93,6 @@
 </head>
 <body class="bg-fonix-bg text-fonix-dark font-sans">
 
-    <!-- Nyílt Nap Popup -->
-    <div id="nyiltNapPopup" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 hidden opacity-0 transition-opacity duration-500">
-        <div class="relative bg-fonix-bg rounded-xl shadow-2xl max-w-lg w-full mx-4 overflow-hidden transform scale-95 transition-transform duration-500" id="popupContent">
-            <!-- Close button -->
-            <button onclick="closePopup()" class="absolute top-3 right-3 bg-black/50 hover:bg-fonix-green text-white rounded-full w-8 h-8 flex items-center justify-center transition-colors z-10 focus:outline-none" aria-label="Bezárás">
-                <i class="fas fa-times"></i>
-            </button>
-            
-            <!-- Popup Image -->
-            <a href="https://docs.google.com/forms/d/1aM4l--7JYMjCr4y-sIlK2Yk6uTbFb7qyAc7gV02RZ2M/edit?ts=69b27c51" target="_blank" class="block">
-                <img src="popup.jpg" alt="Ingyenes Nyílt Nap a Főnix Vitalitás Központban" class="w-full h-auto block object-cover" onerror="this.src='https://placehold.co/600x800/3c3c3c/c6a23a?text=Ny%C3%ADlt+Nap&font=playfair-display'">
-            </a>
-            
-            <!-- CTA Button area -->
-            <div class="p-5 bg-fonix-bg text-center border-t border-fonix-gold/30">
-                <h3 class="text-xl font-bold text-fonix-green mb-3">Várunk szeretettel a Nyílt Napunkon!</h3>
-                <a href="https://docs.google.com/forms/d/1aM4l--7JYMjCr4y-sIlK2Yk6uTbFb7qyAc7gV02RZ2M/edit?ts=69b27c51" target="_blank" class="inline-block bg-fonix-gold text-fonix-bg font-bold px-8 py-3 rounded-lg hover:bg-fonix-green transition duration-300 uppercase tracking-widest shadow-lg transform hover:scale-105 w-full md:w-auto">
-                    <i class="fas fa-edit mr-2"></i> Regisztrálok
-                </a>
-            </div>
-        </div>
-    </div>
-
     <!-- Navigation -->
     <nav class="bg-fonix-bg text-fonix-dark fixed top-0 left-0 w-full z-50 shadow-lg transition-all duration-300" id="navbar">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
@@ -293,7 +270,7 @@
                                 </div>
                                 <div class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify space-y-2">
                                     <p>
-                                        Moderntáncos technikán és mozdulatokon alapú, flow nyújtás és erősítés. Funkcionális alapokon nyújtunk, hiszen a mobilitáshoz az erő is hozzátartozik. Az alapos bemelegítésbe építjük a saját testsúllyal végzett erősítéseket, amiket izoláltan végzünk. A gyakorlatsorokban ezen kívül gerinctréning és egyensúlygyakorlatok is কাশী vannak. Az erősítés és a nyújtás mellett rövid mozdulatsort is tanulunk, amit mindig külön zenére táncolunk. Az óra végén relaxálunk.
+                                        Moderntáncos technikán és mozdulatokon alapú, flow nyújtás és erősítés. Funkcionális alapokon nyújtunk, hiszen a mobilitáshoz az erő is hozzátartozik. Az alapos bemelegítésbe építjük a saját testsúllyal végzett erősítéseket, amiket izoláltan végzünk. A gyakorlatsorokban ezen kívül gerinctréning és egyensúlygyakorlatok is vannak. Az erősítés és a nyújtás mellett rövid mozdulatsort is tanulunk, amit mindig külön zenére táncolunk. Az óra végén relaxálunk.
                                     </p>
                                     <p>
                                         Alacsony intenzitású óra, amire szeretettel várok kezdőket, haladókat, sportolókat, akik szeretnének dolgozni a mobilitásukon, illetve sérüléssel küzdőket is, akik szeretnének tudatosan erősödni.
@@ -1819,49 +1796,6 @@
             } else {
                 btn.innerHTML = 'Kevesebb <i class="fas fa-chevron-up ml-1"></i>';
             }
-        }
-
-        // --- Nyílt Nap Popup Logika ---
-        document.addEventListener('DOMContentLoaded', () => {
-            const popup = document.getElementById('nyiltNapPopup');
-            const popupContent = document.getElementById('popupContent');
-            
-            // Ellenőrizzük, hogy a felhasználó bezárta-e már a popoupot a jelenlegi munkamenetben
-            if (!sessionStorage.getItem('nyiltNapPopupSeen')) {
-                // Kis késleltetés a megjelenítés előtt (1 másodperc)
-                setTimeout(() => {
-                    popup.classList.remove('hidden');
-                    // Rövid idő a böngészőnek, hogy regisztrálja a 'hidden' levételét, így működik a fade-in animáció
-                    setTimeout(() => {
-                        popup.classList.remove('opacity-0');
-                        popupContent.classList.remove('scale-95');
-                        popupContent.classList.add('scale-100');
-                    }, 50);
-                }, 1000); 
-            }
-            
-            // Háttérre kattintva is bezáruljon a popup
-            popup.addEventListener('click', (e) => {
-                if (e.target === popup) {
-                    closePopup();
-                }
-            });
-        });
-
-        function closePopup() {
-            const popup = document.getElementById('nyiltNapPopup');
-            const popupContent = document.getElementById('popupContent');
-            
-            popup.classList.add('opacity-0');
-            popupContent.classList.remove('scale-100');
-            popupContent.classList.add('scale-95');
-            
-            // Megvárjuk a fade-out animáció végét mielőtt elrejtjük (0.5 mp)
-            setTimeout(() => {
-                popup.classList.add('hidden');
-                // Eltároljuk, hogy a user látta és bezárta, így frissítéskor nem ugrik fel újra idegesítően
-                sessionStorage.setItem('nyiltNapPopupSeen', 'true');
-            }, 500); 
         }
     </script>
 </body>
