@@ -98,7 +98,7 @@
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="#" class="flex items-center">
                 <!-- Fallback szöveges logó, ha a kép nem töltődik be -->
-                <img src="logo.png" alt="Főnix Vitalitás Központ" class="h-14 md:h-20 py-1 object-contain mix-blend-multiply" onerror="this.outerHTML='<span class=\'text-2xl font-serif font-bold text-fonix-green\'>Főnix</span>'">
+                <img src="logo.png" alt="Főnix Vitalitás Központ" class="h-20 md:h-24 lg:h-32 py-1 object-contain mix-blend-multiply scale-110 origin-left" onerror="this.outerHTML='<span class=\'text-2xl font-serif font-bold text-fonix-green\'>Főnix</span>'">
             </a>
             <div class="hidden lg:flex space-x-6 items-center text-sm uppercase tracking-widest font-bold">
                 <a href="#rolunk" class="hover:text-fonix-green transition">Rólunk</a>
@@ -129,23 +129,67 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative h-screen min-h-[600px] flex items-center justify-center bg-fixed bg-cover bg-center" style="background-image: url('fonix.jpg');">
-        <!-- Háttér halványítása 70%-os réteggel -->
-        <div class="absolute inset-0 bg-white/70"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-fonix-green/10 to-fonix-green/40"></div>
+    <header class="relative min-h-screen flex items-center pt-28 pb-12 overflow-hidden bg-fonix-bg">
+        <!-- Háttérkép -->
+        <div class="absolute inset-0 bg-[url('wallpaper.jpg')] bg-cover bg-center opacity-60"></div>
         
-        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-28 md:mt-32">
-            <div class="mb-8 text-fonix-gold text-xl md:text-2xl font-bold tracking-[0.2em] uppercase animate-fade-in-up strong-text-shadow">Pomáz szívében</div>
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-fonix-green mb-12 leading-tight strong-text-shadow">
-                Ahol a <span class="font-script text-fonix-gold text-6xl md:text-8xl font-normal lowercase px-2 inline-block -rotate-2">lendület</span>
-                <br class="md:hidden"> és <span class="font-script text-fonix-gold text-6xl md:text-8xl font-normal lowercase pl-1 inline-block rotate-2">egyensúly</span> találkozik
-            </h1>
-            <p class="text-fonix-bg text-lg md:text-xl mb-14 max-w-2xl mx-auto font-bold drop-shadow-md">
-                A Főnix egyedülálló módon egyesíti a rekreáció négy pillérét: mozgás, szépség, kényeztetés és lelki egészség.
-            </p>
-            <a href="#szolgaltatasok" class="inline-block bg-fonix-gold text-fonix-bg font-bold px-8 py-4 rounded hover:bg-white hover:text-fonix-green transition duration-300 uppercase tracking-widest shadow-lg">
-                Szolgáltatásaink
-            </a>
+        <!-- Színátmenet: bal oldalon (szöveg mögött) erős fedés, jobb oldalon áttetsző -->
+        <div class="absolute inset-0 bg-gradient-to-r from-fonix-bg/95 via-fonix-bg/80 to-fonix-bg/10"></div>
+        
+        <!-- Finom "blob" effektek -->
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-fonix-green/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 z-0"></div>
+        <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-fonix-gold/20 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/4 z-0"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
+                
+                <!-- Bal oldal: Szöveges tartalom -->
+                <div class="w-full lg:w-5/12 text-left pt-10 lg:pt-0">
+                    <div class="inline-block mb-6 px-5 py-1.5 rounded-full bg-fonix-gold/10 border border-fonix-gold/30 text-fonix-gold text-sm md:text-base font-bold tracking-[0.2em] uppercase shadow-sm">
+                        Pomáz szívében
+                    </div>
+                    <h1 class="text-5xl md:text-6xl xl:text-7xl font-serif font-bold text-fonix-green mb-8 leading-tight drop-shadow-md">
+                        Ahol a <span class="font-script text-fonix-gold text-6xl md:text-7xl xl:text-8xl font-normal lowercase pr-2 inline-block -rotate-2 drop-shadow-sm">lendület</span>
+                        <br> és <span class="font-script text-fonix-gold text-6xl md:text-7xl xl:text-8xl font-normal lowercase pl-1 inline-block rotate-2 drop-shadow-sm">egyensúly</span>
+                        <br> találkozik
+                    </h1>
+                    <p class="text-fonix-dark/90 text-lg md:text-xl mb-10 max-w-lg font-medium leading-relaxed border-l-4 border-fonix-gold pl-6 drop-shadow-sm">
+                        A Főnix egyedülálló módon egyesíti a rekreáció négy pillérét: mozgás, szépség, kényeztetés és lelki egészség.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#szolgaltatasok" class="inline-block bg-fonix-gold text-fonix-bg font-bold px-8 py-4 rounded-lg hover:bg-fonix-green transition duration-300 uppercase tracking-widest shadow-lg transform hover:-translate-y-1">
+                            Szolgáltatásaink
+                        </a>
+                        <a href="#idopontfoglalas" class="inline-block bg-white text-fonix-green font-bold px-8 py-4 rounded-lg border border-fonix-green/20 hover:border-fonix-green hover:bg-fonix-green/5 transition duration-300 uppercase tracking-widest shadow-md transform hover:-translate-y-1">
+                            Időpontfoglalás
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Jobb oldal: Kép montázs (Letisztult, elegáns elrendezés) -->
+                <div class="w-full lg:w-7/12 mt-12 lg:mt-0 px-2 sm:px-8 lg:px-0">
+                    <div class="grid grid-cols-12 gap-4 sm:gap-6 items-center">
+                        <!-- Bal oszlop (1 kép) -->
+                        <div class="col-span-5 flex flex-col translate-y-8 sm:translate-y-12">
+                            <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/5] relative group cursor-pointer bg-gray-200">
+                                <div class="absolute inset-0 bg-fonix-green/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                                <img src="hero1.jpg" onerror="this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80'" alt="Jóga és mozgás" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            </div>
+                        </div>
+                        <!-- Jobb oszlop (2 kép egymás alatt) -->
+                        <div class="col-span-7 flex flex-col gap-4 sm:gap-6 -translate-y-4 sm:-translate-y-8">
+                            <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3] relative group cursor-pointer bg-gray-200">
+                                <div class="absolute inset-0 bg-fonix-gold/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                                <img src="hero2.jpg" onerror="this.src='https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=500&q=80'" alt="Relaxációs környezet" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            </div>
+                            <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3] relative group cursor-pointer bg-gray-200">
+                                <div class="absolute inset-0 bg-fonix-green/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                                <img src="hero3.jpg" onerror="this.src='https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=500&q=80'" alt="Testkezelés" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -1144,31 +1188,31 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <!-- Helykitöltő képek a galériának automatikusan kezelt fallbackenddel az előnézethez -->
                 <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden border-2 border-fonix-bg shadow-sm group">
-                    <img src="galeria1.jpg" onerror="this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80'" alt="Galéria kép 1" class="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-500 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
+                    <img src="Galeria1.jpg" onerror="this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80'" alt="Galéria kép 1" class="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-500 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
                 </div>
                 <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden border-2 border-fonix-bg shadow-sm group">
                     <!-- Kavitációs zsírbontás ideiglenes helyettesítő képpel -->
-                    <img src="galeria2.jpg" onerror="this.src='https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=500&q=80'" alt="Kavitációs zsírbontás kezelés" class="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-500 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
+                    <img src="Galeria2.jpg" onerror="this.src='https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=500&q=80'" alt="Kavitációs zsírbontás kezelés" class="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-500 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
                 </div>
                 <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden border-2 border-fonix-bg shadow-sm group">
-                    <img src="galeria3.jpg" onerror="this.src='https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=500&q=80'" alt="Galéria kép 3" class="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-500 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
+                    <img src="Galeria3.jpg" onerror="this.src='https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=500&q=80'" alt="Galéria kép 3" class="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-500 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
                 </div>
                 <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden border-2 border-fonix-bg shadow-sm group">
                     <!-- Alfa kapszula / modern relaxációs környezet ideiglenes helyettesítő képpel -->
-                    <img src="galeria4.jpg" onerror="this.src='https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=500&q=80'" alt="Relaxációs környezet" class="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-500 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
+                    <img src="Galeria4.jpg" onerror="this.src='https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=500&q=80'" alt="Relaxációs környezet" class="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-500 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
                 </div>
                 <!-- Új 4 kép -->
                 <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden border-2 border-fonix-bg shadow-sm group">
-                    <img src="galeria5.jpg" onerror="this.src='https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=500&q=80'" alt="Galéria kép 5" class="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-500 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
+                    <img src="Galeria5.jpg" onerror="this.src='https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=500&q=80'" alt="Galéria kép 5" class="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-500 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
                 </div>
                 <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden border-2 border-fonix-bg shadow-sm group">
-                    <img src="galeria6.jpg" onerror="this.src='https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=500&q=80'" alt="Galéria kép 6" class="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-500 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
+                    <img src="Galeria6.jpg" onerror="this.src='https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=500&q=80'" alt="Galéria kép 6" class="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-500 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
                 </div>
                 <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden border-2 border-fonix-bg shadow-sm group">
-                    <img src="galeria7.jpg" onerror="this.src='https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=500&q=80'" alt="Galéria kép 7" class="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-500 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
+                    <img src="Galeria7.jpg" onerror="this.src='https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=500&q=80'" alt="Galéria kép 7" class="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-500 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
                 </div>
                 <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden border-2 border-fonix-bg shadow-sm group">
-                    <img src="galeria8.jpg" onerror="this.src='https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=500&q=80'" alt="Galéria kép 8" class="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-500 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
+                    <img src="Galeria8.jpg" onerror="this.src='https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=500&q=80'" alt="Galéria kép 8" class="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-500 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
                 </div>
             </div>
         </div>
