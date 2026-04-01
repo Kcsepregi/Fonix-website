@@ -84,23 +84,19 @@
             color: #0f8514;
             font-size: 3rem;
         }
-
-        /* Egyedi határozott szövegárnyék a Hero szekcióhoz */
-        .strong-text-shadow {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
-        }
     </style>
 </head>
 <body class="bg-fonix-bg text-fonix-dark font-sans">
 
     <!-- Navigation -->
-    <nav class="bg-fonix-bg text-fonix-dark fixed top-0 left-0 w-full z-50 shadow-lg transition-all duration-300" id="navbar">
-        <div class="container mx-auto px-6 lg:px-10 py-2 md:py-3 flex justify-between items-center max-w-[1600px]">
+    <nav class="bg-fonix-bg/95 backdrop-blur-sm text-fonix-dark fixed top-0 left-0 w-full z-50 shadow-sm transition-all duration-300 border-b border-fonix-gold/20" id="navbar">
+        <!-- Szélesebb konténer a menünek: px-6-tól xl:px-24-ig bővül -->
+        <div class="w-full px-6 lg:px-16 xl:px-24 py-2 lg:py-3 flex justify-between items-center mx-auto">
             <a href="#" class="flex items-center">
-                <!-- Fallback szöveges logó, ha a kép nem töltődik be -->
-                <img src="logo.png" alt="Főnix Vitalitás Központ" class="h-14 md:h-16 lg:h-20 py-1 object-contain mix-blend-multiply scale-[1.1] lg:scale-125 origin-left transition-transform" onerror="this.outerHTML='<span class=\'text-2xl font-serif font-bold text-fonix-green\'>Főnix</span>'">
+                <!-- Visszaállított, torzítatlan, de szép nagy logóméret -->
+                <img src="logo.png" alt="Főnix Vitalitás Központ" class="h-16 lg:h-24 w-auto py-1 object-contain mix-blend-multiply" onerror="this.outerHTML='<span class=\'text-2xl font-serif font-bold text-fonix-green\'>Főnix</span>'">
             </a>
-            <div class="hidden lg:flex space-x-6 items-center text-sm uppercase tracking-widest font-bold">
+            <div class="hidden xl:flex space-x-8 items-center text-sm uppercase tracking-widest font-bold">
                 <a href="#rolunk" class="hover:text-fonix-green transition">Rólunk</a>
                 <a href="#szolgaltatasok" class="hover:text-fonix-green transition">Szolgáltatások</a>
                 <a href="#orarend" class="hover:text-fonix-green transition">Órarend</a>
@@ -108,8 +104,16 @@
                 <a href="#csapat" class="hover:text-fonix-green transition">Csapat</a>
                 <a href="#teremberles" class="hover:text-fonix-green transition">Terembérlés</a>
                 <a href="#kapcsolat" class="hover:text-fonix-green transition">Kapcsolat</a>
-                <a href="#idopontfoglalas" class="bg-fonix-gold text-fonix-bg px-5 py-2.5 rounded-lg hover:bg-fonix-green hover:text-fonix-bg transition duration-300 font-extrabold shadow-lg transform hover:scale-105 cta-button-pop flex items-center gap-2">
+                <a href="#idopontfoglalas" class="bg-fonix-gold text-fonix-bg px-6 py-3 rounded-lg hover:bg-fonix-green hover:text-fonix-bg transition duration-300 font-extrabold shadow-md transform hover:scale-105 cta-button-pop flex items-center gap-2">
                     <i class="fas fa-calendar-check"></i> IDŐPONTFOGLALÁS
+                </a>
+            </div>
+            <!-- Táblagép menü esetén összeugró sáv -->
+            <div class="hidden lg:flex xl:hidden space-x-4 items-center text-xs uppercase tracking-widest font-bold">
+                <a href="#szolgaltatasok" class="hover:text-fonix-green transition">Szolgáltatások</a>
+                <a href="#kapcsolat" class="hover:text-fonix-green transition">Kapcsolat</a>
+                <a href="#idopontfoglalas" class="bg-fonix-gold text-fonix-bg px-4 py-2 rounded-lg hover:bg-fonix-green hover:text-fonix-bg transition duration-300 font-bold shadow-md">
+                    FOGLALÁS
                 </a>
             </div>
             <button class="lg:hidden text-fonix-gold text-2xl focus:outline-none" onclick="toggleMobileMenu()">
@@ -129,31 +133,28 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative min-h-screen flex items-center pt-28 lg:pt-32 pb-16 overflow-hidden bg-fonix-bg">
-        <!-- Háttérkép -->
-        <div class="absolute inset-0 bg-[url('wallpaper.jpg')] bg-cover bg-center opacity-60"></div>
+    <!-- Széles, levegős layout a pt-32 paddinggel, ami nem nyomja össze a képeket -->
+    <header class="relative min-h-screen flex items-center pt-32 lg:pt-36 pb-16 overflow-hidden bg-fonix-bg">
+        <!-- Háttérkép a kért 70%-os opacity-vel -->
+        <div class="absolute inset-0 bg-[url('wallpaper.jpg')] bg-cover bg-center opacity-70"></div>
         
-        <!-- Színátmenet: bal oldalon (szöveg mögött) erős fedés, jobb oldalon áttetsző -->
-        <div class="absolute inset-0 bg-gradient-to-r from-fonix-bg/95 via-fonix-bg/80 to-fonix-bg/10"></div>
+        <!-- Színátmenet: bal oldalon (szöveg mögött) erős, tiszta fedés, ami jobbra haladva teljesen eltűnik -->
+        <div class="absolute inset-0 bg-gradient-to-r from-fonix-bg via-fonix-bg/80 to-transparent"></div>
         
-        <!-- Finom "blob" effektek -->
-        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-fonix-green/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 z-0"></div>
-        <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-fonix-gold/20 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/4 z-0"></div>
-        
-        <div class="container mx-auto px-6 lg:px-12 relative z-10 max-w-[1600px] w-full">
-            <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+        <div class="w-full px-6 lg:px-16 xl:px-24 relative z-10 mx-auto">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-12 xl:gap-20">
                 
                 <!-- Bal oldal: Szöveges tartalom -->
-                <div class="w-full lg:w-[45%] text-left pt-6 lg:pt-0">
+                <div class="w-full lg:w-5/12 xl:w-[45%] text-left pt-6 lg:pt-0">
                     <div class="inline-block mb-6 px-5 py-1.5 rounded-full bg-fonix-gold/10 border border-fonix-gold/30 text-fonix-gold text-sm md:text-base font-bold tracking-[0.2em] uppercase shadow-sm">
                         Pomáz szívében
                     </div>
-                    <h1 class="text-5xl md:text-6xl xl:text-7xl font-serif font-bold text-fonix-green mb-8 leading-tight drop-shadow-md">
-                        Ahol a <span class="font-script text-fonix-gold text-6xl md:text-7xl xl:text-8xl font-normal lowercase pr-2 inline-block -rotate-2 drop-shadow-sm">lendület</span>
-                        <br> és <span class="font-script text-fonix-gold text-6xl md:text-7xl xl:text-8xl font-normal lowercase pl-1 inline-block rotate-2 drop-shadow-sm">egyensúly</span>
+                    <h1 class="text-5xl md:text-6xl xl:text-7xl font-serif font-bold text-fonix-green mb-8 leading-tight drop-shadow-sm">
+                        Ahol a <span class="font-script text-fonix-gold text-6xl md:text-7xl xl:text-8xl font-normal lowercase pr-2 inline-block -rotate-2">lendület</span>
+                        <br> és <span class="font-script text-fonix-gold text-6xl md:text-7xl xl:text-8xl font-normal lowercase pl-1 inline-block rotate-2">egyensúly</span>
                         <br> találkozik
                     </h1>
-                    <p class="text-fonix-dark/90 text-lg md:text-xl mb-10 max-w-lg font-medium leading-relaxed border-l-4 border-fonix-gold pl-6 drop-shadow-sm">
+                    <p class="text-fonix-dark/90 text-lg md:text-xl mb-10 max-w-lg font-medium leading-relaxed border-l-4 border-fonix-gold pl-6">
                         A Főnix egyedülálló módon egyesíti a rekreáció négy pillérét: mozgás, szépség, kényeztetés és lelki egészség.
                     </p>
                     <div class="flex flex-wrap gap-4">
@@ -166,23 +167,23 @@
                     </div>
                 </div>
 
-                <!-- Jobb oldal: Kép montázs (Letisztult, elegáns elrendezés) -->
-                <div class="w-full lg:w-[55%] mt-12 lg:mt-0 lg:pl-10">
-                    <div class="grid grid-cols-12 gap-4 sm:gap-6 items-center">
-                        <!-- Bal oszlop (1 kép) -->
-                        <div class="col-span-5 flex flex-col translate-y-8 sm:translate-y-12">
-                            <div class="rounded-2xl overflow-hidden shadow-2xl border-[5px] border-white/90 aspect-[4/5] relative group cursor-pointer bg-gray-200">
+                <!-- Jobb oldal: Kép montázs (Nagyobb képek, faltól falig kitöltés) -->
+                <div class="w-full lg:w-7/12 xl:w-[55%] mt-12 lg:mt-0">
+                    <div class="grid grid-cols-12 gap-5 sm:gap-6 items-center">
+                        <!-- Bal oszlop (1 hatalmas, magasított kép) -->
+                        <div class="col-span-5 flex flex-col translate-y-6">
+                            <div class="rounded-3xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.15)] border-4 border-white aspect-[3/4] relative group cursor-pointer bg-gray-200">
                                 <div class="absolute inset-0 bg-fonix-green/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
                                 <img src="hero1.jpg" onerror="this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80'" alt="Jóga és mozgás" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out">
                             </div>
                         </div>
-                        <!-- Jobb oszlop (2 kép egymás alatt) -->
-                        <div class="col-span-7 flex flex-col gap-4 sm:gap-6 -translate-y-4 sm:-translate-y-8">
-                            <div class="rounded-2xl overflow-hidden shadow-2xl border-[5px] border-white/90 aspect-[4/3] relative group cursor-pointer bg-gray-200">
+                        <!-- Jobb oszlop (2 széles, hangsúlyos fekvő kép) -->
+                        <div class="col-span-7 flex flex-col gap-5 sm:gap-6 -translate-y-6">
+                            <div class="rounded-3xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.15)] border-4 border-white aspect-[16/10] relative group cursor-pointer bg-gray-200">
                                 <div class="absolute inset-0 bg-fonix-gold/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
                                 <img src="hero2.jpg" onerror="this.src='https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=500&q=80'" alt="Relaxációs környezet" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out">
                             </div>
-                            <div class="rounded-2xl overflow-hidden shadow-2xl border-[5px] border-white/90 aspect-[4/3] relative group cursor-pointer bg-gray-200">
+                            <div class="rounded-3xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.15)] border-4 border-white aspect-[16/10] relative group cursor-pointer bg-gray-200">
                                 <div class="absolute inset-0 bg-fonix-green/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
                                 <img src="hero3.jpg" onerror="this.src='https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=500&q=80'" alt="Testkezelés" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out">
                             </div>
