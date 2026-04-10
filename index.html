@@ -84,9 +84,32 @@
             color: #0f8514;
             font-size: 3rem;
         }
+
+        /* Popup transitions */
+        #ad-popup.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        #ad-popup-content.show {
+            transform: scale(1);
+        }
     </style>
 </head>
 <body class="bg-fonix-bg text-fonix-dark font-sans">
+
+    <!-- Advertisement Popup -->
+    <div id="ad-popup" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 p-4 transition-opacity duration-300 opacity-0 pointer-events-none">
+        <div class="relative max-w-4xl w-full mx-auto flex flex-col items-center transform scale-95 transition-transform duration-300" id="ad-popup-content">
+            <!-- Close Button -->
+            <button onclick="closePopup()" class="absolute -top-12 right-0 md:-right-10 text-white hover:text-fonix-gold focus:outline-none text-5xl z-10 transition-colors drop-shadow-md">
+                &times;
+            </button>
+            <!-- Ad Image -->
+            <a href="#idopontfoglalas" onclick="closePopup()">
+                <img src="popup.jpg" alt="Különleges Ajánlat" class="w-full h-auto max-h-[85vh] object-contain rounded-xl shadow-2xl" onerror="this.src='https://placehold.co/800x600/0f8514/f5f1e8?text=Akci%C3%B3s+Aj%C3%A1nlat&font=playfair-display'">
+            </a>
+        </div>
+    </div>
 
     <!-- Navigation -->
     <nav class="bg-fonix-bg/95 backdrop-blur-md text-fonix-dark fixed top-0 left-0 w-full z-50 shadow-sm transition-all duration-300 border-b border-fonix-gold/20" id="navbar">
@@ -1803,8 +1826,50 @@
         </div>
     </section>
 
-    <!-- Script for Accordion -->
+    <!-- Scripts -->
     <script>
+        // --- Popup Logic ---
+        function openPopup() {
+            const popup = document.getElementById('ad-popup');
+            const content = document.getElementById('ad-popup-content');
+            
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
+            
+            // Slight delay to allow display:flex to apply before transitioning opacity
+            setTimeout(() => {
+                popup.classList.add('show');
+                content.classList.add('show');
+            }, 10);
+        }
+
+        function closePopup() {
+            const popup = document.getElementById('ad-popup');
+            const content = document.getElementById('ad-popup-content');
+            
+            popup.classList.remove('show');
+            content.classList.remove('show');
+            
+            // Wait for transition to finish before hiding element
+            setTimeout(() => {
+                popup.classList.add('hidden');
+                popup.classList.remove('flex');
+            }, 300);
+        }
+
+        // Close when clicking outside the image (on the dark background)
+        document.getElementById('ad-popup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePopup();
+            }
+        });
+
+        // Open popup automatically after 1 second
+        window.addEventListener('load', () => {
+            setTimeout(openPopup, 1000); 
+        });
+
+        // --- Original Logic ---
         function toggleAccordion(id) {
             const content = document.getElementById(id);
             const icon = document.getElementById('icon-' + id);
