@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Főnix Vitalitás Központ - Pomáz</title>
     <meta name="description" content="Főnix Vitalitás Központ Pomáz: mozgás, szépség, kényeztetés, táplálkozás és lelki egészség. Prémium masszázs, jóga, headspa, testkezelések, táplálkozási tanácsadás és alakformálás. Foglalj időpontot!">
-  <meta name="google-site-verification" content="xMQdJwLPPXXZKOHnqU1FkXjEjs6lwM0wV9k8qC8rMzw" />
+    <meta name="google-site-verification" content="xMQdJwLPPXXZKOHnqU1FkXjEjs6lwM0wV9k8qC8rMzw" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <!-- Új arculati betűtípusok importálása: Playfair Display, DM Sans, Allura -->
@@ -122,7 +122,7 @@
             <div class="hidden xl:flex space-x-8 items-center text-sm uppercase tracking-widest font-bold">
                 <a href="#rolunk" class="hover:text-fonix-green transition">Rólunk</a>
                 <a href="#szolgaltatasok" class="hover:text-fonix-green transition">Szolgáltatások</a>
-                <a href="#taplalkozas" class="hover:text-fonix-green transition">Táplálkozás</a>
+                <a href="#taplalkozas" class="hover:text-fonix-green transition" onclick="openTaplalkozas()">Táplálkozás</a>
                 <a href="#orarend" class="hover:text-fonix-green transition">Órarend</a>
                 <a href="#galeria" class="hover:text-fonix-green transition">Galéria</a>
                 <a href="#csapat" class="hover:text-fonix-green transition">Csapat</a>
@@ -147,7 +147,7 @@
         <div id="mobile-menu" class="hidden lg:hidden bg-fonix-bg border-t border-fonix-gold transition-all duration-300 max-h-screen overflow-y-auto">
             <a href="#rolunk" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Rólunk</a>
             <a href="#szolgaltatasok" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Szolgáltatások</a>
-            <a href="#taplalkozas" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Táplálkozás</a>
+            <a href="#taplalkozas" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="openTaplalkozas()">Táplálkozás</a>
             <a href="#orarend" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Órarend</a>
             <a href="#galeria" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Galéria</a>
             <a href="#csapat" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Csapat</a>
@@ -1142,7 +1142,7 @@
                                         <li class="flex items-start gap-3"><i class="fas fa-microscope text-fonix-gold mt-0.5"></i> <span><strong>Táplálkozási típus:</strong> Ezt két faktor vezérli: a vegetatív idegrendszeri beállítottság és az égetőrendszer (milyen sebességgel alakítjuk át a bevitt élelmiszereket energiává).</span></li>
                                         <li class="flex items-start gap-3"><i class="fas fa-dna text-fonix-gold mt-0.5"></i> <span><strong>Domináns hormontermelő mirigy:</strong> Mely befolyásolja azt, hogy mely élelmiszereket érdemes elkerülni a hormonális hízás vagy egyensúlytalanság elkerülése érdekében.</span></li>
                                         <li class="flex items-start gap-3"><i class="fas fa-percentage text-fonix-gold mt-0.5"></i> <span><strong>Makrotápanyag arányok:</strong> A fehérjéket, zsírokat és szénhidrátokat milyen arányban érdemes fogyasztani egy étkezésen belül.</span></li>
-                                        <li class="flex items-start gap-3"><i class="fas fa-battery-half text-fonix-gold mt-0.5"></i> <span><strong>Sejtszintű vitalitás:</strong> Megmutatja, mennyire vannak a sejtjeid jól ellátva energiával egy 0-100-ig terjedő skálán (gyakran a sejtek vegetáló üzemmódban vannak).</span></li>
+                                        <li class="flex items-start gap-3"><i class="fas fa-battery-half text-fonix-gold mt-0.5"></i> <span><strong>Sejtszintű vitalitás:</strong> Megmutatja, mennyire vannak a sejtjeid jól ellátva energiával egy 0-100-ig terjedő skálán (gyakran a sejtek vegetáló üzemmódban চিহ্নিত).</span></li>
                                         <li class="flex items-start gap-3"><i class="fas fa-chart-line text-fonix-gold mt-0.5"></i> <span><strong>Szénhidrát tolerancia:</strong> A hasnyálmirigyünk állapotáról ad visszajelzést, hogy mennyire van kimerülve.</span></li>
                                     </ul>
                                 </div>
@@ -1916,6 +1916,22 @@
 
     <!-- Scripts -->
     <script>
+        // --- Táplálkozás menü egyedi működése ---
+        function openTaplalkozas() {
+            const content = document.getElementById('cat-taplalkozas');
+            
+            // Ha a Táplálkozás szekció harmonikája még nincs nyitva, kinyitjuk
+            if (content && !content.classList.contains('active')) {
+                toggleAccordion('cat-taplalkozas');
+            }
+            
+            // Ha mobilon vagyunk és nyitva a menü, bezárjuk
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                toggleMobileMenu();
+            }
+        }
+
         // --- Promo Logic ---
         function openPromo() {
             const overlay = document.getElementById('promo-overlay');
