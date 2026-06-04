@@ -210,9 +210,20 @@
             </div>
 
             <div class="bg-white rounded-3xl shadow-xl border border-fonix-gold/20 overflow-hidden flex flex-col lg:flex-row">
-                <!-- Plakát -->
-                <div class="lg:w-2/5 bg-[#0b1233] flex items-center justify-center p-6 md:p-8">
-                    <img src="fonix_atrendezodes_plakat.png" alt="Átrendeződés és változás – spirituális előadás plakátja" class="w-full h-auto max-w-xs rounded-xl shadow-2xl" onerror="this.style.display='none'">
+                <!-- Plakát / dekoratív panel -->
+                <div class="lg:w-2/5 relative flex items-center justify-center p-6 md:p-10 min-h-[280px] overflow-hidden bg-gradient-to-br from-[#0b1233] via-[#101a45] to-[#0b1233]">
+                    <!-- Finom csillagos derengés (mindig látszik, hogy a panel ne legyen üres) -->
+                    <div class="absolute inset-0 opacity-40 pointer-events-none" style="background-image: radial-gradient(1.5px 1.5px at 18% 28%, rgba(255,255,255,0.85) 50%, transparent 51%), radial-gradient(1.5px 1.5px at 68% 18%, rgba(255,255,255,0.6) 50%, transparent 51%), radial-gradient(2px 2px at 42% 66%, rgba(198,162,58,0.85) 50%, transparent 51%), radial-gradient(1.5px 1.5px at 83% 58%, rgba(255,255,255,0.55) 50%, transparent 51%), radial-gradient(1.5px 1.5px at 55% 42%, rgba(255,255,255,0.5) 50%, transparent 51%), radial-gradient(2px 2px at 28% 82%, rgba(255,255,255,0.5) 50%, transparent 51%), radial-gradient(1.5px 1.5px at 75% 88%, rgba(198,162,58,0.6) 50%, transparent 51%);"></div>
+                    <!-- Dekoratív tartalom: csak akkor jelenik meg, ha a plakát nem tölthető be -->
+                    <div id="plakat-fallback" class="hidden relative z-10 text-center px-4">
+                        <i class="fas fa-moon text-fonix-gold text-5xl mb-5"></i>
+                        <div class="text-fonix-gold text-xs font-bold tracking-[0.3em] uppercase">Spirituális előadás</div>
+                        <div class="text-white font-serif text-3xl font-bold mt-3 leading-tight">Átrendeződés<br>és változás</div>
+                        <div class="w-12 h-px bg-fonix-gold/60 mx-auto my-4"></div>
+                        <div class="text-white/70 text-sm">2026. június 19. · péntek · 18:00</div>
+                    </div>
+                    <!-- A plakát: ha betölt, ezt látni; ha nem, a fenti dekoráció jelenik meg -->
+                    <img src="fonix_atrendezodes_plakat.png" alt="Átrendeződés és változás – spirituális előadás plakátja" class="w-full h-auto max-w-xs rounded-xl shadow-2xl relative z-10" onerror="this.style.display='none'; var fb=document.getElementById('plakat-fallback'); if(fb){fb.classList.remove('hidden');}">
                 </div>
                 <!-- Tartalom -->
                 <div class="lg:w-3/5 p-8 md:p-12">
