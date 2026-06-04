@@ -75,7 +75,7 @@
         .bio-text {
             transition: all 0.3s ease-in-out;
         }
-
+        
         /* Fallback avatar styling */
         .fallback-avatar {
             display: flex;
@@ -85,9 +85,11 @@
             color: #0f8514;
             font-size: 3rem;
         }
+
     </style>
 </head>
 <body class="bg-fonix-bg text-fonix-dark font-sans">
+
     <!-- Navigation -->
     <nav class="bg-fonix-bg/95 backdrop-blur-md text-fonix-dark fixed top-0 left-0 w-full z-50 shadow-sm transition-all duration-300 border-b border-fonix-gold/20" id="navbar">
         <div class="w-full px-6 lg:px-12 xl:px-20 py-3 flex justify-between items-center mx-auto max-w-[1600px]">
@@ -109,6 +111,7 @@
             </div>
             <!-- Táblagép menü esetén összeugró sáv -->
             <div class="hidden lg:flex xl:hidden space-x-4 items-center text-xs uppercase tracking-widest font-bold">
+                <a href="#programok" class="hover:text-fonix-green transition">Programok</a>
                 <a href="#szolgaltatasok" class="hover:text-fonix-green transition">Szolgáltatások</a>
                 <a href="#kapcsolat" class="hover:text-fonix-green transition">Kapcsolat</a>
                 <a href="#idopontfoglalas" class="bg-fonix-gold text-fonix-bg px-4 py-2 rounded hover:bg-fonix-green hover:text-fonix-bg transition duration-300 font-bold shadow-md">
@@ -121,6 +124,7 @@
         </div>
         <div id="mobile-menu" class="hidden lg:hidden bg-fonix-bg border-t border-fonix-gold transition-all duration-300 max-h-screen overflow-y-auto">
             <a href="#rolunk" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Rólunk</a>
+            <a href="#programok" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Programok</a>
             <a href="#szolgaltatasok" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Szolgáltatások</a>
             <a href="#taplalkozas" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="openTaplalkozas()">Táplálkozás</a>
             <a href="#orarend" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Órarend</a>
@@ -131,33 +135,34 @@
             <a href="#idopontfoglalas" class="block px-6 py-4 bg-fonix-gold text-fonix-bg font-bold text-center mt-2 mx-4 mb-4 rounded" onclick="toggleMobileMenu()">IDŐPONT FOGLALÁS</a>
         </div>
     </nav>
+
     <!-- Hero Section -->
     <header class="relative min-h-[90vh] flex items-center pt-40 lg:pt-48 pb-16 overflow-hidden bg-fonix-bg">
         <!-- Háttérkép mix-blend móddal a tökéletes egybeolvadásért -->
         <div class="absolute inset-0 bg-[url('wallpaper.jpg')] bg-cover bg-center opacity-50 mix-blend-multiply"></div>
-
+        
         <!-- Finom színátmenet a bal oldal olvashatóságáért -->
         <div class="absolute inset-0 bg-gradient-to-r from-fonix-bg via-fonix-bg/70 to-transparent"></div>
-
+        
         <div class="w-full px-6 lg:px-12 xl:px-20 relative z-10 mx-auto max-w-[1600px]">
             <div class="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
-
+                
                 <!-- Bal oldal: Óriási szöveges tartalom a referencia kép alapján -->
                 <div class="w-full lg:w-[48%] xl:w-[45%] text-left pt-6 lg:pt-0 shrink-0">
                     <div class="inline-block mb-8 px-6 py-2 rounded-full border border-fonix-gold/40 text-fonix-gold text-sm md:text-base font-bold tracking-[0.2em] uppercase shadow-sm bg-fonix-bg/50 backdrop-blur-sm">
                         Pomáz szívében
                     </div>
-
+                    
                     <h1 class="text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[5.5rem] font-serif font-bold text-fonix-green mb-8 leading-[1.15]">
                         Ahol a <span class="font-script text-fonix-gold text-6xl md:text-7xl lg:text-[6.5rem] xl:text-[8rem] font-normal lowercase pr-2 inline-block -rotate-2">lendület</span>
                         <br> és <span class="font-script text-fonix-gold text-6xl md:text-7xl lg:text-[6.5rem] xl:text-[8rem] font-normal lowercase pl-1 inline-block rotate-2">egyensúly</span>
                         <br> találkozik
                     </h1>
-
+                    
                     <p class="text-fonix-dark/90 text-lg md:text-xl mb-12 max-w-xl font-medium leading-relaxed border-l-[3px] border-fonix-gold pl-6">
                         A Főnix egyedülálló módon egyesíti a rekreáció öt pillérét: mozgás, szépség, kényeztetés, táplálkozás és lelki egészség.
                     </p>
-
+                    
                     <div class="flex flex-wrap gap-4 md:gap-6">
                         <a href="#szolgaltatasok" class="inline-block bg-fonix-gold text-white font-bold px-8 md:px-10 py-4 md:py-5 text-sm md:text-base rounded-md hover:bg-fonix-green transition duration-300 uppercase tracking-widest shadow-lg">
                             Szolgáltatásaink
@@ -167,6 +172,7 @@
                         </a>
                     </div>
                 </div>
+
                 <!-- Jobb oldal: Aszimmetrikus kép montázs -->
                 <div class="w-full lg:w-[52%] xl:w-[55%] flex gap-4 sm:gap-6 relative">
                     <!-- Bal oszlop (1 hatalmas, magasított kép, lejjebb tolva) -->
@@ -191,60 +197,106 @@
             </div>
         </div>
     </header>
+
     <!-- Programajánló -->
-    <section id="programajanlo" class="py-20 bg-[#fcfbf7] border-b border-fonix-gold/20">
+    <section id="programok" class="py-20 bg-gradient-to-b from-fonix-bg to-[#fcfbf7]">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center mb-12">
+                <span class="inline-block mb-4 px-5 py-1.5 rounded-full border border-fonix-gold/40 text-fonix-gold text-xs md:text-sm font-bold tracking-[0.2em] uppercase bg-white/60 backdrop-blur-sm">
+                    Aktuális program
+                </span>
                 <h2 class="text-4xl font-serif font-bold text-fonix-green mb-4">Programajánló</h2>
                 <div class="w-24 h-1 bg-fonix-gold mx-auto"></div>
-                <p class="mt-4 text-fonix-dark/70 font-medium">Közelgő esemény a Főnixben</p>
             </div>
-            <div class="rounded-3xl overflow-hidden shadow-2xl border border-fonix-gold/40 bg-gradient-to-br from-[#0b4d10] via-[#0a3d0e] to-[#072c0a] text-fonix-bg">
-                <div class="flex flex-col lg:flex-row">
-                    <!-- Bal oldal: az esemény leírása -->
-                    <div class="flex-1 p-8 md:p-12">
-                        <div class="inline-block mb-6 px-5 py-1.5 rounded-full border border-fonix-gold/50 text-fonix-gold text-xs md:text-sm font-bold tracking-[0.2em] uppercase">
-                            Spirituális előadás és kötetlen beszélgetés
+
+            <div class="bg-white rounded-3xl shadow-xl border border-fonix-gold/20 overflow-hidden flex flex-col lg:flex-row">
+                <!-- Plakát -->
+                <div class="lg:w-2/5 bg-[#0b1233] flex items-center justify-center p-6 md:p-8">
+                    <img src="fonix_atrendezodes_plakat.png" alt="Átrendeződés és változás – spirituális előadás plakátja" class="w-full h-auto max-w-xs rounded-xl shadow-2xl" onerror="this.style.display='none'">
+                </div>
+                <!-- Tartalom -->
+                <div class="lg:w-3/5 p-8 md:p-12">
+                    <div class="text-fonix-gold text-xs sm:text-sm font-bold tracking-widest uppercase mb-3">Spirituális előadás és kötetlen beszélgetés</div>
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-fonix-green mb-2 leading-tight">Átrendeződés és változás</h3>
+                    <p class="text-lg text-fonix-dark/80 font-medium mb-3">Spirituális útmutatás a jelenlegi időszakhoz</p>
+                    <p class="text-fonix-dark/70 mb-6"><span class="font-bold text-fonix-green">Előadó:</span> Széplakiné Nagy Anita</p>
+
+                    <p class="text-fonix-dark/80 italic border-l-[3px] border-fonix-gold pl-5 mb-7 leading-relaxed">
+                        Mindannyian érezzük, hogy a világ jelentős változásokon megy keresztül – átalakulnak a körülményeink, kapcsolataink és élethelyzeteink, globális és személyes szinten egyaránt.
+                    </p>
+
+                    <h4 class="font-serif font-bold text-fonix-green text-lg mb-4">Amiről az estén szó lesz</h4>
+                    <ul class="space-y-2.5 mb-8 text-sm md:text-base text-fonix-dark/80">
+                        <li class="flex items-start gap-3"><i class="fas fa-gem text-fonix-gold text-xs mt-1.5 shrink-0"></i> Milyen változások zajlanak a világban és bennünk?</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-gem text-fonix-gold text-xs mt-1.5 shrink-0"></i> Milyen elakadásokkal találkozhatunk az életünkben?</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-gem text-fonix-gold text-xs mt-1.5 shrink-0"></i> Hogyan érthetjük meg a hozzánk érkező üzeneteket?</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-gem text-fonix-gold text-xs mt-1.5 shrink-0"></i> Mit tanítanak a kihívások, és hogyan engedhetünk el?</li>
+                    </ul>
+
+                    <!-- Időpont és helyszín -->
+                    <div class="bg-fonix-green text-white rounded-xl p-5 mb-6 flex items-center gap-4">
+                        <i class="fas fa-calendar-day text-fonix-gold text-3xl shrink-0"></i>
+                        <div>
+                            <div class="font-bold text-lg leading-tight">2026. június 19. · péntek · 18:00</div>
+                            <div class="text-white/80 text-sm mt-0.5">Főnix Vitalitás Központ · Pomáz, Beniczky utca 4.</div>
                         </div>
-                        <h3 class="text-4xl md:text-5xl font-serif font-bold text-gold-gradient mb-3 leading-tight">Átrendeződés és változás</h3>
-                        <p class="text-fonix-bg/90 text-lg md:text-xl font-medium mb-2">Spirituális útmutatás a jelenlegi időszakhoz</p>
-                        <p class="text-fonix-gold font-serif italic text-lg mb-6">Előadó: Széplakiné Nagy Anita</p>
-                        <p class="text-fonix-bg/80 leading-relaxed mb-8 max-w-2xl border-l-[3px] border-fonix-gold/60 pl-5 italic">
-                            Mindannyian érezzük, hogy a világ jelentős változásokon megy keresztül – átalakulnak a körülményeink, kapcsolataink és élethelyzeteink, globális és személyes szinten egyaránt.
-                        </p>
-                        <div class="text-fonix-gold text-sm font-bold tracking-[0.2em] uppercase mb-4">Amiről az estén szó lesz</div>
-                        <ul class="space-y-3 text-fonix-bg/90">
-                            <li class="flex items-start gap-3"><i class="fas fa-leaf text-fonix-gold mt-1 text-xs"></i> <span>Milyen változások zajlanak a világban és bennünk?</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-leaf text-fonix-gold mt-1 text-xs"></i> <span>Milyen elakadásokkal találkozhatunk az életünkben?</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-leaf text-fonix-gold mt-1 text-xs"></i> <span>Hogyan érthetjük meg a hozzánk érkező üzeneteket?</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-leaf text-fonix-gold mt-1 text-xs"></i> <span>Mit tanítanak a kihívások, és hogyan engedhetünk el?</span></li>
-                        </ul>
                     </div>
-                    <!-- Jobb oldal: részletek és jelentkezés -->
-                    <div class="lg:w-96 shrink-0 bg-white/[0.07] border-t lg:border-t-0 lg:border-l border-fonix-gold/30 p-8 md:p-10 flex flex-col justify-center">
-                        <div class="text-center mb-8">
-                            <div class="text-fonix-gold text-sm font-bold tracking-[0.25em] uppercase mb-1">2026. június 19. · péntek</div>
-                            <div class="text-5xl font-serif font-bold text-fonix-bg leading-none mb-3">18:00</div>
-                            <div class="text-fonix-bg/70 text-sm"><i class="fas fa-map-marker-alt text-fonix-gold mr-1"></i> Főnix Vitalitás Központ · Pomáz, Beniczky utca 4.</div>
+
+                    <!-- Így jelentkezhetsz -->
+                    <div class="border border-fonix-gold/30 rounded-xl overflow-hidden mb-6">
+                        <div class="bg-fonix-gold/10 px-5 py-3 font-serif font-bold text-fonix-green flex items-center gap-2">
+                            <i class="fas fa-clipboard-check text-fonix-gold"></i> Így jelentkezhetsz
                         </div>
-                        <div class="space-y-3 text-sm text-fonix-bg/90 mb-8">
-                            <div class="flex justify-between gap-4 border-b border-fonix-gold/20 pb-2"><span>Részvételi díj:</span><span class="font-bold text-fonix-gold whitespace-nowrap">8.000 Ft / fő</span></div>
-                            <div class="flex justify-between gap-4 border-b border-fonix-gold/20 pb-2"><span>Jelentkezési határidő:</span><span class="font-bold whitespace-nowrap">június 18. éjfél</span></div>
-                        </div>
-                        <a href="mailto:fonixvitalitas@gmail.com?subject=Jelentkez%C3%A9s%20-%20%C3%81trendez%C5%91d%C3%A9s%20%C3%A9s%20v%C3%A1ltoz%C3%A1s%20%282026.06.19.%29" class="block text-center bg-fonix-gold text-fonix-bg font-bold px-6 py-4 rounded-md hover:bg-fonix-bg hover:text-fonix-green transition duration-300 uppercase tracking-widest text-sm shadow-lg mb-3">
-                            Jelentkezem
+                        <ol class="divide-y divide-fonix-gold/15">
+                            <li class="flex gap-4 p-5">
+                                <span class="shrink-0 w-7 h-7 rounded-full bg-fonix-green text-white font-bold text-sm flex items-center justify-center">1</span>
+                                <div class="text-sm text-fonix-dark/80">
+                                    <span class="font-bold text-fonix-dark">Jelezd a részvételi szándékod</span> a lenti „Jelentkezem e-mailben” gombbal. Írd meg a neved és hogy hány fővel jönnél.
+                                </div>
+                            </li>
+                            <li class="flex gap-4 p-5">
+                                <span class="shrink-0 w-7 h-7 rounded-full bg-fonix-green text-white font-bold text-sm flex items-center justify-center">2</span>
+                                <div class="text-sm text-fonix-dark/80 w-full">
+                                    <span class="font-bold text-fonix-dark">Utald át a részvételi díj felét</span> (4 000 Ft / fő) a helyed megerősítéséhez:
+                                    <div class="mt-3 bg-[#fcfbf7] border border-fonix-gold/20 rounded-lg p-4 space-y-1.5 text-[13px]">
+                                        <div class="flex justify-between gap-3"><span class="text-fonix-dark/60">Kedvezményezett:</span> <span class="font-bold text-fonix-dark text-right">Csepregi Katalin</span></div>
+                                        <div class="flex justify-between gap-3"><span class="text-fonix-dark/60">Számlaszám:</span> <span class="font-bold text-fonix-green text-right">10918001-00000129-61690000</span></div>
+                                        <div class="flex justify-between gap-3"><span class="text-fonix-dark/60">IBAN:</span> <span class="font-bold text-fonix-dark text-right">HU91 1091 8001 0000 0129 6169 0000</span></div>
+                                        <div class="flex justify-between gap-3"><span class="text-fonix-dark/60">SWIFT/BIC:</span> <span class="font-bold text-fonix-dark text-right">BACXHUHB</span></div>
+                                        <div class="flex justify-between gap-3"><span class="text-fonix-dark/60">Közlemény:</span> <span class="font-bold text-fonix-dark text-right">A neved + „Átrendeződés 06.19”</span></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="flex gap-4 p-5">
+                                <span class="shrink-0 w-7 h-7 rounded-full bg-fonix-green text-white font-bold text-sm flex items-center justify-center">3</span>
+                                <div class="text-sm text-fonix-dark/80">
+                                    <span class="font-bold text-fonix-dark">Készen is vagy!</span> A díj felének beérkezése után véglegesítjük a helyed, és e-mailben visszaigazolunk.
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <!-- Jelentkezés feltételei -->
+                    <div class="bg-[#fcfbf7] border border-fonix-gold/20 rounded-xl p-5 mb-7 text-sm text-fonix-dark/80 space-y-1.5">
+                        <div class="font-bold text-fonix-green mb-1 uppercase tracking-wider text-xs">Jó, ha tudod</div>
+                        <p>Jelentkezési határidő: <strong>2026. június 18-án éjfélig.</strong></p>
+                        <p>Részvételi díj: <strong>8 000 Ft / fő</strong> (a megerősítéshez ennek a fele utalandó előre).</p>
+                        <p>Az esemény legalább 5 fő jelentkezése esetén valósul meg, ennél kevesebb jelentkező esetén elmarad.</p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="mailto:fonixvitalitas@gmail.com?subject=Jelentkez%C3%A9s%20-%20%C3%81trendez%C5%91d%C3%A9s%20%C3%A9s%20v%C3%A1ltoz%C3%A1s%20(2026.%20j%C3%BAnius%2019.)&amp;body=Kedves%20F%C5%91nix%20Csapat!%0A%0ASzeretn%C3%A9k%20r%C3%A9szt%20venni%20az%20%C3%81trendez%C5%91d%C3%A9s%20%C3%A9s%20v%C3%A1ltoz%C3%A1s%20programon.%0A%0AN%C3%A9v%3A%20%0AL%C3%A9tsz%C3%A1m%20(f%C5%91)%3A%20%0ATelefonsz%C3%A1m%3A%20%0A%0A%C3%9Cdv%C3%B6zlettel%3A" class="inline-flex items-center justify-center gap-2 bg-fonix-gold text-fonix-bg font-bold px-8 py-4 rounded-lg hover:bg-fonix-green transition duration-300 shadow-md uppercase tracking-wider text-sm">
+                            <i class="fas fa-envelope"></i> Jelentkezem e-mailben
                         </a>
-                        <a href="tel:+36204654525" class="block text-center border border-fonix-gold/60 text-fonix-gold font-bold px-6 py-3.5 rounded-md hover:bg-fonix-gold hover:text-fonix-bg transition duration-300 text-sm tracking-wider">
-                            <i class="fas fa-phone-alt mr-2"></i>06 20 465 4525
+                        <a href="tel:+36204654525" class="inline-flex items-center justify-center gap-2 bg-white text-fonix-green border-2 border-fonix-green/30 font-bold px-8 py-4 rounded-lg hover:border-fonix-green hover:bg-fonix-green/5 transition duration-300 uppercase tracking-wider text-sm">
+                            <i class="fas fa-phone-alt"></i> Kérdésem van
                         </a>
-                        <p class="text-[11px] text-fonix-bg/60 italic leading-relaxed mt-5 text-center">
-                            A jelentkezés a díj felének átutalásával válik véglegessé. Az esemény legalább 5 fő jelentkezése esetén valósul meg, ennél kevesebb jelentkező esetén elmarad.
-                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- Rólunk -->
     <section id="rolunk" class="py-20 bg-white">
         <div class="container mx-auto px-6">
@@ -275,16 +327,18 @@
             </div>
         </div>
     </section>
+
     <!-- Szolgáltatások -->
     <section id="szolgaltatasok" class="py-20 bg-fonix-bg">
-        <div class="container mx-auto px-6 max-w-6xl">
+        <div class="container mx-auto px-6 max-w-6xl"> 
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-serif font-bold text-fonix-green mb-4">Szolgáltatások és Árak</h2>
                 <div class="w-24 h-1 bg-fonix-gold mx-auto"></div>
                 <p class="mt-4 text-fonix-dark/70 font-medium">Kattints a kategóriákra a részletes árlistáért!</p>
             </div>
-            <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-fonix-bg">
 
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-fonix-bg">
+                
                 <!-- Mozgás -->
                 <div class="border-b border-fonix-bg">
                     <button onclick="toggleAccordion('cat-mozgas')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
@@ -301,6 +355,7 @@
                     </button>
                     <div id="cat-mozgas" class="accordion-content bg-[#fcfbf7]">
                         <div class="px-8 pb-8 pt-6">
+
                             <!-- Fit Jance -->
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
@@ -312,6 +367,7 @@
                                     A <strong>Fit Jance (Jump & Dance)</strong> egy speciális trambulinos–táncos–fitness mozgásforma, ahol a fejlődés és a mozgás élménnyé válik. Kreatív, változatos órák és zenék, igazi flow-élmény vár, miközben észrevétlenül fejlődsz. Az edzések hangulata olyan, mint egy buli, ahol te vagy a középpontban. A cél az, hogy feltöltődve, pozitív energiával és mosollyal menj haza!
                                 </p>
                             </div>
+
                             <!-- Pilates -->
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
@@ -338,6 +394,7 @@
                                     A progresszív pilates a test teljes izomzatát átmozgató, erősítő és nyújtó hatású mozgásforma, amely különösen nagy hangsúlyt fektet a törzsizomzat (core) stabilitására, a helyes testtartás kialakítására és a tudatos légzésre. Minőség a mennyiség felett, azaz kevesebb ismétlésszámmal, de helyesen kivitelezettek a gyakorlatok. Rövid idő alatt fogod érezni közérzeted és életminőséged javulását.
                                 </p>
                             </div>
+
                             <!-- Stretching -->
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
@@ -369,6 +426,7 @@
                                     </p>
                                 </div>
                             </div>
+
                             <!-- Step aerobik -->
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
@@ -395,6 +453,7 @@
                                     A step aerobik bemelegítést követő kardiós rész után váltva erősítünk és rövid, energikus koreográfiákat tanulunk. Az erősítésben változatos gyakorlatokat végzünk különböző eszközökkel, a step pad mellett gumiszalaggal és egyéb rugalmas ellenállásokkal is. Mindkét blokkhoz a step padot használjuk, a koreográfiák változatosak, alaplépéseket és nehezebb elemeket is használunk, de mindemellett követhető és élvezetes marad. Közepes intenzitású óra, amire szeretettel várok kezdőket és haladókat is egyaránt.
                                 </p>
                             </div>
+
                             <!-- Személyi edzés -->
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
@@ -411,6 +470,7 @@
                                     Személyre szabott edzésprogram, amely figyelembe veszi egyéni céljaidat, fittségi állapotodat és esetleges mozgásszervi problémáidat. Szakképzett edzőnk maximális figyelmet fordít a gyakorlatok helyes kivitelezésére, így a fejlődés gyorsabb, biztonságosabb és hatékonyabb, mint az önálló edzés során. Ideális választás újrakezdőknek, vagy specifikus célok (fogyás, erősítés) eléréséhez.
                                 </p>
                             </div>
+
                             <!-- Hatha jóga -->
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
@@ -437,6 +497,7 @@
                                     A Hatha jóga az ászanák kitartására és a légzésre fókuszál. A gyakorlás egyaránt szolgálja a fizikai test egészségét, a vitalitást, és segít a mentális egyensúly megteremtésében. Bérletünkkel szabadon átjárhatsz a csoportos óratípusok között - kivéve a Fit Jance órákat.
                                 </p>
                             </div>
+
                             <!-- Kismama jóga -->
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
@@ -453,6 +514,7 @@
                                     A várandósság idején végzett speciális jóga segít a megváltozott testhelyzethez való alkalmazkodásban, enyhíti a hát- és derékfájdalmakat, valamint felkészíti a medencealapi izmokat a szülésre. A légzőgyakorlatok és a relaxáció segítik a kismamák lelki ráhangolódását az anyaságra és a babával való kapcsolódást.
                                 </p>
                             </div>
+
                             <!-- Baba-mama jóga -->
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
@@ -469,9 +531,11 @@
                                     A kisbabás jóga 6-10 hetes kortól 8–10 hónapos korig ajánlott, ahol babáddal együtt, biztonságos és szeretetteljes térben mozoghattok és töltődhettek. A 90 perces órán ráhangolódás után a babamasszázs, közös mozgás, gátizomtorna és relaxáció is helyet kap, hogy testben és lélekben is feltöltődj. Az alkalmak célja, hogy segítsük a regenerációt, mélyítsétek a kapcsolatotokat, és közben egy támogató hangulatú anyaközösség részévé váljatok.
                                 </p>
                             </div>
+
                         </div>
                     </div>
                 </div>
+
                 <!-- Alakformálás -->
                 <div class="border-b border-fonix-bg">
                     <button onclick="toggleAccordion('cat-alak')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
@@ -503,6 +567,7 @@
                                 <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify">
                                     Az EMS intimfotel (HI-EMS, azaz elektromágneses technológiával végzett kezelések) hatékonyan erősítik a medencefenék izmait, javítják az intim egészséget és csökkentik az inkontinencia problémákat. A kezeléseket kúraszerűen javasolt végezni, heti 2 alkalommal, 6 héten keresztül. A kúrákat fél évente célszerű megismételni.
                                 </p>
+
                                 <!-- Új vélemények szekció az EMS intimfotelhez -->
                                 <div class="mt-6 bg-fonix-gold/10 border-l-4 border-fonix-gold p-4 rounded-r-lg">
                                     <h5 class="text-sm font-bold text-fonix-green mb-3 flex items-center gap-2">
@@ -524,6 +589,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
                                     <div>
@@ -586,6 +652,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Kényeztetés & Masszázs -->
                 <div class="border-b border-fonix-bg">
                     <button onclick="toggleAccordion('cat-masszazs')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
@@ -630,6 +697,7 @@
                                     A head spa egy holisztikus, japán eredetű fej-, nyak- és vállkezelés, amely a fejbőr és a haj egészségének javítását, valamint a stresszoldást célozza meg. Különféle technikák - a masszázs, akupresszúra és aromaterápia - kombinációját használja speciális termékekkel, így mélytisztítást, hidratálást és regenerálást végez.
                                 </p>
                             </div>
+
                             <!-- 2. Lágy csontkovácsolás -->
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
@@ -647,6 +715,7 @@
                                     A lágy csontkovácsolás - más néven "a lusták jógája" - a gerinc, az izmok és az ízületek speciális mozdulatokkal történő kezelése, amely a manuális terápia egy formája. A gerinc eredetű panaszok enyhítésére, valamint mozgásszervi problémák kezelésére szolgál. A módszer ősi népi hagyományokon alapul, és kíméletes, fájdalommentes módszert kínál lumbágó, derék-, nyak- és fejfájás esetén.
                                 </p>
                             </div>
+
                             <!-- 3. Triggerpont masszázs -->
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
@@ -664,6 +733,7 @@
                                     A trigger pont terápia az izmokban kialakult csomókat célzott módon kezeli. Ez az egyik leghatékonyabb, gyógytornászok által is használt technika, ugyanis a kiváltó ok kerül a terápia középpontjába.
                                 </p>
                             </div>
+
                             <!-- 4. Svéd masszázs -->
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
@@ -681,6 +751,7 @@
                                     Célzott fogásokkal, simító, gyúró és dörzsölő technikákkal serkenti a vér- és nyirokkeringést, csökkenti az izomfeszültséget és támogatja a testi-lelki relaxációt. Ideális regenerációhoz és stresszoldáshoz.
                                 </p>
                             </div>
+
                             <!-- 5. Kézi nyirokmasszázs -->
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col gap-4 mb-4">
@@ -710,6 +781,7 @@
                                     Finom, ritmikus, célzott fogásokkal serkenti a nyirokfolyadék áramlását, elősegíti a méreganyagok elszállítását, csökkenti a pangást és duzzanatot, valamint támogatja az immunrendszer működését és a regenerációt.
                                 </p>
                             </div>
+
                             <!-- 6. Arcmasszázs -->
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
@@ -727,6 +799,7 @@
                                     Speciális fogásokkal stimulálja a mimikai izmokat, javítja a vérkeringést és nyirokáramlást az arcon. Elősegíti a bőr oxigén ellátását, fokozza a rugalmasságot és a friss, üde megjelenést, miközben csökkenti a fej- és arc feszültséget.
                                 </p>
                             </div>
+
                             <!-- 7. Sportmasszázs -->
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
@@ -744,6 +817,7 @@
                                     Célzott technikákkal (dörzsölés, nyújtás) optimalizálja az izomfunkciót, csökkenti a sérülésveszélyt és fokozza az edzés utáni regenerációt. Kiemelten ajánlott aktív életmódhoz és versenysportolóknak.
                                 </p>
                             </div>
+
                             <!-- 8. Cellulit masszázs -->
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col gap-4 mb-4">
@@ -773,6 +847,7 @@
                                     A cellulit masszázs elősegíti, hogy a felhalmozódott nyirok a salakanyaggal együtt a nyirokcsomókon keresztül a véráramba jusson és kiürüljön, így megszabadítva a zsírsejteket a méreganyagtól. Emellett hihetetlen módon meggyorsítja az anyagcsere folyamatokat, vérkeringést, és a szövetek frissítését a szervezetben. A narancsbőr masszázs elősegíti az új kollagén termelést, ami a szövetek feszességét fokozza.
                                 </p>
                             </div>
+
                              <!-- 9. Body Mix -->
                              <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
@@ -790,6 +865,7 @@
                                     Egyénre szabott masszázs mix, amely a svéd masszázs, a triggerpont masszázs és a lágy csontkovácsolás elemeit ötvözi, a vendég állapota és igénye szerint.
                                 </p>
                             </div>
+
                              <!-- 10. Stressz masszázs -->
                              <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
@@ -807,6 +883,7 @@
                                     Teljes hát-, váll- és nyakizom masszázs a stressz oldására. Végezhető fekvő és ülő helyzetben is.
                                 </p>
                             </div>
+
                             <!-- 11. Talpmasszázs -->
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col gap-4 mb-4">
@@ -846,6 +923,7 @@
                                     A talp reflexpontjainak stimulálásával harmonizálja az egész szervezet működését, támogatja a keringést, az idegrendszeri egyensúlyt és a szervezet öngyógyító folyamatait. Segít a fáradtság csökkentésében, a test méregtelenítésében és a testi-lelki feltöltődésben.
                                 </p>
                             </div>
+
                             <!-- 12. Csontkovácsolás -->
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col mb-4 gap-2">
@@ -861,6 +939,7 @@
                                     A csontkovácsolás, más néven kiropraktika, egy olyan alternatív gyógyászati módszer, amely a gerinc és az ízületek kézzel történő manipulációjával igyekszik helyreállítani a test egyensúlyát és elősegíti a gyógyulást.
                                 </p>
                             </div>
+
                             <!-- 13. Thai masszázs -->
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col gap-4 mb-4">
@@ -889,6 +968,7 @@
                                     </ul>
                                 </div>
                             </div>
+
                             <!-- 14. Thai masszázs (+talp masszázs) -->
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col gap-4 mb-4">
@@ -907,6 +987,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <!-- 15. Thai masszázs (fej- nyak- hát masszázs) -->
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col gap-4 mb-4">
@@ -928,6 +1009,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Kéz- és Lábápolás -->
                 <div class="border-b border-gray-100">
                      <button onclick="toggleAccordion('cat-kezlab')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
@@ -1091,6 +1173,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Egészségtudatos Táplálkozás -->
                 <div class="border-b border-gray-100" id="taplalkozas">
                     <button onclick="toggleAccordion('cat-taplalkozas')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
@@ -1107,11 +1190,11 @@
                     </button>
                     <div id="cat-taplalkozas" class="accordion-content bg-[#fcfbf7]">
                         <div class="px-8 pb-8 pt-6">
-
+                            
                             <!-- 1. Anyagcseretipizálás -->
                             <div class="mb-10 border-b border-fonix-bg pb-8">
                                 <h4 class="text-lg font-sans text-fonix-green font-bold mb-3">1. csomag: Anyagcseretipizáláson alapuló táplálkozási program</h4>
-
+                                
                                 <div class="bg-white p-4 rounded border border-fonix-bg shadow-sm w-full mb-4">
                                     <div class="flex justify-between items-center py-2 border-b border-fonix-bg last:border-0">
                                         <span class="font-medium text-fonix-dark">Kontrollmérés és konzultáció nélkül:</span>
@@ -1122,6 +1205,7 @@
                                         <span class="font-bold text-fonix-green text-lg whitespace-nowrap">64.900 Ft</span>
                                     </div>
                                 </div>
+
                                 <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify mb-6">
                                     Neked ajánljuk, ha egészségesen akarsz táplálkozni és kíváncsi vagy mely élelmiszerek javasoltak számodra és melyeket érdemes elkerülnöd. Nem vagyunk egyformák táplálkozási igényeinkben. Ezen a tanácsadáson a típusmeghatározás és élelmiszerlista mellett kapsz egy hetes mintaétrendet és alapvitamin ajánlást is.
                                 </p>
@@ -1139,10 +1223,11 @@
                                     Tovább az Anyagcseretipizálás oldalra <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
+
                             <!-- 2. Egyszerűsített program -->
                             <div class="mb-10 border-b border-fonix-bg pb-8">
                                 <h4 class="text-lg font-sans text-fonix-green font-bold mb-3">2. csomag: Mit egyél, hogy jól legyél?</h4>
-
+                                
                                 <div class="bg-white p-4 rounded border border-fonix-bg shadow-sm w-full mb-4">
                                     <div class="flex justify-between items-center py-2 border-b border-fonix-bg">
                                         <span class="font-bold text-fonix-dark">A csomag ára:</span>
@@ -1161,6 +1246,7 @@
                                         <span class="font-bold text-fonix-green text-sm whitespace-nowrap">+ 20.000 Ft</span>
                                     </div>
                                 </div>
+
                                 <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify mb-4">
                                     Neked ajánljuk, ha csak azt szeretnéd tudni, hogy milyen típus vagy, mi a jó Neked, ha csak egy élelmiszerlistát akarsz kapni, hogy tudd mit egyél, és mit kerülj el. Ezen a tanácsadáson az anyagcseretípus mérés során megállapítjuk a táplálkozási típusod, hormontípusod, és kapsz egy ennek megfelelő személyre szabott élelmiszerlistát.
                                 </p>
@@ -1168,6 +1254,7 @@
                                     Tovább a Mit egyél programhoz <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
+
                             <!-- 3. Holisztikus program -->
                             <div class="mb-10 border-b border-fonix-bg pb-8">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-3 gap-4">
@@ -1181,6 +1268,7 @@
                                     Tovább a Holisztikus programhoz <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
+
                             <!-- 4. Táplálékkiegészítő tanácsadás -->
                             <div class="mb-4">
                                 <h4 class="text-lg font-sans text-fonix-green font-bold mb-3">Milyen táplálék kiegészítőket szedjek? Teljeskörű tanácsadás</h4>
@@ -1189,9 +1277,11 @@
                                 </p>
                                 <div class="text-sm font-bold text-fonix-gold italic">Árazás és bejelentkezés telefonos egyeztetés alapján!</div>
                             </div>
+
                         </div>
                     </div>
                 </div>
+
                 <!-- Lelki Egészség -->
                 <div>
                      <button onclick="toggleAccordion('cat-lelki')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
@@ -1208,7 +1298,7 @@
                     </button>
                     <div id="cat-lelki" class="accordion-content bg-[#fcfbf7]">
                         <div class="px-8 pb-8 pt-6">
-
+                             
                             <!-- 1. Hangfürdő -->
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
@@ -1221,6 +1311,7 @@
                                     A hangtál terápia egy ősi és modern gyógymód, amely a test és a lelki egészség támogatására szolgál. A terápia során a hangtálak rezgései a test és a lelki egészség mélyebb rétegeit aktiválják, hozzájárulva a relaxációhoz, meditációhoz és a stresszoldó hormonok csökkentéséhez. A hangtálak hatása alatt az agy különböző változásokat tapasztalhat, és a mélyebb meditatív állapot elérhetővé válik. Aktiválja a test öngyógyító folyamatait a harmonikus rezgések segítségével, a testi és lelki harmónia megteremtésére szolgál.
                                 </p>
                             </div>
+
                             <!-- 2. Családállítás -->
                             <div class="mb-8 border-b border-fonix-bg pb-8 last:border-0 last:pb-0">
                                 <div class="flex flex-col mb-4 gap-2">
@@ -1233,6 +1324,7 @@
                                     A családállítás egy alternatív terápiás módszer, amelyet Bert Hellinger német pszichoterapeuta dolgozott ki. A módszer lényege, hogy a családi kapcsolatokban rejlő problémák és konfliktusok gyökereit feltárja, amelyek gyakran generációkon átívelő hatásokból erednek. A családállítás során a résztvevők szimbolikusan jelenítik meg a családi dinamikát, lehetővé téve a rejtett mintázatok és traumák felismerését és feldolgozását.
                                 </p>
                             </div>
+
                             <!-- 3. Mentálhigiéniás tanácsadás -->
                             <div class="mb-8">
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
@@ -1245,12 +1337,15 @@
                                     Nemcsak a testnek, a léleknek is szüksége van az állandó „karbantartásra”, megtisztulásra. A mentálhigiénés segítő beszélgetés lehetőséget ad az érzelmi tehermentesítésre, az önismeret fejlesztésére és a belső egyensúly visszaállítására.
                                 </p>
                             </div>
+
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
+
     <!-- Órarend -->
     <section id="orarend" class="py-20 bg-white">
         <div class="container mx-auto px-6 max-w-7xl">
@@ -1259,8 +1354,10 @@
                 <div class="w-24 h-1 bg-fonix-gold mx-auto"></div>
                 <p class="mt-4 text-fonix-dark/70 font-medium">Aktuális csoportos óráink beosztása</p>
             </div>
+
             <!-- Kártyás, reszponzív heti órarend -->
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3">
+
                 <!-- Hétfő -->
                 <div class="rounded-2xl overflow-hidden shadow-sm border border-fonix-gold/20 bg-[#fcfbf7] flex flex-col">
                     <div class="bg-fonix-green text-white text-center font-serif font-bold py-3 px-2">Hétfő</div>
@@ -1271,6 +1368,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Kedd -->
                 <div class="rounded-2xl overflow-hidden shadow-sm border border-fonix-gold/20 bg-[#fcfbf7] flex flex-col">
                     <div class="bg-fonix-green text-white text-center font-serif font-bold py-3 px-2">Kedd</div>
@@ -1281,6 +1379,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Szerda -->
                 <div class="rounded-2xl overflow-hidden shadow-sm border border-fonix-gold/20 bg-[#fcfbf7] flex flex-col">
                     <div class="bg-fonix-green text-white text-center font-serif font-bold py-3 px-2">Szerda</div>
@@ -1291,6 +1390,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Csütörtök -->
                 <div class="rounded-2xl overflow-hidden shadow-sm border border-fonix-gold/20 bg-[#fcfbf7] flex flex-col">
                     <div class="bg-fonix-green text-white text-center font-serif font-bold py-3 px-2">Csütörtök</div>
@@ -1305,6 +1405,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Péntek -->
                 <div class="rounded-2xl overflow-hidden shadow-sm border border-fonix-gold/20 bg-[#fcfbf7] flex flex-col">
                     <div class="bg-fonix-green text-white text-center font-serif font-bold py-3 px-2">Péntek</div>
@@ -1315,6 +1416,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Szombat -->
                 <div class="rounded-2xl overflow-hidden shadow-sm border border-fonix-gold/20 bg-[#fcfbf7] flex flex-col">
                     <div class="bg-fonix-green text-white text-center font-serif font-bold py-3 px-2">Szombat</div>
@@ -1325,6 +1427,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Vasárnap -->
                 <div class="rounded-2xl overflow-hidden shadow-sm border border-fonix-gold/20 bg-[#fcfbf7] flex flex-col">
                     <div class="bg-fonix-green/50 text-white text-center font-serif font-bold py-3 px-2">Vasárnap</div>
@@ -1332,7 +1435,9 @@
                         <div class="text-xs text-fonix-dark/40 italic text-center">Nincs csoportos óra</div>
                     </div>
                 </div>
+
             </div>
+
             <!-- Megjegyzés -->
             <div class="text-center mt-8 text-sm text-fonix-dark/60 italic flex items-center justify-center gap-2 flex-wrap px-4">
                 <i class="fas fa-info-circle text-fonix-gold"></i>
@@ -1340,6 +1445,7 @@
             </div>
         </div>
     </section>
+
     <!-- Galéria -->
     <section id="galeria" class="py-20 bg-[#fcfbf7]">
         <div class="container mx-auto px-6">
@@ -1380,6 +1486,7 @@
             </div>
         </div>
     </section>
+
     <!-- Csapat -->
     <section id="csapat" class="py-20 bg-white">
         <div class="container mx-auto px-6">
@@ -1387,7 +1494,7 @@
                 <h2 class="text-4xl font-serif font-bold text-fonix-green mb-4">Munkatársaink</h2>
                 <div class="w-24 h-1 bg-fonix-gold mx-auto"></div>
             </div>
-
+            
             <!-- 0. Dr. Csepregi Katalin - Kiemelve, első sorban, középen -->
             <div class="flex justify-center mb-16">
                 <div class="text-center max-w-xl">
@@ -1411,9 +1518,10 @@
                     </div>
                 </div>
             </div>
+
             <!-- Többi munkatárs négyesével -->
             <div class="flex flex-wrap justify-center gap-8 items-start">
-
+                
                 <!-- Csonka Enikő -->
                 <div class="text-center w-full sm:w-[calc(50%_-_1rem)] lg:w-[calc(25%_-_1.5rem)]">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200 group">
@@ -1436,6 +1544,7 @@
                         </button>
                     </div>
                 </div>
+
                 <!-- 1. Andi -->
                 <div class="text-center w-full sm:w-[calc(50%_-_1rem)] lg:w-[calc(25%_-_1.5rem)]">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200 group">
@@ -1455,6 +1564,7 @@
                         </button>
                     </div>
                 </div>
+
                 <!-- 2. Laura -->
                 <div class="text-center w-full sm:w-[calc(50%_-_1rem)] lg:w-[calc(25%_-_1.5rem)]">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200 group">
@@ -1472,6 +1582,7 @@
                         </button>
                     </div>
                 </div>
+
                 <!-- 3. Szepesi Kata -->
                 <div class="text-center w-full sm:w-[calc(50%_-_1rem)] lg:w-[calc(25%_-_1.5rem)]">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200 group">
@@ -1499,6 +1610,7 @@
                         </button>
                     </div>
                 </div>
+
                 <!-- 4. Welther Hermina -->
                 <div class="text-center w-full sm:w-[calc(50%_-_1rem)] lg:w-[calc(25%_-_1.5rem)]">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200 group">
@@ -1518,6 +1630,7 @@
                         </button>
                     </div>
                 </div>
+
                 <!-- 5. Hajni -->
                 <div class="text-center w-full sm:w-[calc(50%_-_1rem)] lg:w-[calc(25%_-_1.5rem)]">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200 group">
@@ -1535,6 +1648,7 @@
                         </button>
                     </div>
                 </div>
+
                 <!-- 6. Rudolfné Mónika -->
                 <div class="text-center w-full sm:w-[calc(50%_-_1rem)] lg:w-[calc(25%_-_1.5rem)]">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200 group">
@@ -1552,6 +1666,7 @@
                         </button>
                     </div>
                 </div>
+
                 <!-- 7. Balogh Emese -->
                  <div class="text-center w-full sm:w-[calc(50%_-_1rem)] lg:w-[calc(25%_-_1.5rem)]">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200 group">
@@ -1570,6 +1685,7 @@
                         </button>
                     </div>
                 </div>
+
                 <!-- 8. Balogh Maya -->
                  <div class="text-center w-full sm:w-[calc(50%_-_1rem)] lg:w-[calc(25%_-_1.5rem)]">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200 group">
@@ -1589,6 +1705,7 @@
                         </button>
                     </div>
                 </div>
+
                 <!-- 9. Szabolcsi Éva -->
                 <div class="text-center w-full sm:w-[calc(50%_-_1rem)] lg:w-[calc(25%_-_1.5rem)]">
                     <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200 group">
@@ -1608,8 +1725,10 @@
                         </button>
                     </div>
                 </div>
-                <!-- További munkatársak -->
 
+
+                <!-- További munkatársak -->
+                
                 <!-- 10. Edina (Sport) -->
                 <div class="text-center w-full sm:w-[calc(50%_-_1rem)] lg:w-[calc(25%_-_1.5rem)]">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200 group">
@@ -1628,6 +1747,7 @@
                         </button>
                     </div>
                 </div>
+
                 <!-- 11. Kricsfalussy Vali -->
                  <div class="text-center w-full sm:w-[calc(50%_-_1rem)] lg:w-[calc(25%_-_1.5rem)]">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200 group">
@@ -1646,6 +1766,7 @@
                         </button>
                     </div>
                 </div>
+
                 <!-- 12. Edina (Marketing) -->
                 <div class="text-center w-full sm:w-[calc(50%_-_1rem)] lg:w-[calc(25%_-_1.5rem)]">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200 group">
@@ -1666,6 +1787,7 @@
                         </a>
                     </div>
                 </div>
+
                 <!-- 13. Emese (Fodrász & Head Spa) -->
                 <div class="text-center w-full sm:w-[calc(50%_-_1rem)] lg:w-[calc(25%_-_1.5rem)]">
                      <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-fonix-bg hover:border-fonix-gold transition duration-300 mb-4 bg-gray-200 group">
@@ -1685,392 +1807,287 @@
                         </button>
                     </div>
                 </div>
+
             </div>
+
             <!-- Németh László (Szöveges említés legalul) -->
             <div class="text-center mt-12 text-fonix-dark/70">
                 <p>További szakértőnk: <span class="font-bold text-fonix-green">Németh László</span> (Hangfürdő)</p>
             </div>
+
         </div>
     </section>
+
     <!-- Terembérlés Szakasz -->
-    <section id="teremberles" class="py-20 bg-[#fcfbf7] border-t border-fonix-gold/20">
+    <section id="teremberles" class="py-20 bg-fonix-bg">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-serif font-bold text-fonix-green mb-4">Bérelhető Helyiségek</h2>
                 <div class="w-24 h-1 bg-fonix-gold mx-auto"></div>
-                <p class="mt-4 text-fonix-dark/70 font-medium">Kiválóan felszerelt, igényes terek rendezvényekhez és szépségipari vagy terápiás tevékenységekhez.</p>
+                <p class="mt-4 text-fonix-dark/70 font-medium max-w-2xl mx-auto">Tartsd nálunk a következő eseményed, tanfolyamod vagy kezelésed! Belvárosi, mégis csendes és zöld környezetben várnak igényesen kialakított tereink.</p>
             </div>
-            <!-- Rendezvényekre bérelhető termeink -->
-            <div class="mb-16">
-                <h3 class="text-2xl font-serif font-bold text-fonix-green mb-8 flex items-center gap-3 border-b border-fonix-gold/30 pb-2">
-                    <i class="fas fa-users text-fonix-gold"></i> Rendezvényekre bérelhető termeink
-                </h3>
-                <div class="grid md:grid-cols-2 gap-8">
 
-                    <!-- Terem 1.1 -->
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 flex flex-col group">
-                        <div class="grid grid-cols-3 gap-1 bg-gray-100 h-64 sm:h-80 md:h-[22rem]">
-                            <div class="col-span-2 overflow-hidden relative h-full">
-                                <img src="terasz1.jpeg" onerror="this.src='https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=800&q=80'" alt="Teraszkapcsolatos terem 1" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
+            <!-- Rendezvénytermek -->
+            <div class="grid md:grid-cols-2 gap-8 mb-10">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-fonix-gold/20 flex flex-col">
+                    <div class="p-8 flex-grow">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-fonix-green/10 rounded-full flex items-center justify-center text-fonix-green text-2xl shrink-0">
+                                <i class="fas fa-users"></i>
                             </div>
-                            <div class="col-span-1 grid grid-rows-2 gap-1 h-full">
-                                <div class="overflow-hidden relative h-full w-full">
-                                    <img src="terasz2.jpg" onerror="this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=400&q=80'" alt="Teraszkapcsolatos terem 2" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
-                                </div>
-                                <div class="overflow-hidden relative h-full w-full">
-                                    <img src="terasz3.jpg" onerror="this.src='https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=400&q=80'" alt="Teraszkapcsolatos terem 3" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
-                                </div>
-                            </div>
+                            <h3 class="text-2xl font-serif font-bold text-fonix-green">Teraszkapcsolatos Rendezvényterem</h3>
                         </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <h4 class="text-xl font-serif font-bold text-fonix-green mb-3">Teraszkapcsolatos, reprezentatív terem</h4>
-                            <div class="w-12 h-1 bg-fonix-gold mb-5 rounded-full"></div>
-
-                            <div class="text-sm text-fonix-dark/80 leading-relaxed mb-6 flex-grow text-justify space-y-3">
-                                <p>Elegáns, <strong>kb. 40 nm-es</strong> világos tér, amely közvetlen teraszkapcsolattal és egy hangulatos cserépkályhával büszkélkedhet.</p>
-                                <p>Praktikus hidegburkolatának köszönhetően kiváló választás workshopokhoz, tréningekhez, családias összejövetelekhez vagy akár kisebb táncos rendezvényekhez.</p>
+                        <p class="text-fonix-dark/80 mb-5 text-sm leading-relaxed">Tágas, világos, kb. <strong>40 m²</strong>-es terem közvetlen terasz­kapcsolattal. Ideális előadásokhoz, tréningekhez, csoportos foglalkozásokhoz és kisebb rendezvényekhez.</p>
+                        <ul class="space-y-2 text-sm text-fonix-dark/80">
+                            <li class="flex items-center gap-3"><i class="fas fa-ruler-combined text-fonix-gold w-4 text-center"></i> Kb. 40 m² alapterület</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-door-open text-fonix-gold w-4 text-center"></i> Közvetlen terasz­kapcsolat</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-chalkboard-teacher text-fonix-gold w-4 text-center"></i> Előadás, tréning, workshop</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-fonix-gold/20 flex flex-col">
+                    <div class="p-8 flex-grow">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-fonix-gold/15 rounded-full flex items-center justify-center text-fonix-gold text-2xl shrink-0">
+                                <i class="fas fa-mountain"></i>
                             </div>
+                            <h3 class="text-2xl font-serif font-bold text-fonix-green">Tetőtéri Rendezvényterem</h3>
+                        </div>
+                        <p class="text-fonix-dark/80 mb-5 text-sm leading-relaxed">Hangulatos, kb. <strong>50 m²</strong>-es tetőtéri tér, amely tökéletes mozgásos foglalkozásokhoz (jóga, pilates), meditációhoz, valamint nagyobb csoportos eseményekhez.</p>
+                        <ul class="space-y-2 text-sm text-fonix-dark/80">
+                            <li class="flex items-center gap-3"><i class="fas fa-ruler-combined text-fonix-gold w-4 text-center"></i> Kb. 50 m² alapterület</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-spa text-fonix-gold w-4 text-center"></i> Mozgás, jóga, meditáció</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-people-group text-fonix-gold w-4 text-center"></i> Nagyobb csoportos események</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-                            <div class="flex items-center gap-4 text-xs font-bold text-fonix-dark/90 bg-[#fcfbf7] p-4 rounded-xl border border-fonix-gold/30 mt-auto shadow-sm">
-                                <div class="w-10 h-10 rounded-full bg-fonix-gold/20 flex items-center justify-center text-fonix-gold shrink-0">
-                                    <i class="fas fa-chair text-base"></i>
-                                </div>
-                                <span class="leading-tight">Ültetve kényelmes max. 20 főnek,<br>ültetés nélkül 30 fő befogadására alkalmas.</span>
-                            </div>
+            <!-- Kezelőhelyiségek bérlése -->
+            <div class="bg-white rounded-2xl shadow-lg border border-fonix-gold/20 p-8 mb-10">
+                <h3 class="text-xl font-serif font-bold text-fonix-green mb-2">Kezelő- és tanácsadó helyiségek</h3>
+                <p class="text-sm text-fonix-dark/70 mb-6">Szépségiparban és lelki egészség területén dolgozó szakembereknek kiadó, berendezett helyiségek – akár alkalmi, akár rendszeres bérlés formájában.</p>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="bg-[#fcfbf7] rounded-xl border border-fonix-bg p-5 flex items-start gap-4">
+                        <i class="fas fa-hand-sparkles text-fonix-gold text-xl mt-1"></i>
+                        <div>
+                            <div class="font-bold text-fonix-dark">Kozmetikai / masszázs kezelő</div>
+                            <div class="text-xs text-fonix-dark/60 mt-1">Nyugodt, berendezett kezelőszoba kézzel végzett kezelésekhez.</div>
                         </div>
                     </div>
-                    <!-- Terem 1.2 -->
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 flex flex-col group">
-                        <div class="grid grid-cols-3 gap-1 bg-gray-100 h-64 sm:h-80 md:h-[22rem]">
-                            <div class="col-span-2 overflow-hidden relative h-full">
-                                <img src="teto1.jpg" onerror="this.src='https://images.unsplash.com/photo-1588286840104-a4b8eb4968bc?auto=format&fit=crop&w=800&q=80'" alt="Tetőtéri terem 1" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
-                            </div>
-                            <div class="col-span-1 grid grid-rows-2 gap-1 h-full">
-                                <div class="overflow-hidden relative h-full w-full">
-                                    <img src="teto2.jpg" onerror="this.src='https://images.unsplash.com/photo-1545224144-b38cd30dd49f?auto=format&fit=crop&w=400&q=80'" alt="Tetőtéri terem 2" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
-                                </div>
-                                <div class="overflow-hidden relative h-full w-full">
-                                    <img src="teto3.jpg" onerror="this.src='https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=400&q=80'" alt="Tetőtéri terem 3" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
-                                </div>
-                            </div>
+                    <div class="bg-[#fcfbf7] rounded-xl border border-fonix-bg p-5 flex items-start gap-4">
+                        <i class="fas fa-paint-brush text-fonix-gold text-xl mt-1"></i>
+                        <div>
+                            <div class="font-bold text-fonix-dark">Manikűr- / pedikűr munkahely</div>
+                            <div class="text-xs text-fonix-dark/60 mt-1">Kéz- és lábápoláshoz kialakított, jól felszerelt hely.</div>
                         </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <h4 class="text-xl font-serif font-bold text-fonix-green mb-3">Tetőtéri, melegburkolatos terem</h4>
-                            <div class="w-12 h-1 bg-fonix-gold mb-5 rounded-full"></div>
-
-                            <div class="text-sm text-fonix-dark/80 leading-relaxed mb-6 flex-grow text-justify space-y-3">
-                                <p>Tágas, <strong>kb. 50 nm-es</strong> terem a tetőtér háborítatlan nyugalmában. A természetes fény és az intim atmoszféra tökéletes közeget teremt jógaórákhoz vagy elmélyült workshopokhoz.</p>
-                                <p>Kiválóan alkalmas alkalmi rendezvényekre, de akár rendszeres, heti több napos bérlésre is lehetőség van.</p>
-                            </div>
-
-                            <div class="flex items-center gap-4 text-xs font-bold text-fonix-dark/90 bg-[#fcfbf7] p-4 rounded-xl border border-fonix-gold/30 mt-auto shadow-sm">
-                                <div class="w-10 h-10 rounded-full bg-fonix-gold/20 flex items-center justify-center text-fonix-gold shrink-0">
-                                    <i class="fas fa-spa text-base"></i>
-                                </div>
-                                <span class="leading-tight">Kiváló akusztika és csendes környezet,<br>kifejezetten test-lélek foglalkozásokhoz.</span>
-                            </div>
+                    </div>
+                    <div class="bg-[#fcfbf7] rounded-xl border border-fonix-bg p-5 flex items-start gap-4">
+                        <i class="fas fa-comments text-fonix-gold text-xl mt-1"></i>
+                        <div>
+                            <div class="font-bold text-fonix-dark">Tanácsadó / terápiás szoba</div>
+                            <div class="text-xs text-fonix-dark/60 mt-1">Diszkrét, csendes tér tanácsadáshoz, terápiához.</div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Szépségipari vagy mentálhigiéniás tevékenységre -->
-            <div class="mt-20">
-                <h3 class="text-2xl font-serif font-bold text-fonix-green mb-8 flex items-center gap-3 border-b border-fonix-gold/30 pb-2">
-                    <i class="fas fa-spa text-fonix-gold"></i> Szépségipari vagy mentálhigiéniás tevékenységre bérelhető szobák
-                </h3>
-                <div class="grid md:grid-cols-3 gap-8">
 
-                    <!-- Terem 2.1 -->
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 flex flex-col group">
-                        <div class="h-56 bg-gray-100 overflow-hidden relative">
-                            <img src="terem3.png" onerror="this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80'" alt="Műkörömépítő vagy pedikűrös szoba" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
-                        </div>
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h4 class="text-lg font-serif font-bold text-fonix-green mb-3">Kéz- és lábápoló szoba</h4>
-                            <div class="w-10 h-1 bg-fonix-gold mb-4 rounded-full"></div>
-                            <p class="text-sm text-fonix-dark/80 leading-relaxed mb-6 flex-grow">
-                                Kifejezetten műkörömépítőnek, vagy pedikűrösnek kiadó igényes szoba, professzionális szakmai tevékenység végzésére.
-                            </p>
-                            <div class="inline-flex items-center gap-2 text-xs font-bold text-fonix-green bg-fonix-green/10 px-4 py-2 rounded-lg mt-auto self-start border border-fonix-green/20">
-                                <i class="far fa-calendar-alt text-sm"></i> Heti maximum 4 napra
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Terem 2.2 -->
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 flex flex-col group">
-                        <div class="h-56 bg-gray-100 overflow-hidden relative">
-                            <img src="terem4.jpg" onerror="this.src='https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=800&q=80'" alt="Masszázs szoba" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
-                        </div>
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h4 class="text-lg font-serif font-bold text-fonix-green mb-3">Masszázs szoba</h4>
-                            <div class="w-10 h-1 bg-fonix-gold mb-4 rounded-full"></div>
-                            <p class="text-sm text-fonix-dark/80 leading-relaxed mb-6 flex-grow">
-                                Csendes, nyugodt és harmonikus környezetet biztosító, masszázs tevékenységre kiadó terápiás szoba.
-                            </p>
-                            <div class="inline-flex items-center gap-2 text-xs font-bold text-fonix-green bg-fonix-green/10 px-4 py-2 rounded-lg mt-auto self-start border border-fonix-green/20">
-                                <i class="far fa-calendar-alt text-sm"></i> Heti maximum 4 napra
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Terem 2.3 -->
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 flex flex-col group">
-                        <div class="h-56 bg-gray-100 overflow-hidden relative">
-                            <img src="terem5.png" onerror="this.src='https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80'" alt="Konzultációs szoba" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
-                        </div>
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h4 class="text-lg font-serif font-bold text-fonix-green mb-3">Konzultációs szoba</h4>
-                            <div class="w-10 h-1 bg-fonix-gold mb-4 rounded-full"></div>
-                            <p class="text-sm text-fonix-dark/80 leading-relaxed mb-6 flex-grow">
-                                Diszkrét tér tanácsadásra, konzultációra, mentálhigiéniás beszélgetésre, vagy egyéni jóga foglalkozásokra.
-                            </p>
-                            <div class="inline-flex items-center gap-2 text-xs font-bold text-fonix-green bg-fonix-green/10 px-4 py-2 rounded-lg mt-auto self-start border border-fonix-green/20">
-                                <i class="far fa-calendar-alt text-sm"></i> Heti maximum 4 napra
-                            </div>
-                        </div>
-                    </div>
+            <!-- Kapcsolatfelvétel CTA -->
+            <div class="bg-fonix-green text-white rounded-2xl p-8 text-center">
+                <h3 class="text-2xl font-serif font-bold mb-2">Érdekel a bérlés?</h3>
+                <p class="text-white/80 mb-6 max-w-xl mx-auto text-sm">Kérj egyedi ajánlatot a termekre és a kezelőhelyiségekre! Hívj minket, és megbeszéljük az időpontot és a részleteket.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                    <a href="tel:+36204654525" class="inline-flex items-center justify-center gap-2 bg-fonix-gold text-fonix-bg font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-fonix-green transition duration-300 uppercase tracking-wider text-sm">
+                        <i class="fas fa-phone-alt"></i> 06 20 465 4525
+                    </a>
+                    <a href="mailto:fonixvitalitas@gmail.com" class="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/40 text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-fonix-green transition duration-300 uppercase tracking-wider text-sm">
+                        <i class="fas fa-envelope"></i> E-mail küldése
+                    </a>
                 </div>
             </div>
-            <!-- Call to action gomb terembérléshez -->
-            <div class="mt-16 text-center">
-                <p class="text-fonix-dark/70 mb-4 font-medium">További információkért és terembérléssel kapcsolatos egyeztetésért keress minket bizalommal!</p>
-                <a href="tel:+36204654525" class="inline-flex items-center gap-2 bg-fonix-gold text-fonix-bg font-bold px-8 py-3 rounded hover:bg-fonix-green transition duration-300 shadow-md">
-                    <i class="fas fa-phone-alt"></i> Kapcsolatfelvétel: 06 20 465 4525
+        </div>
+    </section>
+
+    <!-- Időpontfoglalás -->
+    <section id="idopontfoglalas" class="py-20 bg-fonix-green relative overflow-hidden">
+        <div class="container mx-auto px-6 max-w-5xl relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-serif font-bold text-white mb-4">Időpontfoglalás</h2>
+                <div class="w-24 h-1 bg-fonix-gold mx-auto"></div>
+                <p class="mt-4 text-white/80 font-medium max-w-2xl mx-auto">Foglald le online a helyed pár kattintással. Válaszd ki, hogy csoportos órára vagy egyéni kezelésre jelentkeznél!</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <a href="https://csoportos.fonixvitalitas.hu" target="_blank" class="group bg-white rounded-2xl p-8 shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-fonix-green/10 rounded-full flex items-center justify-center text-fonix-green text-3xl mb-4 group-hover:bg-fonix-gold group-hover:text-white transition">
+                        <i class="fas fa-people-group"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-fonix-green mb-2">Csoportos órák</h3>
+                    <p class="text-sm text-fonix-dark/70 mb-5">Jóga, pilates, stretching, step és Fit Jance órák foglalása.</p>
+                    <span class="inline-flex items-center gap-2 bg-fonix-gold text-fonix-bg font-bold px-6 py-3 rounded-lg uppercase tracking-wider text-sm group-hover:bg-fonix-green group-hover:text-white transition">
+                        Foglalás <i class="fas fa-arrow-right"></i>
+                    </span>
+                </a>
+                <a href="https://egyeni.fonixvitalitas.hu" target="_blank" class="group bg-white rounded-2xl p-8 shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-fonix-gold/15 rounded-full flex items-center justify-center text-fonix-gold text-3xl mb-4 group-hover:bg-fonix-green group-hover:text-white transition">
+                        <i class="fas fa-user-clock"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-fonix-green mb-2">Egyéni időpontok</h3>
+                    <p class="text-sm text-fonix-dark/70 mb-5">Masszázsok, testkezelések, kéz- és lábápolás, tanácsadás.</p>
+                    <span class="inline-flex items-center gap-2 bg-fonix-gold text-fonix-bg font-bold px-6 py-3 rounded-lg uppercase tracking-wider text-sm group-hover:bg-fonix-green group-hover:text-white transition">
+                        Foglalás <i class="fas fa-arrow-right"></i>
+                    </span>
                 </a>
             </div>
+            <p class="text-center text-white/70 text-sm mt-8">Inkább telefonon foglalnál? Hívj minket: <a href="tel:+36204654525" class="text-white font-bold hover:underline">06 20 465 4525</a></p>
         </div>
     </section>
-    <!-- Időpontfoglalás -->
-    <section id="idopontfoglalas" class="py-20 bg-fonix-bg">
-        <div class="container mx-auto px-6 max-w-5xl">
-            <div class="bg-fonix-bg rounded-[2rem] py-16 px-6 md:px-12 text-center shadow-xl border border-fonix-gold/30 relative overflow-hidden">
-                <!-- Díszítő elem a brand arculatához -->
-                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-fonix-green via-fonix-gold to-fonix-green"></div>
 
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-fonix-green mb-4">Időpontfoglalás</h2>
-                <p class="text-fonix-dark/80 mb-10 text-lg md:text-xl font-sans max-w-2xl mx-auto">Rugalmas foglalás – válaszd ki, mi illik hozzád: közösségi óra vagy privát kezelés.</p>
-
-                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <a href="https://csoportos.fonixvitalitas.hu" target="_blank" class="w-full sm:w-auto bg-fonix-bg text-fonix-green border-2 border-fonix-green px-10 py-4 rounded-lg font-bold uppercase tracking-wider shadow-md hover:bg-fonix-green hover:text-fonix-bg transition duration-300">
-                        Csoportos órák
-                    </a>
-                    <a href="https://egyeni.fonixvitalitas.hu" target="_blank" class="w-full sm:w-auto bg-fonix-gold text-fonix-bg border-2 border-fonix-gold px-10 py-4 rounded-lg font-bold uppercase tracking-wider shadow-md hover:bg-fonix-bg hover:text-fonix-gold transition duration-300">
-                        Egyéni kezelések
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- Kapcsolat -->
-    <section id="kapcsolat" class="bg-fonix-green text-fonix-bg py-20">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-12">
-                <div>
-                    <h2 class="text-4xl font-serif font-bold text-fonix-gold mb-8">Kapcsolat</h2>
-                    <ul class="space-y-6 text-lg">
-                        <li class="flex items-start gap-4">
-                            <i class="fas fa-map-marker-alt text-fonix-gold mt-1"></i>
-                            <div>
-                                <strong class="block text-fonix-gold">Címünk:</strong>
-                                2013 Pomáz, Beniczky utca 4.
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-4">
-                            <i class="fas fa-phone text-fonix-gold mt-1"></i>
-                            <div>
-                                <strong class="block text-fonix-gold">Telefonszám:</strong>
-                                <a href="tel:+36204654525" class="hover:text-fonix-bg transition">06 20 465 4525</a>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-4">
-                            <i class="fas fa-envelope text-fonix-gold mt-1"></i>
-                            <div>
-                                <strong class="block text-fonix-gold">Email:</strong>
-                                fonixvitalitas@gmail.com
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-4">
-                            <i class="fas fa-clock text-fonix-gold mt-1"></i>
-                            <div>
-                                <strong class="block text-fonix-gold">Nyitvatartás:</strong>
-                                <div class="grid grid-cols-2 gap-x-4">
-                                    <span>Hétfő - Péntek:</span> <span>9:00 - 11:00 és 15:00 - 20:00</span>
-                                    <span>Szombat:</span> <span>9:00 - 11:00</span>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="h-80 bg-fonix-bg rounded-lg overflow-hidden shadow-xl border-4 border-fonix-gold">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2688.134006180126!2d19.02271297676756!3d47.64332217119335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741d08e5a7d6569%3A0x6e3b5e4c0c1b7e0!2zUG9tw6F6LCBCZW5pY3preSB1LiA0LCAyMDEz!5e0!3m2!1shu!2shu!4v1709289123456!5m2!1shu!2shu" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
+    <section id="kapcsolat" class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold text-fonix-green mb-4">Kapcsolat</h2>
+                <div class="w-24 h-1 bg-fonix-gold mx-auto"></div>
+                <p class="mt-4 text-fonix-dark/70 font-medium">Várunk szeretettel Pomáz szívében!</p>
             </div>
 
-            <!-- Impresszum -->
-            <div class="mt-12 bg-black/10 rounded-lg p-6 text-sm">
-                <h3 class="text-xl font-bold text-fonix-gold mb-2 cursor-pointer flex items-center justify-between" onclick="toggleBio('impresszum-content', this.querySelector('i'))">
-                    Impresszum <i class="fas fa-chevron-down text-base transition-transform duration-300"></i>
-                </h3>
-                <div id="impresszum-content" class="hidden space-y-2 text-fonix-bg/80 mt-4 border-t border-fonix-gold/30 pt-4">
-                    <p><strong class="text-fonix-gold">Üzemeltető:</strong> Keystone Dynamics Kft.</p>
-                    <p><strong class="text-fonix-gold">Székhely:</strong> 1136 Budapest, Pannónia utca 19. I. 2.</p>
-                    <p><strong class="text-fonix-gold">Adószám:</strong> 27891472-2-41</p>
-                    <p><strong class="text-fonix-gold">Cégjegyzékszám:</strong> 01 09 355601</p>
-                    <p><strong class="text-fonix-gold">Telefonszám:</strong> 06 20 465 4525</p>
-                    <p><strong class="text-fonix-gold">Email:</strong> fonixvitalitas@gmail.com</p>
+            <div class="grid md:grid-cols-2 gap-10 items-stretch">
+                <!-- Elérhetőségek -->
+                <div class="flex flex-col gap-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-fonix-green/10 rounded-full flex items-center justify-center text-fonix-green text-xl shrink-0"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <div class="font-bold text-fonix-green">Címünk</div>
+                            <a href="https://maps.google.com/maps?q=2013%20Pom%C3%A1z%2C%20Beniczky%20utca%204" target="_blank" class="text-fonix-dark/80 hover:text-fonix-green transition">2013 Pomáz, Beniczky utca 4.</a>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-fonix-green/10 rounded-full flex items-center justify-center text-fonix-green text-xl shrink-0"><i class="fas fa-phone-alt"></i></div>
+                        <div>
+                            <div class="font-bold text-fonix-green">Telefon</div>
+                            <a href="tel:+36204654525" class="text-fonix-dark/80 hover:text-fonix-green transition">06 20 465 4525</a>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-fonix-green/10 rounded-full flex items-center justify-center text-fonix-green text-xl shrink-0"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <div class="font-bold text-fonix-green">E-mail</div>
+                            <a href="mailto:fonixvitalitas@gmail.com" class="text-fonix-dark/80 hover:text-fonix-green transition">fonixvitalitas@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-fonix-green/10 rounded-full flex items-center justify-center text-fonix-green text-xl shrink-0"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <div class="font-bold text-fonix-green">Nyitvatartás</div>
+                            <p class="text-fonix-dark/80 text-sm leading-relaxed">A kezelések és tanácsadások <strong>előzetes bejelentkezés</strong> alapján érhetők el. A csoportos órák időpontjait az <a href="#orarend" class="text-fonix-green font-semibold hover:underline">Órarend</a> tartalmazza.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 mt-2">
+                        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook" class="w-11 h-11 rounded-full bg-fonix-green/10 text-fonix-green flex items-center justify-center hover:bg-fonix-green hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram" class="w-11 h-11 rounded-full bg-fonix-green/10 text-fonix-green flex items-center justify-center hover:bg-fonix-green hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
-            </div>
-            <div class="text-center mt-8 pt-8 border-t border-fonix-gold/30 text-sm opacity-70">
-                <p>&copy; 2024 Főnix Vitalitás Központ. Minden jog fenntartva.</p>
+
+                <!-- Térkép -->
+                <div class="rounded-2xl overflow-hidden shadow-lg border border-fonix-gold/20 min-h-[320px]">
+                    <iframe
+                        title="Főnix Vitalitás Központ térkép"
+                        src="https://maps.google.com/maps?q=2013%20Pom%C3%A1z%2C%20Beniczky%20utca%204&z=15&output=embed"
+                        width="100%" height="100%" style="border:0; min-height:320px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Lábléc / Impresszum -->
+    <footer class="bg-fonix-dark text-white/80 py-12">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="flex flex-col md:flex-row justify-between gap-8">
+                <div>
+                    <div class="text-2xl font-serif font-bold text-white mb-2">Főnix Vitalitás Központ</div>
+                    <p class="text-sm text-white/60 max-w-sm">Mozgás, szépség, kényeztetés, táplálkozás és lelki egészség egy helyen, Pomáz szívében.</p>
+                </div>
+                <div class="text-sm leading-relaxed">
+                    <div class="font-bold text-white mb-2 uppercase tracking-wider text-xs">Impresszum</div>
+                    <p>Üzemeltető: <strong class="text-white/90">Keystone Dynamics Kft.</strong></p>
+                    <p>Székhely: 1136 Budapest, Pannónia u. 19. I.2.</p>
+                    <p>Adószám: 27891472-2-41</p>
+                    <p>Cégjegyzékszám: 01 09 355601</p>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-8 pt-6 text-center text-xs text-white/50">
+                &copy; 2026 Főnix Vitalitás Központ. Minden jog fenntartva.
+            </div>
+        </div>
+    </footer>
+
     <!-- Scripts -->
     <script>
-        // --- Táplálkozás menü egyedi működése ---
-        function openTaplalkozas() {
-            const content = document.getElementById('cat-taplalkozas');
-
-            // Ha a Táplálkozás szekció harmonikája még nincs nyitva, kinyitjuk
-            if (content && !content.classList.contains('active')) {
-                toggleAccordion('cat-taplalkozas');
-            }
-
-            // Ha mobilon vagyunk és nyitva a menü, bezárjuk
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                toggleMobileMenu();
-            }
-        }
-        // --- Accordion ---
+        // Harmonika (accordion) nyitás/zárás
         function toggleAccordion(id) {
             const content = document.getElementById(id);
             const icon = document.getElementById('icon-' + id);
-
-            if (!content || !icon) return;
-            content.classList.toggle('active');
-
-            if (content.style.maxHeight) {
+            if (!content) return;
+            if (content.classList.contains('active')) {
                 content.style.maxHeight = null;
+                content.classList.remove('active');
+                if (icon) icon.classList.remove('rotate-icon');
             } else {
-                content.style.maxHeight = content.scrollHeight + "px";
+                content.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + 'px';
+                if (icon) icon.classList.add('rotate-icon');
             }
-
-            icon.classList.toggle('rotate-icon');
         }
+
+        // Táplálkozás kategória megnyitása és odagördítés a menüből
+        function openTaplalkozas() {
+            const content = document.getElementById('cat-taplalkozas');
+            const icon = document.getElementById('icon-cat-taplalkozas');
+            if (content && !content.classList.contains('active')) {
+                content.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + 'px';
+                if (icon) icon.classList.add('rotate-icon');
+            }
+            const menu = document.getElementById('mobile-menu');
+            if (menu && !menu.classList.contains('hidden')) menu.classList.add('hidden');
+            setTimeout(function () {
+                if (content && content.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+                const target = document.getElementById('taplalkozas');
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 80);
+        }
+
+        // Mobil menü nyitás/zárás
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+            if (menu) menu.classList.toggle('hidden');
         }
+
+        // Munkatársi bemutatkozók (bio) ki-/becsukása
         function toggleBio(id, btn) {
-            const content = document.getElementById(id);
-            content.classList.toggle('hidden');
-
-            if (content.classList.contains('hidden')) {
-                btn.innerHTML = 'Bővebben <i class="fas fa-chevron-down ml-1"></i>';
-            } else {
-                btn.innerHTML = 'Kevesebb <i class="fas fa-chevron-up ml-1"></i>';
+            const bio = document.getElementById(id);
+            if (!bio) return;
+            const nowHidden = bio.classList.toggle('hidden');
+            if (btn) {
+                btn.innerHTML = nowHidden
+                    ? 'Bővebben <i class="fas fa-chevron-down ml-1"></i>'
+                    : 'Bezárás <i class="fas fa-chevron-up ml-1"></i>';
+            }
+            const acc = bio.closest('.accordion-content');
+            if (acc && acc.classList.contains('active')) {
+                acc.style.maxHeight = acc.scrollHeight + 'px';
             }
         }
-    </script>
-    <!-- Akciós popup: 2026-os nyárindító ajánlat (2026. június 30-ig él, utána magától nem jelenik meg) -->
-    <style>
-        @keyframes fonixPopupIn {
-            from { opacity: 0; transform: translateY(14px) scale(0.97); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-    </style>
-    <div id="fonix-promo-popup" class="hidden fixed inset-0 z-[100] items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="fonix-promo-title">
-        <div id="fonix-promo-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-        <div class="relative bg-fonix-bg w-full max-w-lg max-h-[92vh] overflow-y-auto rounded-3xl shadow-2xl border border-fonix-gold/40 p-6 md:p-8 text-center" style="animation: fonixPopupIn 0.35s ease-out;">
-            <button type="button" onclick="closeFonixPromo()" aria-label="Bezárás" class="absolute top-3 right-3 w-10 h-10 rounded-full text-fonix-dark/50 hover:text-fonix-green hover:bg-white transition flex items-center justify-center text-xl">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="inline-block mb-4 px-5 py-1.5 rounded-full border border-fonix-gold/50 text-fonix-gold text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase">2026 · Nyárindító ajánlat</div>
-            <h3 id="fonix-promo-title" class="text-3xl md:text-4xl font-serif font-bold text-fonix-green mb-2">Készülj a strandszezonra!</h3>
-            <p class="text-fonix-gold font-bold text-sm md:text-base tracking-[0.15em] uppercase mb-6">Akár -40% a gépi testkezelésekre</p>
-            <div class="bg-white rounded-2xl shadow-md border border-fonix-gold/20 divide-y divide-fonix-bg text-left mb-6">
-                <div class="p-4 md:p-5 flex justify-between items-center gap-4">
-                    <div>
-                        <div class="font-bold text-fonix-dark">Kombinált testkezelés</div>
-                        <div class="text-xs text-fonix-dark/60 italic">Kavitációs zsírbontás + teljes testes nyirokmasszázs · 4 alkalmas csomag</div>
-                    </div>
-                    <div class="text-right shrink-0">
-                        <div class="text-[11px] text-fonix-dark/50 line-through whitespace-nowrap">79.600 Ft</div>
-                        <div class="text-fonix-green font-bold text-xl whitespace-nowrap">47.800 Ft</div>
-                        <span class="inline-block bg-fonix-green text-white text-[10px] font-bold px-2 py-0.5 rounded-full">-40%</span>
-                    </div>
-                </div>
-                <div class="p-4 md:p-5 flex justify-between items-center gap-4">
-                    <div>
-                        <div class="font-bold text-fonix-dark">Gépi nyirokmasszázs</div>
-                        <div class="text-xs text-fonix-dark/60 italic">10×30 perc · teljes testes kezelés</div>
-                        <div class="text-[11px] text-fonix-dark/60 mt-1">Hatóanyagos, kámforos-mentás géllel: <span class="line-through">73.900 Ft</span> <strong class="text-fonix-green">44.400 Ft</strong></div>
-                    </div>
-                    <div class="text-right shrink-0">
-                        <div class="text-[11px] text-fonix-dark/50 line-through whitespace-nowrap">63.900 Ft</div>
-                        <div class="text-fonix-green font-bold text-xl whitespace-nowrap">38.400 Ft</div>
-                        <span class="inline-block bg-fonix-green text-white text-[10px] font-bold px-2 py-0.5 rounded-full">-40%</span>
-                    </div>
-                </div>
-                <div class="p-4 md:p-5 flex justify-between items-center gap-4">
-                    <div>
-                        <div class="font-bold text-fonix-dark">EMS Intimfotel</div>
-                        <div class="text-[11px] text-fonix-dark/60 mt-1">5×30 perc: <span class="line-through">38.500 Ft</span> <strong class="text-fonix-green">19.500 Ft</strong></div>
-                        <div class="text-[11px] text-fonix-dark/60">10×25 perc: <span class="line-through">69.900 Ft</span> <strong class="text-fonix-green">35.000 Ft</strong></div>
-                    </div>
-                    <div class="text-right shrink-0">
-                        <div class="text-fonix-green font-bold text-xl whitespace-nowrap">19.500 Ft-tól</div>
-                        <span class="inline-block bg-fonix-gold text-white text-[10px] font-bold px-2 py-0.5 rounded-full tracking-wider">EXTRA</span>
-                    </div>
-                </div>
-            </div>
-            <div class="inline-block bg-fonix-green text-white text-xs md:text-sm font-bold tracking-[0.15em] uppercase px-6 py-2.5 rounded-full mb-6">Akciós időszak · 2026. június 10–30.</div>
-            <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                <a href="#idopontfoglalas" onclick="closeFonixPromo()" class="bg-fonix-gold text-white font-bold px-8 py-3.5 rounded-md hover:bg-fonix-green transition duration-300 uppercase tracking-widest text-sm shadow-lg">
-                    Időpontfoglalás
-                </a>
-                <a href="tel:+36204654525" class="border border-fonix-green/40 text-fonix-green font-bold px-8 py-3.5 rounded-md hover:bg-fonix-green hover:text-white transition duration-300 text-sm tracking-wider">
-                    <i class="fas fa-phone-alt mr-2"></i>06 20 465 4525
-                </a>
-            </div>
-            <p class="text-xs text-fonix-dark/60 italic mt-4">Jelentkezz be időben – a kedvezményes időpontok gyorsan betelnek!</p>
-        </div>
-    </div>
-    <script>
-        (function () {
-            // Programajánló szekció automatikus elrejtése az esemény (2026. június 19.) után
-            if (new Date() > new Date('2026-06-19T23:59:59')) {
-                var prog = document.getElementById('programajanlo');
-                if (prog) prog.style.display = 'none';
-            }
 
-            // Akciós popup: csak 2026. június 30-ig, munkamenetenként egyszer
-            var popup = document.getElementById('fonix-promo-popup');
-            if (!popup) return;
-            if (new Date() > new Date('2026-06-30T23:59:59')) return;
-
-            var seen = false;
-            try { seen = sessionStorage.getItem('fonixPromo2026jun') === '1'; } catch (e) {}
-            if (seen) return;
-
-            window.closeFonixPromo = function () {
-                popup.classList.add('hidden');
-                popup.classList.remove('flex');
-                document.body.style.overflow = '';
-            };
-
-            setTimeout(function () {
-                popup.classList.remove('hidden');
-                popup.classList.add('flex');
-                document.body.style.overflow = 'hidden';
-                try { sessionStorage.setItem('fonixPromo2026jun', '1'); } catch (e) {}
-            }, 1200);
-
-            document.getElementById('fonix-promo-backdrop').addEventListener('click', function () { closeFonixPromo(); });
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && !popup.classList.contains('hidden')) closeFonixPromo();
+        // Nyitott harmonika magasságának újraszámítása átméretezéskor
+        window.addEventListener('resize', function () {
+            document.querySelectorAll('.accordion-content.active').forEach(function (el) {
+                el.style.maxHeight = el.scrollHeight + 'px';
             });
-        })();
+        });
     </script>
 </body>
 </html>
