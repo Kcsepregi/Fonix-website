@@ -1677,92 +1677,144 @@
     </section>
 
     <!-- Terembérlés Szakasz -->
-    <section id="teremberles" class="py-20 bg-fonix-bg">
+    <section id="teremberles" class="py-20 bg-[#fcfbf7] border-t border-fonix-gold/20">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-serif font-bold text-fonix-green mb-4">Bérelhető Helyiségek</h2>
                 <div class="w-24 h-1 bg-fonix-gold mx-auto"></div>
-                <p class="mt-4 text-fonix-dark/70 font-medium max-w-2xl mx-auto">Tartsd nálunk a következő eseményed, tanfolyamod vagy kezelésed! Belvárosi, mégis csendes és zöld környezetben várnak igényesen kialakított tereink.</p>
+                <p class="mt-4 text-fonix-dark/70 font-medium">Kiválóan felszerelt, igényes terek rendezvényekhez és szépségipari vagy terápiás tevékenységekhez.</p>
             </div>
-
-            <!-- Rendezvénytermek -->
-            <div class="grid md:grid-cols-2 gap-8 mb-10">
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-fonix-gold/20 flex flex-col">
-                    <div class="p-8 flex-grow">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 bg-fonix-green/10 rounded-full flex items-center justify-center text-fonix-green text-2xl shrink-0">
-                                <i class="fas fa-users"></i>
+            <!-- Rendezvényekre bérelhető termeink -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-serif font-bold text-fonix-green mb-8 flex items-center gap-3 border-b border-fonix-gold/30 pb-2">
+                    <i class="fas fa-users text-fonix-gold"></i> Rendezvényekre bérelhető termeink
+                </h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Terem 1.1 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 flex flex-col group">
+                        <div class="grid grid-cols-3 gap-1 bg-gray-100 h-64 sm:h-80 md:h-[22rem]">
+                            <div class="col-span-2 overflow-hidden relative h-full">
+                                <img src="terasz1.jpeg" onerror="this.src='https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=800&q=80'" alt="Teraszkapcsolatos terem 1" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
                             </div>
-                            <h3 class="text-2xl font-serif font-bold text-fonix-green">Teraszkapcsolatos Rendezvényterem</h3>
-                        </div>
-                        <p class="text-fonix-dark/80 mb-5 text-sm leading-relaxed">Tágas, világos, kb. <strong>40 m²</strong>-es terem közvetlen terasz­kapcsolattal. Ideális előadásokhoz, tréningekhez, csoportos foglalkozásokhoz és kisebb rendezvényekhez.</p>
-                        <ul class="space-y-2 text-sm text-fonix-dark/80">
-                            <li class="flex items-center gap-3"><i class="fas fa-ruler-combined text-fonix-gold w-4 text-center"></i> Kb. 40 m² alapterület</li>
-                            <li class="flex items-center gap-3"><i class="fas fa-door-open text-fonix-gold w-4 text-center"></i> Közvetlen terasz­kapcsolat</li>
-                            <li class="flex items-center gap-3"><i class="fas fa-chalkboard-teacher text-fonix-gold w-4 text-center"></i> Előadás, tréning, workshop</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-fonix-gold/20 flex flex-col">
-                    <div class="p-8 flex-grow">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 bg-fonix-gold/15 rounded-full flex items-center justify-center text-fonix-gold text-2xl shrink-0">
-                                <i class="fas fa-mountain"></i>
+                            <div class="col-span-1 grid grid-rows-2 gap-1 h-full">
+                                <div class="overflow-hidden relative h-full w-full">
+                                    <img src="terasz2.jpg" onerror="this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=400&q=80'" alt="Teraszkapcsolatos terem 2" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
+                                </div>
+                                <div class="overflow-hidden relative h-full w-full">
+                                    <img src="terasz3.jpg" onerror="this.src='https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=400&q=80'" alt="Teraszkapcsolatos terem 3" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
+                                </div>
                             </div>
-                            <h3 class="text-2xl font-serif font-bold text-fonix-green">Tetőtéri Rendezvényterem</h3>
                         </div>
-                        <p class="text-fonix-dark/80 mb-5 text-sm leading-relaxed">Hangulatos, kb. <strong>50 m²</strong>-es tetőtéri tér, amely tökéletes mozgásos foglalkozásokhoz (jóga, pilates), meditációhoz, valamint nagyobb csoportos eseményekhez.</p>
-                        <ul class="space-y-2 text-sm text-fonix-dark/80">
-                            <li class="flex items-center gap-3"><i class="fas fa-ruler-combined text-fonix-gold w-4 text-center"></i> Kb. 50 m² alapterület</li>
-                            <li class="flex items-center gap-3"><i class="fas fa-spa text-fonix-gold w-4 text-center"></i> Mozgás, jóga, meditáció</li>
-                            <li class="flex items-center gap-3"><i class="fas fa-people-group text-fonix-gold w-4 text-center"></i> Nagyobb csoportos események</li>
-                        </ul>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h4 class="text-xl font-serif font-bold text-fonix-green mb-3">Teraszkapcsolatos, reprezentatív terem</h4>
+                            <div class="w-12 h-1 bg-fonix-gold mb-5 rounded-full"></div>
+                            <div class="text-sm text-fonix-dark/80 leading-relaxed mb-6 flex-grow text-justify space-y-3">
+                                <p>Elegáns, <strong>kb. 40 nm-es</strong> világos tér, amely közvetlen teraszkapcsolattal és egy hangulatos cserépkályhával büszkélkedhet.</p>
+                                <p>Praktikus hidegburkolatának köszönhetően kiváló választás workshopokhoz, tréningekhez, családias összejövetelekhez vagy akár kisebb táncos rendezvényekhez.</p>
+                            </div>
+                            <div class="flex items-center gap-4 text-xs font-bold text-fonix-dark/90 bg-[#fcfbf7] p-4 rounded-xl border border-fonix-gold/30 mt-auto shadow-sm">
+                                <div class="w-10 h-10 rounded-full bg-fonix-gold/20 flex items-center justify-center text-fonix-gold shrink-0">
+                                    <i class="fas fa-chair text-base"></i>
+                                </div>
+                                <span class="leading-tight">Ültetve kényelmes max. 20 főnek,<br>ültetés nélkül 30 fő befogadására alkalmas.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Terem 1.2 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 flex flex-col group">
+                        <div class="grid grid-cols-3 gap-1 bg-gray-100 h-64 sm:h-80 md:h-[22rem]">
+                            <div class="col-span-2 overflow-hidden relative h-full">
+                                <img src="teto1.jpg" onerror="this.src='https://images.unsplash.com/photo-1588286840104-a4b8eb4968bc?auto=format&fit=crop&w=800&q=80'" alt="Tetőtéri terem 1" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
+                            </div>
+                            <div class="col-span-1 grid grid-rows-2 gap-1 h-full">
+                                <div class="overflow-hidden relative h-full w-full">
+                                    <img src="teto2.jpg" onerror="this.src='https://images.unsplash.com/photo-1545224144-b38cd30dd49f?auto=format&fit=crop&w=400&q=80'" alt="Tetőtéri terem 2" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
+                                </div>
+                                <div class="overflow-hidden relative h-full w-full">
+                                    <img src="teto3.jpg" onerror="this.src='https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=400&q=80'" alt="Tetőtéri terem 3" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h4 class="text-xl font-serif font-bold text-fonix-green mb-3">Tetőtéri, melegburkolatos terem</h4>
+                            <div class="w-12 h-1 bg-fonix-gold mb-5 rounded-full"></div>
+                            <div class="text-sm text-fonix-dark/80 leading-relaxed mb-6 flex-grow text-justify space-y-3">
+                                <p>Tágas, <strong>kb. 50 nm-es</strong> terem a tetőtér háborítatlan nyugalmában. A természetes fény és az intim atmoszféra tökéletes közeget teremt jógaórákhoz vagy elmélyült workshopokhoz.</p>
+                                <p>Kiválóan alkalmas alkalmi rendezvényekre, de akár rendszeres, heti több napos bérlésre is lehetőség van.</p>
+                            </div>
+                            <div class="flex items-center gap-4 text-xs font-bold text-fonix-dark/90 bg-[#fcfbf7] p-4 rounded-xl border border-fonix-gold/30 mt-auto shadow-sm">
+                                <div class="w-10 h-10 rounded-full bg-fonix-gold/20 flex items-center justify-center text-fonix-gold shrink-0">
+                                    <i class="fas fa-spa text-base"></i>
+                                </div>
+                                <span class="leading-tight">Kiváló akusztika és csendes környezet,<br>kifejezetten test-lélek foglalkozásokhoz.</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Kezelőhelyiségek bérlése -->
-            <div class="bg-white rounded-2xl shadow-lg border border-fonix-gold/20 p-8 mb-10">
-                <h3 class="text-xl font-serif font-bold text-fonix-green mb-2">Kezelő- és tanácsadó helyiségek</h3>
-                <p class="text-sm text-fonix-dark/70 mb-6">Szépségiparban és lelki egészség területén dolgozó szakembereknek kiadó, berendezett helyiségek – akár alkalmi, akár rendszeres bérlés formájában.</p>
-                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <div class="bg-[#fcfbf7] rounded-xl border border-fonix-bg p-5 flex items-start gap-4">
-                        <i class="fas fa-hand-sparkles text-fonix-gold text-xl mt-1"></i>
-                        <div>
-                            <div class="font-bold text-fonix-dark">Kozmetikai / masszázs kezelő</div>
-                            <div class="text-xs text-fonix-dark/60 mt-1">Nyugodt, berendezett kezelőszoba kézzel végzett kezelésekhez.</div>
+            <!-- Szépségipari vagy mentálhigiéniás tevékenységre -->
+            <div class="mt-20">
+                <h3 class="text-2xl font-serif font-bold text-fonix-green mb-8 flex items-center gap-3 border-b border-fonix-gold/30 pb-2">
+                    <i class="fas fa-spa text-fonix-gold"></i> Szépségipari vagy mentálhigiéniás tevékenységre bérelhető szobák
+                </h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Terem 2.1 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 flex flex-col group">
+                        <div class="h-56 bg-gray-100 overflow-hidden relative">
+                            <img src="terem3.png" onerror="this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80'" alt="Műkörömépítő vagy pedikűrös szoba" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h4 class="text-lg font-serif font-bold text-fonix-green mb-3">Kéz- és lábápoló szoba</h4>
+                            <div class="w-10 h-1 bg-fonix-gold mb-4 rounded-full"></div>
+                            <p class="text-sm text-fonix-dark/80 leading-relaxed mb-6 flex-grow">
+                                Kifejezetten műkörömépítőnek, vagy pedikűrösnek kiadó igényes szoba, professzionális szakmai tevékenység végzésére.
+                            </p>
+                            <div class="inline-flex items-center gap-2 text-xs font-bold text-fonix-green bg-fonix-green/10 px-4 py-2 rounded-lg mt-auto self-start border border-fonix-green/20">
+                                <i class="far fa-calendar-alt text-sm"></i> Heti maximum 4 napra
+                            </div>
                         </div>
                     </div>
-                    <div class="bg-[#fcfbf7] rounded-xl border border-fonix-bg p-5 flex items-start gap-4">
-                        <i class="fas fa-paint-brush text-fonix-gold text-xl mt-1"></i>
-                        <div>
-                            <div class="font-bold text-fonix-dark">Manikűr- / pedikűr munkahely</div>
-                            <div class="text-xs text-fonix-dark/60 mt-1">Kéz- és lábápoláshoz kialakított, jól felszerelt hely.</div>
+                    <!-- Terem 2.2 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 flex flex-col group">
+                        <div class="h-56 bg-gray-100 overflow-hidden relative">
+                            <img src="terem4.jpg" onerror="this.src='https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=800&q=80'" alt="Masszázs szoba" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h4 class="text-lg font-serif font-bold text-fonix-green mb-3">Masszázs szoba</h4>
+                            <div class="w-10 h-1 bg-fonix-gold mb-4 rounded-full"></div>
+                            <p class="text-sm text-fonix-dark/80 leading-relaxed mb-6 flex-grow">
+                                Csendes, nyugodt és harmonikus környezetet biztosító, masszázs tevékenységre kiadó terápiás szoba.
+                            </p>
+                            <div class="inline-flex items-center gap-2 text-xs font-bold text-fonix-green bg-fonix-green/10 px-4 py-2 rounded-lg mt-auto self-start border border-fonix-green/20">
+                                <i class="far fa-calendar-alt text-sm"></i> Heti maximum 4 napra
+                            </div>
                         </div>
                     </div>
-                    <div class="bg-[#fcfbf7] rounded-xl border border-fonix-bg p-5 flex items-start gap-4">
-                        <i class="fas fa-comments text-fonix-gold text-xl mt-1"></i>
-                        <div>
-                            <div class="font-bold text-fonix-dark">Tanácsadó / terápiás szoba</div>
-                            <div class="text-xs text-fonix-dark/60 mt-1">Diszkrét, csendes tér tanácsadáshoz, terápiához.</div>
+                    <!-- Terem 2.3 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 flex flex-col group">
+                        <div class="h-56 bg-gray-100 overflow-hidden relative">
+                            <img src="terem5.png" onerror="this.src='https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80'" alt="Konzultációs szoba" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h4 class="text-lg font-serif font-bold text-fonix-green mb-3">Konzultációs szoba</h4>
+                            <div class="w-10 h-1 bg-fonix-gold mb-4 rounded-full"></div>
+                            <p class="text-sm text-fonix-dark/80 leading-relaxed mb-6 flex-grow">
+                                Diszkrét tér tanácsadásra, konzultációra, mentálhigiéniás beszélgetésre, vagy egyéni jóga foglalkozásokra.
+                            </p>
+                            <div class="inline-flex items-center gap-2 text-xs font-bold text-fonix-green bg-fonix-green/10 px-4 py-2 rounded-lg mt-auto self-start border border-fonix-green/20">
+                                <i class="far fa-calendar-alt text-sm"></i> Heti maximum 4 napra
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Kapcsolatfelvétel CTA -->
-            <div class="bg-fonix-green text-white rounded-2xl p-8 text-center">
-                <h3 class="text-2xl font-serif font-bold mb-2">Érdekel a bérlés?</h3>
-                <p class="text-white/80 mb-6 max-w-xl mx-auto text-sm">Kérj egyedi ajánlatot a termekre és a kezelőhelyiségekre! Hívj minket, és megbeszéljük az időpontot és a részleteket.</p>
-                <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                    <a href="tel:+36204654525" class="inline-flex items-center justify-center gap-2 bg-fonix-gold text-fonix-bg font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-fonix-green transition duration-300 uppercase tracking-wider text-sm">
-                        <i class="fas fa-phone-alt"></i> 06 20 465 4525
-                    </a>
-                    <a href="mailto:fonixvitalitas@gmail.com" class="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/40 text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-fonix-green transition duration-300 uppercase tracking-wider text-sm">
-                        <i class="fas fa-envelope"></i> E-mail küldése
-                    </a>
-                </div>
-                <p class="text-white/70 text-xs mt-5">A terembérléshez kapcsolódó <a href="#hazirend" class="text-white font-semibold underline hover:text-fonix-gold">házirendünket itt olvashatod</a>.</p>
+            <!-- Call to action gomb terembérléshez -->
+            <div class="mt-16 text-center">
+                <p class="text-fonix-dark/70 mb-4 font-medium">További információkért és terembérléssel kapcsolatos egyeztetésért keress minket bizalommal!</p>
+                <a href="tel:+36204654525" class="inline-flex items-center gap-2 bg-fonix-gold text-fonix-bg font-bold px-8 py-3 rounded hover:bg-fonix-green transition duration-300 shadow-md">
+                    <i class="fas fa-phone-alt"></i> Kapcsolatfelvétel: 06 20 465 4525
+                </a>
+                <p class="text-sm text-fonix-dark/60 mt-5">A terembérléshez kapcsolódó <a href="#hazirend" class="text-fonix-green font-semibold underline hover:text-fonix-gold transition">házirendünket itt olvashatod</a>.</p>
             </div>
         </div>
     </section>
