@@ -99,7 +99,6 @@
             <div class="hidden xl:flex space-x-8 items-center text-sm uppercase tracking-widest font-bold">
                 <a href="#rolunk" class="hover:text-fonix-green transition">Rólunk</a>
                 <a href="#vitalitas-utja" class="hover:text-fonix-green transition">A vitalitás útja</a>
-                <a href="#taplalkozas" class="hover:text-fonix-green transition" onclick="openTaplalkozas()">Táplálkozás</a>
                 <a href="#orarend" class="hover:text-fonix-green transition">Órarend</a>
                 <a href="#galeria" class="hover:text-fonix-green transition">Galéria</a>
                 <a href="#csapat" class="hover:text-fonix-green transition">Csapat</a>
@@ -126,7 +125,6 @@
             <a href="#rolunk" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Rólunk</a>
             <a href="#programok" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Programok</a>
             <a href="#vitalitas-utja" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">A vitalitás útja</a>
-            <a href="#taplalkozas" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="openTaplalkozas()">Táplálkozás</a>
             <a href="#orarend" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Órarend</a>
             <a href="#galeria" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Galéria</a>
             <a href="#csapat" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Csapat</a>
@@ -1335,9 +1333,15 @@
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-serif font-bold text-fonix-green mb-4">Órarend</h2>
                 <div class="w-24 h-1 bg-fonix-gold mx-auto"></div>
-                <p class="mt-4 text-fonix-dark/70 font-medium">Aktuális csoportos óráink beosztása</p>
+                <p class="mt-4 text-fonix-dark/70 font-medium">Aktuális csoportos óráink beosztása a két termünkben</p>
             </div>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3">
+            <!-- Felső terem -->
+            <div class="mb-12">
+                <div class="flex items-center gap-3 mb-5">
+                    <div class="w-10 h-10 rounded-full bg-fonix-green text-white flex items-center justify-center shrink-0"><i class="fas fa-arrow-up"></i></div>
+                    <h3 class="text-2xl font-serif font-bold text-fonix-green">Felső terem</h3>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3">
                 <div class="rounded-2xl overflow-hidden shadow-sm border border-fonix-gold/20 bg-[#fcfbf7] flex flex-col">
                     <div class="bg-fonix-green/50 text-white text-center font-serif font-bold py-3 px-2">Hétfő</div>
                     <div class="p-3 flex-grow flex items-center justify-center min-h-[6rem]">
@@ -1393,6 +1397,68 @@
                         <div class="text-xs text-fonix-dark/40 italic text-center">Nincs csoportos óra</div>
                     </div>
                 </div>
+            </div>
+            </div>
+
+            <!-- Alsó terem -->
+            <div>
+                <div class="flex items-center gap-3 mb-5">
+                    <div class="w-10 h-10 rounded-full bg-fonix-green text-white flex items-center justify-center shrink-0"><i class="fas fa-arrow-down"></i></div>
+                    <h3 class="text-2xl font-serif font-bold text-fonix-green">Alsó terem</h3>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3">
+                <div class="rounded-2xl overflow-hidden shadow-sm border border-fonix-gold/20 bg-[#fcfbf7] flex flex-col">
+                    <div class="bg-fonix-green text-white text-center font-serif font-bold py-3 px-2">Hétfő</div>
+                    <div class="p-3 space-y-3 flex-grow">
+                        <div class="bg-white rounded-lg border-l-4 border-fonix-gold shadow-sm p-3">
+                            <div class="text-xs font-semibold text-fonix-gold flex items-center gap-1.5"><i class="fas fa-moon"></i> 18:00 – 19:00</div>
+                            <div class="text-sm font-bold text-fonix-dark mt-1">Funkcionális erősítő köredzés</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-sm border border-fonix-gold/20 bg-[#fcfbf7] flex flex-col">
+                    <div class="bg-fonix-green/50 text-white text-center font-serif font-bold py-3 px-2">Kedd</div>
+                    <div class="p-3 flex-grow flex items-center justify-center min-h-[6rem]">
+                        <div class="text-xs text-fonix-dark/40 italic text-center">Nincs csoportos óra</div>
+                    </div>
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-sm border border-fonix-gold/20 bg-[#fcfbf7] flex flex-col">
+                    <div class="bg-fonix-green text-white text-center font-serif font-bold py-3 px-2">Szerda</div>
+                    <div class="p-3 space-y-3 flex-grow">
+                        <div class="bg-white rounded-lg border-l-4 border-fonix-gold shadow-sm p-3">
+                            <div class="text-xs font-semibold text-fonix-gold flex items-center gap-1.5"><i class="fas fa-moon"></i> 18:00 – 19:00</div>
+                            <div class="text-sm font-bold text-fonix-dark mt-1">Funkcionális erősítő köredzés</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-sm border border-fonix-gold/20 bg-[#fcfbf7] flex flex-col">
+                    <div class="bg-fonix-green/50 text-white text-center font-serif font-bold py-3 px-2">Csütörtök</div>
+                    <div class="p-3 flex-grow flex items-center justify-center min-h-[6rem]">
+                        <div class="text-xs text-fonix-dark/40 italic text-center">Nincs csoportos óra</div>
+                    </div>
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-sm border border-fonix-gold/20 bg-[#fcfbf7] flex flex-col">
+                    <div class="bg-fonix-green text-white text-center font-serif font-bold py-3 px-2">Péntek</div>
+                    <div class="p-3 space-y-3 flex-grow">
+                        <div class="bg-white rounded-lg border-l-4 border-fonix-gold shadow-sm p-3">
+                            <div class="text-xs font-semibold text-fonix-gold flex items-center gap-1.5"><i class="fas fa-moon"></i> 18:00 – 19:00</div>
+                            <div class="text-sm font-bold text-fonix-dark mt-1">Funkcionális erősítő köredzés</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-sm border border-fonix-gold/20 bg-[#fcfbf7] flex flex-col">
+                    <div class="bg-fonix-green/50 text-white text-center font-serif font-bold py-3 px-2">Szombat</div>
+                    <div class="p-3 flex-grow flex items-center justify-center min-h-[6rem]">
+                        <div class="text-xs text-fonix-dark/40 italic text-center">Nincs csoportos óra</div>
+                    </div>
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-sm border border-fonix-gold/20 bg-[#fcfbf7] flex flex-col">
+                    <div class="bg-fonix-green/50 text-white text-center font-serif font-bold py-3 px-2">Vasárnap</div>
+                    <div class="p-3 flex-grow flex items-center justify-center min-h-[6rem]">
+                        <div class="text-xs text-fonix-dark/40 italic text-center">Nincs csoportos óra</div>
+                    </div>
+                </div>
+            </div>
             </div>
             <div class="text-center mt-8 text-sm text-fonix-dark/60 italic flex items-center justify-center gap-2 flex-wrap px-4">
                 <i class="fas fa-info-circle text-fonix-gold"></i>
