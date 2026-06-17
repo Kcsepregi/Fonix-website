@@ -100,13 +100,13 @@
         .rh-pillars{display:grid;grid-template-columns:repeat(5,1fr);gap:1.1rem;margin-top:3.2rem}
         .rh-pw{opacity:0;animation:rh-rise .8s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i)*0.11s + 0.15s)}
         @keyframes rh-rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
-        .rh-pillar{position:relative;height:100%;padding:2.1rem 1rem 1.6rem;border-radius:20px;background:rgba(255,255,255,0.60);-webkit-backdrop-filter:blur(16px) saturate(125%);backdrop-filter:blur(16px) saturate(125%);border:1px solid rgba(255,255,255,0.7);box-shadow:0 22px 44px -20px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.9);display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s}
-        .rh-pillar::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:46%;height:3px;border-radius:0 0 4px 4px;background:linear-gradient(90deg,transparent,#c6a23a,transparent)}
-        .rh-pillar:hover{transform:translateY(-9px);box-shadow:0 34px 56px -22px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.9)}
-        .rh-med{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#fff,#f3ead6);color:#0f8514;font-size:1.45rem;margin-bottom:1rem;box-shadow:0 0 0 1.5px rgba(198,162,58,0.6), 0 10px 22px -10px rgba(0,0,0,0.4)}
-        .rh-pw:nth-child(2) .rh-med,.rh-pw:nth-child(4) .rh-med{color:#c6a23a}
-        .rh-name{font-family:'Playfair Display',serif;font-weight:600;color:#0a5d0e;font-size:1.16rem;line-height:1.15;margin-bottom:.32rem}
-        .rh-desc{font-size:.81rem;color:rgba(45,45,45,0.72);line-height:1.4}
+        .rh-pillar{position:relative;height:100%;padding:2.1rem 1rem 1.6rem;border-radius:20px;background:linear-gradient(180deg,rgba(34,38,32,0.68),rgba(20,22,18,0.62));-webkit-backdrop-filter:blur(15px) saturate(115%);backdrop-filter:blur(15px) saturate(115%);border:1px solid rgba(255,255,255,0.10);box-shadow:0 22px 46px -22px rgba(0,0,0,0.70), inset 0 1px 0 rgba(255,255,255,0.05);display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s, border-color .4s}
+        .rh-pillar::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:46%;height:3px;border-radius:0 0 4px 4px;background:linear-gradient(90deg,transparent,#18ab1d,transparent);box-shadow:0 0 11px rgba(24,171,29,0.75)}
+        .rh-pillar:hover{transform:translateY(-9px);border-color:rgba(24,171,29,0.40);box-shadow:0 30px 56px -24px rgba(0,0,0,0.75), 0 0 30px -10px rgba(24,171,29,0.45)}
+        .rh-med{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 28%,#18ab1d,#0a5d0e);color:#fff;font-size:1.45rem;margin-bottom:1rem;box-shadow:0 0 0 1px rgba(255,255,255,0.14), 0 0 22px -4px rgba(24,171,29,0.72)}
+        .rh-pw:nth-child(2) .rh-med,.rh-pw:nth-child(4) .rh-med{background:radial-gradient(circle at 35% 28%,#dcbb5e,#b08a2c);box-shadow:0 0 22px -4px rgba(198,162,58,0.7)}
+        .rh-name{font-family:'Playfair Display',serif;font-weight:600;color:#fff;font-size:1.16rem;line-height:1.15;margin-bottom:.32rem}
+        .rh-desc{font-size:.81rem;color:rgba(245,241,232,0.60);line-height:1.4}
         .rh-closing{font-family:'Playfair Display',serif;font-style:italic;color:#fff;font-size:1.25rem;margin-top:3rem;text-shadow:0 1px 14px rgba(0,0,0,.4)}
         .rh-closing .rh-q{font-family:'Allura',cursive;font-style:normal;color:#e8d49b;font-size:1.9rem;vertical-align:-0.15em}
         @media(max-width:880px){.rh-pillars{grid-template-columns:repeat(2,1fr);gap:1rem}.rh-pw:nth-child(5){grid-column:1 / -1;max-width:50%;margin:0 auto}}
@@ -120,7 +120,7 @@
     <nav class="bg-fonix-bg/95 backdrop-blur-md text-fonix-dark fixed top-0 left-0 w-full z-50 shadow-sm transition-all duration-300 border-b border-fonix-gold/20" id="navbar">
         <div class="w-full px-6 lg:px-12 xl:px-20 py-2 flex justify-between items-center mx-auto max-w-[1600px]">
             <a href="#" class="flex items-center shrink-0">
-                <img src="logo.png" alt="Főnix Vitalitás Központ" class="h-14 lg:h-16 w-auto object-contain mix-blend-multiply" onerror="this.outerHTML='<span class=\'text-3xl font-serif font-bold text-fonix-green\'>Főnix</span>'">
+                <img src="logo.png" alt="Főnix Vitalitás Központ" class="h-16 lg:h-24 w-auto object-contain mix-blend-multiply" onerror="this.outerHTML='<span class=\'text-3xl font-serif font-bold text-fonix-green\'>Főnix</span>'">
             </a>
             <div class="hidden xl:flex space-x-8 items-center text-sm uppercase tracking-widest font-bold">
                 <a href="#rolunk" class="hover:text-fonix-green transition">Rólunk</a>
@@ -338,14 +338,14 @@
         </div>
     </section>
 
-    <!-- A vitalitás útja (korábban: Szolgáltatások) -->
+    <!-- A vitalitás útja (5 pillér) -->
     <section id="vitalitas-utja" class="py-20 bg-fonix-bg">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center mb-12">
                 <span class="inline-block mb-4 px-5 py-1.5 rounded-full border border-fonix-gold/40 text-fonix-gold text-xs md:text-sm font-bold tracking-[0.2em] uppercase bg-white/60 backdrop-blur-sm">A hosszú, minőségi élet útja</span>
                 <h2 class="text-4xl font-serif font-bold text-fonix-green mb-4">A vitalitás útja</h2>
                 <div class="w-24 h-1 bg-fonix-gold mx-auto"></div>
-                <p class="mt-4 text-fonix-dark/70 font-medium max-w-2xl mx-auto">Kétféleképpen juthatsz el a tartós vitalitáshoz: szabadon válogatva a szolgáltatásaink között, vagy lépésről lépésre, egy vezetett úton végighaladva.</p>
+                <p class="mt-4 text-fonix-dark/70 font-medium max-w-2xl mx-auto">Ugyanaz az öt pillér, részletesen kibontva. Kétféleképpen indulhatsz: szabadon válogatva a szolgáltatásaink között, vagy egy vezetett úton, lépésről lépésre.</p>
             </div>
 
             <!-- Vitalitás diagnosztika -->
@@ -383,31 +383,31 @@
             <div class="grid md:grid-cols-2 gap-6 mb-16">
                 <div class="bg-white rounded-2xl border border-fonix-bg shadow-sm p-6 md:p-8 flex flex-col">
                     <div class="w-12 h-12 rounded-full bg-fonix-gold/15 flex items-center justify-center text-fonix-gold text-xl mb-4"><i class="fas fa-hand-pointer"></i></div>
-                    <h3 class="text-xl font-serif font-bold text-fonix-green mb-2">1. Szabad programválasztás</h3>
-                    <p class="text-sm text-fonix-dark/70 leading-relaxed">Pontosan tudod, mire vágysz? Válogass szabadon a szolgáltatásaink közül, és állítsd össze a saját vitalitás-rutinodat. Minden szolgáltatásunk és áruk lentebb, kategóriánként megtalálható.</p>
+                    <h3 class="text-xl font-serif font-bold text-fonix-green mb-2">1. Szabad választás</h3>
+                    <p class="text-sm text-fonix-dark/70 leading-relaxed">Pontosan tudod, mire vágysz? Válogass szabadon a szolgáltatásaink közül, és állítsd össze a saját vitalitás-rutinodat. Minden szolgáltatásunk és áruk lentebb, az 5 pillér szerint csoportosítva megtalálható.</p>
                 </div>
                 <div class="bg-white rounded-2xl border border-fonix-bg shadow-sm p-6 md:p-8 flex flex-col">
                     <div class="w-12 h-12 rounded-full bg-fonix-green/10 flex items-center justify-center text-fonix-green text-xl mb-4"><i class="fas fa-route"></i></div>
                     <h3 class="text-xl font-serif font-bold text-fonix-green mb-2">2. Vezetett út</h3>
-                    <p class="text-sm text-fonix-dark/70 leading-relaxed">Szeretnéd, ha végigkísérnénk? A vezetett út három, egymásra épülő programon vezet végig – az alapoktól a teljes megújulásig. Lépésről lépésre haladunk, a diagnosztika eredményeire építve.</p>
+                    <p class="text-sm text-fonix-dark/70 leading-relaxed">Szeretnéd, ha végigkísérnénk? A diagnosztika eredményeire építve együtt haladunk végig az 5 pilléren – személyre szabottan, lépésről lépésre, a te tempódban.</p>
                 </div>
             </div>
 
-            <!-- A vezetett út három programja -->
+            <!-- Szolgáltatások az 5 pillér mentén -->
             <div class="text-center mb-10">
-                <span class="inline-block px-5 py-1.5 rounded-full bg-fonix-green text-white text-xs md:text-sm font-bold tracking-[0.15em] uppercase">A vezetett út három programja</span>
+                <span class="inline-block px-5 py-1.5 rounded-full bg-fonix-green text-white text-xs md:text-sm font-bold tracking-[0.15em] uppercase">Szolgáltatásaink az 5 pillér mentén</span>
             </div>
 
-            <!-- PROGRAM 1: ALAPOZÁS -->
+            <!-- PILLÉR 1: Mozgás -->
             <div class="flex items-start gap-4 mb-6">
                 <div class="w-12 h-12 rounded-full bg-fonix-green text-white font-serif font-bold text-2xl flex items-center justify-center shrink-0 shadow-md">1</div>
                 <div>
-                    <h3 class="text-2xl md:text-3xl font-serif font-bold text-fonix-green">Alapozás</h3>
-                    <p class="text-fonix-dark/70 text-sm md:text-base">A két legfontosabb pillér, amire minden más épül: <strong class="text-fonix-green">a mozgás és a táplálkozás</strong>. Itt kezdődik a tartós vitalitás.</p>
+                    <h3 class="text-2xl md:text-3xl font-serif font-bold text-fonix-green">Mozgás</h3>
+                    <p class="text-fonix-dark/70 text-sm md:text-base">A tested ereje, állóképessége és rugalmassága – a tartós vitalitás alapja.</p>
                 </div>
             </div>
             <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-fonix-bg mb-16">
-                <div class="border-b border-fonix-bg">
+                <div>
                     <button onclick="toggleAccordion('cat-mozgas')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
                         <div class="flex items-center gap-6">
                             <div class="w-12 h-12 bg-fonix-green rounded-full flex items-center justify-center text-fonix-gold text-2xl group-hover:bg-fonix-gold group-hover:text-fonix-bg transition shrink-0">
@@ -531,6 +531,17 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- PILLÉR 2: Táplálkozás -->
+            <div class="flex items-start gap-4 mb-6">
+                <div class="w-12 h-12 rounded-full bg-fonix-green text-white font-serif font-bold text-2xl flex items-center justify-center shrink-0 shadow-md">2</div>
+                <div>
+                    <h3 class="text-2xl md:text-3xl font-serif font-bold text-fonix-green">Táplálkozás</h3>
+                    <p class="text-fonix-dark/70 text-sm md:text-base">Ami az energiádat és a sejtjeid működését táplálja – személyre szabottan, az anyagcseretípusod alapján.</p>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-fonix-bg mb-16">
                 <div id="taplalkozas">
                     <button onclick="toggleAccordion('cat-taplalkozas')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
                         <div class="flex items-center gap-6">
@@ -559,7 +570,7 @@
                                     </div>
                                 </div>
                                 <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify mb-6">
-                                    Neked ajánljuk, ha egészségesen akarsz táplálkozni és kíváncsi vagy mely élelmiszerek javasoltak számodra és melyeket érdemes elkerülnöd. Nem vagyunk egyformák táplálkozási igényeinkben. Ezen a tanácsadáson a típusmeghatározás és élelmiszerlista mellett kapsz egy hetes mintaétrendet és alapvitamin ajánlást is.
+                                    Akkor ajánljuk, ha egészségesen szeretnél táplálkozni, és kíváncsi vagy, mely élelmiszerek tesznek jót neked, és melyeket érdemes inkább kerülnöd. Táplálkozási szempontból ugyanis mindannyian különbözőek vagyunk. Ezen a tanácsadáson a típusmeghatározás és az élelmiszerlista mellett egy hetes mintaétrendet és alapvitamin-ajánlást is kapsz.
                                 </p>
                                 <div class="bg-white p-5 rounded-xl border border-fonix-gold/30 mb-4 shadow-sm">
                                     <p class="text-sm font-bold text-fonix-green mb-4">Egy részletes anamnézis után, gép segítségével feltérképezzük azokat a faktorokat, amiben különbözünk:</p>
@@ -596,7 +607,7 @@
                                     </div>
                                 </div>
                                 <p class="text-xs text-fonix-dark/80 leading-relaxed italic text-justify mb-4">
-                                    Neked ajánljuk, ha csak azt szeretnéd tudni, hogy milyen típus vagy, mi a jó Neked, ha csak egy élelmiszerlistát akarsz kapni, hogy tudd mit egyél, és mit kerülj el. Ezen a tanácsadáson az anyagcseretípus mérés során megállapítjuk a táplálkozási típusod, hormontípusod, és kapsz egy ennek megfelelő személyre szabott élelmiszerlistát.
+                                    Akkor ajánljuk, ha egyszerűen csak azt szeretnéd tudni, milyen típus vagy és mi tesz jót neked – vagyis ha csak egy konkrét élelmiszerlistát szeretnél arról, mit egyél és mit kerülj. Ezen a tanácsadáson az anyagcseretípus-mérés során megállapítjuk a táplálkozási és a hormontípusodat, és kapsz egy ennek megfelelő, személyre szabott élelmiszerlistát.
                                 </p>
                                 <a href="https://bodywakes.hu/mit-egyel-hogy-jol-legyel-taplalkozasi-tanacsadas" target="_blank" class="text-fonix-gold hover:text-fonix-green text-sm font-bold inline-flex items-center gap-2">
                                     Tovább a Mit egyél programhoz <i class="fas fa-external-link-alt"></i>
@@ -626,12 +637,12 @@
                 </div>
             </div>
 
-            <!-- PROGRAM 2: EGYENSÚLY -->
+            <!-- PILLÉR 3: Regeneráció -->
             <div class="flex items-start gap-4 mb-6">
-                <div class="w-12 h-12 rounded-full bg-fonix-green text-white font-serif font-bold text-2xl flex items-center justify-center shrink-0 shadow-md">2</div>
+                <div class="w-12 h-12 rounded-full bg-fonix-green text-white font-serif font-bold text-2xl flex items-center justify-center shrink-0 shadow-md">3</div>
                 <div>
-                    <h3 class="text-2xl md:text-3xl font-serif font-bold text-fonix-green">Egyensúly</h3>
-                    <p class="text-fonix-dark/70 text-sm md:text-base">A test és a lélek regenerációja: <strong class="text-fonix-green">testkezelések, masszázs, kéz- és lábápolás, valamint lelki feltöltődés</strong> a belső egyensúlyért.</p>
+                    <h3 class="text-2xl md:text-3xl font-serif font-bold text-fonix-green">Regeneráció</h3>
+                    <p class="text-fonix-dark/70 text-sm md:text-base">A test és az idegrendszer feltöltődése – gépi kezelések, masszázs és ápolás, amitől újra erőre kapsz.</p>
                 </div>
             </div>
             <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-fonix-bg mb-16">
@@ -1082,7 +1093,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="border-b border-gray-100">
+                <div>
                      <button onclick="toggleAccordion('cat-kezlab')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
                         <div class="flex items-center gap-6">
                             <div class="w-12 h-12 bg-fonix-gold rounded-full flex items-center justify-center text-fonix-bg text-2xl group-hover:bg-fonix-green transition shrink-0">
@@ -1244,6 +1255,17 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- PILLÉR 4: Lelki egyensúly -->
+            <div class="flex items-start gap-4 mb-6">
+                <div class="w-12 h-12 rounded-full bg-fonix-green text-white font-serif font-bold text-2xl flex items-center justify-center shrink-0 shadow-md">4</div>
+                <div>
+                    <h3 class="text-2xl md:text-3xl font-serif font-bold text-fonix-green">Lelki egyensúly</h3>
+                    <p class="text-fonix-dark/70 text-sm md:text-base">Belső béke és mentális feltöltődés – a lélek gondozása, hogy ki tudj kapcsolni és újratöltődj.</p>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-fonix-bg mb-16">
                 <div>
                      <button onclick="toggleAccordion('cat-lelki')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
                         <div class="flex items-center gap-6">
@@ -1297,12 +1319,12 @@
                 </div>
             </div>
 
-            <!-- PROGRAM 3: MEGÚJULÁS -->
+            <!-- PILLÉR 5: Életcél -->
             <div class="flex items-start gap-4 mb-6">
-                <div class="w-12 h-12 rounded-full bg-fonix-green text-white font-serif font-bold text-2xl flex items-center justify-center shrink-0 shadow-md">3</div>
+                <div class="w-12 h-12 rounded-full bg-fonix-green text-white font-serif font-bold text-2xl flex items-center justify-center shrink-0 shadow-md">5</div>
                 <div>
-                    <h3 class="text-2xl md:text-3xl font-serif font-bold text-fonix-green">Megújulás</h3>
-                    <p class="text-fonix-dark/70 text-sm md:text-base">Hol tart az életed? Mi a valódi életcélod? A legmélyebb szint: <strong class="text-fonix-green">az irány és az értelem megtalálása</strong> – személyes, vezetett kísérés mellett.</p>
+                    <h3 class="text-2xl md:text-3xl font-serif font-bold text-fonix-green">Életcél</h3>
+                    <p class="text-fonix-dark/70 text-sm md:text-base">Tudatos irány és értelem – ami hosszú távon célt és motivációt ad a mindennapoknak.</p>
                 </div>
             </div>
             <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-fonix-bg">
@@ -1443,7 +1465,7 @@
                     <div class="bg-fonix-green text-white text-center font-serif font-bold py-3 px-2">Szerda</div>
                     <div class="p-3 space-y-3 flex-grow">
                         <div class="bg-white rounded-lg border-l-4 border-fonix-gold shadow-sm p-3">
-                            <div class="text-xs font-semibold text-fonix-gold flex items-center gap-1.5"><i class="fas fa-moon"></i> 18:00 – 19:00</div>
+                            <div class="text-xs font-semibold text-fonix-gold flex items-center gap-1.5"><i class="fas fa-moon"></i> 18:15 – 19:15</div>
                             <div class="text-sm font-bold text-fonix-dark mt-1">Funkcionális erősítő köredzés</div>
                         </div>
                     </div>
