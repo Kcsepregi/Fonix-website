@@ -86,6 +86,32 @@
             font-size: 3rem;
         }
 
+        /* === Rólunk – longevity hero (fotós háttér + üvegpillérek) === */
+        .rolunk-hero{position:relative;overflow:hidden;isolation:isolate;color:#fff}
+        .rolunk-hero .rh-bg{position:absolute;inset:0;z-index:-3;background-size:cover;background-position:center;transform:scale(1.06);filter:blur(2px) brightness(.9) saturate(1.06)}
+        .rolunk-hero .rh-scrim{position:absolute;inset:0;z-index:-2;background:radial-gradient(72% 62% at 50% 42%, rgba(10,55,16,0.22), transparent 78%), linear-gradient(180deg, rgba(7,38,11,0.68) 0%, rgba(9,42,13,0.54) 42%, rgba(6,30,9,0.80) 100%)}
+        .rolunk-hero .rh-grain{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.06;mix-blend-mode:overlay;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%25" height="100%25" filter="url(%23n)"/></svg>')}
+        .rh-eyebrow{font-family:'Allura',cursive;font-size:2.7rem;line-height:1;color:#e8d49b;margin-bottom:.35rem;text-shadow:0 2px 14px rgba(0,0,0,.35)}
+        .rh-title{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.08;letter-spacing:-0.01em;text-shadow:0 2px 22px rgba(0,0,0,.4)}
+        .rh-title em{font-style:italic;font-weight:600;color:#e8d49b}
+        .rh-rule{width:64px;height:2px;background:linear-gradient(90deg,transparent,#e8d49b,transparent);margin:1.5rem auto 0}
+        .rh-lead{max-width:42rem;margin:1.5rem auto 0;color:rgba(255,255,255,0.92);font-size:1.05rem;line-height:1.7;text-shadow:0 1px 12px rgba(0,0,0,.4)}
+        .rh-lead strong{color:#e8d49b;font-weight:600}
+        .rh-pillars{display:grid;grid-template-columns:repeat(5,1fr);gap:1.1rem;margin-top:3.2rem}
+        .rh-pw{opacity:0;animation:rh-rise .8s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i)*0.11s + 0.15s)}
+        @keyframes rh-rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+        .rh-pillar{position:relative;height:100%;padding:2.1rem 1rem 1.6rem;border-radius:20px;background:rgba(255,255,255,0.60);-webkit-backdrop-filter:blur(16px) saturate(125%);backdrop-filter:blur(16px) saturate(125%);border:1px solid rgba(255,255,255,0.7);box-shadow:0 22px 44px -20px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.9);display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s}
+        .rh-pillar::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:46%;height:3px;border-radius:0 0 4px 4px;background:linear-gradient(90deg,transparent,#c6a23a,transparent)}
+        .rh-pillar:hover{transform:translateY(-9px);box-shadow:0 34px 56px -22px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.9)}
+        .rh-med{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#fff,#f3ead6);color:#0f8514;font-size:1.45rem;margin-bottom:1rem;box-shadow:0 0 0 1.5px rgba(198,162,58,0.6), 0 10px 22px -10px rgba(0,0,0,0.4)}
+        .rh-pw:nth-child(2) .rh-med,.rh-pw:nth-child(4) .rh-med{color:#c6a23a}
+        .rh-name{font-family:'Playfair Display',serif;font-weight:600;color:#0a5d0e;font-size:1.16rem;line-height:1.15;margin-bottom:.32rem}
+        .rh-desc{font-size:.81rem;color:rgba(45,45,45,0.72);line-height:1.4}
+        .rh-closing{font-family:'Playfair Display',serif;font-style:italic;color:#fff;font-size:1.25rem;margin-top:3rem;text-shadow:0 1px 14px rgba(0,0,0,.4)}
+        .rh-closing .rh-q{font-family:'Allura',cursive;font-style:normal;color:#e8d49b;font-size:1.9rem;vertical-align:-0.15em}
+        @media(max-width:880px){.rh-pillars{grid-template-columns:repeat(2,1fr);gap:1rem}.rh-pw:nth-child(5){grid-column:1 / -1;max-width:50%;margin:0 auto}}
+        @media(max-width:520px){.rh-pillars{grid-template-columns:1fr}.rh-pw:nth-child(5){max-width:100%}}
+        @media(prefers-reduced-motion:reduce){.rh-pw{opacity:1;animation:none}.rolunk-hero .rh-bg{filter:brightness(.9) saturate(1.06)}.rh-pillar{transition:none}}
     </style>
 </head>
 <body class="bg-fonix-bg text-fonix-dark font-sans">
@@ -136,7 +162,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative min-h-[90vh] flex items-center pt-40 lg:pt-48 pb-16 overflow-hidden bg-fonix-bg">
+    <header class="relative min-h-[85vh] flex items-center pt-28 lg:pt-36 pb-10 overflow-hidden bg-fonix-bg">
         <!-- Háttérkép mix-blend móddal a tökéletes egybeolvadásért -->
         <div class="absolute inset-0 bg-[url('wallpaper.jpg')] bg-cover bg-center opacity-50 mix-blend-multiply"></div>
         
@@ -174,14 +200,14 @@
                 <!-- Jobb oldal: Aszimmetrikus kép montázs -->
                 <div class="w-full lg:w-[52%] xl:w-[55%] flex gap-4 sm:gap-6 relative">
                     <!-- Bal oszlop (1 hatalmas, magasított kép, lejjebb tolva) -->
-                    <div class="w-5/12 mt-12 sm:mt-20">
+                    <div class="w-5/12 mt-6 sm:mt-10">
                         <div class="rounded-3xl overflow-hidden shadow-2xl border-[4px] border-white aspect-[3/4] relative group">
                             <div class="absolute inset-0 bg-fonix-green/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
                             <img src="hero1.jpg" onerror="this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80'" alt="Jóga és mozgás" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out">
                         </div>
                     </div>
                     <!-- Jobb oszlop (2 széles, hangsúlyos fekvő kép egymás alatt) -->
-                    <div class="w-7/12 flex flex-col gap-4 sm:gap-6 mb-12 sm:mb-20">
+                    <div class="w-7/12 flex flex-col gap-4 sm:gap-6 mb-6 sm:mb-10">
                         <div class="rounded-3xl overflow-hidden shadow-2xl border-[4px] border-white aspect-[16/10] relative group">
                             <div class="absolute inset-0 bg-fonix-gold/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
                             <img src="hero2.jpg" onerror="this.src='https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=500&q=80'" alt="Relaxációs környezet" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out">
@@ -292,33 +318,23 @@
     </section>
 
     <!-- Rólunk -->
-    <section id="rolunk" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2">
-                    <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Spa hangulat" class="rounded-lg shadow-2xl border-b-4 border-r-4 border-fonix-gold w-full h-auto object-cover">
-                </div>
-                <div class="md:w-1/2">
-                    <h2 class="text-4xl font-serif font-bold text-fonix-green mb-6">A longevity ma kezdődik</h2>
-                    <div class="w-20 h-1 bg-fonix-gold mb-6"></div>
-                    <p class="text-fonix-dark/80 mb-4 leading-relaxed">
-                        A <strong class="text-fonix-green">longevity</strong> – a hosszú, minőségi élet – a mai nappal kezdődik: ahogy ma mozogsz, táplálkozol, pihensz és kezeled a stresszt, az alapozza meg, milyenek lesznek a későbbi évtizedeid. Nem a génjeid döntik el a jövődet, hanem Te magad – a mindennapi, tudatos döntéseiddel.
-                    </p>
-                    <p class="text-fonix-dark/80 mb-4 leading-relaxed">
-                        És itt jön a jó hír: nem kell hozzá drasztikus változás vagy csodaszer. Öt egyszerű, de tudatos pillér kell csupán: rendszeres mozgás, személyre szabott táplálkozás, valódi regeneráció és stresszkezelés, lelki egyensúly, valamint tudatosan választott és követett életcél.
-                    </p>
-                    <p class="text-fonix-dark/80 mb-6 leading-relaxed">
-                        És erről szól a Főnix is: nálunk mind az öt pillér egy helyen jelen van. A szolgáltatásaink között megtalálod a hosszú, minőségi élet valamennyi elemét:
-                    </p>
-                    <ul class="space-y-3 text-fonix-dark/90">
-                        <li class="flex items-start gap-3"><i class="fas fa-person-running text-fonix-gold mt-1 w-5 text-center shrink-0"></i> <span><strong class="text-fonix-green font-serif">Mozgás</strong> – pilates, jóga, személyi edzés.</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-utensils text-fonix-gold mt-1 w-5 text-center shrink-0"></i> <span><strong class="text-fonix-green font-serif">Táplálkozás</strong> – anyagcseretipizáláson alapuló, személyre szabott tanácsadás.</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-spa text-fonix-gold mt-1 w-5 text-center shrink-0"></i> <span><strong class="text-fonix-green font-serif">Regeneráció és stresszkezelés</strong> – masszázsok, gépi testkezelések, head spa, kéz- és lábápolás.</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-dove text-fonix-gold mt-1 w-5 text-center shrink-0"></i> <span><strong class="text-fonix-green font-serif">Lelki egyensúly</strong> – mentálhigiénés tanácsadás, hangfürdő, családállítás.</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-compass text-fonix-gold mt-1 w-5 text-center shrink-0"></i> <span><strong class="text-fonix-green font-serif">Életcél</strong> – életcél-meghatározás, business coaching, kiégés és életközépi válság kezelése.</span></li>
-                    </ul>
-                </div>
+    <section id="rolunk" class="rolunk-hero">
+        <div class="rh-bg" style="background-image:url('rolunk-hatter.jpg')"></div>
+        <div class="rh-scrim"></div>
+        <div class="rh-grain"></div>
+        <div class="relative max-w-5xl mx-auto px-6 py-24 md:py-28 text-center">
+            <div class="rh-eyebrow">a vitalitás útja</div>
+            <h2 class="rh-title">A hosszú, minőségi élet<br><em>öt pillére</em></h2>
+            <div class="rh-rule"></div>
+            <p class="rh-lead">A <strong>longevity</strong> nem a génjeiden múlik, hanem a mindennapi, tudatos döntéseiden. Öt pillér tartja – és a Főnixben mind az öt egy helyen jelen van.</p>
+            <div class="rh-pillars">
+                <div class="rh-pw" style="--i:0"><div class="rh-pillar"><div class="rh-med"><i class="fas fa-person-running"></i></div><div class="rh-name">Mozgás</div><div class="rh-desc">Pilates, jóga, edzés</div></div></div>
+                <div class="rh-pw" style="--i:1"><div class="rh-pillar"><div class="rh-med"><i class="fas fa-utensils"></i></div><div class="rh-name">Táplálkozás</div><div class="rh-desc">Személyre szabott tanácsadás</div></div></div>
+                <div class="rh-pw" style="--i:2"><div class="rh-pillar"><div class="rh-med"><i class="fas fa-spa"></i></div><div class="rh-name">Regeneráció</div><div class="rh-desc">Masszázs, testkezelés, head spa</div></div></div>
+                <div class="rh-pw" style="--i:3"><div class="rh-pillar"><div class="rh-med"><i class="fas fa-dove"></i></div><div class="rh-name">Lelki egyensúly</div><div class="rh-desc">Hangfürdő, tanácsadás</div></div></div>
+                <div class="rh-pw" style="--i:4"><div class="rh-pillar"><div class="rh-med"><i class="fas fa-compass"></i></div><div class="rh-name">Életcél</div><div class="rh-desc">Irány, coaching</div></div></div>
             </div>
+            <p class="rh-closing"><span class="rh-q">„</span>A valódi vitalitás a test és a lélek egyensúlyából születik.<span class="rh-q">"</span></p>
         </div>
     </section>
 
@@ -1328,8 +1344,9 @@
     </section>
 
     <!-- Órarend -->
-    <section id="orarend" class="py-20 bg-white">
-        <div class="container mx-auto px-6 max-w-7xl">
+    <section id="orarend" class="relative overflow-hidden py-20 bg-fonix-bg">
+        <div class="absolute inset-0 bg-[url('orarend-hatter.jpg')] bg-cover bg-center opacity-30"></div>
+        <div class="container mx-auto px-6 max-w-7xl relative z-10">
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-serif font-bold text-fonix-green mb-4">Órarend</h2>
                 <div class="w-24 h-1 bg-fonix-gold mx-auto"></div>
