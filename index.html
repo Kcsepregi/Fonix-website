@@ -88,8 +88,8 @@
 
         /* === Rólunk – longevity hero (fotós háttér + üvegpillérek) === */
         .rolunk-hero{position:relative;overflow:hidden;isolation:isolate;color:#fff}
-        .rolunk-hero .rh-bg{position:absolute;inset:0;z-index:-3;background-size:cover;background-position:center;transform:scale(1.06);filter:blur(2px) brightness(.9) saturate(1.06)}
-        .rolunk-hero .rh-scrim{position:absolute;inset:0;z-index:-2;background:radial-gradient(72% 62% at 50% 42%, rgba(10,55,16,0.22), transparent 78%), linear-gradient(180deg, rgba(7,38,11,0.68) 0%, rgba(9,42,13,0.54) 42%, rgba(6,30,9,0.80) 100%)}
+        .rolunk-hero .rh-bg{position:absolute;inset:0;z-index:-3;background-size:cover;background-position:center;transform:scale(1.06);filter:blur(2px) brightness(1.08) saturate(1.06)}
+        .rolunk-hero .rh-scrim{position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg, rgba(6,30,9,0.62) 0%, rgba(6,30,9,0.40) 15%, rgba(6,30,9,0.12) 40%, rgba(6,30,9,0.10) 70%, rgba(6,30,9,0.44) 100%)}
         .rolunk-hero .rh-grain{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.06;mix-blend-mode:overlay;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%25" height="100%25" filter="url(%23n)"/></svg>')}
         .rh-eyebrow{font-family:'Allura',cursive;font-size:2.7rem;line-height:1;color:#e8d49b;margin-bottom:.35rem;text-shadow:0 2px 14px rgba(0,0,0,.35)}
         .rh-title{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.08;letter-spacing:-0.01em;text-shadow:0 2px 22px rgba(0,0,0,.4)}
@@ -111,7 +111,7 @@
         .rh-closing .rh-q{font-family:'Allura',cursive;font-style:normal;color:#e8d49b;font-size:1.9rem;vertical-align:-0.15em}
         @media(max-width:880px){.rh-pillars{grid-template-columns:repeat(2,1fr);gap:1rem}.rh-pw:nth-child(5){grid-column:1 / -1;max-width:50%;margin:0 auto}}
         @media(max-width:520px){.rh-pillars{grid-template-columns:1fr}.rh-pw:nth-child(5){max-width:100%}}
-        @media(prefers-reduced-motion:reduce){.rh-pw{opacity:1;animation:none}.rolunk-hero .rh-bg{filter:brightness(.9) saturate(1.06)}.rh-pillar{transition:none}}
+        @media(prefers-reduced-motion:reduce){.rh-pw{opacity:1;animation:none}.rolunk-hero .rh-bg{filter:brightness(1.08) saturate(1.06)}.rh-pillar{transition:none}}
     </style>
 </head>
 <body class="bg-fonix-bg text-fonix-dark font-sans">
@@ -339,8 +339,9 @@
     </section>
 
     <!-- A vitalitás útja (5 pillér) -->
-    <section id="vitalitas-utja" class="py-20 bg-fonix-bg">
-        <div class="container mx-auto px-6 max-w-6xl">
+    <section id="vitalitas-utja" class="relative overflow-hidden py-20 bg-fonix-bg">
+        <div class="absolute inset-0 bg-[url('hero3.jpg')] bg-cover bg-center opacity-[0.18]"></div>
+        <div class="container mx-auto px-6 max-w-6xl relative z-10">
             <div class="text-center mb-12">
                 <span class="inline-block mb-4 px-5 py-1.5 rounded-full border border-fonix-gold/40 text-fonix-gold text-xs md:text-sm font-bold tracking-[0.2em] uppercase bg-white/60 backdrop-blur-sm">A hosszú, minőségi élet útja</span>
                 <h2 class="text-4xl font-serif font-bold text-fonix-green mb-4">A vitalitás útja</h2>
