@@ -112,9 +112,32 @@
         @media(max-width:880px){.rh-pillars{grid-template-columns:repeat(2,1fr);gap:1rem}.rh-pw:nth-child(5){grid-column:1 / -1;max-width:50%;margin:0 auto}}
         @media(max-width:520px){.rh-pillars{grid-template-columns:1fr}.rh-pw:nth-child(5){max-width:100%}}
         @media(prefers-reduced-motion:reduce){.rh-pw{opacity:1;animation:none}.rolunk-hero .rh-bg{filter:brightness(1.08) saturate(1.06)}.rh-pillar{transition:none}}
+
+        /* ===== Nyari akcio popup ===== */
+        #promo-overlay{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(10,12,8,0.82);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px)}
+        #promo-overlay.show{display:flex;animation:promoFade .3s ease}
+        @keyframes promoFade{from{opacity:0}to{opacity:1}}
+        #promo-box{position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;max-height:94vh;animation:promoPop .45s cubic-bezier(.2,.8,.2,1)}
+        @keyframes promoPop{from{opacity:0;transform:translateY(18px) scale(.96)}to{opacity:1;transform:none}}
+        #promo-img{display:block;max-width:min(92vw,600px);max-height:80vh;width:auto;height:auto;border-radius:14px;box-shadow:0 30px 80px -20px rgba(0,0,0,0.7);border:1px solid rgba(198,162,58,0.35)}
+        #promo-close{position:absolute;top:10px;right:10px;width:42px;height:42px;border-radius:50%;background:#c6a23a;color:#1c1c1c;border:none;font-size:24px;line-height:1;cursor:pointer;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,0.45);transition:transform .2s,background .2s;z-index:2}
+        #promo-close:hover{transform:scale(1.08);background:#d8b54e}
+        #promo-cta{display:inline-flex;align-items:center;gap:10px;background:#c6a23a;color:#1c1c1c;font-weight:800;letter-spacing:.05em;padding:.85rem 1.9rem;border-radius:10px;text-decoration:none;box-shadow:0 14px 30px -10px rgba(198,162,58,0.6);transition:transform .2s,background .2s,color .2s;text-transform:uppercase;font-size:.9rem}
+        #promo-cta:hover{transform:translateY(-2px) scale(1.03);background:#0f8514;color:#fff}
+        @media(max-width:520px){#promo-img{max-height:72vh}#promo-cta{padding:.72rem 1.4rem;font-size:.8rem}#promo-close{width:38px;height:38px;font-size:21px}}
     </style>
 </head>
 <body class="bg-fonix-bg text-fonix-dark font-sans">
+
+    <!-- Nyari akcio popup -->
+    <div id="promo-overlay" role="dialog" aria-modal="true" aria-label="Nyári Szuperkedvezmények">
+        <div id="promo-box">
+            <button id="promo-close" type="button" aria-label="Bezárás">&times;</button>
+            <img id="promo-img" src="nyari-akcio.jpg" alt="Nyári Szuperkedvezmények – Főnix Vitalitás Központ, érvényes 2026. június 25 – július 15.">
+            <a id="promo-cta" href="#idopontfoglalas"><i class="fas fa-calendar-check"></i> Időpontfoglalás</a>
+        </div>
+    </div>
+
 
     <!-- Navigation -->
     <nav class="bg-fonix-bg/95 backdrop-blur-md text-fonix-dark fixed top-0 left-0 w-full z-50 shadow-sm transition-all duration-300 border-b border-fonix-gold/20" id="navbar">
@@ -2495,5 +2518,20 @@
             });
         });
     </script>
+<script>
+(function(){
+    var overlay=document.getElementById('promo-overlay');
+    if(!overlay)return;
+    function openPromo(){overlay.classList.add('show');document.body.style.overflow='hidden';}
+    function closePromo(){overlay.classList.remove('show');document.body.style.overflow='';}
+    var seen=false;
+    try{seen=sessionStorage.getItem('fonixPromo2026')==='1';}catch(e){}
+    if(!seen){setTimeout(openPromo,900);try{sessionStorage.setItem('fonixPromo2026','1');}catch(e){}}
+    document.getElementById('promo-close').addEventListener('click',closePromo);
+    document.getElementById('promo-cta').addEventListener('click',closePromo);
+    overlay.addEventListener('click',function(e){if(e.target===overlay)closePromo();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'||e.key==='Esc')closePromo();});
+})();
+</script>
 </body>
 </html>
