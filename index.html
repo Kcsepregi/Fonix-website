@@ -99,6 +99,7 @@
         .rh-lead strong{color:#e8d49b;font-weight:600}
         .rh-pillars{display:grid;grid-template-columns:repeat(5,1fr);gap:1.1rem;margin-top:3.2rem}
         .rh-pw{opacity:0;animation:rh-rise .8s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i)*0.11s + 0.15s)}
+        a.rh-pw{display:block;text-decoration:none;color:inherit;cursor:pointer}
         @keyframes rh-rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
         .rh-pillar{position:relative;height:100%;padding:2.1rem 1rem 1.6rem;border-radius:20px;background:linear-gradient(180deg,rgba(34,38,32,0.68),rgba(20,22,18,0.62));-webkit-backdrop-filter:blur(15px) saturate(115%);backdrop-filter:blur(15px) saturate(115%);border:1px solid rgba(255,255,255,0.10);box-shadow:0 22px 46px -22px rgba(0,0,0,0.70), inset 0 1px 0 rgba(255,255,255,0.05);display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s, border-color .4s}
         .rh-pillar::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:46%;height:3px;border-radius:0 0 4px 4px;background:linear-gradient(90deg,transparent,#18ab1d,transparent);box-shadow:0 0 11px rgba(24,171,29,0.75)}
@@ -131,7 +132,7 @@
             </a>
             <div class="hidden xl:flex space-x-8 items-center text-sm uppercase tracking-widest font-bold">
                 <a href="#rolunk" class="hover:text-fonix-green transition">Rólunk</a>
-                <a href="#vitalitas-utja" class="hover:text-fonix-green transition">A vitalitás útja</a>
+                <a href="#vitalitas-utja" class="hover:text-fonix-green transition">Szolgáltatásaink</a>
                 <a href="#orarend" class="hover:text-fonix-green transition">Órarend</a>
                 <a href="#galeria" class="hover:text-fonix-green transition">Galéria</a>
                 <a href="#velemenyek" class="hover:text-fonix-green transition">Vélemények</a>
@@ -144,7 +145,7 @@
             </div>
             <!-- Táblagép menü esetén összeugró sáv -->
             <div class="hidden lg:flex xl:hidden space-x-4 items-center text-xs uppercase tracking-widest font-bold">
-                <a href="#vitalitas-utja" class="hover:text-fonix-green transition">A vitalitás útja</a>
+                <a href="#vitalitas-utja" class="hover:text-fonix-green transition">Szolgáltatásaink</a>
                 <a href="#kapcsolat" class="hover:text-fonix-green transition">Kapcsolat</a>
                 <a href="#idopontfoglalas" class="bg-fonix-gold text-fonix-bg px-4 py-2 rounded hover:bg-fonix-green hover:text-fonix-bg transition duration-300 font-bold shadow-md">
                     FOGLALÁS
@@ -156,7 +157,7 @@
         </div>
         <div id="mobile-menu" class="hidden lg:hidden bg-fonix-bg border-t border-fonix-gold transition-all duration-300 max-h-screen overflow-y-auto">
             <a href="#rolunk" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Rólunk</a>
-            <a href="#vitalitas-utja" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">A vitalitás útja</a>
+            <a href="#vitalitas-utja" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Szolgáltatásaink</a>
             <a href="#orarend" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Órarend</a>
             <a href="#galeria" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Galéria</a>
             <a href="#velemenyek" class="block px-6 py-3 hover:bg-fonix-gold hover:text-fonix-bg font-bold" onclick="toggleMobileMenu()">Vélemények</a>
@@ -191,14 +192,11 @@
                     </h1>
                     
                     <p class="text-fonix-dark/90 text-lg md:text-xl mb-12 max-w-xl font-medium leading-relaxed border-l-[3px] border-fonix-gold pl-6">
-                        A Főnix a hosszú, minőségi élet öt pillérét egyesíti: rendszeres mozgás, személyre szabott táplálkozás, tudatos regeneráció, lelki egyensúly és tudatosan választott életcél.
+                        A Főnix a hosszú, minőségi élet – vagyis a longevity – öt pillérét egyesíti: rendszeres mozgás, személyre szabott táplálkozás, tudatos regeneráció, lelki egyensúly és tudatosan választott életcél.
                     </p>
                     
                     <div class="flex flex-wrap gap-4 md:gap-6">
-                        <a href="#vitalitas-utja" class="inline-block bg-fonix-gold text-white font-bold px-8 md:px-10 py-4 md:py-5 text-sm md:text-base rounded-md hover:bg-fonix-green transition duration-300 uppercase tracking-widest shadow-lg">
-                            A vitalitás útja
-                        </a>
-                        <a href="#idopontfoglalas" class="inline-block bg-white text-fonix-green font-bold px-8 md:px-10 py-4 md:py-5 text-sm md:text-base rounded-md border border-transparent hover:border-fonix-green hover:bg-fonix-green/5 transition duration-300 uppercase tracking-widest shadow-md">
+                        <a href="#idopontfoglalas" class="inline-block bg-fonix-gold text-white font-bold px-8 md:px-10 py-4 md:py-5 text-sm md:text-base rounded-md hover:bg-fonix-green transition duration-300 uppercase tracking-widest shadow-lg">
                             Időpontfoglalás
                         </a>
                     </div>
@@ -240,11 +238,11 @@
             <div class="rh-rule"></div>
             <p class="rh-lead">A <strong>longevity</strong> nem a génjeiden múlik, hanem a mindennapi, tudatos döntéseiden. Öt pillér tartja – és a Főnixben mind az öt egy helyen jelen van.</p>
             <div class="rh-pillars">
-                <div class="rh-pw" style="--i:0"><div class="rh-pillar"><div class="rh-med"><i class="fas fa-person-running"></i></div><div class="rh-name">Mozgás</div><div class="rh-desc">Pilates, jóga, edzés</div></div></div>
-                <div class="rh-pw" style="--i:1"><div class="rh-pillar"><div class="rh-med"><i class="fas fa-utensils"></i></div><div class="rh-name">Táplálkozás</div><div class="rh-desc">Személyre szabott tanácsadás</div></div></div>
-                <div class="rh-pw" style="--i:2"><div class="rh-pillar"><div class="rh-med"><i class="fas fa-spa"></i></div><div class="rh-name">Regeneráció</div><div class="rh-desc">Masszázs, testkezelés, head spa</div></div></div>
-                <div class="rh-pw" style="--i:3"><div class="rh-pillar"><div class="rh-med"><i class="fas fa-dove"></i></div><div class="rh-name">Lelki egyensúly</div><div class="rh-desc">Hangfürdő, tanácsadás</div></div></div>
-                <div class="rh-pw" style="--i:4"><div class="rh-pillar"><div class="rh-med"><i class="fas fa-compass"></i></div><div class="rh-name">Életcél</div><div class="rh-desc">Irány, coaching</div></div></div>
+                <a href="#pillar-mozgas" class="rh-pw" style="--i:0"><div class="rh-pillar"><div class="rh-med"><i class="fas fa-person-running"></i></div><div class="rh-name">Mozgás</div><div class="rh-desc">Pilates, jóga, edzés</div></div></a>
+                <a href="#pillar-taplalkozas" class="rh-pw" style="--i:1"><div class="rh-pillar"><div class="rh-med"><i class="fas fa-utensils"></i></div><div class="rh-name">Táplálkozás</div><div class="rh-desc">Személyre szabott tanácsadás</div></div></a>
+                <a href="#pillar-regeneracio" class="rh-pw" style="--i:2"><div class="rh-pillar"><div class="rh-med"><i class="fas fa-spa"></i></div><div class="rh-name">Regeneráció</div><div class="rh-desc">Masszázs, testkezelés, head spa</div></div></a>
+                <a href="#pillar-lelki" class="rh-pw" style="--i:3"><div class="rh-pillar"><div class="rh-med"><i class="fas fa-dove"></i></div><div class="rh-name">Lelki egyensúly</div><div class="rh-desc">Hangfürdő, tanácsadás</div></div></a>
+                <a href="#pillar-eletcel" class="rh-pw" style="--i:4"><div class="rh-pillar"><div class="rh-med"><i class="fas fa-compass"></i></div><div class="rh-name">Életcél</div><div class="rh-desc">Irány, coaching</div></div></a>
             </div>
             <p class="rh-closing"><span class="rh-q">„</span>A valódi vitalitás a test és a lélek egyensúlyából születik.<span class="rh-q">"</span></p>
         </div>
@@ -255,64 +253,12 @@
         <div class="absolute inset-0 bg-[url('hero3.jpg')] bg-cover bg-center opacity-[0.18]"></div>
         <div class="container mx-auto px-6 max-w-6xl relative z-10">
             <div class="text-center mb-12">
-                <span class="inline-block mb-4 px-5 py-1.5 rounded-full border border-fonix-gold/40 text-fonix-gold text-xs md:text-sm font-bold tracking-[0.2em] uppercase bg-white/60 backdrop-blur-sm">A hosszú, minőségi élet útja</span>
-                <h2 class="text-4xl font-serif font-bold text-fonix-green mb-4">A vitalitás útja</h2>
+                <h2 class="text-4xl font-serif font-bold text-fonix-green mb-4">Szolgáltatásaink</h2>
                 <div class="w-24 h-1 bg-fonix-gold mx-auto"></div>
-                <p class="mt-4 text-fonix-dark/70 font-medium max-w-2xl mx-auto">Ugyanaz az öt pillér, részletesen kibontva. Kétféleképpen indulhatsz: szabadon válogatva a szolgáltatásaink között, vagy egy vezetett úton, lépésről lépésre.</p>
-            </div>
-
-            <!-- Vitalitás diagnosztika -->
-            <div class="bg-white rounded-2xl shadow-xl border border-fonix-gold/20 overflow-hidden mb-12">
-                <div class="bg-fonix-green text-white px-6 md:px-8 py-5 flex items-center gap-4">
-                    <i class="fas fa-stethoscope text-fonix-gold text-2xl shrink-0"></i>
-                    <div>
-                        <h3 class="text-xl md:text-2xl font-serif font-bold">Vitalitás diagnosztika</h3>
-                        <p class="text-white/80 text-sm">Felmérjük, hol tartasz most – ez a kiindulópont</p>
-                    </div>
-                </div>
-                <div class="p-6 md:p-8">
-                    <p class="text-fonix-dark/80 mb-6 leading-relaxed">Mielőtt belevágnál, érdemes feltérképezni a jelenlegi állapotodat. A diagnosztika három területet vizsgál, és együtt megnézzük, melyik pillérre van a legnagyobb szükséged:</p>
-                    <div class="grid md:grid-cols-3 gap-4">
-                        <div class="bg-[#fcfbf7] rounded-xl border border-fonix-bg p-5">
-                            <div class="w-11 h-11 rounded-full bg-fonix-green/10 flex items-center justify-center text-fonix-green text-lg mb-3"><i class="fas fa-heart-pulse"></i></div>
-                            <h4 class="font-serif font-bold text-fonix-green mb-1">Sejtszintű vitalitás</h4>
-                            <p class="text-xs text-fonix-dark/70 leading-relaxed">Anyagcsere-mérés: mennyire vannak energiával ellátva a sejtjeid, milyen a táplálkozási típusod és a szénhidrát-toleranciád.</p>
-                        </div>
-                        <div class="bg-[#fcfbf7] rounded-xl border border-fonix-bg p-5">
-                            <div class="w-11 h-11 rounded-full bg-fonix-gold/15 flex items-center justify-center text-fonix-gold text-lg mb-3"><i class="fas fa-brain"></i></div>
-                            <h4 class="font-serif font-bold text-fonix-green mb-1">Mentális egészség</h4>
-                            <p class="text-xs text-fonix-dark/70 leading-relaxed">Hol tartasz a stressz, a kiegyensúlyozottság és a lelki feltöltődés terén – mire van szükséged a belső egyensúlyhoz.</p>
-                        </div>
-                        <div class="bg-[#fcfbf7] rounded-xl border border-fonix-bg p-5">
-                            <div class="w-11 h-11 rounded-full bg-fonix-green/10 flex items-center justify-center text-fonix-green text-lg mb-3"><i class="fas fa-compass"></i></div>
-                            <h4 class="font-serif font-bold text-fonix-green mb-1">Életcél elemzés</h4>
-                            <p class="text-xs text-fonix-dark/70 leading-relaxed">Van-e tudatosan választott, követett irány az életedben – ami értelmet és hosszú távú motivációt ad a mindennapoknak.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Két út -->
-            <div class="grid md:grid-cols-2 gap-6 mb-16">
-                <div class="bg-white rounded-2xl border border-fonix-bg shadow-sm p-6 md:p-8 flex flex-col">
-                    <div class="w-12 h-12 rounded-full bg-fonix-gold/15 flex items-center justify-center text-fonix-gold text-xl mb-4"><i class="fas fa-hand-pointer"></i></div>
-                    <h3 class="text-xl font-serif font-bold text-fonix-green mb-2">1. Szabad választás</h3>
-                    <p class="text-sm text-fonix-dark/70 leading-relaxed">Pontosan tudod, mire vágysz? Válogass szabadon a szolgáltatásaink közül, és állítsd össze a saját vitalitás-rutinodat. Minden szolgáltatásunk és áruk lentebb, az 5 pillér szerint csoportosítva megtalálható.</p>
-                </div>
-                <div class="bg-white rounded-2xl border border-fonix-bg shadow-sm p-6 md:p-8 flex flex-col">
-                    <div class="w-12 h-12 rounded-full bg-fonix-green/10 flex items-center justify-center text-fonix-green text-xl mb-4"><i class="fas fa-route"></i></div>
-                    <h3 class="text-xl font-serif font-bold text-fonix-green mb-2">2. Vezetett út</h3>
-                    <p class="text-sm text-fonix-dark/70 leading-relaxed">Szeretnéd, ha végigkísérnénk? A diagnosztika eredményeire építve együtt haladunk végig az 5 pilléren – személyre szabottan, lépésről lépésre, a te tempódban.</p>
-                </div>
-            </div>
-
-            <!-- Szolgáltatások az 5 pillér mentén -->
-            <div class="text-center mb-10">
-                <span class="inline-block px-5 py-1.5 rounded-full bg-fonix-green text-white text-xs md:text-sm font-bold tracking-[0.15em] uppercase">Szolgáltatásaink az 5 pillér mentén</span>
             </div>
 
             <!-- PILLÉR 1: Mozgás -->
-            <div class="flex items-start gap-4 mb-6">
+            <div class="flex items-start gap-4 mb-6 scroll-mt-28" id="pillar-mozgas">
                 <div class="w-12 h-12 rounded-full bg-fonix-green text-white font-serif font-bold text-2xl flex items-center justify-center shrink-0 shadow-md">1</div>
                 <div>
                     <h3 class="text-2xl md:text-3xl font-serif font-bold text-fonix-green">Mozgás</h3>
@@ -468,7 +414,7 @@
             </div>
 
             <!-- PILLÉR 2: Táplálkozás -->
-            <div class="flex items-start gap-4 mb-6">
+            <div class="flex items-start gap-4 mb-6 scroll-mt-28" id="pillar-taplalkozas">
                 <div class="w-12 h-12 rounded-full bg-fonix-green text-white font-serif font-bold text-2xl flex items-center justify-center shrink-0 shadow-md">2</div>
                 <div>
                     <h3 class="text-2xl md:text-3xl font-serif font-bold text-fonix-green">Táplálkozás</h3>
@@ -572,7 +518,7 @@
             </div>
 
             <!-- PILLÉR 3: Regeneráció -->
-            <div class="flex items-start gap-4 mb-6">
+            <div class="flex items-start gap-4 mb-6 scroll-mt-28" id="pillar-regeneracio">
                 <div class="w-12 h-12 rounded-full bg-fonix-green text-white font-serif font-bold text-2xl flex items-center justify-center shrink-0 shadow-md">3</div>
                 <div>
                     <h3 class="text-2xl md:text-3xl font-serif font-bold text-fonix-green">Regeneráció</h3>
@@ -1321,7 +1267,7 @@
             </div>
 
             <!-- PILLÉR 4: Lelki egyensúly -->
-            <div class="flex items-start gap-4 mb-6">
+            <div class="flex items-start gap-4 mb-6 scroll-mt-28" id="pillar-lelki">
                 <div class="w-12 h-12 rounded-full bg-fonix-green text-white font-serif font-bold text-2xl flex items-center justify-center shrink-0 shadow-md">4</div>
                 <div>
                     <h3 class="text-2xl md:text-3xl font-serif font-bold text-fonix-green">Lelki egyensúly</h3>
@@ -1383,7 +1329,7 @@
             </div>
 
             <!-- PILLÉR 5: Életcél -->
-            <div class="flex items-start gap-4 mb-6">
+            <div class="flex items-start gap-4 mb-6 scroll-mt-28" id="pillar-eletcel">
                 <div class="w-12 h-12 rounded-full bg-fonix-green text-white font-serif font-bold text-2xl flex items-center justify-center shrink-0 shadow-md">5</div>
                 <div>
                     <h3 class="text-2xl md:text-3xl font-serif font-bold text-fonix-green">Életcél</h3>
@@ -1421,6 +1367,34 @@
                         <a href="tel:+36204654525" class="inline-flex items-center justify-center gap-2 bg-fonix-gold text-fonix-bg font-bold px-6 py-3 rounded-lg hover:bg-fonix-green hover:text-white transition duration-300 shadow-md whitespace-nowrap shrink-0 w-full sm:w-auto">
                             <i class="fas fa-phone-alt"></i> 06 20 465 4525
                         </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vitalitás diagnosztika (a szolgáltatások felsorolása után, az órarend előtt) -->
+            <div class="bg-white rounded-2xl shadow-xl border border-fonix-gold/20 overflow-hidden mt-16">
+                <div class="bg-fonix-green text-white px-6 md:px-8 py-5 flex items-center gap-4">
+                    <i class="fas fa-stethoscope text-fonix-gold text-2xl shrink-0"></i>
+                    <h3 class="text-xl md:text-2xl font-serif font-bold">Vitalitás diagnosztika</h3>
+                </div>
+                <div class="p-6 md:p-8">
+                    <p class="text-fonix-dark/80 mb-6 leading-relaxed">Mielőtt belevágnál, ajánljuk, hogy végezd el a <strong class="text-fonix-green">Vitalitás diagnosztikát:</strong> érdemes felmérned a jelenlegi állapotodat, hogy hol tartasz most – ez a kiindulópont. A diagnosztika három területet vizsgál – a sejtszintű vitalitásodat, a mentális egészségedet és az életcélodat. Együtt megnézzük, melyikkel érdemes elindulnod.</p>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-[#fcfbf7] rounded-xl border border-fonix-bg p-5">
+                            <div class="w-11 h-11 rounded-full bg-fonix-green/10 flex items-center justify-center text-fonix-green text-lg mb-3"><i class="fas fa-heart-pulse"></i></div>
+                            <h4 class="font-serif font-bold text-fonix-green mb-1">Sejtszintű vitalitás</h4>
+                            <p class="text-xs text-fonix-dark/70 leading-relaxed">Anyagcsere-mérés: mennyire vannak energiával ellátva a sejtjeid, milyen a táplálkozási típusod és a szénhidrát-toleranciád.</p>
+                        </div>
+                        <div class="bg-[#fcfbf7] rounded-xl border border-fonix-bg p-5">
+                            <div class="w-11 h-11 rounded-full bg-fonix-gold/15 flex items-center justify-center text-fonix-gold text-lg mb-3"><i class="fas fa-brain"></i></div>
+                            <h4 class="font-serif font-bold text-fonix-green mb-1">Mentális egészség</h4>
+                            <p class="text-xs text-fonix-dark/70 leading-relaxed">Hol tartasz a stressz, a kiegyensúlyozottság és a lelki feltöltődés terén – mire van szükséged a belső egyensúlyhoz.</p>
+                        </div>
+                        <div class="bg-[#fcfbf7] rounded-xl border border-fonix-bg p-5">
+                            <div class="w-11 h-11 rounded-full bg-fonix-green/10 flex items-center justify-center text-fonix-green text-lg mb-3"><i class="fas fa-compass"></i></div>
+                            <h4 class="font-serif font-bold text-fonix-green mb-1">Életcél elemzés</h4>
+                            <p class="text-xs text-fonix-dark/70 leading-relaxed">Van-e tudatosan választott, követett irány az életedben – ami értelmet és hosszú távú motivációt ad a mindennapoknak.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2025,24 +1999,8 @@
                     <i class="fas fa-spa text-fonix-gold"></i> Szépségipari vagy mentálhigiéniás tevékenységre bérelhető szobák
                 </h3>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Terem 2.1 -->
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 flex flex-col group">
-                        <div class="h-56 bg-gray-100 overflow-hidden relative">
-                            <img src="terem3.png" onerror="this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80'" alt="Műkörömépítő vagy pedikűrös szoba" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
-                        </div>
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h4 class="text-lg font-serif font-bold text-fonix-green mb-3">Kéz- és lábápoló szoba</h4>
-                            <div class="w-10 h-1 bg-fonix-gold mb-4 rounded-full"></div>
-                            <p class="text-sm text-fonix-dark/80 leading-relaxed mb-6 flex-grow">
-                                Kifejezetten műkörömépítőnek, vagy pedikűrösnek kiadó igényes szoba, professzionális szakmai tevékenység végzésére.
-                            </p>
-                            <div class="inline-flex items-center gap-2 text-xs font-bold text-fonix-green bg-fonix-green/10 px-4 py-2 rounded-lg mt-auto self-start border border-fonix-green/20">
-                                <i class="far fa-calendar-alt text-sm"></i> Heti maximum 4 napra
-                            </div>
-                        </div>
-                    </div>
                     <!-- Terem 2.2 -->
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 flex flex-col group">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 flex flex-col group md:col-start-2">
                         <div class="h-56 bg-gray-100 overflow-hidden relative">
                             <img src="terem4.jpg" onerror="this.src='https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=800&q=80'" alt="Masszázs szoba" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
                         </div>
@@ -2051,22 +2009,6 @@
                             <div class="w-10 h-1 bg-fonix-gold mb-4 rounded-full"></div>
                             <p class="text-sm text-fonix-dark/80 leading-relaxed mb-6 flex-grow">
                                 Csendes, nyugodt és harmonikus környezetet biztosító, masszázs tevékenységre kiadó terápiás szoba.
-                            </p>
-                            <div class="inline-flex items-center gap-2 text-xs font-bold text-fonix-green bg-fonix-green/10 px-4 py-2 rounded-lg mt-auto self-start border border-fonix-green/20">
-                                <i class="far fa-calendar-alt text-sm"></i> Heti maximum 4 napra
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Terem 2.3 -->
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 flex flex-col group">
-                        <div class="h-56 bg-gray-100 overflow-hidden relative">
-                            <img src="terem5.png" onerror="this.src='https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80'" alt="Konzultációs szoba" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);">
-                        </div>
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h4 class="text-lg font-serif font-bold text-fonix-green mb-3">Konzultációs szoba</h4>
-                            <div class="w-10 h-1 bg-fonix-gold mb-4 rounded-full"></div>
-                            <p class="text-sm text-fonix-dark/80 leading-relaxed mb-6 flex-grow">
-                                Diszkrét tér tanácsadásra, konzultációra, mentálhigiéniás beszélgetésre, vagy egyéni jóga foglalkozásokra.
                             </p>
                             <div class="inline-flex items-center gap-2 text-xs font-bold text-fonix-green bg-fonix-green/10 px-4 py-2 rounded-lg mt-auto self-start border border-fonix-green/20">
                                 <i class="far fa-calendar-alt text-sm"></i> Heti maximum 4 napra
@@ -2220,7 +2162,7 @@
                 <div class="border-b border-fonix-bg">
                     <button onclick="toggleAccordion('hr-altalanos')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
                         <div class="flex items-center gap-6">
-                            <div class="w-12 h-12 bg-fonix-green rounded-full flex items-center justify-center text-fonix-gold text-2xl group-hover:bg-fonix-gold group-hover:text-fonix-bg transition shrink-0"><i class="fas fa-clipboard-list"></i></div>
+                            <div class="w-12 h-12 bg-fonix-green text-fonix-gold group-hover:bg-fonix-gold group-hover:text-fonix-bg rounded-full flex items-center justify-center text-2xl transition shrink-0"><i class="fas fa-clipboard-list"></i></div>
                             <div>
                                 <h3 class="text-xl md:text-2xl font-serif font-bold text-fonix-green">Általános szabályok</h3>
                                 <p class="text-sm text-fonix-dark/50">Alapszabályok, tilalmak, nyitvatartás, korhatár</p>
@@ -2237,128 +2179,195 @@
                                 <div class="font-bold text-fonix-green mb-2 flex items-center gap-2"><i class="fas fa-ban text-fonix-gold"></i> A Főnix területén tilos</div>
                                 <ul class="space-y-1.5 list-none">
                                     <li class="flex gap-2.5"><i class="fas fa-xmark text-fonix-gold text-xs mt-1.5 shrink-0"></i> a dohányzás (kivéve a teraszt);</li>
-                                    <li class="flex gap-2.5"><i class="fas fa-xmark text-fonix-gold text-xs mt-1.5 shrink-0"></i> alkohol fogyasztása;</li>
+                                    <li class="flex gap-2.5"><i class="fas fa-xmark text-fonix-gold text-xs mt-1.5 shrink-0"></i> alkohol fogyasztása (kivéve előzetes egyeztetés esetén, rendezvények alatt);</li>
                                     <li class="flex gap-2.5"><i class="fas fa-xmark text-fonix-gold text-xs mt-1.5 shrink-0"></i> minden olyan tevékenység, amely a Főnix szolgáltatásain kívül esik, jogszabályba ütközik, illetve a közerkölcsöt sérti;</li>
                                     <li class="flex gap-2.5"><i class="fas fa-xmark text-fonix-gold text-xs mt-1.5 shrink-0"></i> minden, másokat erős zajjal, szaggal vagy egyéb környezeti ártalommal zavaró tevékenység;</li>
-                                    <li class="flex gap-2.5"><i class="fas fa-xmark text-fonix-gold text-xs mt-1.5 shrink-0"></i> drogok, tiltott doppingszerek, narkotikumok fogyasztása vagy az ezekkel való visszaélés; bármilyen veszélyes anyag, illetve tárgy (robbanóanyag, pirotechnikai eszköz, fegyver), ital vagy állat bevitele (kivételt képeznek a vakvezető, rokkantsegítő vagy terápiás kutyák);</li>
-                                    <li class="flex gap-2.5"><i class="fas fa-xmark text-fonix-gold text-xs mt-1.5 shrink-0"></i> az üzemeltető engedélye nélküli kereskedelmi tevékenység, reklám, propaganda (reklámtábla, megállítótábla, falragasz, szórólap elhelyezése), hang- és képanyag készítése, tiltott szerencsejáték, valamint zeneszolgáltatás.</li>
+                                    <li class="flex gap-2.5"><i class="fas fa-xmark text-fonix-gold text-xs mt-1.5 shrink-0"></i> drogok, tiltott doppingszerek, narkotikumok fogyasztása vagy az ezekkel való visszaélés;</li>
+                                    <li class="flex gap-2.5"><i class="fas fa-xmark text-fonix-gold text-xs mt-1.5 shrink-0"></i> bármilyen veszélyes anyag, illetve tárgy (robbanóanyag, pirotechnikai eszköz, fegyver) bevitele;</li>
+                                    <li class="flex gap-2.5"><i class="fas fa-xmark text-fonix-gold text-xs mt-1.5 shrink-0"></i> állat bevitele – kivételt képeznek a vakvezető, rokkantsegítő és terápiás kutyák;</li>
+                                    <li class="flex gap-2.5"><i class="fas fa-xmark text-fonix-gold text-xs mt-1.5 shrink-0"></i> az üzemeltető engedélye nélküli kereskedelmi tevékenység, reklám és propaganda (reklámtábla, megállítótábla, falragasz, szórólap elhelyezése), valamint zeneszolgáltatás;</li>
+                                    <li class="flex gap-2.5"><i class="fas fa-xmark text-fonix-gold text-xs mt-1.5 shrink-0"></i> más vendégekről az érintett hozzájárulása nélkül hang-, kép- vagy mozgóképfelvétel készítése.</li>
                                 </ul>
                             </div>
 
-                            <p class="mb-3">A Főnix egész területén kizárólag államilag elismert végzettséggel rendelkező, a létesítmény üzemeltetőjénél jegyzékbe vett és az üzemeltetővel jogviszonyban álló, engedéllyel rendelkező személyek jogosultak sportszakmai tevékenységet, oktatást, edzést, masszázst és testkezelést végezni.</p>
-                            <p class="mb-3">A Főnix sport- és vendéglátó szolgáltatásai kizárólag a nyitvatartási időn belül vehetők igénybe (kivéve, ha az nem sért jogszabályt, és az üzemeltető előzetesen engedélyezte).</p>
+                            <p class="mb-3">A Főnix egész területén kizárólag államilag elismert végzettséggel rendelkező, az üzemeltetőnél jegyzékbe vett és az üzemeltetővel jogviszonyban álló, engedéllyel rendelkező személyek jogosultak sportszakmai tevékenységet, oktatást, edzést, masszázst és testkezelést végezni.</p>
+                            <p class="mb-3">A Főnix szolgáltatásai kizárólag a nyitvatartási időn belül vehetők igénybe, kivéve, ha az üzemeltető ettől eltérően, előzetesen engedélyezi.</p>
 
                             <div class="bg-fonix-green text-white rounded-xl p-5 my-5 flex items-start gap-4">
                                 <i class="fas fa-clock text-fonix-gold text-2xl mt-0.5 shrink-0"></i>
                                 <div>
                                     <div class="font-bold mb-1">Nyitvatartás</div>
                                     <div class="text-sm text-white/90 space-y-0.5">
-                                        <div>Hétfő–Péntek: 9.00–11.00 és 15.00–20.00</div>
+                                        <div>Hétfő–Péntek: 8.00–12.00 és 15.00–20.00</div>
                                         <div>Szombat: 8.00–12.00</div>
                                         <div>Vasárnap: zárva</div>
                                     </div>
-                                    <div class="text-xs text-white/70 mt-2">A nyitvatartás tájékoztató jellegű keret; egyes órák és kezelések ettől eltérhetnek, előzetes egyeztetés alapján. A vendégek a zárási időpontokra tekintettel kötelesek a komplexumot időben elhagyni.</div>
+                                    <div class="text-xs text-white/70 mt-2">A nyitvatartás tájékoztató jellegű keret; egyes órák és kezelések ettől eltérhetnek, előzetes egyeztetés alapján. A vendégek a zárási időpontokra tekintettel kötelesek a Főnixet időben elhagyni.</div>
                                 </div>
                             </div>
 
-                            <h4 class="font-serif font-bold text-fonix-green text-base mb-2 mt-5">Korhatár</h4>
-                            <p class="mb-3">A Főnixben szülői felügyelet nélkül 14 év alatti gyermek nem tartózkodhat, és a szolgáltatásokat 14 éven aluli gyermek nem veheti igénybe – kivéve a 6 év feletti, személyi edzővel tartott gyermektorna foglalkozásokat, az ott megadott szabályok szerint.</p>
-                            <p>A fitnesz/cardio részleg használatának, valamint a csoportos órákon való részvételnek 14–18 éves kor között feltétele a recepción leadott szülői felelősségvállalási nyilatkozat és a vezető edző engedélye. 14–18 éves korúak a fitnesz/cardio részleget kizárólag személyi edző felügyelete mellett vehetik igénybe; a csoportos órán való részvételi szándékot az óra előtt a vezető edzővel és a csoportos óraadóval szükséges egyeztetni. A WALKenergie és a TRX órán való részvétel 150 cm-es testmagasság felett lehetséges.</p>
+                            <div class="font-bold text-fonix-green mb-2 mt-5 flex items-center gap-2"><i class="fas fa-children text-fonix-gold"></i> Korhatár</div>
+                            <p class="mb-3">14 éven aluli gyermek a Főnix területén kizárólag szülői (törvényes képviselői) felügyelettel tartózkodhat. 14 éven aluli gyermek a következő szolgáltatásokat veheti igénybe:</p>
+                            <ul class="space-y-1.5 list-none mb-3">
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> a kifejezetten gyermekek részére meghirdetett foglalkozásokat, az ott megadott szabályok szerint;</li>
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> a kismama és baba-mama jóga órákat a szülővel együtt, az órát tartó oktató iránymutatása szerint;</li>
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> a kéz- és lábápolási szolgáltatásokat szülői kísérettel és a szülő hozzájárulásával.</li>
+                            </ul>
+                            <p class="mb-3">14 és 18 év között a csoportos órákon való részvétel feltétele a recepción leadott szülői felelősségvállalási nyilatkozat, valamint az órát tartó oktatóval történő előzetes egyeztetés.</p>
+                            <p>Masszázs, testkezelés és gépi kezelés 18 éven aluli személy részére kizárólag a törvényes képviselő írásbeli hozzájárulásával és jelenlétében vehető igénybe.</p>
                         </div>
                     </div>
                 </div>
+                <!-- 2. Adatkezelés, kép- és hangfelvétel -->
+                <div class="border-b border-fonix-bg">
+                    <button onclick="toggleAccordion('hr-adatkezeles')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
+                        <div class="flex items-center gap-6">
+                            <div class="w-12 h-12 bg-fonix-gold text-fonix-bg group-hover:bg-fonix-green group-hover:text-fonix-gold rounded-full flex items-center justify-center text-2xl transition shrink-0"><i class="fas fa-shield-halved"></i></div>
+                            <div>
+                                <h3 class="text-xl md:text-2xl font-serif font-bold text-fonix-green">Adatkezelés, kép- és hangfelvétel</h3>
+                                <p class="text-sm text-fonix-dark/50">Vendégnyilvántartás, egészségügyi adatok, kamera</p>
+                            </div>
+                        </div>
+                        <i id="icon-hr-adatkezeles" class="fas fa-chevron-down text-fonix-gold text-xl transition-transform duration-300"></i>
+                    </button>
+                    <div id="hr-adatkezeles" class="accordion-content bg-[#fcfbf7]">
+                        <div class="px-8 pb-8 pt-6 text-sm text-fonix-dark/80 leading-relaxed">
+                            <div class="font-bold text-fonix-green mb-2 flex items-center gap-2"><i class="fas fa-address-book text-fonix-gold"></i> Vendégnyilvántartás</div>
+                            <p class="mb-3">Az üzemeltető a szolgáltatásokat igénybe vevő vendégekről nyilvántartást vezet. A nyilvántartás a szolgáltatás nyújtásához szükséges adatokra terjed ki (név, elérhetőség, a megvásárolt jegyek és bérletek adatai). Ha a vendég ezeknek az adatoknak a megadását megtagadja, az üzemeltető a szolgáltatás nyújtását megtagadhatja, mert ezek hiányában a szerződés nem teljesíthető. Kivéve, ha a vendég olyan kezelésen vagy csoportos órán vesz részt, ahol a kezelést nyújtó vagy az edző csak helyiséget bérel az üzemeltetőtől a szolgáltatás nyújtására – vendégei adatait ilyenkor ő maga kezeli, a fizetést maga intézi.</p>
+                            <p class="mb-3">Az azonosítás céljából az üzemeltető kérheti a vendég személyazonosításra alkalmas okmányának bemutatását. <strong class="text-fonix-green">Az okmányról másolat nem készül, az okmány száma és a lakcím nem kerül rögzítésre.</strong></p>
+                            <p class="mb-3">A személyes adatok kezelésének részleteiről – a célokról, a jogalapokról, a megőrzési időkről és a vendéget megillető jogokról – az <a href="adatkezelesi-tajekoztato.pdf" target="_blank" rel="noopener" class="text-fonix-green font-semibold underline hover:text-fonix-gold transition">Adatkezelési tájékoztató</a> rendelkezik, amely a recepción és a weboldalon érhető el.</p>
 
-                <!-- 2. Felelősség és üzemeltetői rendelkezések -->
+                            <div class="font-bold text-fonix-green mb-2 mt-5 flex items-center gap-2"><i class="fas fa-notes-medical text-fonix-gold"></i> Egészségügyi adatok</div>
+                            <p class="mb-3">Egyes szolgáltatások (masszázs, gépi testkezelés, rehabilitációs és kismama programok, táplálkozási tanácsadás) biztonságos elvégzéséhez szükséges, hogy a vendég tájékoztassa az üzemeltetőt az esetleges ellenjavallatokról és egészségi állapotáról. Ezeket az adatokat az üzemeltető kizárólag a vendég <strong class="text-fonix-green">kifejezett hozzájárulásával</strong> kezeli, és azokat csak a kezelést végző munkatárs, valamint a Központ vezetője ismerheti meg.</p>
+                            <p class="mb-3">A hozzájárulás megadása önkéntes, azonban annak hiányában – biztonsági okból – egyes szolgáltatások nem vehetők igénybe.</p>
+
+                            <div class="font-bold text-fonix-green mb-2 mt-5 flex items-center gap-2"><i class="fas fa-camera text-fonix-gold"></i> Kép- és mozgóképfelvétel</div>
+                            <p class="mb-3">Az üzemeltető a tevékenységének bemutatására és népszerűsítésére fotó- és videófelvételeket készíthet. <strong class="text-fonix-green">Olyan felvétel elkészítéséhez és felhasználásához, amelyen a vendég felismerhető, az üzemeltető a vendég előzetes hozzájárulását kéri</strong> (Ptk. 2:48. §, GDPR 6. cikk (1) a)). A hozzájárulás megadása önkéntes, megtagadása semmilyen hátránnyal nem jár, és a hozzájárulás bármikor, indokolás nélkül visszavonható. Visszavonás esetén az üzemeltető a felvételt haladéktalanul eltávolítja a saját felületeiről.</p>
+                            <p class="mb-3">Hozzájárulás nélkül is készíthető és felhasználható tömegfelvétel, illetve olyan felvétel, amelyen egyes személyek nem ismerhetők fel. Ha felvételkészítés zajlik, az üzemeltető erről a helyszínen előzetesen tájékoztatást ad, és biztosítja, hogy aki nem kíván a felvételen szerepelni, kimaradhasson belőle.</p>
+                            <p class="mb-3">Vendégek egymásról és a Főnix területén tartózkodó más személyekről kizárólag az érintettek hozzájárulásával készíthetnek felvételt.</p>
+
+                            <div class="bg-fonix-green/5 border border-fonix-green/20 rounded-lg p-4 mt-4">
+                                <div class="font-bold text-fonix-green mb-1 flex items-center gap-2"><i class="fas fa-video text-fonix-gold"></i> Elektronikus megfigyelőrendszer</div>
+                                <p class="text-sm">A Főnix területén a következő helyeken üzemel kamera: a bejárati részen (az ajtót és az előteret figyeli), valamint a recepció felett. Kamera nem működik az öltözőkben, a zuhanyzókban, az illemhelyeken, a kezelő-, masszázs- és konzultációs szobákban, valamint a termekben. A felvételek megőrzési ideje 14 nap. A részleteket az Adatkezelési tájékoztató tartalmazza.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 3. Felelősség -->
                 <div class="border-b border-fonix-bg">
                     <button onclick="toggleAccordion('hr-felelosseg')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
                         <div class="flex items-center gap-6">
-                            <div class="w-12 h-12 bg-fonix-gold rounded-full flex items-center justify-center text-fonix-bg text-2xl group-hover:bg-fonix-green transition shrink-0"><i class="fas fa-scale-balanced"></i></div>
+                            <div class="w-12 h-12 bg-fonix-green text-fonix-gold group-hover:bg-fonix-gold group-hover:text-fonix-bg rounded-full flex items-center justify-center text-2xl transition shrink-0"><i class="fas fa-scale-balanced"></i></div>
                             <div>
-                                <h3 class="text-xl md:text-2xl font-serif font-bold text-fonix-green">Felelősség és üzemeltetői rendelkezések</h3>
-                                <p class="text-sm text-fonix-dark/50">Adatkezelés, fotó, felelősség, talált tárgyak</p>
+                                <h3 class="text-xl md:text-2xl font-serif font-bold text-fonix-green">Felelősség</h3>
+                                <p class="text-sm text-fonix-dark/50">Felelősségi szabályok, értéktárgyak, baleset</p>
                             </div>
                         </div>
                         <i id="icon-hr-felelosseg" class="fas fa-chevron-down text-fonix-gold text-xl transition-transform duration-300"></i>
                     </button>
                     <div id="hr-felelosseg" class="accordion-content bg-[#fcfbf7]">
                         <div class="px-8 pb-8 pt-6 text-sm text-fonix-dark/80 leading-relaxed">
-                            <p class="mb-3">A Főnix területén kizárólag az üzemeltető engedélyével helyezhető el: játékautomata, gyermekjáték, vendégeket kiszolgáló egyéb gép, díszvilágítás, közhasználatú elektronikus készülék; egyéb díszítőelem (dekoráció, növényzet); reklám-, hirdetési, propaganda- vagy szóróanyag.</p>
-                            <p class="mb-3">Amennyiben az üzemeltető a tevékenységének vagy szolgáltatásának bemutatására, népszerűsítésére reklámanyagot készít (például mozgókép- vagy fényképfelvételt), és azon bármely vendég feltűnik, a vendég a megjelenésével összefüggésben az üzemeltetővel szemben semmilyen követeléssel nem léphet fel.</p>
-                            <p class="mb-3">Az üzemeltető a szolgáltatásokat igénybe vevő vendégekről adatnyilvántartást vezet. A szükséges adatok közlését részben vagy egészben megtagadó vendéggel szemben az üzemeltető jogosult megtagadni a szolgáltatást. Az adatok helyességének ellenőrzése érdekében az üzemeltető jogosult a vendég személyi igazolványát és lakcímkártyáját adategyeztetés céljából elkérni.</p>
-                            <p class="mb-3">A Főnix zavartalan működése érdekében az üzemeltető észrevételezési jogosultsága a Főnix egész területére kiterjed, különös tekintettel a vendégek által használt területekre és a szolgáltatások igénybevételének módjára.</p>
-                            <p class="mb-3">Szabálytalanság (a jelen házirend vagy az általánosan elfogadott viselkedési szabályok megszegése) esetén a szabálytalankodó figyelmeztetésére kerül sor; ennek eredménytelensége esetén az üzemeltető jogosult a vendéget távozásra felszólítani, illetve – ideiglenesen vagy véglegesen – kizárni. Az intézkedési jogosultságát meghaladó esetekben az üzemeltető a rendőrség vagy más hatóság segítségét kérheti, akinek az utasításai szerint minden érintett köteles együttműködni. A kiutasított vendég az üzemeltetővel szemben semmilyen követeléssel nem élhet.</p>
-                            <p class="mb-3">A komplexum területén minden vendég számára kötelező a rend és a tisztaság fenntartása; alapvető elvárás a többi vendég tiszteletben tartása és a kulturált viselkedés.</p>
-                            <p class="mb-3">A Főnix üzemeltetője nem vállal felelősséget a személyekben vagy anyagi értékekben keletkezett károkért, amennyiben azok a házirend be nem tartásából vagy a vendégek felelőtlen magatartásából erednek. Nem vállal felelősséget továbbá az elveszett vagy eltulajdonított tárgyakért, sem az öltözőszekrényben, csomagmegőrzőben hagyott értékekért. A szolgáltatásokat minden vendég saját felelősségére és kockázatára veszi igénybe.</p>
-                            <p class="mb-3">A talált tárgyakat minden vendég köteles – dokumentálás mellett – a recepción leadni.</p>
-                            <p class="mb-3">A komplexum területén balesetet szenvedett személyek ellátásához elsősegélydoboz áll rendelkezésre. Minden baleset esetén az üzemeltető baleseti jegyzőkönyvet vesz fel.</p>
-                            <p class="mb-3">A házirendet az üzemeltető saját belátása szerint módosíthatja, illetve kiegészítheti. Az üzemeltető fenntartja a jogot – az általános vendégkör kizárásával – zártkörű rendezvények lebonyolítására a komplexum egész területén vagy annak egy részén. Az éves rendelkezésre állás 95%.</p>
-                            <p>A házirend a recepción, valamint a <a href="https://fonixvitalitas.hu" class="text-fonix-green font-semibold hover:underline">www.fonixvitalitas.hu</a> oldalon szabadon elérhető és áttekinthető. A szolgáltatások igénybevétele a házirend egyidejű elfogadását is jelenti.</p>
+                            <p class="mb-3">A szolgáltatásokat minden vendég a saját egészségi állapotának ismeretében veszi igénybe. Kérjük, hogy fennálló betegségéről, panaszáról vagy állapotáról a kezelés megkezdése előtt tájékoztassa munkatársunkat.</p>
+                            <p class="mb-3">Az üzemeltető felel a saját vagy közreműködőinek felróható magatartásával okozott károkért, a magyar jog szabályai szerint. <strong class="text-fonix-green">Az üzemeltető nem zárja ki és nem korlátozza a felelősségét a szándékosan okozott, valamint az emberi életet, testi épséget vagy egészséget megkárosító károkozásért</strong> (Ptk. 6:152. §).</p>
+                            <p class="mb-2">Ezt meghaladóan az üzemeltető nem felel azokért a károkért, amelyek</p>
+                            <ul class="space-y-1.5 list-none mb-4">
+                                <li class="flex gap-2.5"><i class="fas fa-xmark text-fonix-gold text-xs mt-1.5 shrink-0"></i> a jelen házirend be nem tartásából,</li>
+                                <li class="flex gap-2.5"><i class="fas fa-xmark text-fonix-gold text-xs mt-1.5 shrink-0"></i> az eszközök nem rendeltetésszerű használatából,</li>
+                                <li class="flex gap-2.5"><i class="fas fa-xmark text-fonix-gold text-xs mt-1.5 shrink-0"></i> a vendég egészségi állapotára vonatkozó lényeges információ elhallgatásából, vagy</li>
+                                <li class="flex gap-2.5"><i class="fas fa-xmark text-fonix-gold text-xs mt-1.5 shrink-0"></i> a vendég egyéb, neki felróható magatartásából</li>
+                            </ul>
+                            <p class="mb-4">erednek.</p>
+                            <p class="mb-3"><strong class="text-fonix-green">Értéktárgyak:</strong> a vendégek értéktárgyaikat a recepción helyezhetik el megőrzésre. Az öltözőszekrényben vagy a közösségi terekben őrizetlenül hagyott tárgyakért az üzemeltető nem tud felelősséget vállalni.</p>
+                            <p class="mb-3"><strong class="text-fonix-green">Talált tárgyak:</strong> a talált tárgyakat kérjük – dokumentálás mellett – a recepción leadni. A munkatársak az öltözőszekrényeket a zárást követően kiürítik; a bent felejtett tárgyakat a recepción őrzik, ahol azokat a tulajdonosok kereshetik.</p>
+                            <p><strong class="text-fonix-green">Baleset:</strong> a Főnix területén elsősegélydoboz áll rendelkezésre. Minden baleset esetén az üzemeltető baleseti jegyzőkönyvet vesz fel.</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- 3. Speciális szabályok -->
+                <!-- 4. Üzemeltetői rendelkezések -->
                 <div class="border-b border-fonix-bg">
-                    <button onclick="toggleAccordion('hr-specialis')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
+                    <button onclick="toggleAccordion('hr-uzemeltetoi')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
                         <div class="flex items-center gap-6">
-                            <div class="w-12 h-12 bg-fonix-green rounded-full flex items-center justify-center text-fonix-gold text-2xl group-hover:bg-fonix-gold group-hover:text-fonix-bg transition shrink-0"><i class="fas fa-shoe-prints"></i></div>
+                            <div class="w-12 h-12 bg-fonix-gold text-fonix-bg group-hover:bg-fonix-green group-hover:text-fonix-gold rounded-full flex items-center justify-center text-2xl transition shrink-0"><i class="fas fa-user-tie"></i></div>
                             <div>
-                                <h3 class="text-xl md:text-2xl font-serif font-bold text-fonix-green">Speciális szabályok</h3>
-                                <p class="text-sm text-fonix-dark/50">Sportterek, öltözködés, eszközhasználat</p>
+                                <h3 class="text-xl md:text-2xl font-serif font-bold text-fonix-green">Üzemeltetői rendelkezések</h3>
+                                <p class="text-sm text-fonix-dark/50">Szabálytalanság kezelése, kizárás, módosítás</p>
                             </div>
                         </div>
-                        <i id="icon-hr-specialis" class="fas fa-chevron-down text-fonix-gold text-xl transition-transform duration-300"></i>
+                        <i id="icon-hr-uzemeltetoi" class="fas fa-chevron-down text-fonix-gold text-xl transition-transform duration-300"></i>
                     </button>
-                    <div id="hr-specialis" class="accordion-content bg-[#fcfbf7]">
+                    <div id="hr-uzemeltetoi" class="accordion-content bg-[#fcfbf7]">
+                        <div class="px-8 pb-8 pt-6 text-sm text-fonix-dark/80 leading-relaxed">
+                            <p class="mb-3">A Főnix területén kizárólag az üzemeltető engedélyével helyezhető el bármilyen berendezés, dekoráció, díszvilágítás, növényzet, valamint reklám-, hirdetési vagy szóróanyag.</p>
+                            <p class="mb-3">A Főnix zavartalan működése érdekében az üzemeltető észrevételezési jogosultsága a Főnix egész területére kiterjed, különös tekintettel a vendégek által használt területekre és a szolgáltatások igénybevételének módjára.</p>
+                            <p class="mb-3">Szabálytalanság (a jelen házirend vagy az általánosan elfogadott viselkedési szabályok megszegése) esetén az üzemeltető először figyelmezteti a szabálytalankodót. Ennek eredménytelensége esetén – ha a magatartás mások nyugalmát, biztonságát vagy a szolgáltatás nyújtását érdemben zavarja – az üzemeltető jogosult a vendéget távozásra felszólítani, illetve ideiglenesen vagy véglegesen kizárni. Az intézkedési jogosultságát meghaladó esetekben az üzemeltető a rendőrség vagy más hatóság segítségét kérheti.</p>
+                            <p class="mb-3">Kizárás esetén a vendég érvényes bérletéből fel nem használt alkalmak ellenértékét az üzemeltető visszatéríti, kivéve, ha a kizárásra a vendég szándékos, súlyos szabályszegése miatt került sor.</p>
+                            <p class="mb-3">A Főnix területén minden vendég számára kötelező a rend és a tisztaság fenntartása; alapvető elvárás a többi vendég tiszteletben tartása és a kulturált viselkedés.</p>
+                            <p class="mb-3">Az üzemeltető fenntartja a jogot – az általános vendégkör kizárásával – zártkörű rendezvények lebonyolítására a Főnix egész területén vagy annak egy részén; erről a vendégeket előzetesen tájékoztatja.</p>
+                            <p>A házirendet az üzemeltető módosíthatja, illetve kiegészítheti. A módosítás a recepción és a fonixvitalitas.hu oldalon történő közzététellel lép hatályba; a már megvásárolt bérletekre a vásárláskor hatályos feltételek irányadók.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 5. Termek és eszközhasználat -->
+                <div class="border-b border-fonix-bg">
+                    <button onclick="toggleAccordion('hr-termek')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
+                        <div class="flex items-center gap-6">
+                            <div class="w-12 h-12 bg-fonix-green text-fonix-gold group-hover:bg-fonix-gold group-hover:text-fonix-bg rounded-full flex items-center justify-center text-2xl transition shrink-0"><i class="fas fa-dumbbell"></i></div>
+                            <div>
+                                <h3 class="text-xl md:text-2xl font-serif font-bold text-fonix-green">Termek és eszközhasználat</h3>
+                                <p class="text-sm text-fonix-dark/50">Sportfelszerelés, eszközök, higiénia</p>
+                            </div>
+                        </div>
+                        <i id="icon-hr-termek" class="fas fa-chevron-down text-fonix-gold text-xl transition-transform duration-300"></i>
+                    </button>
+                    <div id="hr-termek" class="accordion-content bg-[#fcfbf7]">
                         <div class="px-8 pb-8 pt-6 text-sm text-fonix-dark/80 leading-relaxed">
                             <ul class="space-y-2 list-none">
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> A sportterek területére kizárólag az ott végezhető tevékenységnek megfelelő sportfelszerelésben lehet belépni.</li>
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> A sportterekbe ital kizárólag zárható műanyag palackban vihető be; minden más ital és eszköz bevitele tilos.</li>
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> A sportszolgáltatások igénybevétele alatt a mobiltelefon használata mellőzendő.</li>
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> A Főnix teljes fitnesz területén váltócipő (zárt sportcipő) használata kötelező. Ha a vendég nem hozott magával zárt sportcipőt, a megváltott jegy nem vész el, a következő alkalommal jóváírjuk, az adott napon azonban a szolgáltatás nem vehető igénybe.</li>
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> A zuhanyzókban papucs használata kötelező.</li>
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> A termekbe kizárólag az ott végezhető tevékenységnek megfelelő sportfelszerelésben lehet belépni.</li>
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> A termekbe ital kizárólag zárható műanyag palackban vihető be.</li>
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> A szolgáltatások igénybevétele alatt a mobiltelefon használata mellőzendő.</li>
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> A termekben váltócipő (zárt sportcipő) használata kötelező. Ha a vendég nem hozott magával zárt sportcipőt, a megváltott jegy nem vész el, azt a következő alkalommal jóváírjuk; az adott napon azonban a szolgáltatás nem vehető igénybe. A jógaórákon a mezítláb gyakorlás helyénvaló.</li>
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> A zuhanyzókban papucs használata kötelező.</li>
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> Az eszközöket kizárólag rendeltetésszerűen, a vendég alkatának és erőnlétének megfelelően szabad használni. Használat után az eszközöket fertőtlenítve, a tárolóhelyükre kell visszahelyezni. Az eszközök használata során a törölköző használata kötelező; a helyes használatot az oktatók segítik és ellenőrzik.</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
-                <!-- 4. Recepció -->
+                <!-- 6. Recepció – belépés, jegyek, bérletek -->
                 <div class="border-b border-fonix-bg">
                     <button onclick="toggleAccordion('hr-recepcio')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
                         <div class="flex items-center gap-6">
-                            <div class="w-12 h-12 bg-fonix-gold rounded-full flex items-center justify-center text-fonix-bg text-2xl group-hover:bg-fonix-green transition shrink-0"><i class="fas fa-bell-concierge"></i></div>
+                            <div class="w-12 h-12 bg-fonix-gold text-fonix-bg group-hover:bg-fonix-green group-hover:text-fonix-gold rounded-full flex items-center justify-center text-2xl transition shrink-0"><i class="fas fa-id-card"></i></div>
                             <div>
-                                <h3 class="text-xl md:text-2xl font-serif font-bold text-fonix-green">Recepció</h3>
-                                <p class="text-sm text-fonix-dark/50">Belépés, jegyek, bérletek, fizetés</p>
+                                <h3 class="text-xl md:text-2xl font-serif font-bold text-fonix-green">Recepció – belépés, jegyek, bérletek</h3>
+                                <p class="text-sm text-fonix-dark/50">Fizetés, nyilvántartás, bérletek érvényessége</p>
                             </div>
                         </div>
                         <i id="icon-hr-recepcio" class="fas fa-chevron-down text-fonix-gold text-xl transition-transform duration-300"></i>
                     </button>
                     <div id="hr-recepcio" class="accordion-content bg-[#fcfbf7]">
                         <div class="px-8 pb-8 pt-6 text-sm text-fonix-dark/80 leading-relaxed">
-                            <ul class="space-y-2 list-none">
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> A Főnix sportterületeire belépni csak érvényes jeggyel vagy bérlettel lehet.</li>
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> Az első belépéskor minden vendég számára kötelező a nyilvántartásba vétel, amellyel elfogadja a házirendben foglaltakat, és tudomásul veszi, hogy annak betartását a munkatársak ellenőrzik.</li>
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> A sportszolgáltatást igénybe vevő vendég részére az üzemeltető a ruhaváltáshoz öltözőszekrény-rekeszt biztosít, valamint az általa meghatározott ingyenes szolgáltatásokat nyújtja (1 db törölköző, tusfürdő).</li>
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> A belépéskor átadott eszközöket (öltözőszekrény-kulcs, törölköző, sportfelszerelés stb.) a vendég köteles távozáskor hiánytalanul a recepción leadni; ezek vonatkozásában anyagi felelősséggel tartozik.</li>
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> Az ügyfélegyenlegre vásárolt termékek ellenértékét a vendég köteles kilépéskor kiegyenlíteni. Tartozással rendelkező vendéget – a tartozás nagyságától függetlenül – nem áll módunkban beléptetni.</li>
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> A szolgáltatások díját belépéskor előre kell megfizetni.</li>
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> A bérlet lejártakor a fennmaradt alkalom és összeg nem vihető át a következő bérletre; a bérlet a lejárati időn túl nem használható fel.</li>
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> A vizesblokkban észlelt problémákat (dugulás, nagy szennyeződés) kérjük, jelezzék a recepción.</li>
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> Távozáskor a használt törölközőket a recepciósnak kell átadni.</li>
+                            <ul class="space-y-2 list-none mb-4">
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> A Főnix szolgáltatásainak igénybevételéhez érvényes jegy vagy bérlet szükséges.</li>
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> Az első alkalommal minden vendég nyilvántartásba kerül, amellyel elfogadja a házirendben foglaltakat – kivéve azokat a vendégeket, akik a Főnixszel bérleti viszonyban álló edzők óráira érkeznek.</li>
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> A szolgáltatást igénybe vevő vendég részére az üzemeltető öltözőszekrény-rekeszt biztosít, valamint a meghatározott ingyenes szolgáltatásokat nyújtja (1 db törölköző, tusfürdő).</li>
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> A belépéskor átadott eszközöket (öltözőszekrény-kulcs, törölköző, sportfelszerelés) a vendég köteles távozáskor hiánytalanul a recepción leadni; ezekért anyagi felelősséggel tartozik.</li>
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> A szolgáltatások díját belépéskor előre kell megfizetni.</li>
                             </ul>
+                            <div class="bg-fonix-green/5 border border-fonix-green/20 rounded-lg p-4">
+                                <div class="font-bold text-fonix-green mb-1 flex items-center gap-2"><i class="fas fa-id-card text-fonix-gold"></i> Bérletek érvényessége</div>
+                                <p class="text-sm">A bérletek a rajtuk feltüntetett időtartamon belül használhatók fel. A felhasználási idő lejárta után a fennmaradt alkalmak nem érvényesíthetők és a következő bérletbe nem vihetők át. A bérlet érvényességi idejéről a vendég a vásárláskor tájékoztatást kap. Tartós betegség vagy más méltányolható akadály esetén – előzetes jelzés mellett – az üzemeltető a bérlet érvényességét meghosszabbíthatja.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- 5. Öltöző -->
+                <!-- 7. Öltöző -->
                 <div class="border-b border-fonix-bg">
                     <button onclick="toggleAccordion('hr-oltozo')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
                         <div class="flex items-center gap-6">
-                            <div class="w-12 h-12 bg-fonix-green rounded-full flex items-center justify-center text-fonix-gold text-2xl group-hover:bg-fonix-gold group-hover:text-fonix-bg transition shrink-0"><i class="fas fa-box-archive"></i></div>
+                            <div class="w-12 h-12 bg-fonix-green text-fonix-gold group-hover:bg-fonix-gold group-hover:text-fonix-bg rounded-full flex items-center justify-center text-2xl transition shrink-0"><i class="fas fa-door-open"></i></div>
                             <div>
                                 <h3 class="text-xl md:text-2xl font-serif font-bold text-fonix-green">Öltöző</h3>
-                                <p class="text-sm text-fonix-dark/50">Öltöző- és zuhanytér használata</p>
+                                <p class="text-sm text-fonix-dark/50">Öltöző- és zuhanyhasználat szabályai</p>
                             </div>
                         </div>
                         <i id="icon-hr-oltozo" class="fas fa-chevron-down text-fonix-gold text-xl transition-transform duration-300"></i>
@@ -2366,131 +2375,80 @@
                     <div id="hr-oltozo" class="accordion-content bg-[#fcfbf7]">
                         <div class="px-8 pb-8 pt-6 text-sm text-fonix-dark/80 leading-relaxed">
                             <ul class="space-y-2 list-none">
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> Az öltöző- és zuhanytérben papucs használata kötelező.</li>
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> A területeken és az öltözőszekrényben hagyott tárgyakért az üzemeltető felelősséget nem vállal; értéktárgyaikat a vendégek a recepción helyezhetik el.</li>
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> Távozás után a szekrényekben szemetet hagyni tilos.</li>
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> Az öltöző- és zuhanytérben papucs használata kötelező.</li>
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> Értéktárgyaikat a vendégek a recepción helyezhetik el.</li>
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> Távozás után a szekrényekben szemetet hagyni tilos.</li>
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> A vizesblokkban észlelt problémákat (dugulás, nagy szennyeződés) kérjük, jelezzék a recepción.</li>
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> Távozáskor a használt törölközőket kérjük a recepciósnak átadni.</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
-                <!-- 6. Emeleti terem -->
+                <!-- 8. Csoportos órák -->
                 <div class="border-b border-fonix-bg">
-                    <button onclick="toggleAccordion('hr-emeleti')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
+                    <button onclick="toggleAccordion('hr-csoportos')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
                         <div class="flex items-center gap-6">
-                            <div class="w-12 h-12 bg-fonix-gold rounded-full flex items-center justify-center text-fonix-bg text-2xl group-hover:bg-fonix-green transition shrink-0"><i class="fas fa-people-group"></i></div>
+                            <div class="w-12 h-12 bg-fonix-gold text-fonix-bg group-hover:bg-fonix-green group-hover:text-fonix-gold rounded-full flex items-center justify-center text-2xl transition shrink-0"><i class="fas fa-users"></i></div>
                             <div>
-                                <h3 class="text-xl md:text-2xl font-serif font-bold text-fonix-green">Emeleti terem</h3>
-                                <p class="text-sm text-fonix-dark/50">Csoportos órák szabályai</p>
+                                <h3 class="text-xl md:text-2xl font-serif font-bold text-fonix-green">Csoportos órák</h3>
+                                <p class="text-sm text-fonix-dark/50">Felső és alsó terem, foglalás, létszám</p>
                             </div>
                         </div>
-                        <i id="icon-hr-emeleti" class="fas fa-chevron-down text-fonix-gold text-xl transition-transform duration-300"></i>
+                        <i id="icon-hr-csoportos" class="fas fa-chevron-down text-fonix-gold text-xl transition-transform duration-300"></i>
                     </button>
-                    <div id="hr-emeleti" class="accordion-content bg-[#fcfbf7]">
+                    <div id="hr-csoportos" class="accordion-content bg-[#fcfbf7]">
                         <div class="px-8 pb-8 pt-6 text-sm text-fonix-dark/80 leading-relaxed">
-                            <ul class="space-y-2 list-none">
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> A csoportos órákon nincsenek fix, foglalt helyek; a vendégek érkezéskor a szabad helyekre állhatnak be. Maximális létszám: 12 fő.</li>
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> Az órákra előre be kell jelentkezni az online felületen vagy a recepción. Ha a foglalással érkező vendég az óra kezdetekor nem jelenik meg, a foglalása érvénytelenné válik, helyét mások elfoglalhatják; az óra díját ebben az esetben is ki kell fizetnie.</li>
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> A terembe csak megfelelő sportöltözetben (sportcipő, trikó/póló/top, sportnadrág) lehet belépni és edzeni. Papucsban, szandálban vagy mezítláb edzeni nem engedélyezett – kivéve a jógaórákat, ahol a mezítláb gyakorlás helyénvaló. Utcai cipő használata tilos.</li>
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> Az edzőgépeket és eszközöket kizárólag rendeltetésszerűen, a vendég alkatának és erőnlétének megfelelően, saját felelősségére szabad használni. Használat után az eszközöket a tárolóhelyükre, fertőtlenítve kell visszahelyezni. Az eszközök használata során a törölköző használata kötelező; használatukat a teremedzők segítik és ellenőrzik.</li>
+                            <ul class="space-y-2 list-none mb-4">
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> Az óra megkezdése előtt a vendég órajegyet vagy bérletet köteles váltani.</li>
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> A csoportos órákon nincsenek fix, foglalt helyek; a vendégek érkezéskor a szabad helyekre állhatnak be. <strong class="text-fonix-green">Maximális létszám: 12 fő.</strong></li>
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> Az órákra előre be kell jelentkezni a <a href="https://csoportos.fonixvitalitas.hu" target="_blank" rel="noopener" class="text-fonix-green font-semibold underline hover:text-fonix-gold transition">csoportos foglalási felületen</a> vagy a recepción.</li>
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> Ha a foglalással érkező vendég az óra kezdetekor nem jelenik meg, a foglalása érvénytelenné válik, helyét mások elfoglalhatják. Meg nem jelenés esetén az óra díját felszámítjuk, illetve bérlet esetén az alkalmat levonjuk – erről a vendéget a foglaláskor tájékoztatjuk. A lefoglalt órát általánosságban előző nap reggel 9 óráig van lehetőség lemondani; ettől eltérően rendelkezhetnek az edzők, akik termet bérelnek a Főnixben.</li>
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> A terembe csak megfelelő sportöltözetben (sportcipő, trikó/póló/top, sportnadrág) lehet belépni. Papucsban vagy szandálban edzeni nem engedélyezett, utcai cipő használata tilos. A jógaórákon a mezítláb gyakorlás helyénvaló.</li>
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> Az óra kezdése után (legfeljebb 10 perccel) érkező vendéget az oktató – a balesetveszély és a többi vendég zavarásának elkerülése érdekében – jogosult az óráról kizárni.</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
-                <!-- 7. Földszinti terem -->
-                <div class="border-b border-fonix-bg">
-                    <button onclick="toggleAccordion('hr-foldszinti')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
-                        <div class="flex items-center gap-6">
-                            <div class="w-12 h-12 bg-fonix-green rounded-full flex items-center justify-center text-fonix-gold text-2xl group-hover:bg-fonix-gold group-hover:text-fonix-bg transition shrink-0"><i class="fas fa-person-running"></i></div>
-                            <div>
-                                <h3 class="text-xl md:text-2xl font-serif font-bold text-fonix-green">Földszinti terem</h3>
-                                <p class="text-sm text-fonix-dark/50">Csoportos órák szabályai</p>
-                            </div>
-                        </div>
-                        <i id="icon-hr-foldszinti" class="fas fa-chevron-down text-fonix-gold text-xl transition-transform duration-300"></i>
-                    </button>
-                    <div id="hr-foldszinti" class="accordion-content bg-[#fcfbf7]">
-                        <div class="px-8 pb-8 pt-6 text-sm text-fonix-dark/80 leading-relaxed">
-                            <ul class="space-y-2 list-none">
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> Az óra megkezdése előtt a vendég órajegyet vagy bérletet köteles váltani.</li>
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> A csoportos órákon nincsenek fix, foglalt helyek; a vendégek érkezéskor a szabad helyekre állhatnak be. Maximális létszám: 12 fő.</li>
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> Az órákra előre be kell jelentkezni az online felületen vagy a recepción. Meg nem jelenés esetén a foglalás érvénytelenné válik, az óra díját ki kell fizetni.</li>
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> A terembe csak megfelelő sportöltözetben lehet belépni; papucsban, szandálban vagy mezítláb edzeni nem engedélyezett, utcai cipő használata tilos.</li>
-                                <li class="flex gap-2.5"><i class="fas fa-circle text-fonix-gold text-[6px] mt-2 shrink-0"></i> Az óra kezdése után (legfeljebb 10 perccel) érkező vendéget az edző – a balesetveszély és a többi vendég zavarásának elkerülése érdekében – jogosult az óráról kizárni.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 8. Masszázs és testkezelés részleg -->
+                <!-- 9. Masszázs és testkezelés részleg -->
                 <div class="border-b border-fonix-bg">
                     <button onclick="toggleAccordion('hr-masszazs')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
                         <div class="flex items-center gap-6">
-                            <div class="w-12 h-12 bg-fonix-gold rounded-full flex items-center justify-center text-fonix-bg text-2xl group-hover:bg-fonix-green transition shrink-0"><i class="fas fa-spa"></i></div>
+                            <div class="w-12 h-12 bg-fonix-green text-fonix-gold group-hover:bg-fonix-gold group-hover:text-fonix-bg rounded-full flex items-center justify-center text-2xl transition shrink-0"><i class="fas fa-spa"></i></div>
                             <div>
                                 <h3 class="text-xl md:text-2xl font-serif font-bold text-fonix-green">Masszázs és testkezelés részleg</h3>
-                                <p class="text-sm text-fonix-dark/50">Bejelentkezés, érkezés, lemondás, higiénia</p>
+                                <p class="text-sm text-fonix-dark/50">Bejelentkezés, érkezés, késés, lemondás</p>
                             </div>
                         </div>
                         <i id="icon-hr-masszazs" class="fas fa-chevron-down text-fonix-gold text-xl transition-transform duration-300"></i>
                     </button>
                     <div id="hr-masszazs" class="accordion-content bg-[#fcfbf7]">
-                        <div class="px-8 pb-8 pt-6">
-                            <div class="space-y-3">
-                                <div class="bg-white border border-fonix-bg rounded-lg p-4">
-                                    <div class="text-xs font-bold text-fonix-gold uppercase tracking-wider mb-1">Bejelentkezés</div>
-                                    <p class="text-sm text-fonix-dark/80 leading-relaxed">Vendégeink hétfőtől péntekig kérhetnek masszázs- és testkezelési időpontot a <a href="tel:+36204654525" class="text-fonix-green font-bold hover:underline">+36 20 465 4525</a> telefonszámon. Vasárnap a telefonos időpontegyeztetés szünetel.</p>
-                                </div>
-                                <div class="bg-white border border-fonix-bg rounded-lg p-4">
-                                    <div class="text-xs font-bold text-fonix-gold uppercase tracking-wider mb-1">Érkezés</div>
-                                    <p class="text-sm text-fonix-dark/80 leading-relaxed">Kérjük, a kapott időpontnál legalább 5 perccel korábban érkezzenek (pl. 14.00 órás időpontra 13.55-kor). A kapott időpont a kezelés kezdésének időpontja, nem az érkezésé.</p>
-                                </div>
-                                <div class="bg-white border border-fonix-bg rounded-lg p-4">
-                                    <div class="text-xs font-bold text-fonix-gold uppercase tracking-wider mb-1">Késés</div>
-                                    <p class="text-sm text-fonix-dark/80 leading-relaxed">Késés esetén a kezelést a késés idejével megegyező mértékben lerövidítjük, mivel a következő vendég idejéből nem szeretnénk elvenni, és a kezelőknek is szükségük van regenerálódási és tisztasági szünetre. Az előre egyeztetett szolgáltatás díját késés esetén is felszámítjuk.</p>
-                                </div>
-                                <div class="bg-white border border-fonix-bg rounded-lg p-4">
-                                    <div class="text-xs font-bold text-fonix-gold uppercase tracking-wider mb-1">Időpont lemondása</div>
-                                    <p class="text-sm text-fonix-dark/80 leading-relaxed">Az időpontot az azt megelőző nap reggel 9 óráig kérjük lemondani. Ennek elmulasztása esetén a lemondott kezelés árát a következő alkalommal felszámítjuk; bérlet esetén a le nem mondott (vagy túl későn lemondott) alkalmat levonjuk. Ettől eltekintünk, ha a vendég maga helyett küld valakit a kezelésre.</p>
-                                </div>
-                                <div class="bg-white border border-fonix-bg rounded-lg p-4">
-                                    <div class="text-xs font-bold text-fonix-gold uppercase tracking-wider mb-1">Higiénia</div>
-                                    <p class="text-sm text-fonix-dark/80 leading-relaxed">A masszázsszobákban, az illemhelyeken és a fürdőszobában naponta többször fertőtlenítünk. Kérjük, a bejáratnál vegyék le utcai cipőjüket – a belső helyiségekbe csak papucsban lehet továbbhaladni –, és legyenek tekintettel az önök után érkező vendégekre.</p>
-                                </div>
-                                <div class="bg-white border border-fonix-bg rounded-lg p-4">
-                                    <div class="text-xs font-bold text-fonix-gold uppercase tracking-wider mb-1">Zavartalanság</div>
-                                    <p class="text-sm text-fonix-dark/80 leading-relaxed">A kezelések zavartalansága érdekében kérjük a mobiltelefonok mellőzését; ha a készüléket az előtérben hagyják, kérjük, halkítsák vagy némítsák el.</p>
-                                </div>
-                                <div class="bg-white border border-fonix-bg rounded-lg p-4">
-                                    <div class="text-xs font-bold text-fonix-gold uppercase tracking-wider mb-1">Bérletek érvényessége</div>
-                                    <p class="text-sm text-fonix-dark/80 leading-relaxed">A bérlet lejárta után a felhasználási idő nem hosszabbítható meg; a megmaradt alkalmak elévülnek.</p>
-                                </div>
-                                <div class="bg-white border border-fonix-bg rounded-lg p-4">
-                                    <div class="text-xs font-bold text-fonix-gold uppercase tracking-wider mb-1">Egészségügyi állapot</div>
-                                    <p class="text-sm text-fonix-dark/80 leading-relaxed">A kezelést mindenki saját felelősségére veszi igénybe; új vendégeknél az első alkalommal rákérdezünk az esetleges ellenjavallatokra. Ha a vendég nem tájékoztat a fennálló egészségügyi állapotáról és elhallgat egy kizáró okot, az egészségéért nem tudunk felelősséget vállalni. Kérjük, betegség esetén jelezzék – nem minden esetben szükséges a kezelést elhalasztani, fertőző betegségnél azonban a saját és a többi vendég egészsége érdekében erre szükség lehet.</p>
-                                </div>
-                            </div>
+                        <div class="px-8 pb-8 pt-6 text-sm text-fonix-dark/80 leading-relaxed">
+                            <p class="mb-3"><strong class="text-fonix-green">Bejelentkezés</strong> — Vendégeink hétfőtől péntekig kérhetnek masszázs-, és hétfőtől szombatig testkezelési időpontot a <a href="tel:+36204654525" class="text-fonix-green font-semibold hover:underline">+36 20 465 4525</a> telefonszámon, illetve az <a href="https://egyeni.fonixvitalitas.hu" target="_blank" rel="noopener" class="text-fonix-green font-semibold underline hover:text-fonix-gold transition">egyéni foglalási felületen</a>. Vasárnap a telefonos időpontegyeztetés szünetel.</p>
+                            <p class="mb-3"><strong class="text-fonix-green">Érkezés</strong> — Kérjük, a kapott időpontnál legalább 5 perccel korábban érkezzenek (pl. 14.00 órás időpontra 13.55-kor). A kapott időpont a kezelés kezdésének időpontja, nem az érkezésé.</p>
+                            <p class="mb-3"><strong class="text-fonix-green">Késés</strong> — Késés esetén a kezelést a késés idejével megegyező mértékben lerövidítjük, mivel a következő vendég idejéből nem szeretnénk elvenni, és a kezelőknek is szükségük van regenerálódási és tisztasági szünetre. Az előre egyeztetett szolgáltatás díját késés esetén is felszámítjuk.</p>
+                            <p class="mb-3"><strong class="text-fonix-green">Időpont lemondása</strong> — Az időpontot az azt megelőző nap reggel 9 óráig kérjük lemondani. Ennek elmulasztása esetén a lemondott kezelés árát a következő alkalommal felszámítjuk; bérlet esetén a le nem mondott (vagy túl későn lemondott) alkalmat levonjuk. Ettől eltekintünk, ha a vendég maga helyett küld valakit a kezelésre, illetve ha a lemondás orvosi igazolással alátámasztott betegség vagy más, előre nem látható, méltányolható ok miatt történt.</p>
+                            <p class="mb-3"><strong class="text-fonix-green">Higiénia</strong> — A masszázsszobákban, az illemhelyeken és a fürdőszobában naponta többször fertőtlenítünk. Kérjük, a bejáratnál vegyék le utcai cipőjüket – a belső helyiségekbe csak papucsban lehet továbbhaladni –, és legyenek tekintettel az önök után érkező vendégekre.</p>
+                            <p class="mb-3"><strong class="text-fonix-green">Zavartalanság</strong> — A kezelések zavartalansága érdekében kérjük a mobiltelefonok mellőzését; ha a készüléket az előtérben hagyják, kérjük, halkítsák vagy némítsák el.</p>
+                            <p><strong class="text-fonix-green">Egészségügyi állapot</strong> — Új vendégeknél az első alkalommal rákérdezünk az esetleges ellenjavallatokra. Kérjük, betegség esetén jelezzék – nem minden esetben szükséges a kezelést elhalasztani, fertőző betegségnél azonban a saját és a többi vendég egészsége érdekében erre szükség lehet. Ha a vendég a fennálló, kizáró okot jelentő egészségi állapotáról nem tájékoztat, az ebből eredő következményekért az üzemeltető nem tud felelősséget vállalni.</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- 9. Udvari parkoló – parkolási szabályzat -->
+                <!-- 10. Udvari parkoló -->
                 <div class="border-b border-fonix-bg">
                     <button onclick="toggleAccordion('hr-parkolo')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
                         <div class="flex items-center gap-6">
-                            <div class="w-12 h-12 bg-fonix-green rounded-full flex items-center justify-center text-fonix-gold text-2xl group-hover:bg-fonix-gold group-hover:text-fonix-bg transition shrink-0"><i class="fas fa-square-parking"></i></div>
+                            <div class="w-12 h-12 bg-fonix-gold text-fonix-bg group-hover:bg-fonix-green group-hover:text-fonix-gold rounded-full flex items-center justify-center text-2xl transition shrink-0"><i class="fas fa-square-parking"></i></div>
                             <div>
                                 <h3 class="text-xl md:text-2xl font-serif font-bold text-fonix-green">Udvari parkoló</h3>
-                                <p class="text-sm text-fonix-dark/50">Parkolási szabályzat</p>
+                                <p class="text-sm text-fonix-dark/50">Parkolási szabályzat – Beniczky utca 4. belső udvar</p>
                             </div>
                         </div>
                         <i id="icon-hr-parkolo" class="fas fa-chevron-down text-fonix-gold text-xl transition-transform duration-300"></i>
                     </button>
                     <div id="hr-parkolo" class="accordion-content bg-[#fcfbf7]">
                         <div class="px-8 pb-8 pt-6 text-sm text-fonix-dark/80 leading-relaxed">
-                            <p class="mb-3">A jelen parkolási szabályzat területi hatálya a Pomáz, Beniczky utca 4. belső udvarára (Parkoló) terjed ki, személyi hatálya pedig a Parkolót járművük időszakos tárolására igénybe vevő, illetve a Parkoló területén bármely egyéb célból tartózkodó személyekre. Az üzemeltető fenntartja a szabályzat módosításának jogát.</p>
-                            <p class="mb-3">A vendég a behajtást követően jogosult a járművét a Parkoló szabad helyére leállítani, úgy, hogy az a lehető legkevesebb helyet foglalja el. A gyalogosoknak fokozott figyelemmel kell közlekedniük. A Parkoló férőhelyeinek száma: 9. A maximális sebesség a Parkoló egész területén 5 km/óra.</p>
+                            <p class="mb-3">A jelen parkolási szabályzat területi hatálya a Pomáz, Beniczky utca 4. belső udvarára (Parkoló) terjed ki, személyi hatálya pedig a Parkolót járművük időszakos tárolására igénybe vevő, illetve a Parkoló területén bármely egyéb célból tartózkodó személyekre.</p>
+                            <p class="mb-3">A vendég a behajtást követően jogosult a járművét a Parkoló szabad helyére leállítani úgy, hogy az a lehető legkevesebb helyet foglalja el. A gyalogosoknak fokozott figyelemmel kell közlekedniük. A Parkoló férőhelyeinek száma: <strong class="text-fonix-green">9</strong>. A maximális sebesség a Parkoló egész területén <strong class="text-fonix-green">5 km/óra</strong>.</p>
 
                             <div class="bg-fonix-gold/10 border-l-4 border-fonix-gold rounded-r-lg p-4 my-5">
                                 <div class="font-bold text-fonix-green mb-2 flex items-center gap-2"><i class="fas fa-ban text-fonix-gold"></i> A Parkolóban tilos</div>
@@ -2507,35 +2465,69 @@
                                 </ul>
                             </div>
 
-                            <p class="mb-3">A Parkolóban álló és haladó járművekben, azok tartalmában harmadik személy által okozott károkért az üzemeltető felelősséget nem vállal. A jármű vezetője felel mindazon kárért, amelyet az általa vezetett gépkocsival okoz; a károkozás minden esetben rendőri intézkedést von maga után, és jegyzőkönyv, illetve baleseti bejelentő készül. A parkolást igénybe vevő köteles megtéríteni a más járműben, a gépészeti elemekben vagy a parkolástechnikai berendezésekben okozott kárt; az ilyen esetet azonnal jelezni kell az üzemeltető személyzetének.</p>
-                            <p class="mb-3">Az üzemeltető felhívja a figyelmet, hogy a Parkoló egyes helyein gépészeti elemek (pl. csövek, klímaberendezések) állnak ki a fal síkjából; ezeket az üzemeltető lehetőség szerint figyelemfelkeltő jelzéssel látja el, az ezekbe való ütközésből eredő károkért azonban a felelősségét kizárja.</p>
-                            <p class="mb-3">Az üzemeltető nem felelős harmadik személy magatartásáért (sérülés, vandalizmus, lopás, betörés stb.), és csak azokért a károkért felel, amelyeket munkavállalói súlyos gondatlansággal vagy szándékosan okoznak; a felelősség az üzemeltető felelősségbiztosításának összegére korlátozódik. Ha a vendég vagy más személy megzavarja a Parkoló rendjét vagy veszélyezteti a biztonságát, az üzemeltető jogosult őt kiutasítani, szükség esetén a hatóságok közreműködését kérni és a járművet a szabálytalankodó költségére elszállíttatni.</p>
-                            <p>A szabályzatban nem szabályozott kérdésekben a magyar jog az irányadó; jogvita esetén kizárólag a Pest Megyei Törvényszék az illetékes.</p>
+                            <p class="mb-3">A jármű vezetője felel mindazon kárért, amelyet az általa vezetett gépkocsival okoz. A károkozás minden esetben rendőri intézkedést von maga után, és jegyzőkönyv, illetve baleseti bejelentő készül. A parkolást igénybe vevő köteles megtéríteni a más járműben vagy a Parkoló berendezéseiben okozott kárt; az ilyen esetet azonnal jelezni kell az üzemeltető személyzetének.</p>
+                            <p class="mb-3">Az üzemeltető felhívja a figyelmet arra, hogy a Parkoló egyes helyein gépészeti elemek (pl. csövek, klímaberendezések) állnak ki a fal síkjából; ezeket az üzemeltető figyelemfelkeltő jelzéssel látja el.</p>
+                            <p class="mb-3">Az üzemeltető a Parkolót ingyenes, őrzés nélküli parkolási lehetőségként biztosítja; a Parkoló nem minősül őrzött parkolónak. Az üzemeltető a saját vagy közreműködői felróható magatartásával okozott károkért a magyar jog szabályai szerint felel, harmadik személy magatartásáért (lopás, rongálás, ütközés) azonban nem.</p>
+                            <p>Ha a vendég vagy más személy megzavarja a Parkoló rendjét vagy veszélyezteti a biztonságát, az üzemeltető jogosult őt kiutasítani, szükség esetén a hatóságok közreműködését kérni.</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- 10. Egyéb rendelkezések -->
-                <div>
-                    <button onclick="toggleAccordion('hr-egyeb')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
+                <!-- 11. Panaszkezelés -->
+                <div class="border-b border-fonix-bg">
+                    <button onclick="toggleAccordion('hr-panasz')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
                         <div class="flex items-center gap-6">
-                            <div class="w-12 h-12 bg-fonix-gold rounded-full flex items-center justify-center text-fonix-bg text-2xl group-hover:bg-fonix-green transition shrink-0"><i class="fas fa-circle-info"></i></div>
+                            <div class="w-12 h-12 bg-fonix-green text-fonix-gold group-hover:bg-fonix-gold group-hover:text-fonix-bg rounded-full flex items-center justify-center text-2xl transition shrink-0"><i class="fas fa-comments"></i></div>
                             <div>
-                                <h3 class="text-xl md:text-2xl font-serif font-bold text-fonix-green">Egyéb rendelkezések</h3>
-                                <p class="text-sm text-fonix-dark/50">Kiléptetés, talált értékek, pótdíj</p>
+                                <h3 class="text-xl md:text-2xl font-serif font-bold text-fonix-green">Panaszkezelés</h3>
+                                <p class="text-sm text-fonix-dark/50">Panasztétel módjai, békéltető testület, NAIH</p>
                             </div>
                         </div>
-                        <i id="icon-hr-egyeb" class="fas fa-chevron-down text-fonix-gold text-xl transition-transform duration-300"></i>
+                        <i id="icon-hr-panasz" class="fas fa-chevron-down text-fonix-gold text-xl transition-transform duration-300"></i>
                     </button>
-                    <div id="hr-egyeb" class="accordion-content bg-[#fcfbf7]">
+                    <div id="hr-panasz" class="accordion-content bg-[#fcfbf7]">
                         <div class="px-8 pb-8 pt-6 text-sm text-fonix-dark/80 leading-relaxed">
-                            <p class="mb-3">A munkatársak az öltözőszekrényeket a zárást követően kiürítik; a bent felejtett értékeket a recepción leadják, ahol azokat a tulajdonosok kereshetik.</p>
-                            <p class="mb-3">Az igénybe vett szolgáltatás lezárása minden esetben a recepción, személyes kiléptetéssel történik. Kérjük, hogy az épület elhagyása előtt a belépéskor kapott eszközöket (törölköző, öltözőkulcs, pulzusmérő óra stb.) hiánytalanul adják át a recepciós munkatársnak, aki ezt követően ellenőrzi az ügyfélegyenleget és kilépteti a vendéget. Távozás előtt kérjük a belépéskor biztosított hitelkeret kiegyenlítését.</p>
-                            <p class="mb-3">Ha a vendég a recepcióval való egyeztetés nélkül hagyja el az épületet, hozzájárul, hogy a kiléptetés a jelenléte nélkül történjen, és tudomásul veszi, hogy a pénztártól való távozást követően utólagos reklamációval nem élhet.</p>
-                            <div class="bg-fonix-green/5 border border-fonix-green/20 rounded-lg p-4 flex items-center gap-3 mt-4">
-                                <i class="fas fa-key text-fonix-gold text-lg shrink-0"></i>
-                                <p class="text-sm text-fonix-dark/80">Az elveszített vagy kilépéskor le nem adott öltözőkulcsért <strong class="text-fonix-green">2.000 Ft</strong> pótdíjat számítunk fel.</p>
+                            <p class="mb-2">Ha a vendég a szolgáltatással kapcsolatban kifogással él, panaszát a következő módokon terjesztheti elő:</p>
+                            <ul class="space-y-1.5 list-none mb-4">
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> szóban a recepción vagy telefonon a <a href="tel:+36204654525" class="text-fonix-green font-semibold hover:underline">+36 20 465 4525</a> számon,</li>
+                                <li class="flex gap-2.5"><i class="fas fa-circle-check text-fonix-green text-xs mt-1.5 shrink-0"></i> írásban a <a href="mailto:fonixvitalitas@gmail.com" class="text-fonix-green font-semibold hover:underline">fonixvitalitas@gmail.com</a> címen, illetve postai úton a 2013 Pomáz, Fáy András utca 41. címre.</li>
+                            </ul>
+                            <p class="mb-4">A szóbeli panaszt az üzemeltető lehetőség szerint azonnal orvosolja. Ha ez nem lehetséges, vagy a vendég a kezeléssel nem ért egyet, az üzemeltető a panaszról jegyzőkönyvet vesz fel. Az írásbeli panaszt az üzemeltető a beérkezéstől számított <strong class="text-fonix-green">30 napon belül</strong> írásban, érdemben megválaszolja (Fgytv. 17/A. §).</p>
+                            <p class="mb-3">Ha a panasz rendezése nem vezet eredményre, a vendég az alábbi fórumokhoz fordulhat:</p>
+                            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                <div class="bg-fonix-green/5 border border-fonix-green/20 rounded-lg p-4">
+                                    <div class="font-bold text-fonix-green mb-1">Pest Vármegyei Békéltető Testület</div>
+                                    <p class="text-xs leading-relaxed">Székhely: 1055 Budapest, Balassi Bálint utca 25. IV. emelet 2.<br>Levelezési cím: 1364 Budapest, Pf.: 81.<br>Telefon: +36 1 792 7881<br>E-mail: <a href="mailto:pmbekelteto@pmkik.hu" class="text-fonix-green font-semibold hover:underline">pmbekelteto@pmkik.hu</a><br>Web: <a href="https://www.panaszrendezes.hu" target="_blank" rel="noopener" class="text-fonix-green font-semibold hover:underline">www.panaszrendezes.hu</a></p>
+                                </div>
+                                <div class="bg-fonix-green/5 border border-fonix-green/20 rounded-lg p-4">
+                                    <div class="font-bold text-fonix-green mb-1">Pest Vármegyei Kormányhivatal – fogyasztóvédelem</div>
+                                    <p class="text-xs leading-relaxed">Cím: 1088 Budapest, József körút 6.<br>Telefon: +36 1 459 4843<br>E-mail: <a href="mailto:fogyved@pest.gov.hu" class="text-fonix-green font-semibold hover:underline">fogyved@pest.gov.hu</a></p>
+                                </div>
                             </div>
+                            <div class="bg-fonix-green/5 border border-fonix-green/20 rounded-lg p-4 mb-4">
+                                <div class="font-bold text-fonix-green mb-1">Adatkezeléssel kapcsolatos panasz esetén</div>
+                                <p class="text-xs leading-relaxed">Nemzeti Adatvédelmi és Információszabadság Hatóság (NAIH)<br>1055 Budapest, Falk Miksa utca 9–11. · Postacím: 1363 Budapest, Pf. 9.<br>Telefon: +36 1 391 1400 · E-mail: <a href="mailto:ugyfelszolgalat@naih.hu" class="text-fonix-green font-semibold hover:underline">ugyfelszolgalat@naih.hu</a></p>
+                            </div>
+                            <p>A vendég igényét bíróság előtt is érvényesítheti; erre az általános szabályok szerint illetékes bíróság előtt van lehetőség.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 12. Záró rendelkezések -->
+                <div>
+                    <button onclick="toggleAccordion('hr-zaro')" class="w-full py-6 px-8 flex items-center justify-between bg-white hover:bg-fonix-bg transition text-left focus:outline-none group">
+                        <div class="flex items-center gap-6">
+                            <div class="w-12 h-12 bg-fonix-gold text-fonix-bg group-hover:bg-fonix-green group-hover:text-fonix-gold rounded-full flex items-center justify-center text-2xl transition shrink-0"><i class="fas fa-circle-info"></i></div>
+                            <div>
+                                <h3 class="text-xl md:text-2xl font-serif font-bold text-fonix-green">Záró rendelkezések</h3>
+                                <p class="text-sm text-fonix-dark/50">Irányadó jog, elérhetőség, hatályba lépés</p>
+                            </div>
+                        </div>
+                        <i id="icon-hr-zaro" class="fas fa-chevron-down text-fonix-gold text-xl transition-transform duration-300"></i>
+                    </button>
+                    <div id="hr-zaro" class="accordion-content bg-[#fcfbf7]">
+                        <div class="px-8 pb-8 pt-6 text-sm text-fonix-dark/80 leading-relaxed">
+                            <p class="mb-3">A jelen házirendben nem szabályozott kérdésekben a magyar jog szabályai az irányadók.</p>
+                            <p class="mb-3">A házirend a recepción, valamint a fonixvitalitas.hu oldalon szabadon elérhető és áttekinthető. A szolgáltatások igénybevétele a házirend egyidejű elfogadását is jelenti.</p>
+                            <p><strong class="text-fonix-green">Hatályos: 2026. 08. 20-tól.</strong></p>
                         </div>
                     </div>
                 </div>
@@ -2544,8 +2536,8 @@
 
             <!-- Lábjegyzet -->
             <div class="text-center mt-8 text-xs text-fonix-dark/60 leading-relaxed">
-                <p>A házirend teljes szövege a Főnix recepcióján és a <a href="https://fonixvitalitas.hu/#hazirend" class="text-fonix-green font-semibold hover:underline">www.fonixvitalitas.hu</a> oldalon is elérhető.</p>
-                <p class="mt-1">Hatályos: 2026.</p>
+                <p>A házirend teljes szövege a Főnix recepcióján és a <a href="https://fonixvitalitas.hu/#hazirend" class="text-fonix-green font-semibold hover:underline">www.fonixvitalitas.hu</a> oldalon is elérhető. <strong>Hatályos: 2026. 08. 20-tól.</strong></p>
+                <p class="mt-1">Főnix Vitalitás Központ · Üzemeltető: dr. Csepregi Katalin e.v. · 2013 Pomáz, Fáy András utca 41. · Adószám: 91927055-1-33 · Nyilvántartási szám: 62119162</p>
             </div>
         </div>
     </section>
@@ -2557,7 +2549,11 @@
                 <div>
                     <div class="text-2xl font-serif font-bold text-white mb-2">Főnix Vitalitás Központ</div>
                     <p class="text-sm text-white/60 max-w-sm">A hosszú, minőségi élet öt pillére – mozgás, táplálkozás, regeneráció, lelki egyensúly és életcél – egy helyen, Pomáz szívében.</p>
-                    <a href="#hazirend" class="inline-flex items-center gap-2 text-fonix-gold hover:text-white transition text-sm mt-4 font-semibold"><i class="fas fa-scroll"></i> Házirend</a>
+                    <div class="flex flex-wrap items-center gap-x-6 gap-y-2 mt-4">
+                        <a href="#hazirend" class="inline-flex items-center gap-2 text-fonix-gold hover:text-white transition text-sm font-semibold"><i class="fas fa-scroll"></i> Házirend</a>
+                        <a href="adatkezelesi-tajekoztato.pdf" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-fonix-gold hover:text-white transition text-sm font-semibold"><i class="fas fa-shield-halved"></i> Adatkezelési tájékoztató</a>
+                        <button onclick="openCookieSettings()" class="inline-flex items-center gap-2 text-fonix-gold hover:text-white transition text-sm font-semibold"><i class="fas fa-cookie-bite"></i> Süti beállítások</button>
+                    </div>
                 </div>
                 <div class="text-sm leading-relaxed">
                     <div class="font-bold text-white mb-2 uppercase tracking-wider text-xs">Impresszum</div>
@@ -2572,6 +2568,44 @@
             </div>
         </div>
     </footer>
+
+    <!-- ===== AKCIÓS FELUGRÓ – augusztus végi bérletakció =====
+         A felugró 2026. szeptember 1-jétől automatikusan nem jelenik meg (lásd a scriptet).
+         Szeptember 1. után ez a blokk, a hozzá tartozó script-rész és az
+         akcio-berlet-2026-08.jpg kép is törölhető a repóból. -->
+    <div id="akcio-popup" class="hidden fixed inset-0 z-[70] flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closeAkcioPopup()"></div>
+        <div class="relative w-full max-w-md">
+            <button onclick="closeAkcioPopup()" aria-label="Bezárás" class="absolute -top-3 -right-3 z-10 w-10 h-10 rounded-full bg-white text-fonix-dark shadow-lg flex items-center justify-center text-xl hover:bg-fonix-gold hover:text-white transition">
+                <i class="fas fa-xmark"></i>
+            </button>
+            <div class="rounded-2xl overflow-hidden shadow-2xl bg-white">
+                <a href="#idopontfoglalas" onclick="closeAkcioPopup()">
+                    <img src="akcio-berlet-2026-08.jpg" alt="Augusztus végi bérletakció augusztus 24–31. között: EMS Intimfotel és Gépi nyirokmasszázs bérletek -40%, Kavitációs zsírbontás és Alpha melegterápia bérletek -30% kedvezménnyel." class="w-full h-auto max-h-[70vh] object-contain bg-[#f5f1e8]">
+                </a>
+                <a href="#idopontfoglalas" onclick="closeAkcioPopup()" class="block bg-fonix-gold text-white text-center font-bold uppercase tracking-widest text-sm py-4 hover:bg-fonix-green transition">
+                    <i class="fas fa-calendar-check mr-2"></i>Kihasználom az akciót
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SÜTI-TÁJÉKOZTATÓ SÁV (consent banner) =====
+         A statisztikai és marketing mérőkódok (Google Analytics, Meta Pixel) kizárólag
+         az "Elfogadom" gombbal adott hozzájárulás után töltődnek be – lásd a
+         loadMarketingScripts() függvényt a scriptben. Jelenleg nincs aktív mérőkód. -->
+    <div id="cookie-banner" class="hidden fixed bottom-0 inset-x-0 z-[60] bg-fonix-dark text-white shadow-[0_-4px_20px_rgba(0,0,0,0.35)]">
+        <div class="container mx-auto px-6 py-4 max-w-6xl flex flex-col md:flex-row items-start md:items-center gap-4">
+            <div class="flex items-start gap-3 flex-grow">
+                <i class="fas fa-cookie-bite text-fonix-gold text-2xl mt-0.5 shrink-0"></i>
+                <p class="text-sm text-white/85 leading-relaxed">Weboldalunk a működéshez szükséges sütiket használja. Statisztikai és marketing sütiket kizárólag az előzetes hozzájárulásoddal helyezünk el. Részletek: <a href="adatkezelesi-tajekoztato.pdf" target="_blank" rel="noopener" class="text-fonix-gold font-semibold underline hover:text-white transition">Adatkezelési tájékoztató</a>.</p>
+            </div>
+            <div class="flex gap-3 shrink-0 w-full md:w-auto">
+                <button onclick="setCookieConsent('necessary')" class="flex-1 md:flex-none px-5 py-2.5 rounded border border-white/40 text-sm font-bold hover:bg-white/10 transition">Csak a szükségesek</button>
+                <button onclick="setCookieConsent('all')" class="flex-1 md:flex-none px-5 py-2.5 rounded bg-fonix-gold text-white text-sm font-bold hover:bg-fonix-green transition">Elfogadom</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script>
@@ -2639,6 +2673,77 @@
                 el.style.maxHeight = el.scrollHeight + 'px';
             });
         });
+
+        // ===== Akciós felugró (2026. augusztus 24–31.) =====
+        // Szeptember 1-jétől automatikusan nem jelenik meg többé.
+        function closeAkcioPopup() {
+            const p = document.getElementById('akcio-popup');
+            if (p) p.classList.add('hidden');
+            document.body.style.overflow = '';
+            try { sessionStorage.setItem('fonixAkcioLatva', '1'); } catch (e) {}
+        }
+        (function () {
+            const p = document.getElementById('akcio-popup');
+            if (!p) return;
+            const lejarat = new Date('2026-09-01T00:00:00');
+            let latva = false;
+            try { latva = sessionStorage.getItem('fonixAkcioLatva') === '1'; } catch (e) {}
+            if (new Date() < lejarat && !latva) {
+                setTimeout(function () {
+                    p.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                }, 900);
+            }
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeAkcioPopup();
+            });
+        })();
+
+        // ===== Süti (cookie) hozzájárulás kezelése =====
+        // A választás 12 hónapig érvényes, utána a sáv újra megjelenik.
+        const FONIX_COOKIE_KULCS = 'fonixCookieConsent';
+        function getCookieConsent() {
+            try {
+                const raw = localStorage.getItem(FONIX_COOKIE_KULCS);
+                if (!raw) return null;
+                const c = JSON.parse(raw);
+                if (!c.ts || (Date.now() - c.ts) > 365 * 24 * 60 * 60 * 1000) return null;
+                return c;
+            } catch (e) { return null; }
+        }
+        function setCookieConsent(level) {
+            try { localStorage.setItem(FONIX_COOKIE_KULCS, JSON.stringify({ level: level, ts: Date.now() })); } catch (e) {}
+            const b = document.getElementById('cookie-banner');
+            if (b) b.classList.add('hidden');
+            if (level === 'all') loadMarketingScripts();
+        }
+        function openCookieSettings() {
+            const b = document.getElementById('cookie-banner');
+            if (b) b.classList.remove('hidden');
+        }
+        function loadMarketingScripts() {
+            if (window.fonixMarketingBetoltve) return;
+            window.fonixMarketingBetoltve = true;
+            /* ============================================================
+               STATISZTIKAI ÉS MARKETING MÉRŐKÓDOK HELYE
+               Kizárólag az "Elfogadom" hozzájárulás után fut le.
+               Jelenleg NINCS aktív mérőkód az oldalon.
+               ------------------------------------------------------------
+               1) GOOGLE ANALYTICS 4 – a lead kampány indításakor ide kerül
+                  a gtag.js betöltő kód (G-XXXXXXXXXX mérési azonosítóval).
+               2) META PIXEL – ide kerül az fbevents.js betöltő kód
+                  (Pixel ID-val), amikor a Meta lead ads kampány elindul.
+               ============================================================ */
+        }
+        (function () {
+            const consent = getCookieConsent();
+            if (!consent) {
+                const b = document.getElementById('cookie-banner');
+                if (b) b.classList.remove('hidden');
+            } else if (consent.level === 'all') {
+                loadMarketingScripts();
+            }
+        })();
     </script>
 </body>
 </html>
