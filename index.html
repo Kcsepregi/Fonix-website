@@ -130,17 +130,23 @@
             <a href="#" class="flex items-center shrink-0">
                 <img src="logo.png" alt="Főnix Vitalitás Központ" class="h-16 lg:h-24 w-auto object-contain mix-blend-multiply" onerror="this.outerHTML='<span class=\'text-3xl font-serif font-bold text-fonix-green\'>Főnix</span>'">
             </a>
-            <div class="hidden xl:flex flex-grow justify-evenly items-center text-sm uppercase tracking-widest font-bold">
-                <a href="#rolunk" class="hover:text-fonix-green transition">Rólunk</a>
-                <a href="#vitalitas-utja" class="hover:text-fonix-green transition">Szolgáltatásaink</a>
-                <a href="#orarend" class="hover:text-fonix-green transition">Órarend</a>
-                <a href="#ajandekutalvany" onclick="openUtalvany(); return false;" class="hover:text-fonix-green transition flex items-center gap-1.5"><i class="fas fa-gift text-fonix-gold"></i> Ajándékutalvány</a>
-                <a href="#galeria" class="hover:text-fonix-green transition">Galéria</a>
-                <a href="#velemenyek" class="hover:text-fonix-green transition">Vélemények</a>
-                <a href="#csapat" class="hover:text-fonix-green transition">Csapat</a>
-                <a href="#teremberles" class="hover:text-fonix-green transition">Terembérlés</a>
-                <a href="#kapcsolat" class="hover:text-fonix-green transition">Kapcsolat</a>
-                <a href="#idopontfoglalas" class="bg-fonix-gold text-fonix-bg px-6 py-3 rounded hover:bg-fonix-green hover:text-fonix-bg transition duration-300 font-extrabold shadow-md transform hover:scale-105 cta-button-pop flex items-center gap-2">
+            <div class="hidden xl:flex flex-grow items-center gap-10 pl-10">
+                <div class="flex-grow flex flex-col gap-3 text-sm uppercase tracking-widest font-bold">
+                    <div class="flex justify-evenly items-center">
+                        <a href="#rolunk" class="hover:text-fonix-green transition">Rólunk</a>
+                        <a href="#vitalitas-utja" class="hover:text-fonix-green transition">Szolgáltatásaink</a>
+                        <a href="#orarend" class="hover:text-fonix-green transition">Órarend</a>
+                        <a href="#ajandekutalvany" onclick="openUtalvany(); return false;" class="hover:text-fonix-green transition flex items-center gap-1.5 text-fonix-green"><i class="fas fa-gift text-fonix-gold"></i> Ajándékutalvány</a>
+                    </div>
+                    <div class="flex justify-evenly items-center">
+                        <a href="#galeria" class="hover:text-fonix-green transition">Galéria</a>
+                        <a href="#velemenyek" class="hover:text-fonix-green transition">Vélemények</a>
+                        <a href="#csapat" class="hover:text-fonix-green transition">Csapat</a>
+                        <a href="#teremberles" class="hover:text-fonix-green transition">Terembérlés</a>
+                        <a href="#kapcsolat" class="hover:text-fonix-green transition">Kapcsolat</a>
+                    </div>
+                </div>
+                <a href="#idopontfoglalas" class="bg-fonix-gold text-fonix-bg px-6 py-3 rounded hover:bg-fonix-green hover:text-fonix-bg transition duration-300 font-extrabold shadow-md transform hover:scale-105 cta-button-pop flex items-center gap-2 text-sm uppercase tracking-widest shrink-0">
                     <i class="fas fa-calendar-check"></i> IDŐPONTFOGLALÁS
                 </a>
             </div>
@@ -1396,11 +1402,11 @@
                         <div class="px-8 pb-8 pt-6">
                             <div class="grid md:grid-cols-2 gap-8 items-center mb-8">
                                 <div>
-                                    <p class="text-fonix-dark/80 leading-relaxed mb-4">Ajándékozz feltöltődést! Kezeléseink és masszázsaink ajándékutalvány formájában is elérhetők – igényes, nyomtatott kivitelben, a választott szolgáltatás nevével. <strong class="text-fonix-green">Az utalvány tartalma tetszés szerint összeállítható:</strong> lehet egyetlen kezelés, masszázs, vagy bármilyen kombináció – a képen látható csomag csak egy minta a sok lehetőség közül. Az utalvány a kiállítástól számított <strong class="text-fonix-green">12 hónapig érvényes és átruházható</strong>, így a megajándékozott akkor váltja be, amikor neki a legjobb.</p>
-                                    <p class="text-fonix-dark/80 leading-relaxed">Az előre összeállított utalványcsomagok és az árak az online foglalási felületen, az <strong class="text-fonix-green">Ajándékutalvány</strong> csoportban találhatók – ott rögtön meg is rendelheted, vagy hívj minket, és a recepción készítjük el.</p>
+                                    <p class="text-fonix-dark/80 leading-relaxed mb-4">Ajándékozz feltöltődést! Kezeléseink és masszázsaink ajándékutalvány formájában is elérhetők – igényes, nyomtatott kivitelben, a választott szolgáltatás nevével. <strong class="text-fonix-green">Az utalvány tartalma tetszés szerint összeállítható:</strong> lehet egyetlen kezelés, masszázs, vagy bármilyen kombináció – a választott ajándék kerül az utalvány "Az ajándék tartalma" mezőjébe. Az utalvány a kiállítástól számított <strong class="text-fonix-green">12 hónapig érvényes és átruházható</strong>, így a megajándékozott akkor váltja be, amikor neki a legjobb.</p>
+                                    <p class="text-fonix-dark/80 leading-relaxed">Kétféleképpen juthatsz hozzá: a recepción a <strong class="text-fonix-green">kész, előre nyomtatott utalványok</strong> közül választhatsz, vagy <strong class="text-fonix-green">megrendeled online</strong> a foglalási felületen, az Ajándékutalvány csoportban, és mi elkészítjük neked. Az előre összeállított csomagok és az árak is ott találhatók.</p>
                                 </div>
                                 <figure class="rounded-xl overflow-hidden shadow-lg border border-fonix-gold/30">
-                                    <img src="ajandekutalvany.jpg" alt="Főnix Vitalitás Központ ajándékutalvány – minta" class="w-full h-auto" loading="lazy">
+                                    <img src="ajandekutalvany.jpg" alt="Főnix Vitalitás Központ ajándékutalvány – minta" width="1701" height="827" class="w-full h-auto block" onload="var c=document.getElementById('cat-utalvany'); if(c && c.classList.contains('active')) c.style.maxHeight=c.scrollHeight+'px';">
                                     <figcaption class="text-xs text-fonix-dark/50 italic text-center py-2 bg-white">Az utalvány nyomtatott előlapja (minta)</figcaption>
                                 </figure>
                             </div>
@@ -1417,7 +1423,7 @@
                                 <i class="fas fa-gift text-fonix-gold text-3xl shrink-0"></i>
                                 <div class="flex-grow">
                                     <div class="font-serif font-bold text-fonix-green mb-1">Utalvány megrendelése</div>
-                                    <p class="text-sm text-fonix-dark/70 leading-relaxed">Online a foglalási felületen az Ajándékutalvány csoportban, telefonon, vagy személyesen a recepción – egyedi összeállítást telefonon vagy a recepción kérhetsz.</p>
+                                    <p class="text-sm text-fonix-dark/70 leading-relaxed">Kész utalványok a recepción; egyedi összeállítás megrendelésre – online a foglalási felületen, vagy telefonon.</p>
                                 </div>
                                 <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto shrink-0">
                                     <a href="https://egyeni.fonixvitalitas.hu" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-fonix-gold text-fonix-bg font-bold px-6 py-3 rounded-lg hover:bg-fonix-green hover:text-white transition duration-300 shadow-md whitespace-nowrap w-full sm:w-auto">
