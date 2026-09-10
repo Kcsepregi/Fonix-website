@@ -2656,6 +2656,20 @@
         </div>
     </footer>
 
+    <!-- ===== AKCIÓS FELUGRÓ – Pomáz napja, 2026. szeptember 19. =====
+         A felugró 2026. szeptember 20-ától automatikusan nem jelenik meg (lásd a scriptet,
+         "lejarat"). Utána ez a blokk, a hozzá tartozó script-rész és az
+         akcio-pomaz-napja-2026-09.jpg kép is törölhető a repóból. -->
+    <div id="akcio-popup" class="hidden fixed inset-0 z-[70] flex items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true" aria-label="Pomáz napja – helyszíni kedvezmények">
+        <div class="absolute inset-0 bg-fonix-dark/85 backdrop-blur-sm" onclick="closeAkcioPopup()"></div>
+        <div class="relative max-w-[440px] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-fonix-gold/40 bg-fonix-dark">
+            <button type="button" onclick="closeAkcioPopup()" aria-label="Bezárás" class="absolute top-3 right-3 z-10 w-10 h-10 rounded-full bg-fonix-dark/80 text-white text-lg flex items-center justify-center border border-white/30 hover:bg-fonix-gold hover:border-fonix-gold transition focus:outline-none focus:ring-2 focus:ring-fonix-gold">
+                <i class="fas fa-xmark"></i>
+            </button>
+            <img src="akcio-pomaz-napja-2026-09.jpg" width="1080" height="1080" class="block w-auto h-auto max-w-full max-h-[85vh]" alt="Pomáz napja, szeptember 19. – ott leszünk mi is, keressétek a sátrunkat! Helyszíni bérletvásárlásnál: EMS Intimfotel bérlet −30%, gépi nyirokmasszázs bérlet −30%, Alpha melegterápia és kavitációs kombinált kezelés −20%. Ajándékutalvány a helyszínen −15%, egyénileg összeállítható, 1 évig beváltható.">
+        </div>
+    </div>
+
     <!-- ===== SÜTI-TÁJÉKOZTATÓ SÁV (consent banner) =====
          A statisztikai és marketing mérőkódok (Google Analytics, Meta Pixel) kizárólag
          az "Elfogadom" gombbal adott hozzájárulás után töltődnek be – lásd a
@@ -2762,6 +2776,34 @@
                 el.style.maxHeight = el.scrollHeight + 'px';
             });
         });
+
+        // ===== Akciós felugró – Pomáz napja (2026. szeptember 19.) =====
+        // 2026. szeptember 20-ától automatikusan nem jelenik meg többé.
+        // Munkameneten belül egyszer ugrik fel; bezárás: X gomb, háttérre kattintás vagy Esc.
+        function closeAkcioPopup() {
+            const p = document.getElementById('akcio-popup');
+            if (p) p.classList.add('hidden');
+            document.body.style.overflow = '';
+            try { sessionStorage.setItem('fonixAkcioLatva', 'pomaz-2026-09'); } catch (e) {}
+        }
+        (function () {
+            const p = document.getElementById('akcio-popup');
+            if (!p) return;
+            const lejarat = new Date('2026-09-20T00:00:00');
+            let latva = false;
+            try { latva = sessionStorage.getItem('fonixAkcioLatva') === 'pomaz-2026-09'; } catch (e) {}
+            if (new Date() < lejarat && !latva) {
+                setTimeout(function () {
+                    p.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                    const z = p.querySelector('button');
+                    if (z) z.focus();
+                }, 900);
+            }
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeAkcioPopup();
+            });
+        })();
 
         // ===== Süti (cookie) hozzájárulás kezelése =====
         // A választás 12 hónapig érvényes, utána a sáv újra megjelenik.
