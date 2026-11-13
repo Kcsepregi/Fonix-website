@@ -2831,6 +2831,23 @@
         </div>
     </footer>
 
+    <!-- ===== AKCIÓS FELUGRÓ – Black Friday, 2026. november 20–27. =====
+         A felugró 2026. november 28-ától automatikusan nem jelenik meg (lásd a scriptet,
+         "lejarat"). Utána ez a blokk, a script "Akciós felugró" része és a
+         black-friday-2026-11.jpg kép is törölhető a repóból. -->
+    <div id="akcio-popup" class="hidden fixed inset-0 z-[70] flex items-center justify-center p-3 sm:p-6" role="dialog" aria-modal="true" aria-label="Black Friday a Főnixben – 50–60% kedvezmény a gépi testkezelésekre, november 20–27.">
+        <div class="absolute inset-0 bg-fonix-dark/85 backdrop-blur-sm" onclick="closeAkcioPopup()"></div>
+        <div class="relative max-w-[480px] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-fonix-gold/40 bg-[#0f2a1f]">
+            <button type="button" onclick="closeAkcioPopup()" aria-label="Bezárás" class="absolute top-3 right-3 z-10 w-10 h-10 rounded-full bg-fonix-dark/80 text-white text-lg flex items-center justify-center border border-white/30 hover:bg-fonix-gold hover:border-fonix-gold transition focus:outline-none focus:ring-2 focus:ring-fonix-gold">
+                <i class="fas fa-xmark"></i>
+            </button>
+            <img src="black-friday-2026-11.jpg" width="1080" height="1920" class="block w-auto h-auto max-w-full max-h-[80vh] sm:max-h-[82vh] mx-auto" alt="Black Friday a Főnix Vitalitás Központban, november 20–27.: 50–60% kedvezmény a gépi testkezelésekre. EMS Intimfotel –60%: 5 alkalom 17.800 Ft (44.500 Ft helyett), 10 alkalom 32.200 Ft (80.500 Ft helyett). Gépi nyirokmasszázs –60%: 5 alkalom 15.560 Ft (38.900 Ft helyett), 10 alkalom 29.400 Ft (73.500 Ft helyett). Kombinált testkezelés –50%: 4 alkalom 34.450 Ft (68.900 Ft helyett). Alpha melegterápiás kezelés –60%: 5 alkalom 17.800 Ft (44.500 Ft helyett), 10 alkalom 32.200 Ft (80.500 Ft helyett). Az akció november 20–27. között érvényes, a megvásárolt bérletek 2027. március 31-ig használhatók fel. Időpont és érdeklődés: 06 20 465 4525. 2013 Pomáz, Beniczky utca 4.">
+            <div class="p-3 text-center">
+                <a href="tel:+36204654525" class="inline-flex items-center gap-2 bg-fonix-gold text-fonix-dark font-bold px-6 py-3 rounded-full uppercase tracking-wider text-xs sm:text-sm hover:bg-white transition"><i class="fas fa-phone"></i> Hívj: 06 20 465 4525</a>
+            </div>
+        </div>
+    </div>
+
     <!-- ===== HÍRLEVÉL FELUGRÓ (kilépési szándéknál) =====
          Csak akkor jelenik meg, ha az adott munkamenetben még nem volt felugró
          (lásd a script "Hírlevél felugró" részét). A feliratkozás jelenleg
@@ -2976,6 +2993,12 @@
         function fonixPopupMegjelent() {
             try { sessionStorage.setItem('fonixPopupSession', '1'); } catch (e) {}
         }
+        function closeAkcioPopup() {
+            const p = document.getElementById('akcio-popup');
+            if (p) p.classList.add('hidden');
+            document.body.style.overflow = '';
+            try { sessionStorage.setItem('fonixAkcioLatva', 'black-friday-2026-11'); } catch (e) {}
+        }
         function closeHirlevelPopup() {
             const p = document.getElementById('hirlevel-popup');
             if (p) p.classList.add('hidden');
@@ -2986,6 +3009,22 @@
             closeHirlevelPopup();
         }
         (function () {
+            // --- Akciós felugró: Black Friday (2026. november 20–27.) ---
+            // 2026. november 28-ától a felugró már nem jelenik meg.
+            const lejarat = new Date('2026-11-28T00:00:00');
+            const akcio = document.getElementById('akcio-popup');
+            let akcioLatva = false;
+            try { akcioLatva = sessionStorage.getItem('fonixAkcioLatva') === 'black-friday-2026-11'; } catch (e) {}
+            if (akcio && new Date() < lejarat && !akcioLatva && !fonixPopupVoltMar()) {
+                setTimeout(function () {
+                    akcio.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                    fonixPopupMegjelent();
+                    const z = akcio.querySelector('button');
+                    if (z) z.focus();
+                }, 900);
+            }
+
             // --- Hírlevél felugró (kilépési szándék / exit intent) ---
             const hirlevel = document.getElementById('hirlevel-popup');
             const betoltve = Date.now();
@@ -3011,7 +3050,7 @@
             });
 
             document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape') closeHirlevelPopup();
+                if (e.key === 'Escape') { closeAkcioPopup(); closeHirlevelPopup(); }
             });
         })();
 
